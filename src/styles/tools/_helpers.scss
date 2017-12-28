@@ -1,0 +1,162 @@
+// =============================================================================
+//	TOOLS - HELPERS
+// =============================================================================
+
+// Clearfix
+@mixin clearfix {
+    &::after {
+        clear: both;
+        content: '';
+        display: table;
+    }
+}
+
+// Align centre content with flexbox
+@mixin align-content-centre {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+// Vertically align content centre with flexbox
+@mixin v-align-content-centre {
+    align-items: center;
+    display: flex;
+}
+
+// Centre element that is absolutely positioned
+@mixin abs-h-centre {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+// Reset an element that is absolutely positioned centred
+@mixin abs-cancel-h-centre {
+    left: auto;
+    transform: translateX(0);
+}
+
+// Remove default list styling
+@mixin remove-list-styles {
+    @include padding(null 0);
+    margin: 0;
+
+    li {
+        list-style: none;
+        padding-left: 0;
+    }
+}
+
+// Remove default link styling
+@mixin remove-link-styles {
+    font-weight: inherit;
+    text-decoration: none;
+}
+
+// Clickable elements that are not an anchor
+@mixin clickable {
+    cursor: pointer;
+
+    &:active,
+    &:focus,
+    &:hover {
+        opacity: $opacity-hover;
+    }
+}
+
+// Disabled styles
+@mixin disabled {
+    cursor: not-allowed;
+    opacity: $opacity-disabled;
+}
+
+// Override disabled styles
+// sass-lint:disable-block no-important
+@mixin override-disabled-styles {
+    cursor: inherit !important;
+    opacity: inherit !important;
+
+    &:active,
+    &:focus,
+    &:hover {
+        cursor: inherit !important;
+        opacity: inherit !important;
+    }
+}
+
+// Hide text not the pseudo
+@mixin hide-text-not-pseudo {
+    text-indent: -9999px;
+
+    &::before,
+    &::after {
+        float: left;
+        height: 100%;
+        margin: 0;
+        text-indent: 0;
+        width: 100%;
+    }
+}
+
+// BG Images
+@mixin bg-cover {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+// Hide text
+@mixin hide-text {
+    overflow: hidden;
+    text-indent: -9999px;
+}
+
+// Margin centre
+@mixin m-centre {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Full width/height overlay.
+// If it is a pseudo element, it will meeds an empty content property and the wrapper to have a relative position
+@mixin full-overlay($bg-colour: $black) {
+    @include position(absolute, 0 0 0 0);
+    background-color: $bg-colour;
+    height: 100%;
+    width: 100%;
+}
+
+// A container that centre aligns with padding and max width
+@mixin container($max-width-content: $max-width-content) {
+    @include m-centre;
+    @include p-h-resp;
+    max-width: $max-width-content;
+}
+
+// Maintain aspect radio mixin
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+
+    &::before {
+        content: '';
+        display: block;
+        padding-top: ($height / $width) * 100%;
+        width: 100%;
+    }
+
+    > .aspect-ratio-content {
+        @include position(absolute, 0 0 0 0);
+    }
+}
+
+// Inline list gutter
+@mixin inline-list-gutter($gutter) {
+    margin: -$gutter;
+    padding: 0;
+
+    li {
+        display: inline-block;
+        margin: $gutter;
+        padding: 0;
+    }
+}
