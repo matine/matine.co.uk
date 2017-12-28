@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { RichText } from 'prismic-reactjs';
 
-class Links extends Component {
+class LinksPage extends Component {
     /**
      * Render all the lists of links with titles
      *
@@ -39,8 +39,6 @@ class Links extends Component {
             }
         });
 
-        console.log(sliceContent);
-
         return sliceContent;
     }
 
@@ -62,8 +60,8 @@ class Links extends Component {
     }
 }
 
-Links.propTypes = {
+LinksPage.propTypes = {
     globalContent: PropTypes.shape().isRequired,
 };
 
-export default Links;
+export default LinksPage;
