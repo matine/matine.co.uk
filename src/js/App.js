@@ -1,17 +1,14 @@
 import React from 'react';
 import Prismic from 'prismic-javascript';
 import PrismicConfig from './prismic-configuration';
-import { Route, Switch } from 'react-router-dom'
 import Header from './components/Header';
 import Footer from './components/Footer';
-import LinksPage from './pages/LinksPage';
-import WorkPage from './pages/WorkPage';
-import AboutPage from './pages/AboutPage';
+import Routing from './Routing';
 
 class App extends React.Component {
 
     state = {
-        globalContent: null,
+        workContent: null,
     }
 
     componentWillMount() {
@@ -39,23 +36,19 @@ class App extends React.Component {
      * @return {XML}
      */
     render() {
-        if (this.state.globalContent) {
-            const globalContent = this.state.globalContent.data;
+        const globalContent = this.state.globalContent;
 
-            return (
-                <div>
-                    <Header globalContent={ globalContent } />
-                    <Switch>
-                        <Route exact path='/' component={ WorkPage } />
-                        <Route path='/work' render={ props => ( <WorkPage { ...props } globalContent={ globalContent } /> )}/>
-                        <Route path='/about' render={ props => ( <AboutPage { ...props } globalContent={ globalContent } /> )}/>
-                        <Route path='/links' render={ props => ( <LinksPage { ...props } globalContent={ globalContent } /> )}/>
-                    </Switch>
-                    <Footer globalContent={ globalContent } />
-                </div>
-            );
+        if (!globalContent) {
+            return <h1>Loading...</h1>;
         }
-        return <h1>Loading...</h1>;
+
+        return (
+            <div>
+                <Header globalContent={ globalContent.data } />
+                <Routing globalContent={ globalContent.data } />
+                <Footer globalContent={ globalContent.data } />
+            </div>
+        );
     }
 }
 

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { RichText } from 'prismic-reactjs';
 
 class AboutPage extends Component {
     /**
