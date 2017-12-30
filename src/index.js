@@ -1,15 +1,10 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom'
-import App from './js/App';
+import store from './js/store';
+import Root from './js/Root';
 import './styles/index.css';
-// import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render((
-    <BrowserRouter>
-        <App />
-    </BrowserRouter>
+    <Root store={ store } />
 ), document.getElementById('root'))
-// registerServiceWorker();
-

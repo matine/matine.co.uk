@@ -14,11 +14,12 @@ class Routing extends React.Component {
      */
     render() {
         const globalContent = this.props.globalContent;
+        const projects = this.props.projects;
 
         const Work = () => (
             <Switch>
-                <Route exact path='/work' render={ props => ( <WorkPage { ...props } globalContent={ globalContent } /> )} />
-                <Route path='/work/:uid' render={ props => ( <ProjectPage { ...props } globalContent={ globalContent } /> )} />
+                <Route exact path='/work' render={ props => ( <WorkPage { ...props } globalContent={ globalContent } projects={ projects } /> )} />
+                <Route path='/work/:uid' render={ props => ( <ProjectPage { ...props } globalContent={ globalContent } projects={ projects } /> )} />
             </Switch>
         )
 
@@ -34,6 +35,7 @@ class Routing extends React.Component {
 }
 
 Routing.propTypes = {
+    projects: PropTypes.array.isRequired,
     globalContent: PropTypes.shape().isRequired,
 };
 

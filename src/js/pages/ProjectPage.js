@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Prismic from 'prismic-javascript';
-import PrismicConfig from '../prismic-configuration';
 import PropTypes from 'prop-types';
 import { RichText } from 'prismic-reactjs';
 
@@ -15,13 +13,9 @@ class ProjectPage extends Component {
     }
 
     fetchProjectContent() {
-        Prismic.api(PrismicConfig.apiEndpoint).then(api => {
-            api.getByUID('project', this.props.match.params.uid).then(response => {
-                if (response) {
-                    this.setState({ projectContent: response.data });
-                }
-            });
-        });
+        this.props.projects
+            .filter(project => project.uid === this.props.match.params.uid)
+            .map((project, index) => this.setState({ projectContent: project }));
     }
 
     /**
@@ -38,7 +32,7 @@ class ProjectPage extends Component {
 
         return (
             <div>
-                <h1>{ RichText.render(projectContent.project_title)}</h1>
+                <h1>{ RichText.render(projectContent.data.project_title) }</h1>
             </div>
         );
     }
@@ -46,6 +40,7 @@ class ProjectPage extends Component {
 
 ProjectPage.propTypes = {
     globalContent: PropTypes.shape().isRequired,
+    projects: PropTypes.array.isRequired,
 };
 
 export default ProjectPage;

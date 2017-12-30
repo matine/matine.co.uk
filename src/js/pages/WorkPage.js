@@ -1,33 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Prismic from 'prismic-javascript';
-import PrismicConfig from '../prismic-configuration';
 import { Link } from 'react-router-dom';
 
 class WorkPage extends Component {
 
     state = {
         globalContent: null,
-        workContent: null,
-    }
-
-    componentWillMount() {
-        this.fetchWorkContent();
-    }
-
-    /**
-     * Fetch work content from Prismic and save to state.
-     *
-     * @return {void}
-     */
-    fetchWorkContent() {
-        Prismic.api(PrismicConfig.apiEndpoint).then(api => {
-            api.query(Prismic.Predicates.at('document.type', 'project')).then(response => {
-                if (response) {
-                    this.setState({ workContent: response });
-                }
-            });
-        });
     }
 
     /**
@@ -36,13 +14,13 @@ class WorkPage extends Component {
      * @return {XML}
      */
     render() {
-        const workContent = this.state.workContent;
+        const projects = this.props.projects;
 
-        if (!workContent) {
+        if (!projects) {
             return null;
         }
 
-        const projectsListed = workContent.results.map((project, index) => {
+        const projectsListed = projects.map((project, index) => {
             return (
                 <li key={ index }><Link to={ `/work/${project.uid}` }>{ project.uid }</Link></li>
             );
@@ -58,6 +36,7 @@ class WorkPage extends Component {
 
 WorkPage.propTypes = {
     globalContent: PropTypes.shape().isRequired,
+    projects: PropTypes.array.isRequired,
 };
 
 export default WorkPage;
