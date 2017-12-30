@@ -3,24 +3,19 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 class WorkPage extends Component {
-
-    state = {
-        globalContent: null,
-    }
-
     /**
      * Renders the component.
      *
      * @return {XML}
      */
     render() {
-        const projects = this.props.projects;
-
-        if (!projects) {
+        if (!this.props.projectsContent) {
             return null;
         }
 
-        const projectsListed = projects.map((project, index) => {
+        const projectsContent = this.props.projectsContent;
+
+        const projectsListed = projectsContent.map((project, index) => {
             return (
                 <li key={ index }><Link to={ `/work/${project.uid}` }>{ project.uid }</Link></li>
             );
@@ -36,7 +31,7 @@ class WorkPage extends Component {
 
 WorkPage.propTypes = {
     globalContent: PropTypes.shape().isRequired,
-    projects: PropTypes.array.isRequired,
+    projectsContent: PropTypes.array.isRequired,
 };
 
 export default WorkPage;

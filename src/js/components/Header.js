@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { RichText } from 'prismic-reactjs';
 import Nav from './Nav';
+import store from '../store';
 import logo from '../../img/logo.svg';
 
 class Header extends Component {
@@ -11,7 +12,8 @@ class Header extends Component {
      * @return {XML}
      */
     render() {
-        const globalContent = this.props.globalContent;
+        const globalState = this.context.store.getState();
+        const globalContent = globalState.content.global;
 
         return (
             <header className="header">
@@ -22,6 +24,10 @@ class Header extends Component {
         );
     }
 }
+
+Header.contextTypes = {
+    store: PropTypes.object,
+};
 
 Header.propTypes = {
     globalContent: PropTypes.shape().isRequired,

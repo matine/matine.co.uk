@@ -11,32 +11,29 @@ import Routing from './Routing';
 
 class App extends React.Component {
 
-    state = {
-        globalContent: null,
-        workContent: null,
-        projects: [],
-    }
-
     componentWillMount() {
-        this.getUiContent();
+        this.getPrismicContent();
     }
 
-    getUiContent() {
+    getPrismicContent() {
+        let content = {
+            global: null,
+            projects: [],
+        }
+
         Prismic.api(PrismicConfig.apiEndpoint).then(api => {
             if (api) {
                 api.query('').then(response => {
-                    let projects = [];
-
                     response.results.map((doc, index) => {
                         if (doc.type === 'global') {
-                            this.setState({ globalContent: doc });
+                            content.global = doc.data;
                         }
                         if (doc.type === 'project') {
-                            projects.push(doc);
+                            content.projects.push(doc);
                         }
                     });
-
-                    this.setState({ projects: projects });
+                }).then(response => {
+                    this.props.setContentState(content);
                 });
             }
         });
@@ -48,40 +45,58 @@ class App extends React.Component {
      * @return {XML}
      */
     render() {
-        if (!this.state.globalContent || !this.state.projects) {
+        const {
+            content,
+        } = this.props;
+
+        const {
+            store,
+        } = this.context;
+
+        const log = () => {
+            console.log('store.getState()', store.getState());
+        }
+
+        this.context.store.subscribe(log);
+        log();
+
+        if (!content.global || !content.projects) {
             return <h1>Loading...</h1>;
         }
 
-        const globalContent = this.state.globalContent.data;
-        const projects = this.state.projects;
+        const globalContent = content.global;
+        const projectsContent = content.projects;
 
         return (
             <div>
                 <Header globalContent={ globalContent } />
-                <Routing globalContent={ globalContent } projects={ projects } />
+                <Routing globalContent={ globalContent } projectsContent={ projectsContent } />
                 <Footer globalContent={ globalContent } />
             </div>
         );
     }
 }
 
+App.contextTypes = {
+    store: PropTypes.object,
+};
+
 App.propTypes = {
-    ui: PropTypes.shape(),
-    setUiState: PropTypes.func,
+    content: PropTypes.shape(),
+    setContentState: PropTypes.func,
 };
 
 App.defaultProps = {
-    ui: null,
-    setUiState: () => {},
+    content: null,
+    setContentState: () => {},
 };
 
 const mapStateToProps = state => ({
-    ui: state.ui,
+    content: state.content,
 });
 
 const mapDispatchToProps = dispatch => ({
-    setUiState: ui => dispatch(actions.setUiState(ui)),
+    setContentState: content => dispatch(actions.setContentState(content)),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
-

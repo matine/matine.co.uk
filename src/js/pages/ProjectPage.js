@@ -13,7 +13,7 @@ class ProjectPage extends Component {
     }
 
     fetchProjectContent() {
-        this.props.projects
+        this.props.projectsContent
             .filter(project => project.uid === this.props.match.params.uid)
             .map((project, index) => this.setState({ projectContent: project }));
     }
@@ -24,15 +24,15 @@ class ProjectPage extends Component {
      * @return {XML}
      */
     render() {
-        const projectContent = this.state.projectContent;
-
-        if (!projectContent) {
+        if (!this.state.projectContent) {
             return null;
         }
 
+        const projectContent = this.state.projectContent.data;
+
         return (
             <div>
-                <h1>{ RichText.render(projectContent.data.project_title) }</h1>
+                <h1>{ RichText.render(projectContent.project_title) }</h1>
             </div>
         );
     }
@@ -40,7 +40,7 @@ class ProjectPage extends Component {
 
 ProjectPage.propTypes = {
     globalContent: PropTypes.shape().isRequired,
-    projects: PropTypes.array.isRequired,
+    projectsContent: PropTypes.array.isRequired,
 };
 
 export default ProjectPage;

@@ -1,14 +1,14 @@
 import * as actions from '../constants/actions';
 
 /**
- * Sets the UI state.
+ * Sets the CONTENT state.
  *
- * @param {Object} ui
+ * @param {Object} content
  * @return {Object}
  */
-export function setUiState(ui) {
+export const setContentState = content => {
     return {
-        type: actions.SET_UI_STATE,
-        data: ui,
+        type: actions.SET_CONTENT_STATE,
+        data: content,
     };
 }

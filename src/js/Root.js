@@ -1,17 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Provider } from 'react-redux'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
-import App from './App'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import App from './App';
 
 class Root extends React.Component {
-    /**
-     * Component constructor.
-     */
-    constructor() {
-        super();
-    }
-
     /**
      * Renders the component.
      *
