@@ -15,6 +15,10 @@ class Root extends React.Component {
             store,
         } = this.props;
 
+        if (!store) {
+            return null;
+        }
+
         return (
             <Provider store={ store }>
                 <Router>

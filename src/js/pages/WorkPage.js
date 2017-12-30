@@ -4,6 +4,27 @@ import { Link } from 'react-router-dom';
 
 class WorkPage extends Component {
     /**
+     * Renders the project list items.
+     *
+     * @return {XML}
+     */
+    renderProjectListItems() {
+        const {
+            projectsContent,
+        } = this.props;
+
+        return projectsContent.map((project, index) => {
+            return (
+                <li key={ index }>
+                    <Link to={ `/work/${project.uid}` }>
+                        { project.uid }
+                    </Link>
+                </li>
+            );
+        });
+    }
+
+    /**
      * Renders the component.
      *
      * @return {XML}
@@ -13,19 +34,7 @@ class WorkPage extends Component {
             return null;
         }
 
-        const projectsContent = this.props.projectsContent;
-
-        const projectsListed = projectsContent.map((project, index) => {
-            return (
-                <li key={ index }><Link to={ `/work/${project.uid}` }>{ project.uid }</Link></li>
-            );
-        });
-
-        return (
-            <ul>
-                { projectsListed }
-            </ul>
-        )
+        return <ul>{ this.renderProjectListItems() }</ul>
     }
 }
 

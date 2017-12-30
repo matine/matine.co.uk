@@ -3,16 +3,33 @@ import PropTypes from 'prop-types';
 import { RichText } from 'prismic-reactjs';
 
 class ProjectPage extends Component {
-
-    state = {
-        projectContent: null,
+    /**
+     * Component constructor.
+     *
+     * @param {Object} props
+     */
+    constructor(props) {
+        super(props);
+        this.state = {
+            projectContent: null,
+        }
     }
 
+    /**
+     * Things to do before the component renders.
+     *
+     * @return {void}
+     */
     componentWillMount() {
-        this.fetchProjectContent();
+        this.getProjectContent();
     }
 
-    fetchProjectContent() {
+    /**
+     * Gets the current project content from the array of projects and saves to state.
+     *
+     * @return {void}
+     */
+    getProjectContent() {
         this.props.projectsContent
             .filter(project => project.uid === this.props.match.params.uid)
             .map((project, index) => this.setState({ projectContent: project }));
@@ -39,7 +56,6 @@ class ProjectPage extends Component {
 }
 
 ProjectPage.propTypes = {
-    globalContent: PropTypes.shape().isRequired,
     projectsContent: PropTypes.array.isRequired,
 };
 

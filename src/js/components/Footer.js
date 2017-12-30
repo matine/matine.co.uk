@@ -8,6 +8,10 @@ class Footer extends Component {
      * @return {XML}
      */
     render() {
+        const {
+            globalContent,
+        } = this.props;
+
         return (
             <footer>
                 <h2>This is my footer</h2>

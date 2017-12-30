@@ -13,22 +13,65 @@ class Routing extends React.Component {
      * @return {XML}
      */
     render() {
-        const globalContent = this.props.globalContent;
-        const projectsContent = this.props.projectsContent;
+        const {
+            globalContent,
+            projectsContent,
+        } = this.props;
+
+        if (!globalContent || !projectsContent) {
+            return null;
+        }
 
         const Work = () => (
             <Switch>
-                <Route exact path='/work' render={ props => ( <WorkPage { ...props } globalContent={ globalContent } projectsContent={ projectsContent } /> )} />
-                <Route path='/work/:uid' render={ props => ( <ProjectPage { ...props } globalContent={ globalContent } projectsContent={ projectsContent } /> )} />
+                <Route
+                    exact
+                    path='/work'
+                    render={ props => (
+                        <WorkPage { ...props }
+                            globalContent={ globalContent }
+                            projectsContent={ projectsContent }
+                        />
+                    )}
+                />
+                <Route
+                    path='/work/:uid'
+                    render={ props => (
+                        <ProjectPage { ...props }
+                            projectsContent={ projectsContent }
+                        />
+                    )}
+                />
             </Switch>
         )
 
         return (
             <Switch>
-                <Redirect exact from='/' to='/work' />
-                <Route path='/work' component={ Work } />
-                <Route path='/about' render={ props => ( <AboutPage { ...props } globalContent={ globalContent } /> )} />
-                <Route path='/links' render={ props => ( <LinksPage { ...props } globalContent={ globalContent } /> )} />
+                <Redirect
+                    exact
+                    from='/'
+                    to='/work'
+                />
+                <Route
+                    path='/work'
+                    component={ Work }
+                />
+                <Route
+                    path='/about'
+                    render={ props => (
+                        <AboutPage { ...props }
+                            globalContent={ globalContent }
+                        />
+                    )}
+                />
+                <Route
+                    path='/links'
+                    render={ props => (
+                        <LinksPage { ...props }
+                            globalContent={ globalContent }
+                        />
+                    )}
+                />
             </Switch>
         );
     }

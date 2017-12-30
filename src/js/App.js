@@ -10,11 +10,20 @@ import Footer from './components/Footer';
 import Routing from './Routing';
 
 class App extends React.Component {
-
+    /**
+     * Things to do before the component renders.
+     *
+     * @return {void}
+     */
     componentWillMount() {
         this.getPrismicContent();
     }
 
+    /**
+     * Get content from Prismic and save to the store.
+     *
+     * @return {void}
+     */
     getPrismicContent() {
         let content = {
             global: null,
@@ -25,12 +34,8 @@ class App extends React.Component {
             if (api) {
                 api.query('').then(response => {
                     response.results.map((doc, index) => {
-                        if (doc.type === 'global') {
-                            content.global = doc.data;
-                        }
-                        if (doc.type === 'project') {
-                            content.projects.push(doc);
-                        }
+                        if (doc.type === 'global') content.global = doc.data;
+                        if (doc.type === 'project') content.projects.push(doc);
                     });
                 }).then(response => {
                     this.props.setContentState(content);
@@ -49,17 +54,6 @@ class App extends React.Component {
             content,
         } = this.props;
 
-        const {
-            store,
-        } = this.context;
-
-        const log = () => {
-            console.log('store.getState()', store.getState());
-        }
-
-        this.context.store.subscribe(log);
-        log();
-
         if (!content.global || !content.projects) {
             return <h1>Loading...</h1>;
         }
@@ -69,17 +63,20 @@ class App extends React.Component {
 
         return (
             <div>
-                <Header globalContent={ globalContent } />
-                <Routing globalContent={ globalContent } projectsContent={ projectsContent } />
-                <Footer globalContent={ globalContent } />
+                <Header
+                    globalContent={ globalContent }
+                />
+                <Routing
+                    globalContent={ globalContent }
+                    projectsContent={ projectsContent }
+                />
+                <Footer
+                    globalContent={ globalContent }
+                />
             </div>
         );
     }
 }
-
-App.contextTypes = {
-    store: PropTypes.object,
-};
 
 App.propTypes = {
     content: PropTypes.shape(),
