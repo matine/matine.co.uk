@@ -6,9 +6,7 @@ import * as actions from '../constants/actions';
  * @param {Object} content
  * @return {Object}
  */
-export const setContentState = content => {
-    return {
-        type: actions.SET_CONTENT_STATE,
-        data: content,
-    };
-}
+export const setContentState = content => ({
+    type: actions.SET_CONTENT_STATE,
+    data: content,
+});

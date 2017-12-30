@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import LinksPage from './pages/LinksPage';
-import WorkPage from './pages/WorkPage';
-import AboutPage from './pages/AboutPage';
-import ProjectPage from './pages/ProjectPage';
+import LinksPage from '../pages/LinksPage';
+import WorkPage from '../pages/WorkPage';
+import AboutPage from '../pages/AboutPage';
+import ProjectPage from '../pages/ProjectPage';
 
 class Routing extends React.Component {
     /**

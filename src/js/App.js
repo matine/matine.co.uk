@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 import * as actions from './actions';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Routing from './Routing';
+import Routing from './components/Routing';
 
 class App extends React.Component {
     /**
