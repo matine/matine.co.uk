@@ -43,6 +43,43 @@ class ProjectsPage extends Component {
     }
 
     /**
+     * Scroll points.
+     *
+     * @return {Void}
+     */
+    scrollEvents() {
+        let scroll1 = 100;
+        let scroll2 = 200;
+        let scroll3 = 300;
+
+        window.onscroll = () => {
+            if ((window.pageYOffset > scroll1) && (window.pageYOffset < scroll2)) {
+                this.thumbnailVisibility(false);
+            } else if ((window.pageYOffset > scroll2) && (window.pageYOffset < scroll3)) {
+                this.thumbnailVisibility(true);
+            } else if (window.pageYOffset > scroll3) {
+                scroll1 += 200;
+                scroll2 += 200;
+                scroll3 += 200;
+            }
+        };
+    }
+
+    /**
+     * Shows or hides thumbnails.
+     *
+     * @param {Boolean} show
+     * @return {Void}
+     */
+    thumbnailVisibility(show) {
+        if (show) {
+            console.log('show');
+        } else {
+            console.log('hide');
+        }
+    }
+
+    /**
      * Renders the component.
      *
      * @return {XML}
@@ -51,6 +88,8 @@ class ProjectsPage extends Component {
         if (!this.props.projectsContent) {
             return null;
         }
+
+        this.scrollEvents();
 
         return (
             <div className="container text-centre">
