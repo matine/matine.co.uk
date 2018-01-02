@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { RichText } from 'prismic-reactjs';
 import Nav from './Nav';
-import logo from '../../img/logo.svg';
 
 class Header extends Component {
     /**
@@ -16,12 +15,7 @@ class Header extends Component {
         } = this.props;
 
         return (
-            <header className="header">
-                <img
-                    src={ logo }
-                    className="header__logo"
-                    alt="logo"
-                />
+            <header className="container text-centre">
                 <Nav />
                 { RichText.render(globalContent.site_title) }
             </header>

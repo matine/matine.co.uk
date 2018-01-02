@@ -30,11 +30,18 @@ class App extends React.Component {
             projects: [],
         }
 
+        const queryOptions = {
+            pageSize: 30,
+        };
+
         Prismic.api(PrismicConfig.apiEndpoint).then(api => {
             if (api) {
-                api.query('').then(response => {
+                api.query('', queryOptions).then(response => {
                     response.results.map((doc, index) => {
-                        if (doc.type === 'global') content.global = doc.data;
+                        console.log(doc.type);
+                        if (doc.type === 'global') {
+                            content.global = doc.data;
+                        }
                         if (doc.type === 'project') content.projects.push(doc);
                     });
                 }).then(response => {

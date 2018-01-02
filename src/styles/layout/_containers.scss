@@ -1,0 +1,13 @@
+// =============================================================================
+//  LAYOUT - CONTAINERS
+// =============================================================================
+
+.container {
+    @include container;
+    box-sizing: border-box;
+    max-width: $max-width-content-tablet;
+
+    @include screen-md-min {
+        max-width: $max-width-content;
+    }
+}

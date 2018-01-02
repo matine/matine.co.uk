@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import LinksPage from '../pages/LinksPage';
-import WorkPage from '../pages/WorkPage';
 import AboutPage from '../pages/AboutPage';
+import ProjectsPage from '../pages/ProjectsPage';
 import ProjectPage from '../pages/ProjectPage';
 
 class Routing extends React.Component {
@@ -22,13 +22,13 @@ class Routing extends React.Component {
             return null;
         }
 
-        const Work = () => (
+        const Projects = () => (
             <Switch>
                 <Route
                     exact
                     path='/work'
                     render={ props => (
-                        <WorkPage { ...props }
+                        <ProjectsPage { ...props }
                             globalContent={ globalContent }
                             projectsContent={ projectsContent }
                         />
@@ -54,7 +54,7 @@ class Routing extends React.Component {
                 />
                 <Route
                     path='/work'
-                    component={ Work }
+                    component={ Projects }
                 />
                 <Route
                     path='/about'

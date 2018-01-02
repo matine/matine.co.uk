@@ -13,7 +13,7 @@ class AboutPage extends Component {
         }
 
         return (
-            <div>
+            <div className="container text-centre">
                 <h2>This is the About page</h2>
             </div>
         );

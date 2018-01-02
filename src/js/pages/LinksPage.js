@@ -27,7 +27,7 @@ class LinksPage extends Component {
                 return (
                     <div key={ sliceIndex }>
                         { listOfLinksTitle }
-                        <ul>
+                        <ul className="list--no-styles">
                             { linkContent }
                         </ul>
                     </div>
@@ -53,7 +53,7 @@ class LinksPage extends Component {
         }
 
         return (
-            <div>
+            <div className="container text-centre">
                 { this.renderListOfLinks() }
             </div>
         );

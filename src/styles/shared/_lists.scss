@@ -1,10 +1,11 @@
 // =============================================================================
-//  SETTINGS - IMPORT ALL
+//  SHARED - LISTS
 // =============================================================================
 
-@import '_base';
-@import '_screen';
-@import '_spacing';
-@import '_grid';
-@import '_typography';
-@import '_widths';
+.list--no-styles {
+    @include remove-list-styles;
+}
+
+.list--inline {
+    @include inline-list-gutter(10px);
+}

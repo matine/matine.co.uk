@@ -48,7 +48,7 @@ class ProjectPage extends Component {
         const projectContent = this.state.projectContent.data;
 
         return (
-            <div>
+            <div className="container text-centre">
                 <h1>{ RichText.render(projectContent.project_title) }</h1>
             </div>
         );

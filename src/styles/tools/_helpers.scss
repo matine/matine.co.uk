@@ -117,6 +117,14 @@
     margin-right: auto;
 }
 
+@mixin p-h-resp($h-spacing: $h-spacing, $h-spacing-mobile: $h-spacing-mobile) {
+    @include padding(null $h-spacing-mobile);
+
+    @include screen-md-min {
+        @include padding(null $h-spacing);
+    }
+}
+
 // Full width/height overlay.
 // If it is a pseudo element, it will meeds an empty content property and the wrapper to have a relative position
 @mixin full-overlay($bg-colour: $black) {

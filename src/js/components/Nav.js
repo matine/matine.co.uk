@@ -10,7 +10,7 @@ class Nav extends Component {
     render() {
         return (
             <nav>
-                <ul>
+                <ul className="list--no-styles list--inline">
                     <li><NavItem to="/about">About</NavItem></li>
                     <li><NavItem to="/work">Work</NavItem></li>
                     <li><NavItem to="/links">Links</NavItem></li>
