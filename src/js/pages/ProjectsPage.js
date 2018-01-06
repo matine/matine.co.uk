@@ -5,6 +5,18 @@ import { RichText } from 'prismic-reactjs';
 
 class ProjectsPage extends Component {
     /**
+     * Component constructor.
+     *
+     * @param {Object} props
+     */
+    constructor(props) {
+        super(props);
+        this.state = {
+            thumbnailVisible: false,
+        }
+    }
+
+    /**
      * Renders the project list items.
      *
      * @return {XML}
@@ -25,13 +37,19 @@ class ProjectsPage extends Component {
             return (
                 <div
                     key={ index }
-                    className="grid__col grid__col-md-4"
+                    className="grid__col grid__col-md-4 pos-rel"
                 >
-                    <Link to={ `/work/${project.uid}` }>
+                    <Link
+                        to={ `/work/${project.uid}` }>
                         <img
                             src={ projectData.project_thumbnail.url }
                             alt={ projectData.project_thumbnail.alt }
                             className="width-100"
+                        />
+                        <img
+                            className={ this.state.thumbnailVisible ? "width-100 pos-abs pin-top-left thumbnail-2" : "width-100 pos-abs pin-top-left thumbnail-2 hidden"}
+                            src={ projectData.project_thumbnail_2.url }
+                            alt={ projectData.project_thumbnail_2.alt }
                         />
                         <div className="hidden">
                             { RichText.render(projectData.project_title) }
@@ -40,43 +58,6 @@ class ProjectsPage extends Component {
                 </div>
             );
         });
-    }
-
-    /**
-     * Scroll points.
-     *
-     * @return {Void}
-     */
-    scrollEvents() {
-        let scroll1 = 100;
-        let scroll2 = 200;
-        let scroll3 = 300;
-
-        window.onscroll = () => {
-            if ((window.pageYOffset > scroll1) && (window.pageYOffset < scroll2)) {
-                this.thumbnailVisibility(false);
-            } else if ((window.pageYOffset > scroll2) && (window.pageYOffset < scroll3)) {
-                this.thumbnailVisibility(true);
-            } else if (window.pageYOffset > scroll3) {
-                scroll1 += 200;
-                scroll2 += 200;
-                scroll3 += 200;
-            }
-        };
-    }
-
-    /**
-     * Shows or hides thumbnails.
-     *
-     * @param {Boolean} show
-     * @return {Void}
-     */
-    thumbnailVisibility(show) {
-        if (show) {
-            console.log('show');
-        } else {
-            console.log('hide');
-        }
     }
 
     /**
@@ -89,15 +70,59 @@ class ProjectsPage extends Component {
             return null;
         }
 
-        this.scrollEvents();
-
         return (
-            <div className="container text-centre">
+            <div id="projects-page" className="container text-centre">
                 <div className="grid grid--gutter-none">
                     { this.renderProjectListItems() }
                 </div>
             </div>
         )
+    }
+
+    /**
+     * Things to do after the component mounts.
+     *
+     */
+    componentDidMount() {
+        this.scrollEvents();
+    }
+
+    /**
+     * Scroll events.
+     *
+     * @return {Void}
+     */
+    scrollEvents() {
+        const pageHeight = document.getElementById('projects-page').getBoundingClientRect().height;
+        const iterationAmount = 50;
+        const numberOfTimes = Math.floor(pageHeight / iterationAmount);
+
+        let scrollArray = [];
+
+        for (var i = 0; i < numberOfTimes; i++) {
+            let j = i++;
+
+            scrollArray.push({
+                end: iterationAmount * i,
+                start: iterationAmount * j,
+            });
+        };
+
+        window.onscroll = () => {
+            scrollArray.forEach((scrollNumbers, index) => {
+                const start = scrollNumbers.start;
+                const end = scrollNumbers.end;
+                const offset = window.pageYOffset;
+
+                if (index % 2) {
+                    if (offset > start && offset < end)
+                        this.setState({thumbnailVisible: true});
+                } else {
+                    if (offset > start && offset < end)
+                        this.setState({thumbnailVisible: false});
+                }
+            });
+        };
     }
 }
 
