@@ -1,15 +1,7 @@
 // =============================================================================
-//  TRUMPS - HELPERS
+//  TRUMPS - BACKGROUNDS
 // =============================================================================
 
-.m-centre {
-    @include margin(null auto);
-}
-
-.text-centre {
-    text-align: center;
-}
-
-.hidden {
-    display: none;
+.bg-texture {
+    background: url($img-path + 'bg-texture.jpg') repeat center center;
 }

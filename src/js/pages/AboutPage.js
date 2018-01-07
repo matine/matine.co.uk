@@ -17,9 +17,17 @@ class AboutPage extends Component {
         }
 
         return (
-            <div className="container text-centre">
-                <h2>This is the About page</h2>
-                { RichText.render(globalContent.site_title) }
+            <div className="container">
+                <div className="text-centre">
+                    <img
+                        src={ globalContent.about_me_image.url }
+                        alt={ globalContent.about_me_image.alt }
+                        className="width-100 max-width-xxl"
+                    />
+                </div>
+                <div className="max-width-text-narrow m-centre p-t-lg p-b-xxl">
+                    { RichText.render(globalContent.about_me_text) }
+                </div>
             </div>
         );
     }

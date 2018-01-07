@@ -50,7 +50,7 @@ class ProjectsPage extends Component {
                             src={ projectData.project_thumbnail_2.url }
                             alt={ projectData.project_thumbnail_2.alt }
                         />
-                        <div className="width-100 pos-abs pin-bottom-left text-centre">
+                        <div className="width-100 pos-abs pin-bottom-left text-centre remove-link-styles hidden">
                             { RichText.render(projectData.project_title) }
                         </div>
                     </Link>
@@ -65,8 +65,13 @@ class ProjectsPage extends Component {
      * @return {XML}
      */
     render() {
+        const globalContent = this.props.content.global;
+
         return (
             <div id="projects-page" className="container text-centre">
+                <div className="p-t-xxl m-b-xl">
+                    { RichText.render(globalContent.site_title) }
+                </div>
                 <div className="grid grid--gutter-none">
                     { this.renderProjectListItems() }
                 </div>

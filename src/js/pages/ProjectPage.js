@@ -53,6 +53,11 @@ class ProjectPage extends Component {
         return (
             <div className="container text-centre">
                 <h1>{ RichText.render(projectContent.project_title) }</h1>
+                <img
+                    src={ projectContent.project_thumbnail.url }
+                    alt={ projectContent.project_thumbnail.alt }
+                    className="width-100 max-width-lg"
+                />
             </div>
         );
     }

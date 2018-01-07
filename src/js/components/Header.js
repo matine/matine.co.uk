@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import { RichText } from 'prismic-reactjs';
 import Nav from './Nav';
 
 class Header extends Component {
@@ -12,29 +8,14 @@ class Header extends Component {
      * @return {XML}
      */
     render() {
-        const {
-            globalContent,
-        } = this.props;
-
         return (
-            <header className="container text-centre">
-                <Nav />
-                { RichText.render(globalContent.site_title) }
+            <header className="bg-texture b-a-frame b-b-none pos-fix width-100 pin-top-left z-index-99 p-v-md">
+                <div className="container text-centre">
+                    <Nav />
+                </div>
             </header>
         );
     }
 }
 
-Header.propTypes = {
-    globalContent: PropTypes.shape(),
-};
-
-Header.defaultProps = {
-    globalContent: null,
-};
-
-const mapStateToProps = state => ({
-    globalContent: state.content.global,
-});
-
-export default withRouter(connect(mapStateToProps)(Header));
+export default Header;

@@ -14,8 +14,10 @@ class Footer extends Component {
         } = this.props;
 
         return (
-            <footer className="container text-centre">
-                <h2>This is my footer</h2>
+            <footer className="width-100 pos-fix pin-bottom-left z-index-0">
+                <div className="container text-centre">
+                    <h2 className="colour-light">This is my footer</h2>
+                </div>
             </footer>
         );
     }

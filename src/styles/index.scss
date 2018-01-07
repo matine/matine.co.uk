@@ -2,15 +2,15 @@
 //  INDEX - IMPORT ALL
 // =============================================================================
 
-@import 'utilities/all';
-@import 'animations/all';
-@import 'tools/all';
-@import 'settings/all';
-@import 'base/all';
-@import 'layout/all';
-@import 'shared/all';
-@import 'components/all';
-@import 'trumps/all';
+@import 'utilities/_all';
+@import 'animations/_all';
+@import 'settings/_all';
+@import 'tools/_all';
+@import 'base/_all';
+@import 'layout/_all';
+@import 'shared/_all';
+@import 'components/_all';
+@import 'trumps/_all';
 
 li .active {
     color: red!important;

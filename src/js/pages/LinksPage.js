@@ -20,15 +20,15 @@ class LinksPage extends Component {
             if (slice.slice_type === 'links') {
                 const linkContent = slice.items.map((link, linkIndex) => {
                     return (
-                        <li key={ linkIndex }>
-                            <a href={ link.link_url.url } target="blank">{ link.link_name }</a>
-                            <div>{ RichText.render(link.link_description) }</div>
+                        <li key={ linkIndex } className="b-b-thin m-b-sm p-b-sm">
+                            <a href={ link.link_url.url } target="blank" className="remove-link-style">{ link.link_name }</a>
+                            { RichText.render(link.link_description) }
                         </li>
                     );
                 });
 
                 return (
-                    <div key={ sliceIndex }>
+                    <div key={ sliceIndex } className="grid__col grid__col-sm-6 grid__col-md-3">
                         { listOfLinksTitle }
                         <ul className="list--no-styles">
                             { linkContent }
@@ -56,8 +56,10 @@ class LinksPage extends Component {
         }
 
         return (
-            <div className="container text-centre">
-                { this.renderListOfLinks() }
+            <div className="container">
+                <div className="grid">
+                    { this.renderListOfLinks() }
+                </div>
             </div>
         );
     }

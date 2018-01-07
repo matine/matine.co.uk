@@ -1,15 +1,15 @@
 // =============================================================================
-//  TRUMPS - HELPERS
+//  TRUMPS - BORDERS
 // =============================================================================
 
-.m-centre {
-    @include margin(null auto);
+.b-a-frame {
+    border: 15px solid $grey-very-dark;
 }
 
-.text-centre {
-    text-align: center;
+.b-b-none {
+    border-bottom: none;
 }
 
-.hidden {
-    display: none;
+.b-b-thin {
+    border-bottom: 1px solid $grey-keyline;
 }
