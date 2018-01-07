@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 class Footer extends Component {
@@ -21,7 +22,15 @@ class Footer extends Component {
 }
 
 Footer.propTypes = {
-    globalContent: PropTypes.shape().isRequired,
+    globalContent: PropTypes.shape(),
 };
 
-export default Footer;
+Footer.defaultProps = {
+    globalContent: null,
+};
+
+const mapStateToProps = state => ({
+    globalContent: state.content.global,
+});
+
+export default connect(mapStateToProps)(Footer);

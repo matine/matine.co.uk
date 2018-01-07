@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { RichText } from 'prismic-reactjs';
 
 class LinksPage extends Component {
@@ -9,7 +10,9 @@ class LinksPage extends Component {
      * @return {XML}
      */
     renderListOfLinks() {
-        const sliceContent = this.props.globalContent.body.map((slice, sliceIndex) => {
+        const globalContent = this.props.content.global;
+
+        const sliceContent = globalContent.body.map((slice, sliceIndex) => {
             // Get the title for the list
             const listOfLinksTitle = RichText.render(slice.primary.list_of_links_title);
 
@@ -48,7 +51,7 @@ class LinksPage extends Component {
      * @return {XML}
      */
     render() {
-        if (!this.props.globalContent) {
+        if (!this.props.content.global) {
             return null;
         }
 
@@ -61,7 +64,16 @@ class LinksPage extends Component {
 }
 
 LinksPage.propTypes = {
-    globalContent: PropTypes.shape().isRequired,
+    content: PropTypes.shape(),
 };
 
-export default LinksPage;
+LinksPage.defaultProps = {
+    content: null,
+};
+
+const mapStateToProps = state => ({
+    content: state.content,
+});
+
+export default connect(mapStateToProps)(LinksPage);
+

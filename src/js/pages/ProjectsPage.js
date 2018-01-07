@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { RichText } from 'prismic-reactjs';
 
@@ -22,9 +23,7 @@ class ProjectsPage extends Component {
      * @return {XML}
      */
     renderProjectListItems() {
-        const {
-            projectsContent,
-        } = this.props;
+        const projectsContent = this.props.content.projects;
 
         // Sort in decending order
         projectsContent.sort((a, b) => {
@@ -51,7 +50,7 @@ class ProjectsPage extends Component {
                             src={ projectData.project_thumbnail_2.url }
                             alt={ projectData.project_thumbnail_2.alt }
                         />
-                        <div className="hidden">
+                        <div className="width-100 pos-abs pin-bottom-left text-centre">
                             { RichText.render(projectData.project_title) }
                         </div>
                     </Link>
@@ -66,10 +65,6 @@ class ProjectsPage extends Component {
      * @return {XML}
      */
     render() {
-        if (!this.props.projectsContent) {
-            return null;
-        }
-
         return (
             <div id="projects-page" className="container text-centre">
                 <div className="grid grid--gutter-none">
@@ -127,8 +122,15 @@ class ProjectsPage extends Component {
 }
 
 ProjectsPage.propTypes = {
-    globalContent: PropTypes.shape().isRequired,
-    projectsContent: PropTypes.array.isRequired,
+    content: PropTypes.shape(),
 };
 
-export default ProjectsPage;
+ProjectsPage.defaultProps = {
+    content: null,
+};
+
+const mapStateToProps = state => ({
+    content: state.content,
+});
+
+export default connect(mapStateToProps)(ProjectsPage);

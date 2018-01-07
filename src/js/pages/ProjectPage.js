@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { RichText } from 'prismic-reactjs';
 
 class ProjectPage extends Component {
@@ -30,7 +31,9 @@ class ProjectPage extends Component {
      * @return {void}
      */
     getProjectContent() {
-        this.props.projectsContent
+        const projectsContent = this.props.content.projects;
+
+        projectsContent
             .filter(project => project.uid === this.props.match.params.uid)
             .map((project, index) => this.setState({ projectContent: project }));
     }
@@ -56,7 +59,15 @@ class ProjectPage extends Component {
 }
 
 ProjectPage.propTypes = {
-    projectsContent: PropTypes.array.isRequired,
+    content: PropTypes.shape(),
 };
 
-export default ProjectPage;
+ProjectPage.defaultProps = {
+    content: null,
+};
+
+const mapStateToProps = state => ({
+    content: state.content,
+});
+
+export default connect(mapStateToProps)(ProjectPage);

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 import App from './App';
 
 class Root extends React.Component {
@@ -20,11 +20,11 @@ class Root extends React.Component {
         }
 
         return (
-            <Provider store={ store }>
-                <Router>
-                    <Route path="/" component={ App } />
-                </Router>
-            </Provider>
+            <Router>
+                <Provider store={ store } >
+                    <App />
+                </Provider>
+            </Router>
         );
     }
 }

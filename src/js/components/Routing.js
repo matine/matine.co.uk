@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import LinksPage from '../pages/LinksPage';
 import AboutPage from '../pages/AboutPage';
@@ -13,38 +12,6 @@ class Routing extends React.Component {
      * @return {XML}
      */
     render() {
-        const {
-            globalContent,
-            projectsContent,
-        } = this.props;
-
-        if (!globalContent || !projectsContent) {
-            return null;
-        }
-
-        const Projects = () => (
-            <Switch>
-                <Route
-                    exact
-                    path='/work'
-                    render={ props => (
-                        <ProjectsPage { ...props }
-                            globalContent={ globalContent }
-                            projectsContent={ projectsContent }
-                        />
-                    )}
-                />
-                <Route
-                    path='/work/:uid'
-                    render={ props => (
-                        <ProjectPage { ...props }
-                            projectsContent={ projectsContent }
-                        />
-                    )}
-                />
-            </Switch>
-        )
-
         return (
             <Switch>
                 <Redirect
@@ -53,33 +20,25 @@ class Routing extends React.Component {
                     to='/work'
                 />
                 <Route
+                    exact
                     path='/work'
-                    component={ Projects }
+                    component={ ProjectsPage }
+                />
+                <Route
+                    path='/work/:uid'
+                    component={ ProjectPage }
                 />
                 <Route
                     path='/about'
-                    render={ props => (
-                        <AboutPage { ...props }
-                            globalContent={ globalContent }
-                        />
-                    )}
+                    component={ AboutPage }
                 />
                 <Route
                     path='/links'
-                    render={ props => (
-                        <LinksPage { ...props }
-                            globalContent={ globalContent }
-                        />
-                    )}
+                    component={ LinksPage }
                 />
             </Switch>
         );
     }
 }
-
-Routing.propTypes = {
-    projectsContent: PropTypes.array.isRequired,
-    globalContent: PropTypes.shape().isRequired,
-};
 
 export default Routing;

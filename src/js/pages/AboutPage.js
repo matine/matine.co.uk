@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { RichText } from 'prismic-reactjs';
 
 class AboutPage extends Component {
     /**
@@ -8,20 +10,31 @@ class AboutPage extends Component {
      * @return {XML}
      */
     render() {
-        if (!this.props.globalContent) {
+        const globalContent = this.props.content.global;
+
+        if (!globalContent) {
             return null;
         }
 
         return (
             <div className="container text-centre">
                 <h2>This is the About page</h2>
+                { RichText.render(globalContent.site_title) }
             </div>
         );
     }
 }
 
 AboutPage.propTypes = {
-    globalContent: PropTypes.shape().isRequired,
+    content: PropTypes.shape(),
 };
 
-export default AboutPage;
+AboutPage.defaultProps = {
+    content: null,
+};
+
+const mapStateToProps = state => ({
+    content: state.content,
+});
+
+export default connect(mapStateToProps)(AboutPage);
