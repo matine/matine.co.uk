@@ -14,6 +14,7 @@ class ProjectsPage extends Component {
         super(props);
         this.state = {
             thumbnailVisible: false,
+            numImagesLoaded: 1,
         }
     }
 
@@ -43,6 +44,7 @@ class ProjectsPage extends Component {
                         <img
                             src={ projectData.project_thumbnail.url }
                             alt={ projectData.project_thumbnail.alt }
+                            onLoad={this.handleImageLoaded.bind(this)}
                             className="width-100"
                         />
                         <img
@@ -80,11 +82,17 @@ class ProjectsPage extends Component {
     }
 
     /**
-     * Things to do after the component mounts.
+     * Handles when an image thumbnail is loaded.
      *
+     * @return {XML}
      */
-    componentDidMount() {
-        this.scrollEvents();
+    handleImageLoaded() {
+        const numOfImages = this.props.content.projects.length;
+
+        this.setState({ numImagesLoaded: this.state.numImagesLoaded + 1 });
+
+        if (this.state.numImagesLoaded === numOfImages)
+            this.scrollEvents();
     }
 
     /**
