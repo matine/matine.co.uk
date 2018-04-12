@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import LinksPage from '../pages/LinksPage';
-import AboutPage from '../pages/AboutPage';
-import ProjectsPage from '../pages/ProjectsPage';
-import ProjectPage from '../pages/ProjectPage';
+import LinksPage from './pages/LinksPage';
+import AboutPage from './pages/AboutPage';
+import ProjectsPage from './pages/ProjectsPage';
+import ProjectPage from './pages/ProjectPage';
 
 class Routing extends React.Component {
     /**

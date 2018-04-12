@@ -1,14 +1,14 @@
 import React from 'react';
 import Prismic from 'prismic-javascript';
-import PrismicConfig from './prismic-configuration';
+import PrismicConfig from '../prismic-configuration';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types'
-import * as actions from './actions';
-import Loading from './components/Loading';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Routing from './components/Routing';
+import * as actions from '../state/actions';
+import Loading from './partials/Loading';
+import Header from './partials/Header';
+import Footer from './partials/Footer';
+import Routing from './Routing';
 
 class App extends React.Component {
     /**

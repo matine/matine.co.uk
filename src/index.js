@@ -1,8 +1,8 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import store from './js/store';
-import Root from './js/Root';
+import store from './state/store';
+import Root from './components/Root';
 import './styles/index.css';
 
 ReactDOM.render((
