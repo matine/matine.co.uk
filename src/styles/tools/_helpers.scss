@@ -49,6 +49,7 @@
 
 // Remove default link styling
 @mixin remove-link-styles {
+    color: inherit;
     font-weight: inherit;
     text-decoration: none;
 }

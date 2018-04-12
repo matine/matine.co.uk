@@ -21,30 +21,12 @@ $grey-lighten-6: tint($grey-base, 6);
 $grey-lighten-3: tint($grey-base, 3);
 
 // Primary palette
-$primary-base: #8cc63f;
+$primary-base: #59edd6;
 $primary-lighten-5: tint($primary-base, 5);
 $primary-darken-30: shade($primary-base, 30);
 
 // Other colours
-$sky-blue: #deeefc;
 $red: #c1272d;
-
-// State colours (alerts and labels)
-$success-colour: #5cb85c;
-$success-colour-light: tint($success-colour, 20);
-$success-colour-dark: shade($success-colour, 70);
-
-$info-colour: #5bc0de;
-$info-colour-light: tint($info-colour, 20);
-$info-colour-dark: shade($info-colour, 70);
-
-$warning-colour: #f0ad4e;
-$warning-colour-light: tint($warning-colour, 20);
-$warning-colour-dark: shade($warning-colour, 70);
-
-$danger-colour: $red;
-$danger-colour-light: tint($danger-colour, 20);
-$danger-colour-dark: shade($danger-colour, 95);
 
 // Opacities
 $opacity-hover: .7;
