@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { RichText } from 'prismic-reactjs';
+import Loading from '../partials/Loading';
 
 class ProjectsPage extends Component {
     /**
@@ -13,9 +14,64 @@ class ProjectsPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            isLoading: true,
             thumbnailVisible: false,
             numImagesLoaded: 1,
         }
+    }
+
+    /**
+     * Handles when an image thumbnail is loaded.
+     *
+     * @return {void}
+     */
+    handleImageLoaded() {
+        const numOfImages = this.props.content.projects.length;
+
+        this.setState({ numImagesLoaded: this.state.numImagesLoaded + 1 });
+
+        if (this.state.numImagesLoaded === numOfImages) {
+            this.setState({ isLoading: false });
+            this.scrollEvents();
+        }
+    }
+
+    /**
+     * Scroll events.
+     *
+     * @return {void}
+     */
+    scrollEvents() {
+        const pageHeight = document.getElementById('projects-page').getBoundingClientRect().height;
+        const iterationAmount = 50;
+        const numberOfTimes = Math.floor(pageHeight / iterationAmount);
+
+        let scrollArray = [];
+
+        for (var i = 0; i < numberOfTimes; i++) {
+            let j = i++;
+
+            scrollArray.push({
+                end: iterationAmount * i,
+                start: iterationAmount * j,
+            });
+        };
+
+        window.onscroll = () => {
+            scrollArray.forEach((scrollNumbers, index) => {
+                const start = scrollNumbers.start;
+                const end = scrollNumbers.end;
+                const offset = window.pageYOffset;
+
+                if (index % 2) {
+                    if (offset > start && offset < end)
+                        this.setState({thumbnailVisible: true});
+                } else {
+                    if (offset > start && offset < end)
+                        this.setState({thumbnailVisible: false});
+                }
+            });
+        };
     }
 
     /**
@@ -71,6 +127,7 @@ class ProjectsPage extends Component {
 
         return (
             <div id="projects-page" className="container text-centre">
+                <Loading isLoading={ this.state.isLoading } />
                 <div className="p-t-xxl m-b-xl">
                     { RichText.render(globalContent.site_title) }
                 </div>
@@ -79,58 +136,6 @@ class ProjectsPage extends Component {
                 </div>
             </div>
         )
-    }
-
-    /**
-     * Handles when an image thumbnail is loaded.
-     *
-     * @return {XML}
-     */
-    handleImageLoaded() {
-        const numOfImages = this.props.content.projects.length;
-
-        this.setState({ numImagesLoaded: this.state.numImagesLoaded + 1 });
-
-        if (this.state.numImagesLoaded === numOfImages)
-            this.scrollEvents();
-    }
-
-    /**
-     * Scroll events.
-     *
-     * @return {Void}
-     */
-    scrollEvents() {
-        const pageHeight = document.getElementById('projects-page').getBoundingClientRect().height;
-        const iterationAmount = 50;
-        const numberOfTimes = Math.floor(pageHeight / iterationAmount);
-
-        let scrollArray = [];
-
-        for (var i = 0; i < numberOfTimes; i++) {
-            let j = i++;
-
-            scrollArray.push({
-                end: iterationAmount * i,
-                start: iterationAmount * j,
-            });
-        };
-
-        window.onscroll = () => {
-            scrollArray.forEach((scrollNumbers, index) => {
-                const start = scrollNumbers.start;
-                const end = scrollNumbers.end;
-                const offset = window.pageYOffset;
-
-                if (index % 2) {
-                    if (offset > start && offset < end)
-                        this.setState({thumbnailVisible: true});
-                } else {
-                    if (offset > start && offset < end)
-                        this.setState({thumbnailVisible: false});
-                }
-            });
-        };
     }
 }
 

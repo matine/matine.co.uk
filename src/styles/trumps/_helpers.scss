@@ -13,3 +13,32 @@
 .hidden {
     display: none;
 }
+
+.rotating {
+    @include rotate;
+}
+
+.height-100 {
+    height: 100%;
+}
+
+// Uses display flex to centre align content
+.align-content-centre {
+    @include align-content-centre;
+}
+
+.v-align-content-centre {
+    @include v-align-content-centre;
+}
+
+  
+.item-leave {
+    opacity: 1;
+    width: 100px;
+}
+  
+.item-leave.item-leave-active {
+    opacity: 0.01;
+    width: 0px;
+    transition: 700ms;
+}
