@@ -89,29 +89,36 @@ class ProjectsPage extends Component {
 
         return projectsContent.map((project, index) => {
             const projectData = project.data;
+            const projectTitle = projectData.project_title[0].text;
 
             return (
                 <div
                     key={ index }
-                    className="grid__col grid__col-md-4 pos-rel"
+                    className="grid__col grid__col-md-4"
                 >
-                    <Link
-                        to={ `/work/${project.uid}` }>
-                        <img
-                            src={ projectData.project_thumbnail.url }
-                            alt={ projectData.project_thumbnail.alt }
-                            onLoad={this.handleImageLoaded.bind(this)}
-                            className="width-100"
-                        />
-                        <img
-                            className={ this.state.thumbnailVisible ? "width-100 pos-abs pin-top-left thumbnail-2" : "width-100 pos-abs pin-top-left thumbnail-2 hidden"}
-                            src={ projectData.project_thumbnail_2.url }
-                            alt={ projectData.project_thumbnail_2.alt }
-                        />
-                        <div className="width-100 pos-abs pin-bottom-left text-centre remove-link-styles hidden">
-                            { RichText.render(projectData.project_title) }
-                        </div>
-                    </Link>
+                    <div className="project-thumbnail pos-rel">
+                        <Link
+                            to={ `/work/${project.uid}` }>
+                            <div className="pos-rel z-index-1">
+                                <img
+                                    src={ projectData.project_thumbnail.url }
+                                    alt={ projectData.project_thumbnail.alt }
+                                    onLoad={this.handleImageLoaded.bind(this)}
+                                    className="width-100"
+                                />
+                                <img
+                                    className={ this.state.thumbnailVisible ? "width-100 pos-abs pin-top-left thumbnail-2" : "width-100 pos-abs pin-top-left thumbnail-2 hidden"}
+                                    src={ projectData.project_thumbnail_2.url }
+                                    alt={ projectData.project_thumbnail_2.alt }
+                                />
+                            </div>
+                            <div className="project-thumbnail_hover width-100 height-100 pos-abs pin-top-left">
+                                <div className="width-100 pos-abs pin-bottom-left text-centre">
+                                    <h3 className="font-uppercase font-size-sm remove-link-style colour-base">{ projectTitle }</h3>
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
                 </div>
             );
         });
