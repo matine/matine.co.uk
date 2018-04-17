@@ -69,7 +69,7 @@ class App extends React.Component {
         return (
             <div>
                 <Header />
-                <main className="bg-texture b-a-frame b-b-none pos-rel z-index-1 m-b-xxl p-t-xxl">
+                <main className="main bg-texture b-a-frame b-b-none pos-rel z-index-1">
                     <Routing />
                 </main>
                 <Footer />

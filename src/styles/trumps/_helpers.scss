@@ -42,3 +42,11 @@
     width: 0px;
     transition: 700ms;
 }
+
+.icon-colour {
+    &-primary {
+        svg > path {
+            fill: $primary-colour;
+        }
+    }
+}

@@ -6,6 +6,11 @@
     @include remove-list-styles;
 }
 
-.list--inline {
+.list-inline {
+    @include remove-list-styles;
     @include inline-list-gutter(10px);
+}
+
+.list-inline--xs {
+    @include inline-list-gutter(5px);
 }
