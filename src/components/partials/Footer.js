@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { LinkedInIcon, TwitterIcon, GithubIcon, EmailIcon, PinterestIcon } from '../ui';
+import links from '../../constants/links';
 
 class Footer extends Component {
     /**
@@ -18,11 +19,11 @@ class Footer extends Component {
             <footer className="width-100 pos-fix pin-bottom-left z-index-0">
                 <div className="container text-centre p-v-lg">
                     <ul className="remove-link-styles remove-list-styles list-inline list-inline--xs">
-                        <li><a href="#" className="icon-colour-primary"><LinkedInIcon /></a></li>
-                        <li><a href="#" className="icon-colour-primary"><TwitterIcon /></a></li>
-                        <li><a href="#" className="icon-colour-primary"><GithubIcon /></a></li>
-                        <li><a href="#" className="icon-colour-primary"><EmailIcon /></a></li>
-                        <li><a href="#" className="icon-colour-primary"><PinterestIcon /></a></li>
+                        <li><a href={ links.linkedIn } className="icon-colour-primary" target="blank"><LinkedInIcon /></a></li>
+                        <li><a href={ links.twitter } className="icon-colour-primary" target="blank"><TwitterIcon /></a></li>
+                        <li><a href={ links.github } className="icon-colour-primary" target="blank"><GithubIcon /></a></li>
+                        <li><a href={ links.email } className="icon-colour-primary" target="blank"><EmailIcon /></a></li>
+                        <li><a href={ links.pinterest } className="icon-colour-primary" target="blank"><PinterestIcon /></a></li>
                     </ul>
                 </div>
             </footer>

@@ -49,4 +49,14 @@
             fill: $primary-colour;
         }
     }
+
+    &-base {
+        svg > path {
+            fill: $font-colour-base;
+        }
+    }
+}
+
+.float-right {
+    float: right;
 }
