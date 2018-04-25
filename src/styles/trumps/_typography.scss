@@ -4,10 +4,14 @@
 
 // sass-lint:disable no-important
 
-p,
-.p {
+p {
     @include p-v-spacing;
-    @include font-base;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px dashed $font-colour-base;
 }
 
 // Font sizes
@@ -53,10 +57,18 @@ p,
 // Font colours
 .colour-base {
     color: $font-colour-base !important;
+
+    a {
+        border-bottom-color: $font-colour-base !important;
+    }
 }
 
 .colour-primary {
     color: $primary-colour !important;
+
+    a {
+        border-bottom-color: $primary-colour !important;
+    }
 }
 
 .colour-inverted {

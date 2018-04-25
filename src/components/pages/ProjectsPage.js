@@ -135,9 +135,7 @@ class ProjectsPage extends Component {
         return (
             <div id="projects-page" className="container text-centre">
                 <Loading isLoading={ this.state.isLoading } />
-                <div className="p-t-xxl m-b-xl">
-                    { RichText.render(globalContent.site_title) }
-                </div>
+                <h1 className="p-t-xxl p-b-xxl">{ globalContent.site_title[0].text }</h1>
                 <div className="grid grid--gutter-none">
                     { this.renderProjectListItems() }
                 </div>

@@ -14,22 +14,22 @@ class LinksPage extends Component {
 
         const sliceContent = globalContent.body.map((slice, sliceIndex) => {
             // Get the title for the list
-            const listOfLinksTitle = RichText.render(slice.primary.list_of_links_title);
+            const listOfLinksTitle = slice.primary.list_of_links_title[0].text;
 
             // Render the list of links
             if (slice.slice_type === 'links') {
                 const linkContent = slice.items.map((link, linkIndex) => {
                     return (
                         <li key={ linkIndex } className="b-b-thin m-b-sm p-b-sm">
-                            <a href={ link.link_url.url } target="blank" className="remove-link-style">{ link.link_name }</a>
-                            { RichText.render(link.link_description) }
+                            <a href={ link.link_url.url } target="blank" className="remove-link-style font-weight-bold">{ link.link_name }</a>
+                            <div className="font-size-xs">{ RichText.render(link.link_description) }</div>
                         </li>
                     );
                 });
 
                 return (
-                    <div key={ sliceIndex } className="grid__col grid__col-sm-6 grid__col-md-3">
-                        { listOfLinksTitle }
+                    <div key={ sliceIndex } className="grid__col grid__col-sm-6 grid__col-md-3 text-left">
+                        <h3 className="title-with-decoration font-uppercase font-weight-regular m-b-lg">{ listOfLinksTitle }</h3>
                         <ul className="list--no-styles">
                             { linkContent }
                         </ul>
@@ -51,12 +51,15 @@ class LinksPage extends Component {
      * @return {XML}
      */
     render() {
-        if (!this.props.content.global) {
+        const globalContent = this.props.content.global;
+
+        if (!globalContent) {
             return null;
         }
 
         return (
-            <div className="container">
+            <div id="links-page" className="container text-centre">
+                <h1 className="p-t-xxl p-b-xxl">{ globalContent.links_title[0].text }</h1>
                 <div className="grid">
                     { this.renderListOfLinks() }
                 </div>
