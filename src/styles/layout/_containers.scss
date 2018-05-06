@@ -17,3 +17,12 @@
     padding-bottom: 200px;
     margin-bottom: 200px;
 }
+
+.app-wrapper {
+    height: 100%;
+    background-color: $grey-very-dark;
+}
+
+.app-wrapper.theme--inverted {
+    background-color: $primary-colour;
+}

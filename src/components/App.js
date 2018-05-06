@@ -60,6 +60,7 @@ class App extends React.Component {
     render() {
         const {
             ui,
+            theme,
         } = this.props;
 
         if (ui.isLoading) {
@@ -67,7 +68,7 @@ class App extends React.Component {
         }
 
         return (
-            <div>
+            <div className={ `app-wrapper theme--${theme}`}>
                 <Header />
                 <main className="main bg-texture b-a-frame b-b-none pos-rel z-index-1">
                     <Routing />
@@ -90,6 +91,7 @@ App.defaultProps = {
 
 const mapStateToProps = state => ({
     ui: state.ui,
+    theme: state.theme,
 });
 
 const mapDispatchToProps = dispatch => ({

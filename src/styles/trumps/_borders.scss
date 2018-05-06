@@ -6,6 +6,12 @@
     border: 15px solid $grey-very-dark;
 }
 
+.theme--inverted {
+    .b-a-frame {
+        border-color: $primary-colour;
+    }    
+}
+
 .b-b-none {
     border-bottom: none;
 }

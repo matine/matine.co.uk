@@ -71,6 +71,16 @@ a {
     }
 }
 
+.theme--inverted {
+    .colour-primary {
+        color: $font-colour-base !important;
+
+        a {
+            border-bottom-color: $font-colour-base !important;
+        }
+    }
+}
+
 .colour-inverted {
     color: $white !important;
 }

@@ -19,6 +19,9 @@ class ProjectsPage extends Component {
             thumbnailVisible: false,
             numImagesLoaded: 1,
         }
+
+        this.hoverOnThumbnail = this.hoverOnThumbnail.bind(this);
+        this.hoverOffThumbnail = this.hoverOffThumbnail.bind(this);
     }
 
     /**
@@ -75,6 +78,22 @@ class ProjectsPage extends Component {
         };
     }
 
+    hoverOnThumbnail() {
+        const {
+            setTheme,
+        } = this.props;
+
+        setTheme('inverted');
+    }
+
+    hoverOffThumbnail() {
+        const {
+            setTheme,
+        } = this.props;
+
+        setTheme('default');
+    }
+
     /**
      * Renders the project list items.
      *
@@ -101,13 +120,13 @@ class ProjectsPage extends Component {
                 <div
                     key={ index }
                     className="grid__col grid__col-md-4"
-                    onMouseEnter={ () => setTheme('inverted') }
-                    onMouseLeave={ () => setTheme('default') }
+                    onMouseEnter={ this.hoverOnThumbnail }
+                    onMouseLeave={ this.hoverOffThumbnail }
                 >
                     <div className="project-thumbnail pos-rel">
                         <Link
                             to={ `/work/${project.uid}` }>
-                            <div className="pos-rel z-index-1">
+                            <div className="project-thumbnail_img pos-rel z-index-1">
                                 <img
                                     src={ projectData.project_thumbnail.url }
                                     alt={ projectData.project_thumbnail.alt }

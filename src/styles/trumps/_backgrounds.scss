@@ -3,7 +3,17 @@
 // =============================================================================
 
 .bg-texture {
-    background: url($img-path + 'bg-texture.jpg') repeat center center;
-    // background: white;
-    // background: $grey-very-dark;
+    background-color: white;
+    background-image: url($img-path + 'bg-texture.jpg');
+    background-repeat: repeat;
+    background-position: center center;
+}
+
+.theme--inverted {
+    .bg-texture {
+        transition: background-color 1s ease-out;
+        background-color: $grey-very-dark;
+        background-image: url('');
+    }
+    color: $primary-colour;
 }

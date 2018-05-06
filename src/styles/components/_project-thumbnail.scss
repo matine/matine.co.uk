@@ -22,3 +22,20 @@
         }
     }
 }
+
+.theme--inverted {
+    .project-thumbnail {
+        @include screen-md-min {
+            .project-thumbnail_img {
+                opacity: .3;
+                transition: opacity 1s ease-out;
+            }
+
+            &:hover {
+                .project-thumbnail_img {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
