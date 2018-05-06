@@ -27,7 +27,8 @@ class App extends React.Component {
      */
     getPrismicContent() {
         const {
-            dispatch,
+            setContent,
+            setIsLoading,
         } = this.props;
 
         let content = {
@@ -45,8 +46,8 @@ class App extends React.Component {
                         if (doc.type === 'project') content.projects.push(doc);
                     });
                 }).then(response => {
-                    dispatch(actions.setContent(content));
-                    dispatch(actions.setIsLoading(false));
+                    setContent(content);
+                    setIsLoading(false);
                 });
             }
         });
@@ -69,6 +70,8 @@ class App extends React.Component {
 
         return (
             <div className={ `app-wrapper theme--${theme}`}>
+                { ui.imgsLoading ? <Loading /> : null }
+                <Loading />
                 <Header />
                 <main className="main bg-texture b-a-frame b-b-none pos-rel z-index-1">
                     <Routing />
@@ -80,12 +83,10 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-    dispatch: PropTypes.func,
     ui: PropTypes.shape(),
 };
 
 App.defaultProps = {
-    dispatch: () => {},
     ui: null,
 };
 
@@ -95,7 +96,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    dispatch,
+    setContent: content => dispatch(actions.setContent(content)),
+    setIsLoading: isLoading => dispatch(actions.setIsLoading(isLoading)),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

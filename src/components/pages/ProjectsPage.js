@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { RichText } from 'prismic-reactjs';
-import Loading from '../partials/Loading';
 import * as actions from '../../state/actions';
 
 class ProjectsPage extends Component {
@@ -15,10 +14,11 @@ class ProjectsPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isLoading: true,
             thumbnailVisible: false,
             numImagesLoaded: 1,
         }
+
+        props.setImgsLoading(true);
 
         this.hoverOnThumbnail = this.hoverOnThumbnail.bind(this);
         this.hoverOffThumbnail = this.hoverOffThumbnail.bind(this);
@@ -30,12 +30,16 @@ class ProjectsPage extends Component {
      * @return {void}
      */
     handleImageLoaded() {
+        const {
+            setImgsLoading,
+        } = this.props;
+
         const numOfImages = this.props.content.projects.length;
 
         this.setState({ numImagesLoaded: this.state.numImagesLoaded + 1 });
 
         if (this.state.numImagesLoaded === numOfImages) {
-            this.setState({ isLoading: false });
+            setImgsLoading(false);
             this.scrollEvents();
         }
     }
@@ -101,7 +105,6 @@ class ProjectsPage extends Component {
      */
     renderProjectListItems() {
         const {
-            setTheme,
             content,
         } = this.props;
 
@@ -141,7 +144,7 @@ class ProjectsPage extends Component {
                             </div>
                             <div className="project-thumbnail_hover width-100 height-100 pos-abs pin-top-left">
                                 <div className="width-100 pos-abs pin-bottom-left text-centre">
-                                    <h3 className="font-uppercase font-size-sm font-weight-bold remove-link-style colour-base m-b-lg">{ projectTitle }</h3>
+                                    <h3 className="font-uppercase font-weight-bold remove-link-style colour-base m-b-lg">{ projectTitle }</h3>
                                 </div>
                             </div>
                         </Link>
@@ -160,11 +163,10 @@ class ProjectsPage extends Component {
         const globalContent = this.props.content.global;
 
         return (
-            <div id="projects-page" className="container text-centre p-v-xxl">
-                <Loading isLoading={ this.state.isLoading } />
+            <div id="projects-page" className="container text-centre p-b-xxl">
                 <div className="p-v-xxl m-v-xxl">
-                    <h1 className="font-uppercase">{ globalContent.site_title[0].text }</h1>
-                    <p className="font-uppercase font-weight-bold font-size-sm">Frontend developer / (sometimes) designer</p>
+                    <h1 className="font-uppercase font-size-xxl">{ globalContent.site_title[0].text }</h1>
+                    <p className="font-uppercase font-weight-bold font-size-lg">Frontend developer / (sometimes) designer</p>
                 </div>
                 <div className="grid grid--gutter-none">
                     { this.renderProjectListItems() }
@@ -183,12 +185,14 @@ ProjectsPage.defaultProps = {
 };
 
 const mapStateToProps = state => ({
+    ui: state.ui,
     content: state.content,
     theme: state.theme,
 });
 
 const mapDispatchToProps = dispatch => ({
     setTheme: theme => dispatch(actions.setTheme(theme)),
+    setImgsLoading: imgsLoading => dispatch(actions.setImgsLoading(imgsLoading)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectsPage);

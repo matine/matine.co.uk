@@ -35,6 +35,10 @@ a {
     @include font-size-responsive($font-size-xl-mobile, $font-size-xl-desktop);
 }
 
+.font-size-xxl {
+    @include font-size-responsive($font-size-xxl-mobile, $font-size-xxl-desktop);
+}
+
 // Font weights
 .font-weight-regular {
     font-family: $font-weight-regular !important;

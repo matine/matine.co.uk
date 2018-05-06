@@ -4,6 +4,7 @@ import * as actions from '../../constants/actions';
 const initialState = {
     ui: {
         isLoading: true,
+        imgsLoading: false,
     },
     content: {
         global: null,
@@ -17,6 +18,11 @@ export const ui = (state = initialState.ui, action) => {
         case actions.SET_IS_LOADING:
             return Object.assign({}, state, {
                 isLoading: action.isLoading,
+            });
+
+        case actions.SET_IMGS_LOADING:
+            return Object.assign({}, state, {
+                imgsLoading: action.imgsLoading,
             });
 
         default:

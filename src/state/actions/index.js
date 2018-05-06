@@ -12,6 +12,17 @@ export const setIsLoading = isLoading => ({
 });
 
 /**
+ * Sets images are loading.
+ *
+ * @param {Boolean} imgsLoading
+ * @return {Object}
+ */
+export const setImgsLoading = imgsLoading => ({
+    type: actions.SET_IMGS_LOADING,
+    imgsLoading,
+});
+
+/**
  * Sets the CONTENT.
  *
  * @param {Object} content
