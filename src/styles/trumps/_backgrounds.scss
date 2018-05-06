@@ -17,3 +17,17 @@
     }
     color: $primary-colour;
 }
+
+.bg-primary {
+    background-color: $primary-colour;
+}
+
+.theme--inverted {
+    .bg-primary {
+        background-color: $grey-very-dark;
+    }
+}
+
+.bg-dark-grey {
+    background-color: $grey-very-dark;
+}

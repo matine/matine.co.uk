@@ -33,7 +33,7 @@ class Loading extends Component {
         }
 
         return (
-            <div key="one" className="width-100 height-100 pos-fix pin-top-left b-a-frame b-b-none bg-texture z-index-10 align-content-centre">
+            <div key="one" className="width-100 height-100 pos-fix pin-top-left b-a-frame b-b-none bg-dark-grey z-index-10 align-content-centre">
                 <div className="max-width-xxs icon-colour-primary">
                     <LoadingIcon colour="#59edd6" />
                 </div>

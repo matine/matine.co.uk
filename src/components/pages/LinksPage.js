@@ -58,7 +58,7 @@ class LinksPage extends Component {
         }
 
         return (
-            <div id="links-page" className="container text-centre">
+            <div id="links-page" className="container text-centre p-b-xxl">
                 <h1 className="p-t-xxl p-b-xxl">{ globalContent.links_title[0].text }</h1>
                 <div className="grid">
                     { this.renderListOfLinks() }

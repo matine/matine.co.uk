@@ -17,7 +17,7 @@ class AboutPage extends Component {
         }
 
         return (
-            <div className="container">
+            <div id="about-page" className="container p-b-xxl">
                 <div className="text-centre">
                     <img
                         src={ globalContent.about_me_image.url }

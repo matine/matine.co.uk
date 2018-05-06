@@ -18,7 +18,7 @@ class Footer extends Component {
 
         return (
             <footer className="width-100 pos-fix pin-bottom-left z-index-0">
-                <div className="container text-centre p-v-lg">
+                <div className="container text-centre p-v-xxl">
                     <div className="colour-primary m-b-md">
                         { RichText.render(globalContent.footer_text) }
                     </div>

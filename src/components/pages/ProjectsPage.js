@@ -141,7 +141,7 @@ class ProjectsPage extends Component {
                             </div>
                             <div className="project-thumbnail_hover width-100 height-100 pos-abs pin-top-left">
                                 <div className="width-100 pos-abs pin-bottom-left text-centre">
-                                    <h3 className="font-uppercase font-size-sm remove-link-style colour-base">{ projectTitle }</h3>
+                                    <h3 className="font-uppercase font-size-sm font-weight-bold remove-link-style colour-base m-b-lg">{ projectTitle }</h3>
                                 </div>
                             </div>
                         </Link>
@@ -159,12 +159,13 @@ class ProjectsPage extends Component {
     render() {
         const globalContent = this.props.content.global;
 
-        console.log(this.props.theme);
-
         return (
-            <div id="projects-page" className="container text-centre">
+            <div id="projects-page" className="container text-centre p-v-xxl">
                 <Loading isLoading={ this.state.isLoading } />
-                <h1 className="p-t-xxl p-b-xxl">{ globalContent.site_title[0].text }</h1>
+                <div className="p-v-xxl m-v-xxl">
+                    <h1 className="font-uppercase">{ globalContent.site_title[0].text }</h1>
+                    <p className="font-uppercase font-weight-bold font-size-sm">Frontend developer / (sometimes) designer</p>
+                </div>
                 <div className="grid grid--gutter-none">
                     { this.renderProjectListItems() }
                 </div>
