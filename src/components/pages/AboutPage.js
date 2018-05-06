@@ -43,6 +43,7 @@ AboutPage.defaultProps = {
 
 const mapStateToProps = state => ({
     content: state.content,
+    theme: state.theme,
 });
 
 export default connect(mapStateToProps)(AboutPage);

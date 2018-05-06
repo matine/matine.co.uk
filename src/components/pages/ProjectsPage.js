@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { RichText } from 'prismic-reactjs';
 import Loading from '../partials/Loading';
+import * as actions from '../../state/actions';
 
 class ProjectsPage extends Component {
     /**
@@ -80,7 +81,12 @@ class ProjectsPage extends Component {
      * @return {XML}
      */
     renderProjectListItems() {
-        const projectsContent = this.props.content.projects;
+        const {
+            setTheme,
+            content,
+        } = this.props;
+
+        const projectsContent = content.projects;
 
         // Sort in decending order
         projectsContent.sort((a, b) => {
@@ -95,6 +101,8 @@ class ProjectsPage extends Component {
                 <div
                     key={ index }
                     className="grid__col grid__col-md-4"
+                    onMouseEnter={ () => setTheme('inverted') }
+                    onMouseLeave={ () => setTheme('default') }
                 >
                     <div className="project-thumbnail pos-rel">
                         <Link
@@ -132,6 +140,8 @@ class ProjectsPage extends Component {
     render() {
         const globalContent = this.props.content.global;
 
+        console.log(this.props.theme);
+
         return (
             <div id="projects-page" className="container text-centre">
                 <Loading isLoading={ this.state.isLoading } />
@@ -154,6 +164,11 @@ ProjectsPage.defaultProps = {
 
 const mapStateToProps = state => ({
     content: state.content,
+    theme: state.theme,
 });
 
-export default connect(mapStateToProps)(ProjectsPage);
+const mapDispatchToProps = dispatch => ({
+    setTheme: theme => dispatch(actions.setTheme(theme)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectsPage);

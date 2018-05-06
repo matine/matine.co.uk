@@ -21,3 +21,14 @@ export const setContent = content => ({
     type: actions.SET_CONTENT,
     content,
 });
+
+/**
+ * Sets the theme.
+ *
+ * @param {Object} theme
+ * @return {Object}
+ */
+export const setTheme = theme => ({
+    type: actions.SET_THEME,
+    theme,
+});

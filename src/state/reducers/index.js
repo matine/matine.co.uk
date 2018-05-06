@@ -9,6 +9,7 @@ const initialState = {
         global: null,
         projects: [],
     },
+    theme: 'default',
 };
 
 export const ui = (state = initialState.ui, action) => {
@@ -33,9 +34,20 @@ export const content = (state = initialState.content, action) => {
     }
 };
 
+export const theme = (state = initialState.theme, action) => {
+    switch (action.type) {
+        case actions.SET_THEME:
+            return action.theme;
+
+        default:
+            return state;
+    }
+};
+
 const reducers = combineReducers({
     ui,
     content,
+    theme,
 });
 
 export default reducers;
