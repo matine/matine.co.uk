@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { RichText } from 'prismic-reactjs';
+import { Page, mapStateToProps, mapDispatchToProps } from './Page';
 
-class ProjectPage extends Component {
+class ProjectPage extends Page {
     /**
      * Component constructor.
      *
@@ -14,6 +15,22 @@ class ProjectPage extends Component {
         this.state = {
             projectContent: null,
         }
+
+        props.setTheme('default');
+        props.setImgsLoading(false);
+    }
+
+    /**
+     * Before the component has mounted.
+     *
+     * @return {void}
+     */
+    componentWillMount() {
+        const {
+            setTheme,
+        } = this.props;
+
+        setTheme('default');
     }
 
     /**
@@ -59,7 +76,7 @@ class ProjectPage extends Component {
                 <div className="project-banner" style={ bannerStyle }></div>
                 <div className="container">
                     <div className="m-t-xxl">
-                        <h1 className="text-centre font-uppercase">{ projectContent.project_title[0].text }</h1>
+                        <h1 className="text-centre font-uppercase font-size-xl">{ projectContent.project_title[0].text }</h1>
                         <div className="width-100 max-width-lg m-centre">{ RichText.render(projectContent.project_main_text) }</div>
                     </div>
                 </div>
@@ -89,16 +106,4 @@ class ProjectPage extends Component {
     }
 }
 
-ProjectPage.propTypes = {
-    content: PropTypes.shape(),
-};
-
-ProjectPage.defaultProps = {
-    content: null,
-};
-
-const mapStateToProps = state => ({
-    content: state.content,
-});
-
-export default connect(mapStateToProps)(ProjectPage);
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectPage);

@@ -1,9 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { RichText } from 'prismic-reactjs';
+import { Page, mapStateToProps, mapDispatchToProps } from './Page';
 
-class LinksPage extends Component {
+class LinksPage extends Page {
+    /**
+     * Component constructor.
+     *
+     * @param {Object} props
+     */
+    constructor(props) {
+        super(props);
+
+        props.setImgsLoading(false);
+    }
+
     /**
      * Render all the lists of links with titles
      *
@@ -68,17 +80,5 @@ class LinksPage extends Component {
     }
 }
 
-LinksPage.propTypes = {
-    content: PropTypes.shape(),
-};
-
-LinksPage.defaultProps = {
-    content: null,
-};
-
-const mapStateToProps = state => ({
-    content: state.content,
-});
-
-export default connect(mapStateToProps)(LinksPage);
+export default connect(mapStateToProps, mapDispatchToProps)(LinksPage);
 

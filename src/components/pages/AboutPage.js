@@ -1,9 +1,34 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { RichText } from 'prismic-reactjs';
+import { Page, mapStateToProps, mapDispatchToProps } from './Page';
 
-class AboutPage extends Component {
+class AboutPage extends Page {
+    /**
+     * Component constructor.
+     *
+     * @param {Object} props
+     */
+    constructor(props) {
+        super(props);
+
+        this.handleImageLoaded = this.handleImageLoaded.bind(this);
+    }
+
+    /**
+     * Handles when an image is loaded.
+     *
+     * @return {void}
+     */
+    handleImageLoaded() {
+        const {
+            setImgsLoading,
+        } = this.props;
+
+        setImgsLoading(false);
+    }
+
     /**
      * Renders the component.
      *
@@ -23,6 +48,7 @@ class AboutPage extends Component {
                         src={ globalContent.about_me_image.url }
                         alt={ globalContent.about_me_image.alt }
                         className="width-100 max-width-xxl"
+                        onLoad={ this.handleImageLoaded }
                     />
                 </div>
                 <div className="max-width-text-narrow m-centre p-t-lg p-b-xxl">
@@ -33,17 +59,4 @@ class AboutPage extends Component {
     }
 }
 
-AboutPage.propTypes = {
-    content: PropTypes.shape(),
-};
-
-AboutPage.defaultProps = {
-    content: null,
-};
-
-const mapStateToProps = state => ({
-    content: state.content,
-    theme: state.theme,
-});
-
-export default connect(mapStateToProps)(AboutPage);
+export default connect(mapStateToProps, mapDispatchToProps)(AboutPage);

@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { RichText } from 'prismic-reactjs';
-import * as actions from '../../state/actions';
+import { Page, mapStateToProps, mapDispatchToProps } from './Page';
 
-class ProjectsPage extends Component {
+class ProjectsPage extends Page {
     /**
      * Component constructor.
      *
@@ -13,12 +13,11 @@ class ProjectsPage extends Component {
      */
     constructor(props) {
         super(props);
+
         this.state = {
             thumbnailVisible: false,
             numImagesLoaded: 1,
         }
-
-        props.setImgsLoading(true);
 
         this.hoverOnThumbnail = this.hoverOnThumbnail.bind(this);
         this.hoverOffThumbnail = this.hoverOffThumbnail.bind(this);
@@ -133,7 +132,7 @@ class ProjectsPage extends Component {
                                 <img
                                     src={ projectData.project_thumbnail.url }
                                     alt={ projectData.project_thumbnail.alt }
-                                    onLoad={this.handleImageLoaded.bind(this)}
+                                    onLoad={ this.handleImageLoaded.bind(this) }
                                     className="width-100"
                                 />
                                 <img
@@ -175,24 +174,5 @@ class ProjectsPage extends Component {
         )
     }
 }
-
-ProjectsPage.propTypes = {
-    content: PropTypes.shape(),
-};
-
-ProjectsPage.defaultProps = {
-    content: null,
-};
-
-const mapStateToProps = state => ({
-    ui: state.ui,
-    content: state.content,
-    theme: state.theme,
-});
-
-const mapDispatchToProps = dispatch => ({
-    setTheme: theme => dispatch(actions.setTheme(theme)),
-    setImgsLoading: imgsLoading => dispatch(actions.setImgsLoading(imgsLoading)),
-});
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectsPage);
