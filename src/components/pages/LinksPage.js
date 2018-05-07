@@ -33,15 +33,15 @@ class LinksPage extends Page {
                 const linkContent = slice.items.map((link, linkIndex) => {
                     return (
                         <li key={ linkIndex } className="b-b-thin m-b-sm p-b-sm">
-                            <a href={ link.link_url.url } target="blank" className="remove-link-style font-weight-bold">{ link.link_name }</a>
-                            <div className="font-size-xs">{ RichText.render(link.link_description) }</div>
+                            <a href={ link.link_url.url } target="blank" className="remove-link-style font-weight-bold font-uppercase font-size-lg">{ link.link_name }</a>
+                            <div className="font-size-sm">{ RichText.render(link.link_description) }</div>
                         </li>
                     );
                 });
 
                 return (
                     <div key={ sliceIndex } className="grid__col grid__col-sm-6 grid__col-md-3 text-left">
-                        <h3 className="title-with-decoration font-uppercase font-weight-regular m-b-lg">{ listOfLinksTitle }</h3>
+                        <h3 className="title-with-decoration font-uppercase font-size-sm font-weight-bold p-b-xxs m-b-lg">{ listOfLinksTitle }</h3>
                         <ul className="list--no-styles">
                             { linkContent }
                         </ul>
@@ -71,7 +71,7 @@ class LinksPage extends Page {
 
         return (
             <div id="links-page" className="container text-centre p-b-xxl">
-                <h1 className="p-t-xxl p-b-xxl">{ globalContent.links_title[0].text }</h1>
+                <h1 className="font-uppercase p-v-xxl m-v-xxl">{ globalContent.links_title[0].text }</h1>
                 <div className="grid">
                     { this.renderListOfLinks() }
                 </div>
