@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { RichText } from 'prismic-reactjs';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
+import SunIcon from '../ui/icons/SunIcon';
 
 class ProjectsPage extends Page {
     /**
@@ -163,8 +164,14 @@ class ProjectsPage extends Page {
 
         return (
             <div id="projects-page" className="container text-centre p-b-xxl">
-                <div className="p-v-xxl m-v-xxl">
-                    <h1 className="font-uppercase font-size-xxl">{ globalContent.site_title[0].text }</h1>
+                <div className="hero p-v-xxl m-v-xxl">
+                    <h1 className="font-uppercase font-size-xxl">
+                        <span className="pos-rel">
+                            <span className="hero__sun"><SunIcon size={ 80 }/></span>
+                            { globalContent.first_name[0].text }
+                        </span>
+                        <span>{ globalContent.surname[0].text }</span>
+                    </h1>
                     <p className="font-uppercase font-weight-bold font-size-lg">Frontend developer / (sometimes) designer</p>
                 </div>
                 <div className="grid grid--gutter-none">
