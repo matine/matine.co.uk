@@ -17,3 +17,15 @@
     position: relative;
     top: -500px;
 }
+
+.project__ipad {
+    @include position(absolute, 250px null null 50%);
+    width: 250px;
+    margin-left: 180px;
+}
+
+.project__iphone {
+    @include position(absolute, 330px null null 50%);
+    width: 150px;
+    margin-left: 120px;
+}

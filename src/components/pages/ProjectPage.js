@@ -72,31 +72,31 @@ class ProjectPage extends Page {
         };
 
         return (
-            <div id="project-page" className="p-b-xxl">
+            <div id="project-page">
                 <div className="project-banner" style={ bannerStyle }></div>
                 <div className="container">
                     <div className="m-t-xxl">
-                        <h1 className="text-centre font-uppercase font-size-xl">{ projectContent.project_title[0].text }</h1>
+                        <h1 className="text-centre font-uppercase">{ projectContent.project_title[0].text }</h1>
                         <div className="width-100 max-width-lg m-centre">{ RichText.render(projectContent.project_main_text) }</div>
                     </div>
                 </div>
-                <div className="bg-primary project-bg">
-                    <div className="project-container container">
+                <div className="bg-primary-light project-bg">
+                    <div className="project-container container pos-rel">
                         <img
                             src={ projectContent.project_imac.url }
                             alt={ projectContent.project_imac.alt }
-                            className="block max-width-100 m-centre"
+                            className="project__imac block max-width-100 m-centre"
                         />
                         <div className="text-centre">
                             <img
                                 src={ projectContent.project_ipad.url }
                                 alt={ projectContent.project_ipad.alt }
-                                className="inline-block max-width-md"
+                                className="project__ipad inline-block max-width-md"
                             />
                             <img
                                 src={ projectContent.project_iphone.url }
                                 alt={ projectContent.project_iphone.alt }
-                                className="inline-block max-width-sm"
+                                className="project__iphone inline-block max-width-sm"
                             />
                         </div>
                     </div>

@@ -35,8 +35,16 @@ a {
     @include font-size-responsive($font-size-xl-mobile, $font-size-xl-desktop);
 }
 
-.font-size-xxl {
-    @include font-size-responsive($font-size-xxl-mobile, $font-size-xxl-desktop);
+h1 {
+    @include heading-style-responsive($font-size-h1-mobile, $font-size-h1-desktop);
+}
+
+h2 {
+    @include heading-style-responsive($font-size-h2-mobile, $font-size-h2-desktop);
+}
+
+h3 {
+    @include heading-style-responsive($font-size-h3-mobile, $font-size-h3-desktop);
 }
 
 // Font weights

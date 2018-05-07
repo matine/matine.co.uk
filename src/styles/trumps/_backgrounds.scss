@@ -22,6 +22,10 @@
     background-color: $primary-colour;
 }
 
+.bg-primary-light {
+    background-color: $primary-colour-light;
+}
+
 .theme--inverted {
     .bg-primary {
         background-color: $grey-very-dark;

@@ -164,12 +164,12 @@ class ProjectsPage extends Page {
 
         return (
             <div id="projects-page" className="container text-centre p-b-xxl">
-                <div className="hero p-v-xxl m-v-xxl">
-                    <h1 className="font-uppercase font-size-xxl">
+                <div className="hero">
+                    <h1 className="hero__title font-uppercase">
                         <span className="pos-rel">
                             <span className="hero__sun"><SunIcon size={ 80 }/></span>
-                            { globalContent.first_name[0].text }
-                        </span>
+                            { globalContent.first_name[0].text } 
+                        </span><br/>
                         <span>{ globalContent.surname[0].text }</span>
                     </h1>
                     <p className="font-uppercase font-weight-bold font-size-lg">Frontend developer / (sometimes) designer</p>
