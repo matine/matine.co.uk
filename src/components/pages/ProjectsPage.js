@@ -163,7 +163,7 @@ class ProjectsPage extends Page {
         const globalContent = this.props.content.global;
 
         return (
-            <div id="projects-page" className="container text-centre p-b-xxl">
+            <div id="projects-page" className="container container--wide text-centre p-b-xxl">
                 <div className="hero">
                     <h1 className="hero__title font-uppercase">
                         <span className="pos-rel">

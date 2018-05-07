@@ -10,6 +10,12 @@
     @include screen-md-min {
         max-width: $max-width-content;
     }
+
+    &--wide {
+        @include screen-md-min {
+            max-width: $max-width-content-wide;
+        }
+    }
 }
 
 .main {
