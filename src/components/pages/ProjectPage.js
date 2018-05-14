@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { RichText } from 'prismic-reactjs';
+import Carousel from '../partials/Carousel';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
 
 class ProjectPage extends Page {
@@ -56,6 +57,39 @@ class ProjectPage extends Page {
     }
 
     /**
+     * Renders the carousel of project screenshots.
+     *
+     * @return {XML}
+     */
+    renderProjectScreenshotCarousel() {
+        const projectContent = this.state.projectContent.data;
+        const projectScreenshots = projectContent.project_screenshots;
+
+        if (!projectScreenshots[0]) {
+            return null;
+        }
+
+        const carouselItems = projectScreenshots.map(carouselItem => {
+            const carouselImage = carouselItem.screenshot;
+
+            return (
+                <div key={ carouselImage.alt }>
+                    <div className="browser-window">
+                        <div className="browser-window__controls"><span></span><span></span><span></span></div>
+                    </div>
+                    <img
+                        className="width-100"
+                        src={ carouselImage.url }
+                        alt={ carouselImage.alt }
+                    />
+                </div>
+            );
+        });
+
+        return <Carousel items={ carouselItems } />;
+    }
+
+    /**
      * Renders the component.
      *
      * @return {XML}
@@ -99,6 +133,9 @@ class ProjectPage extends Page {
                                 className="project__iphone inline-block max-width-sm"
                             />
                         </div>
+                    </div>
+                    <div className="m-t-md p-b-xxl">
+                        { this.renderProjectScreenshotCarousel() }
                     </div>
                 </div>
             </div>

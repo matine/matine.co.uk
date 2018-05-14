@@ -1,0 +1,44 @@
+// =============================================================================
+//  COMPONENTS - CAROUSEL
+// =============================================================================
+
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
+.slick-dots {
+    top: -40px !important;
+
+    li {
+        button {
+            cursor: pointer;
+
+            &:before {
+                font-size: 16px !important;
+            }
+
+            &:focus {
+                &:before {
+                    color: $grey !important;
+                    opacity: 1 !important;
+                }
+            }
+
+            &:hover,
+            &:active {
+                &:before {
+                    color: $primary-colour !important;
+                    opacity: 1 !important;
+                }
+            }
+        }
+
+        &.slick-active {
+            button {
+                &:before {
+                    color: $primary-colour !important;
+                    opacity: 1 !important;
+                }
+            }
+        }
+    }
+}

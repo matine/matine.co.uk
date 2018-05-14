@@ -20,6 +20,10 @@
     max-width: auto !important;
 }
 
+.max-width-screenshots {
+    max-width: $max-width-screenshots;
+}
+
 .min-width {
     &-xxs {
         min-width: $width-xxs !important;
