@@ -110,18 +110,18 @@ class ProjectPage extends Page {
                 <div className="project-banner" style={ bannerStyle }></div>
                 <div className="container">
                     <div className="m-t-xxl">
-                        <h1 className="text-centre font-uppercase">{ projectContent.project_title[0].text }</h1>
+                        <h1 className="text-centre font-uppercase p-b-sm">{ projectContent.project_title[0].text }</h1>
                         <div className="width-100 max-width-lg m-centre">{ RichText.render(projectContent.project_main_text) }</div>
                     </div>
                 </div>
-                <div className="bg-primary-light project-bg">
+                <div className="project-bg">
                     <div className="project-container container pos-rel">
                         <img
                             src={ projectContent.project_imac.url }
                             alt={ projectContent.project_imac.alt }
                             className="project__imac block max-width-100 m-centre"
                         />
-                        <div className="text-centre">
+                        <div className="project__touch-devices text-centre">
                             <img
                                 src={ projectContent.project_ipad.url }
                                 alt={ projectContent.project_ipad.alt }
@@ -134,7 +134,7 @@ class ProjectPage extends Page {
                             />
                         </div>
                     </div>
-                    <div className="m-t-md p-b-xxl">
+                    <div className="container m-t-md p-b-xxl">
                         { this.renderProjectScreenshotCarousel() }
                     </div>
                 </div>
