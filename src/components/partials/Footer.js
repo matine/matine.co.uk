@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import * as Scroll from 'react-scroll';
 import { RichText } from 'prismic-reactjs';
 import { LinkedInIcon, TwitterIcon, GithubIcon, EmailIcon, PinterestIcon } from '../ui';
 import links from '../../constants/links';
@@ -16,9 +17,20 @@ class Footer extends Component {
             globalContent,
         } = this.props;
 
+        const scroll = Scroll.animateScroll;
+
         return (
             <footer className="width-100 pos-fix pin-bottom-left z-index-0">
                 <div className="container text-centre p-v-xxl m-v-xl">
+                    <div className="m-b-sm">
+                        <button
+                            onClick={ scroll.scrollToTop }
+                            className="colour-primary font-weight-bold font-uppercase"
+                        >
+                            <span className="block font-size-lg">&uarr;</span>
+                            <span>Top</span>
+                        </button>
+                    </div>
                     <div className="colour-primary m-b-md">
                         { RichText.render(globalContent.footer_text) }
                     </div>

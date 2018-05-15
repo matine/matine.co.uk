@@ -45,13 +45,13 @@
 
 .icon-colour {
     &-primary {
-        svg > path {
+        svg path {
             fill: $primary-colour;
         }
     }
 
     &-base {
-        svg > path {
+        svg path {
             fill: $font-colour-base;
         }
     }
@@ -62,10 +62,10 @@
 }
 
 .theme--inverted {
-    .icon-colour-base svg > path {
+    .icon-colour-base svg path {
         fill: $primary-colour;
     }
-    .icon-colour-primary svg > path {
+    .icon-colour-primary svg path {
         fill: $font-colour-base;
     }    
 }
