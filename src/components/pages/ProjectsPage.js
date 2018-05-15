@@ -110,11 +110,6 @@ class ProjectsPage extends Page {
 
         const projectsContent = content.projects;
 
-        // Sort in decending order
-        projectsContent.sort((a, b) => {
-            return b.data.project_order - a.data.project_order;
-        })
-
         return projectsContent.map((project, index) => {
             const projectData = project.data;
             const projectTitle = projectData.project_title[0].text;

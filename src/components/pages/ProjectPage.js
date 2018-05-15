@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { RichText } from 'prismic-reactjs';
+import { Link } from 'react-router-dom';
 import Carousel from '../partials/Carousel';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
 
@@ -13,7 +14,9 @@ class ProjectPage extends Page {
      */
     constructor(props) {
         super(props);
+
         this.state = {
+            projectUid: this.props.match.params.uid,
             projectContent: null,
         }
 
@@ -22,7 +25,20 @@ class ProjectPage extends Page {
     }
 
     /**
-     * Before the component has mounted.
+     * Things to do when the component recieves props.
+     *
+     * @return {void}
+     */
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.match.params.uid !== this.state.projectUid) {
+            this.setState({
+                projectUid: nextProps.match.params.uid,
+            }, () => this.getProjectContent());
+        }
+    }
+
+    /**
+     * Things to do before the component renders.
      *
      * @return {void}
      */
@@ -32,14 +48,7 @@ class ProjectPage extends Page {
         } = this.props;
 
         setTheme('default');
-    }
 
-    /**
-     * Things to do before the component renders.
-     *
-     * @return {void}
-     */
-    componentWillMount() {
         this.getProjectContent();
     }
 
@@ -52,8 +61,60 @@ class ProjectPage extends Page {
         const projectsContent = this.props.content.projects;
 
         projectsContent
-            .filter(project => project.uid === this.props.match.params.uid)
+            .filter(project => project.uid === this.state.projectUid)
             .map((project, index) => this.setState({ projectContent: project }));
+    }
+
+    /**
+     * Gets the prev project id and title.
+     *
+     * @return {Object|null}
+     */
+    getPrevProject() {
+        const projectsContent = this.props.content.projects;
+        const numberOfProjects = projectsContent.length;
+        const currentProjectPos = projectsContent.map(project => project.uid).indexOf(this.props.match.params.uid);
+
+        if (currentProjectPos > 0) {
+            const prevProject = projectsContent[currentProjectPos-1];
+
+            if (!prevProject) {
+                return null;
+            }
+
+            return {
+                uid: prevProject.uid,
+                title: prevProject.data.project_title[0].text,
+            };
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Gets the next project id and title.
+     *
+     * @return {Object|null}
+     */
+    getNextProject() {
+        const projectsContent = this.props.content.projects;
+        const numberOfProjects = projectsContent.length;
+        const currentProjectPos = projectsContent.map(project => project.uid).indexOf(this.props.match.params.uid);
+
+        if (currentProjectPos < numberOfProjects) {
+            const nextProject = projectsContent[currentProjectPos+1];
+
+            if (!nextProject) {
+                return null;
+            }
+
+            return {
+                uid: nextProject.uid,
+                title: nextProject.data.project_title[0].text,
+            };
+        } else {
+            return null;
+        }
     }
 
     /**
@@ -90,6 +151,19 @@ class ProjectPage extends Page {
     }
 
     /**
+     * Renders a project link.
+     *
+     * @return {XML}
+     */
+    renderProjectLink(project, linkText) {
+        return (
+            <Link to={ `/work/${project.uid}` }>
+                { linkText }
+            </Link>
+        );
+    }
+
+    /**
      * Renders the component.
      *
      * @return {XML}
@@ -100,6 +174,8 @@ class ProjectPage extends Page {
         }
 
         const projectContent = this.state.projectContent.data;
+        const prevProject = this.getPrevProject();
+        const nextProject = this.getNextProject();
 
         const bannerStyle = {
             backgroundImage: 'url(' + projectContent.project_banner.url + ')',
@@ -136,6 +212,10 @@ class ProjectPage extends Page {
                     </div>
                     <div className="container m-t-md p-b-xxl">
                         { this.renderProjectScreenshotCarousel() }
+                    </div>
+                    <div className="projects-nav remove-link-styles font-size-xl">
+                        <div className="projects-nav__prev">{ prevProject ? this.renderProjectLink(prevProject, '←') : null }</div>
+                        <div className="projects-nav__next">{ nextProject ? this.renderProjectLink(nextProject, '→') : null }</div>
                     </div>
                 </div>
             </div>

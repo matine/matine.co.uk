@@ -54,3 +54,22 @@
         margin-left: 120px;
     }
 }
+
+.projects-nav {
+    &__next,
+    &__prev {
+        position: fixed;
+        top: 450px
+    }
+
+    &__next {
+        right: 35px;
+        text-align: left;
+    }
+
+    &__prev {
+        left: 35px;
+        text-align: right;
+    }
+    
+}

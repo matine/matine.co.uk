@@ -46,6 +46,9 @@ class App extends React.Component {
                         if (doc.type === 'project') content.projects.push(doc);
                     });
                 }).then(response => {
+                    content.projects.sort((a, b) => {
+                        return b.data.project_order - a.data.project_order;
+                    })
                     setContent(content);
                     setIsLoading(false);
                 });

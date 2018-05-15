@@ -2,6 +2,12 @@
 //  TRUMPS - HELPERS
 // =============================================================================
 
+// Apply clearfix styles with classes .clearfix or .clear
+.clear,
+.clearfix {
+    @include clearfix;
+}
+
 .m-centre {
     @include margin(null auto);
 }
