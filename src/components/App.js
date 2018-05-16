@@ -73,7 +73,6 @@ class App extends React.Component {
 
         return (
             <div className={ `app-wrapper theme--${theme}`}>
-                { ui.imgsLoading ? <Loading /> : null }
                 <Loading />
                 <Header />
                 <main className="main bg-texture b-a-frame b-b-none pos-rel z-index-1">

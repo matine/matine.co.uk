@@ -167,7 +167,7 @@ class ProjectsPage extends Page {
                         </span><br/>
                         <span>{ globalContent.surname[0].text }</span>
                     </h1>
-                    <p className="font-uppercase font-weight-bold font-size-lg">Frontend developer / (sometimes) designer</p>
+                    <p className="font-uppercase font-weight-bold font-size-lg">Frontend developer</p>
                 </div>
                 <div className="grid grid--gutter-none">
                     { this.renderProjectListItems() }
