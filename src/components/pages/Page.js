@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import * as Scroll from 'react-scroll';
 import { RichText } from 'prismic-reactjs';
 import * as actions from '../../state/actions';
 
@@ -15,11 +14,9 @@ export class Page extends Component {
     constructor(props) {
         super(props);
 
-        const scroll = Scroll.animateScroll;
-
+        window.scroll(0, 0);
         props.setTheme('default');
         props.setImgsLoading(true);
-        scroll.scrollToTop();
     }
 
     /**
@@ -28,10 +25,8 @@ export class Page extends Component {
      * @return {void}
      */
     componentWillReceiveProps(props) {
-        const scroll = Scroll.animateScroll;
-
         if (props.match.url !== this.props.match.url) {
-            scroll.scrollToTop();
+            window.scroll(0, 0);
             this.props.setImgsLoading(true);
         }
     }
