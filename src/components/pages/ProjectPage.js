@@ -18,10 +18,10 @@ class ProjectPage extends Page {
         this.state = {
             projectUid: this.props.match.params.uid,
             projectContent: null,
+            numImagesLoaded: 0,
         }
 
         props.setTheme('default');
-        props.setImgsLoading(false);
     }
 
     /**
@@ -29,10 +29,13 @@ class ProjectPage extends Page {
      *
      * @return {void}
      */
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.match.params.uid !== this.state.projectUid) {
+    componentWillReceiveProps(props) {
+        super.componentWillReceiveProps(props);
+
+        if (props.match.params.uid !== this.state.projectUid) {
             this.setState({
-                projectUid: nextProps.match.params.uid,
+                projectUid: props.match.params.uid,
+                numImagesLoaded: 0,
             }, () => this.getProjectContent());
         }
     }
@@ -50,6 +53,29 @@ class ProjectPage extends Page {
         setTheme('default');
 
         this.getProjectContent();
+    }
+
+    /**
+     * Handles when an images are all loaded.
+     *
+     * @return {void}
+     */
+    handleImageLoaded() {
+        const {
+            setImgsLoading,
+        } = this.props;
+
+        const {
+            projectContent,
+        } = this.state;
+
+        const minNumOfImages = 3;
+
+        this.setState({ numImagesLoaded: this.state.numImagesLoaded += 1 });
+
+        if (this.state.numImagesLoaded >= minNumOfImages) {
+            setImgsLoading(false);
+        }
     }
 
     /**
@@ -142,6 +168,7 @@ class ProjectPage extends Page {
                         className="width-100"
                         src={ carouselImage.url }
                         alt={ carouselImage.alt }
+                        onLoad={ this.handleImageLoaded.bind(this) }
                     />
                 </div>
             );
@@ -196,17 +223,20 @@ class ProjectPage extends Page {
                             src={ projectContent.project_imac.url }
                             alt={ projectContent.project_imac.alt }
                             className="project__imac block max-width-100 m-centre"
+                            onLoad={ this.handleImageLoaded.bind(this) }
                         />
                         <div className="project__touch-devices text-centre">
                             <img
                                 src={ projectContent.project_ipad.url }
                                 alt={ projectContent.project_ipad.alt }
                                 className="project__ipad inline-block max-width-md"
+                                onLoad={ this.handleImageLoaded.bind(this) }
                             />
                             <img
                                 src={ projectContent.project_iphone.url }
                                 alt={ projectContent.project_iphone.alt }
                                 className="project__iphone inline-block max-width-sm"
+                                onLoad={ this.handleImageLoaded.bind(this) }
                             />
                         </div>
                     </div>

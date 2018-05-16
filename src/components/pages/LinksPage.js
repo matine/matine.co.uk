@@ -13,7 +13,19 @@ class LinksPage extends Page {
     constructor(props) {
         super(props);
 
-        props.setImgsLoading(false);
+    }
+
+    /**
+     * Things to do when the component recieves props.
+     *
+     * @return {void}
+     */
+    componentWillReceiveProps(props) {
+        super.componentWillReceiveProps(props);
+
+        setTimeout(() => {
+            this.props.setImgsLoading(false);
+        }, 1);
     }
 
     /**
