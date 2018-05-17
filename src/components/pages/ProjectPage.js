@@ -214,7 +214,7 @@ class ProjectPage extends Page {
                 <div className="project-wrap">
                     <div className="bg-texture">
                         <div className="container">
-                            <div className="p-t-xxl">
+                            <div className="project-desc">
                                 <h1 className="text-centre font-uppercase p-b-sm">{ projectContent.project_title[0].text }</h1>
                                 <div className="width-100 max-width-lg m-centre">{ RichText.render(projectContent.project_main_text) }</div>
                             </div>
@@ -242,7 +242,7 @@ class ProjectPage extends Page {
                                     />
                                 </div>
                             </div>
-                            <div className="container m-t-md p-b-xxl">
+                            <div className="project-screenshots-container container p-b-xxl">
                                 { this.renderProjectScreenshotCarousel() }
                             </div>
                             <div className="projects-nav remove-link-styles font-size-xl">

@@ -20,8 +20,8 @@ class Footer extends Component {
         const scroll = Scroll.animateScroll;
 
         return (
-            <footer className="width-100 pos-fix pin-bottom-left z-index-0">
-                <div className="container text-centre p-v-xxl m-v-xl">
+            <footer className="footer width-100 pos-fix pin-bottom-left z-index-0">
+                <div className="footer__container container text-centre">
                     <div className="m-b-sm">
                         <button
                             onClick={ scroll.scrollToTop }

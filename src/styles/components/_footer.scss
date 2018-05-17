@@ -1,3 +1,17 @@
 // =============================================================================
 //  COMPONENTS - FOOTER
 // =============================================================================
+
+.footer {
+    &__container {
+        @include padding(40px null);
+
+        @include screen-sm-min {
+            @include padding(80px null);
+        }
+
+        @include screen-md-min {
+            @include padding(110px null);
+        }
+    }
+}

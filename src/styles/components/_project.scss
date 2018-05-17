@@ -4,20 +4,36 @@
 
 .project-banner {
     width: 100%;
-    height: 300px;
+    height: 200px;
     background-position: center center;
     background-size: cover;
-    position: fixed;
-    top: 80px;
-    left: 15px;
-    width: calc(100% - 30px);
-    z-index: 1;
+
+    @include screen-md-min {
+        @include position(fixed, 80px null null 15px);
+        height: 300px;
+        width: calc(100% - 30px);
+        z-index: 1;
+    }
 }
 
 .project-wrap {
-    margin-top: 300px;
-    position: relative;
-    z-index: 2;
+    @include screen-md-min {
+        margin-top: 300px;
+        position: relative;
+        z-index: 2;
+    }
+}
+
+.project-desc {
+    padding-top: 25px;
+
+    @include screen-sm-min {
+        padding-top: 40px;
+    }
+
+    @include screen-md-min {
+        padding-top: 80px;
+    }
 }
 
 .project-bg {
@@ -33,6 +49,16 @@
     position: relative;
     top: -500px;
     margin-bottom: -500px;
+}
+
+.project-screenshots-container {
+    position: relative;
+    z-index: 1;
+    margin-top: 60px;
+
+    @include screen-sm-min {
+        margin-top: 20px;
+    }
 }
 
 .project__touch-devices {
@@ -70,17 +96,25 @@
     &__next,
     &__prev {
         position: fixed;
-        top: 450px
+        top: 303px;
+        z-index: 0;
+
+        @include screen-sm-min {
+            top: 318px;
+        }
+
+        @include screen-md-min {
+            top: 460px;
+        }
     }
 
     &__next {
-        right: 35px;
+        right: 40px;
         text-align: left;
     }
 
     &__prev {
-        left: 35px;
+        left: 40px;
         text-align: right;
     }
-    
 }

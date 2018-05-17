@@ -20,7 +20,15 @@
 
 .main {
     padding-top: 58px;
-    margin-bottom: 360px;
+    margin-bottom: 230px;
+
+    @include screen-sm-min {
+        margin-bottom: 300px;
+    }
+
+    @include screen-md-min {
+        margin-bottom: 350px;
+    }
 }
 
 .app-wrapper {

@@ -124,7 +124,7 @@ class ProjectsPage extends Page {
                     <div className="project-thumbnail pos-rel">
                         <Link
                             to={ `/work/${project.uid}` }>
-                            <div className="project-thumbnail_img pos-rel z-index-1">
+                            <div className="project-thumbnail__img pos-rel z-index-1">
                                 <img
                                     src={ projectData.project_thumbnail.url }
                                     alt={ projectData.project_thumbnail.alt }
@@ -137,9 +137,9 @@ class ProjectsPage extends Page {
                                     alt={ projectData.project_thumbnail_2.alt }
                                 />
                             </div>
-                            <div className="project-thumbnail_hover width-100 height-100 pos-abs pin-top-left">
+                            <div className="project-thumbnail__hover width-100 height-100 pos-abs pin-top-left">
                                 <div className="width-100 pos-abs pin-bottom-left text-centre">
-                                    <h3 className="font-uppercase font-weight-bold remove-link-style colour-base m-b-lg">{ projectTitle }</h3>
+                                    <h3 className="project-thumbnail__title font-uppercase font-weight-bold remove-link-style colour-base">{ projectTitle }</h3>
                                 </div>
                             </div>
                         </Link>
