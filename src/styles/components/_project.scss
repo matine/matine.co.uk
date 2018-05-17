@@ -7,6 +7,17 @@
     height: 300px;
     background-position: center center;
     background-size: cover;
+    position: fixed;
+    top: 80px;
+    left: 15px;
+    width: calc(100% - 30px);
+    z-index: 1;
+}
+
+.project-wrap {
+    margin-top: 300px;
+    position: relative;
+    z-index: 2;
 }
 
 .project-bg {

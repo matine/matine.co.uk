@@ -5,6 +5,83 @@ import links from '../../constants/links';
 
 class Header extends Component {
     /**
+     * Component constructor.
+     *
+     * @param {Object} props
+     * @return {void}
+     */
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            weatherResponse: null,
+        };
+
+        this.fetchTheWeather();
+    }
+
+    /**
+     * Fetches the weather for London.
+     *
+     * @return {void}
+     */
+    fetchTheWeather() {
+        const url = 'http://api.wunderground.com/api/d1d7592b6fb76038/geolookup/conditions/q/UK/London.json';
+
+        fetch(url, {
+                headers: {
+                    "Content-Type": "multipart/form-data; charset=utf-8"
+                }
+            })
+            .then(res => res.json())
+            .then(response => {
+                this.setState({
+                    weatherResponse: response,
+                });
+            })
+            .catch(err => {
+                this.setState({
+                    weatherResponse: null,
+                });
+            });
+    }
+
+    /**
+     * Renders the weather for London.
+     *
+     * @return {XML}
+     */
+    renderWeather() {
+        const {
+            weatherResponse,
+        } = this.state;
+
+        if (!weatherResponse) {
+            return null;
+        }
+
+        const location = weatherResponse['location']['city'];
+        const temp_c = weatherResponse['current_observation']['temp_c'];
+        const weather = weatherResponse['current_observation']['weather'];
+        const weatherNoSpaces = weather.toLowerCase().replace(/\s/g, '');
+        const icon = `http://icons.wxug.com/i/c/i/${weatherNoSpaces}.gif`;
+        const londonToday = `${location} today is:`;
+        const theWeather = `${weather} and ${temp_c} °C`;
+
+        return (
+            <div>
+                <div className="weather">
+                    <img src={ icon } className="weather__icon" />
+                    <p className="weather__text font-size-xs font-weight-bold">{ londonToday } { theWeather }</p>
+                </div>
+                <div className="weather--inverted">
+                    <p className="weather--inverted__text font-size-sm font-weight-bold"><span className="font-size-lg">👻</span></p>
+                </div>
+            </div>
+        );
+    }
+
+    /**
      * Renders the component.
      *
      * @return {XML}
@@ -15,7 +92,7 @@ class Header extends Component {
                 <div className="p-h-md">
                     <div className="grid grid--v-gutter-none">
                         <div className="grid__col grid__col-md-4 hidden block-md">
-                            <p>This will be the weather</p>
+                            { this.renderWeather() }
                         </div>
                         <div className="grid__col grid__col-md-4 text-centre">
                             <Nav />

@@ -211,41 +211,45 @@ class ProjectPage extends Page {
         return (
             <div id="project-page">
                 <div className="project-banner" style={ bannerStyle }></div>
-                <div className="container">
-                    <div className="m-t-xxl">
-                        <h1 className="text-centre font-uppercase p-b-sm">{ projectContent.project_title[0].text }</h1>
-                        <div className="width-100 max-width-lg m-centre">{ RichText.render(projectContent.project_main_text) }</div>
-                    </div>
-                </div>
-                <div className="project-bg">
-                    <div className="project-container container pos-rel">
-                        <img
-                            src={ projectContent.project_imac.url }
-                            alt={ projectContent.project_imac.alt }
-                            className="project__imac block max-width-100 m-centre"
-                            onLoad={ this.handleImageLoaded.bind(this) }
-                        />
-                        <div className="project__touch-devices text-centre">
-                            <img
-                                src={ projectContent.project_ipad.url }
-                                alt={ projectContent.project_ipad.alt }
-                                className="project__ipad inline-block max-width-md"
-                                onLoad={ this.handleImageLoaded.bind(this) }
-                            />
-                            <img
-                                src={ projectContent.project_iphone.url }
-                                alt={ projectContent.project_iphone.alt }
-                                className="project__iphone inline-block max-width-sm"
-                                onLoad={ this.handleImageLoaded.bind(this) }
-                            />
+                <div className="project-wrap">
+                    <div className="bg-texture">
+                        <div className="container">
+                            <div className="p-t-xxl">
+                                <h1 className="text-centre font-uppercase p-b-sm">{ projectContent.project_title[0].text }</h1>
+                                <div className="width-100 max-width-lg m-centre">{ RichText.render(projectContent.project_main_text) }</div>
+                            </div>
                         </div>
-                    </div>
-                    <div className="container m-t-md p-b-xxl">
-                        { this.renderProjectScreenshotCarousel() }
-                    </div>
-                    <div className="projects-nav remove-link-styles font-size-xl">
-                        <div className="projects-nav__prev">{ prevProject ? this.renderProjectLink(prevProject, '←') : null }</div>
-                        <div className="projects-nav__next">{ nextProject ? this.renderProjectLink(nextProject, '→') : null }</div>
+                        <div className="project-bg">
+                            <div className="project-container container pos-rel">
+                                <img
+                                    src={ projectContent.project_imac.url }
+                                    alt={ projectContent.project_imac.alt }
+                                    className="project__imac block max-width-100 m-centre"
+                                    onLoad={ this.handleImageLoaded.bind(this) }
+                                />
+                                <div className="project__touch-devices text-centre">
+                                    <img
+                                        src={ projectContent.project_ipad.url }
+                                        alt={ projectContent.project_ipad.alt }
+                                        className="project__ipad inline-block max-width-md"
+                                        onLoad={ this.handleImageLoaded.bind(this) }
+                                    />
+                                    <img
+                                        src={ projectContent.project_iphone.url }
+                                        alt={ projectContent.project_iphone.alt }
+                                        className="project__iphone inline-block max-width-sm"
+                                        onLoad={ this.handleImageLoaded.bind(this) }
+                                    />
+                                </div>
+                            </div>
+                            <div className="container m-t-md p-b-xxl">
+                                { this.renderProjectScreenshotCarousel() }
+                            </div>
+                            <div className="projects-nav remove-link-styles font-size-xl">
+                                <div className="projects-nav__prev">{ prevProject ? this.renderProjectLink(prevProject, '←') : null }</div>
+                                <div className="projects-nav__next">{ nextProject ? this.renderProjectLink(nextProject, '→') : null }</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
