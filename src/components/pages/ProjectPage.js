@@ -19,6 +19,7 @@ class ProjectPage extends Page {
             projectUid: this.props.match.params.uid,
             projectContent: null,
             numImagesLoaded: 0,
+            minNumOfImages: 0,
         }
 
         props.setTheme('default');
@@ -36,6 +37,7 @@ class ProjectPage extends Page {
             this.setState({
                 projectUid: props.match.params.uid,
                 numImagesLoaded: 0,
+                minNumOfImages: 0,
             }, () => this.getProjectContent());
         }
     }
@@ -56,6 +58,22 @@ class ProjectPage extends Page {
     }
 
     /**
+     * Count minimum amount of images to load the page.
+     *
+     * @return {void}
+     */
+    countMinNumOfImages() {
+        const projectContent = this.state.projectContent.data;
+        let minNumOfImages = 0;
+
+        projectContent.project_imac.url ? minNumOfImages += 1 : minNumOfImages = minNumOfImages;
+        projectContent.project_ipad.url ? minNumOfImages += 1 : minNumOfImages = minNumOfImages;
+        projectContent.project_iphone.url ? minNumOfImages += 1 : minNumOfImages = minNumOfImages;
+
+        this.setState({ minNumOfImages });
+    }
+
+    /**
      * Handles when an images are all loaded.
      *
      * @return {void}
@@ -67,9 +85,8 @@ class ProjectPage extends Page {
 
         const {
             projectContent,
+            minNumOfImages,
         } = this.state;
-
-        const minNumOfImages = 3;
 
         this.setState({ numImagesLoaded: this.state.numImagesLoaded += 1 });
 
@@ -88,7 +105,11 @@ class ProjectPage extends Page {
 
         projectsContent
             .filter(project => project.uid === this.state.projectUid)
-            .map((project, index) => this.setState({ projectContent: project }));
+            .map((project, index) => {
+                this.setState({
+                    projectContent: project,
+                }, () => this.countMinNumOfImages());
+            });
     }
 
     /**
@@ -215,6 +236,44 @@ class ProjectPage extends Page {
         const techStack = techStackContent ? <p><span className="font-weight-bold">Tech stack: </span>{ techStackContent }</p> : null;
         const visitWebsite = visitWebsiteContent ? <p><a href={ visitWebsiteContent } target="_blank">Visit website</a></p> : null;
 
+        let numOfImgs = 1;
+
+        projectContent.project_imac.url ? numOfImgs += 1 : numOfImgs = numOfImgs;
+        projectContent.project_ipad.url ? numOfImgs += 1 : numOfImgs = numOfImgs;
+        projectContent.project_iphone.url ? numOfImgs += 1 : numOfImgs = numOfImgs;
+
+        const imacImg = (
+            projectContent.project_imac.url ?
+                <img
+                    src={ projectContent.project_imac.url }
+                    alt={ projectContent.project_imac.alt }
+                    className="project__imac block max-width-100 m-centre"
+                    onLoad={ this.handleImageLoaded.bind(this) }
+                /> : null
+        );
+
+        const ipadImg = (
+            projectContent.project_ipad.url ?
+            <img
+                src={ projectContent.project_ipad.url }
+                alt={ projectContent.project_ipad.alt }
+                className="project__ipad inline-block max-width-md"
+                onLoad={ this.handleImageLoaded.bind(this) }
+            /> : null
+        );
+
+        const iphoneImg = (
+            projectContent.project_iphone.url ?
+            <img
+                src={ projectContent.project_iphone.url }
+                alt={ projectContent.project_iphone.alt }
+                className="project__iphone inline-block max-width-sm"
+                onLoad={ this.handleImageLoaded.bind(this) }
+            /> : null
+        );
+
+        console.log('numOfImgs', numOfImgs);
+
         return (
             <div id="project-page">
                 <div className="project-banner" style={ bannerStyle }></div>
@@ -235,25 +294,10 @@ class ProjectPage extends Page {
                         </div>
                         <div className="project-bg">
                             <div className="project-container container pos-rel">
-                                <img
-                                    src={ projectContent.project_imac.url }
-                                    alt={ projectContent.project_imac.alt }
-                                    className="project__imac block max-width-100 m-centre"
-                                    onLoad={ this.handleImageLoaded.bind(this) }
-                                />
+                                { imacImg }
                                 <div className="project__touch-devices text-centre">
-                                    <img
-                                        src={ projectContent.project_ipad.url }
-                                        alt={ projectContent.project_ipad.alt }
-                                        className="project__ipad inline-block max-width-md"
-                                        onLoad={ this.handleImageLoaded.bind(this) }
-                                    />
-                                    <img
-                                        src={ projectContent.project_iphone.url }
-                                        alt={ projectContent.project_iphone.alt }
-                                        className="project__iphone inline-block max-width-sm"
-                                        onLoad={ this.handleImageLoaded.bind(this) }
-                                    />
+                                    { ipadImg }
+                                    { iphoneImg }
                                 </div>
                             </div>
                             <div className="project-screenshots-container container p-b-xxl">
