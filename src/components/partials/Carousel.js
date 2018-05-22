@@ -33,7 +33,9 @@ class Carousel extends React.PureComponent {
 
         if (items.length < 2) {
             return (
-                items[0]
+                <div className="m-centre max-width-screenshots width-100">
+                    { items[0] }
+                </div>
             );
         }
 

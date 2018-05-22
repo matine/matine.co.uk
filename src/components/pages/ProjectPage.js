@@ -34,12 +34,22 @@ class ProjectPage extends Page {
         super.componentWillReceiveProps(props);
 
         if (props.match.params.uid !== this.state.projectUid) {
-            this.setState({
-                projectUid: props.match.params.uid,
-                numImagesLoaded: 0,
-                minNumOfImages: 0,
-            }, () => this.getProjectContent());
+            this.onPageChange(props.match.params.uid);
         }
+    }
+
+    /**
+     * Things to do when the page changes.
+     *
+     * @param {String} newPageUid
+     * @return {void}
+     */
+    onPageChange(newPageUid) {
+        this.setState({
+            projectUid: newPageUid,
+            numImagesLoaded: 0,
+            minNumOfImages: 0,
+        }, () => this.getProjectContent());
     }
 
     /**
@@ -195,7 +205,11 @@ class ProjectPage extends Page {
             );
         });
 
-        return <Carousel items={ carouselItems } />;
+        if (this.props.ui.imgsLoading) {
+            return null;
+        }
+
+        return <Carousel items={ carouselItems } initialSlide={ 0 } />;
     }
 
     /**
@@ -247,7 +261,7 @@ class ProjectPage extends Page {
                 <img
                     src={ projectContent.project_imac.url }
                     alt={ projectContent.project_imac.alt }
-                    className="project__imac block max-width-100 m-centre"
+                    className="project__imac block m-centre"
                     onLoad={ this.handleImageLoaded.bind(this) }
                 /> : null
         );
@@ -257,7 +271,7 @@ class ProjectPage extends Page {
             <img
                 src={ projectContent.project_ipad.url }
                 alt={ projectContent.project_ipad.alt }
-                className="project__ipad inline-block max-width-md"
+                className="project__ipad inline-block"
                 onLoad={ this.handleImageLoaded.bind(this) }
             /> : null
         );
@@ -267,12 +281,10 @@ class ProjectPage extends Page {
             <img
                 src={ projectContent.project_iphone.url }
                 alt={ projectContent.project_iphone.alt }
-                className="project__iphone inline-block max-width-sm"
+                className="project__iphone inline-block"
                 onLoad={ this.handleImageLoaded.bind(this) }
             /> : null
         );
-
-        console.log('numOfImgs', numOfImgs);
 
         return (
             <div id="project-page">

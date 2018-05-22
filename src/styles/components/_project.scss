@@ -73,6 +73,11 @@
     }
 }
 
+.project__imac {
+    width: 100%;
+    max-width: 800px;
+}
+
 .project__ipad {
     width: 40%;
 
@@ -101,6 +106,7 @@
 
         @include screen-sm-min {
             top: 318px;
+            z-index: 1;
         }
 
         @include screen-md-min {
