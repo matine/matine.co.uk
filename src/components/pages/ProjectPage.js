@@ -203,10 +203,17 @@ class ProjectPage extends Page {
         const projectContent = this.state.projectContent.data;
         const prevProject = this.getPrevProject();
         const nextProject = this.getNextProject();
+        const roleContent = projectContent.project_role[0] ? projectContent.project_role[0].text : null;
+        const techStackContent = projectContent.project_tech_stack[0] ? projectContent.project_tech_stack[0].text : null;
+        const visitWebsiteContent = projectContent.project_visit_website_link ? projectContent.project_visit_website_link.url : null;
 
         const bannerStyle = {
             backgroundImage: 'url(' + projectContent.project_banner.url + ')',
         };
+
+        const role = roleContent ? <p><span className="font-weight-bold">Role: </span>{ roleContent }</p> : null;
+        const techStack = techStackContent ? <p><span className="font-weight-bold">Tech stack: </span>{ techStackContent }</p> : null;
+        const visitWebsite = visitWebsiteContent ? <p><a href={ visitWebsiteContent } target="_blank">Visit website</a></p> : null;
 
         return (
             <div id="project-page">
@@ -216,7 +223,14 @@ class ProjectPage extends Page {
                         <div className="container">
                             <div className="project-desc">
                                 <h1 className="text-centre font-uppercase p-b-sm">{ projectContent.project_title[0].text }</h1>
-                                <div className="width-100 max-width-lg m-centre">{ RichText.render(projectContent.project_main_text) }</div>
+                                <div className="width-100 max-width-lg m-centre">
+                                    { RichText.render(projectContent.project_main_text) }
+                                    <div className="m-t-md">
+                                        { role }
+                                        { techStack }
+                                        { visitWebsite }
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div className="project-bg">
