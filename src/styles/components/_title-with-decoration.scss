@@ -1,0 +1,16 @@
+// =============================================================================
+//  COMPONENTS - TITLE WITH DECORATION
+// =============================================================================
+
+.title-with-decoration {
+    position: relative;
+
+    &::before {
+        @include position(absolute, null null -5px 0);
+        content: '';
+        display: block;
+        width: 18px;
+        height: 5px;
+        background-color: $primary-colour;
+    }
+}

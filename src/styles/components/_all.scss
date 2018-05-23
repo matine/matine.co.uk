@@ -10,16 +10,4 @@
 @import '_hero';
 @import '_carousel';
 @import '_browser-window';
-
-.title-with-decoration {
-    position: relative;
-
-    &::before {
-        @include position(absolute, null null -5px 0);
-        content: '';
-        display: block;
-        width: 18px;
-        height: 5px;
-        background-color: $primary-colour;
-    }
-}
+@import '_title-with-decoration';
