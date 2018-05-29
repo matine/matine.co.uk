@@ -6,6 +6,12 @@
     @include remove-list-styles;
 }
 
+.lists--no-styles {
+    ul {
+        @include remove-list-styles;
+    }
+}
+
 .list-inline {
     @include remove-list-styles;
     @include inline-list-gutter(10px);

@@ -31,6 +31,80 @@ class AboutPage extends Page {
     }
 
     /**
+     * Renders the intro text.
+     *
+     * @return {XML}
+     */
+    renderIntro() {
+        const globalContent = this.props.content.global;
+        const introTitle = globalContent.me_intro_title;
+        const introText = globalContent.me_intro_text;
+
+        if (!introTitle && !introText) {
+            return null;
+        }
+
+        return (
+            <div className="cv__section">
+                <img
+                    src={ globalContent.about_me_image.url }
+                    alt={ globalContent.about_me_image.alt }
+                    className="me"
+                    onLoad={ this.handleImageLoaded }
+                />
+                { introTitle && <h3 className="title-with-decoration font-uppercase font-size-lg font-weight-regular p-b-xxs m-b-md">{ introTitle[0].text }</h3> }
+                { introText && RichText.render(introText) }
+            </div>
+        );
+    }
+
+    /**
+     * Renders the skills text.
+     *
+     * @return {XML}
+     */
+    renderSkills() {
+        const globalContent = this.props.content.global;
+        const skillsTitle = globalContent.me_skills_title;
+        const skillsText = globalContent.me_skills_text;
+
+        if (!skillsTitle && !skillsText) {
+            return null;
+        }
+
+        return (
+            <div className="cv__section">
+                { skillsTitle && <h3 className="title-with-decoration font-uppercase font-size-lg font-weight-regular p-b-xxs m-b-md">{ skillsTitle[0].text }</h3> }
+                <div className="lists--no-styles font-size-sm">
+                    { skillsText && RichText.render(skillsText) }
+                </div>
+            </div>
+        );
+    }
+
+    /**
+     * Renders the interests text.
+     *
+     * @return {XML}
+     */
+    renderInterests() {
+        const globalContent = this.props.content.global;
+        const interestsTitle = globalContent.me_interests_title;
+        const interestsText = globalContent.me_interests_text;
+
+        if (!interestsTitle && !interestsText) {
+            return null;
+        }
+
+        return (
+            <div className="cv__section">
+                { interestsTitle && <h3 className="title-with-decoration font-uppercase font-size-lg font-weight-regular p-b-xxs m-b-md">{ interestsTitle[0].text }</h3> }
+                { interestsText && RichText.render(interestsText) }
+            </div>
+        );
+    }
+
+    /**
      * Renders the component.
      *
      * @return {XML}
@@ -45,54 +119,9 @@ class AboutPage extends Page {
         return (
             <div id="about-page" className="container p-b-xxl">
                 <div className="max-width-text m-centre p-t-lg p-b-xxl cv">
-                    <div className="cv__section">
-                        <img
-                            src={ globalContent.about_me_image.url }
-                            alt={ globalContent.about_me_image.alt }
-                            className="me"
-                            onLoad={ this.handleImageLoaded }
-                        />
-                        <h3 className="title-with-decoration font-uppercase font-size-lg font-weight-regular p-b-xxs m-b-md">$Whoami</h3>
-                        <div>
-                            <p>A sociable, creative and highly motivated frontend developer with 5 years experience in building websites and more recently LOVING working with React JS / React Native and Redux to build apps.</p>
-                            <p>With great appreciation for beautiful design and an excellent eye for detail, I get thrills out of producing polished, responsive builds that work elegantly at every screen size. Clean and structured code also makes me very happy.</p>
-                        </div>
-                    </div>
-                    <div className="cv__section">
-                        <h3 className="title-with-decoration font-uppercase font-size-lg font-weight-regular p-b-xxs m-b-md">I got some skills</h3>
-                        <div className="cv__subsection">
-                            <h4 className="p-b-xs font-size-lg">Good working knowledge</h4>
-                            <ul className="list--no-styles font-size-sm">
-                                <li><strong>Frontend core → </strong> HTML(5), CSS(3), JavaScript (ECMAScript 6)</li>
-                                <li><strong>JS frameworks → </strong>React JS, React Native, Redux, jQuery</li>
-                                <li><strong>CSS pre-processors and methodologies → </strong> SASS, BEM, SMACSS, Atomic/Functional CSS</li>
-                                <li><strong>Templating → </strong> Handlebars, Twig</li>
-                                <li><strong>Content management → </strong> Prismic headless CMS, Craft CMS, WordPress</li>
-                                <li><strong>Package managers and task runners → </strong> NPM, Yarn, Gulp, Grunt, Webpack, Browserify</li>
-                                <li><strong>Version control → </strong>GIT, Github, Bitbucket, PR reviews</li>
-                                <li><strong>Design and UX → </strong>Photoshop, Illustrator, InDesign</li>
-                                <li><strong>Agile principles → </strong>Jira, Trello, Kanban, scrum, daily standups, tech specs, sprint planning, estimations</li>
-                            </ul>
-                        </div>
-                        <div className="cv__subsection">
-                            <h4 className="p-b-xs font-size-lg">Some working knowledge</h4>
-                            <ul className="list--no-styles font-size-sm">
-                                <li><strong>Backend → </strong>PHP</li>
-                                <li><strong>Frameworks → </strong>Ruby on Rails, Angular JS 1</li>
-                                <li><strong>Native mobile → </strong>Swift, XCode</li>
-                                <li><strong>Testing → </strong> Jest, Enzyme</li>
-                                <li><strong>Design and UX → </strong>Sketch, InVision</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="cv__section">
-                        <h3 className="title-with-decoration font-uppercase font-size-lg font-weight-regular p-b-xxs m-b-md">I also do other things</h3>
-                        <div>
-                            <p>I am a London original with a very French sounding name. Having many interests, I find I'm at my happiest when I'm learning something new or making something great!</p>
-                            <p>When I'm not making codes, I make things with my hands. From DIY to some more sofisticated woodwork (ask to see the very impressive chest of drawers I built). I also dabble in eco building and permaculture design and am partial to a spot of life drawing or making a clay pot.</p>
-                            <p>Dancing is another thing I can't get enough of. Right now Salsa and Latin Hustle are the favourites.</p>
-                        </div>
-                    </div>
+                    { this.renderIntro() }
+                    { this.renderSkills() }
+                    { this.renderInterests() }
                     <div className="cv__section">
                         <p>View my full <Link to={ `/cv` }>CV</Link></p>
                         <p>Mail me <a href="mailto:matine.chabrier@gmail.com" target="blank">matine.chabrier@gmail.com</a></p>
