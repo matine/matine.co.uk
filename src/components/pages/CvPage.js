@@ -45,7 +45,7 @@ class CvPage extends Page {
         return (
             <div className="cv__section">
                 { introTitle && <h3 className="title-with-decoration font-uppercase font-size-lg font-weight-regular p-b-xxs m-b-md">{ introTitle[0].text }</h3> }
-                <div className="font-size-xs">{ introText && RichText.render(introText) }</div>
+                <div className="font-size-sm">{ introText && RichText.render(introText) }</div>
             </div>
         );
     }
@@ -65,11 +65,85 @@ class CvPage extends Page {
         }
 
         return (
-            <div className="cv__section">
+            <div className="cv__section cv__section--skills">
                 { skillsTitle && <h3 className="title-with-decoration font-uppercase font-size-lg font-weight-regular p-b-xxs m-b-md">{ skillsTitle[0].text }</h3> }
-                <div className="lists--no-styles font-size-sm">
+                <div className="lists--no-styles font-size-xs">
                     { skillsText && RichText.render(skillsText) }
                 </div>
+            </div>
+        );
+    }
+
+    /**
+     * Renders the employments list.
+     *
+     * @return {XML}
+     */
+    renderEmployments() {
+        const globalContent = this.props.content.global;
+        const employmentsTitle = globalContent.me_employment_title;
+        const employmentsList = globalContent.me_employments;
+
+        if (!employmentsList && !employmentsTitle) {
+            return null;
+        }
+
+        const renderEmployments = employmentsList.map((element, index) => {
+            const employmentDate = element.me_employment_date;
+            const employmentTitle = element.me_employment_title;
+            const employmentDesc = element.me_employment_description;
+            const pageBreak = element.me_employment_page_break;
+
+            return (
+                <div key={ index } className="cv__subsection">
+                    { employmentDate && <h4 className="p-b-none font-size-xxs font-uppercase colour-light">{ employmentDate[0].text }</h4> }
+                    { employmentTitle && <h4 className="font-size-md p-b-xxs">{ employmentTitle[0].text }</h4> }
+                    { employmentDesc && RichText.render(employmentDesc) }
+                    { pageBreak && <div className="print-page-break"></div> }
+                </div>
+            );
+        });
+
+        return (
+            <div className="cv__section">
+                { employmentsTitle && <h3 className="title-with-decoration font-uppercase font-size-lg font-weight-regular p-b-xxs m-b-md">{ employmentsTitle[0].text }</h3> }
+                { renderEmployments }
+            </div>
+        );
+    }
+
+    /**
+     * Renders the educations list.
+     *
+     * @return {XML}
+     */
+    renderEducations() {
+        const globalContent = this.props.content.global;
+        const educationsTitle = globalContent.me_education_title;
+        const educationsList = globalContent.me_educations;
+
+        if (!educationsList && !educationsTitle) {
+            return null;
+        }
+
+        const renderEducations = educationsList.map((element, index) => {
+            const educationDate = element.me_education_date;
+            const educationTitle = element.me_education_title1;
+            const educationDesc = element.me_education_description;
+
+            return (
+                <div key={ index } className="cv__subsection">
+                    { educationDate && <h4 className="p-b-none font-size-xxs font-uppercase colour-light">{ educationDate[0].text }</h4> }
+                    { educationTitle && <h4 className="font-size-md p-b-xxs">{ educationTitle[0].text }</h4> }
+                    { educationDesc && RichText.render(educationDesc) }
+                </div>
+            );
+        });
+
+        return (
+            <div className="cv__section">
+                { educationsTitle && <h3 className="title-with-decoration font-uppercase font-size-lg font-weight-regular p-b-xxs m-b-md">{ educationsTitle[0].text }</h3> }
+                { renderEducations }
             </div>
         );
     }
@@ -91,7 +165,7 @@ class CvPage extends Page {
         return (
             <div className="cv__section">
                 { interestsTitle && <h3 className="title-with-decoration font-uppercase font-size-lg font-weight-regular p-b-xxs m-b-md">{ interestsTitle[0].text }</h3> }
-                <div className="font-size-xs">{ interestsText && RichText.render(interestsText) }</div>
+                <div className="font-size-sm">{ interestsText && RichText.render(interestsText) }</div>
             </div>
         );
     }
@@ -125,65 +199,8 @@ class CvPage extends Page {
                     </div>
                     { this.renderIntro() }
                     { this.renderSkills() }
-                    <div className="cv__section">
-                        <h3 className="title-with-decoration font-uppercase font-size-lg font-weight-regular p-b-xxs m-b-md">I've been around</h3>
-                        <div className="cv__subsection">
-                            <h4 className="p-b-none font-size-xxs font-uppercase colour-light">March 2017 - August 2018</h4>
-                            <h4 className="font-size-md p-b-xxs">Pod Point → Frontend web/app developer</h4>
-                            <p>Projects included... UI Toolkit, Craft CMS website, Checkout React web app, React Native app.</p>
-                        </div>
-                        <div className="cv__subsection">
-                            <h4 className="p-b-none font-size-xxs font-uppercase colour-light">January 2015 - March 2017</h4>
-                            <h4 className="font-size-md p-b-xxs">iris Worldwide → Frontend web developer</h4>
-                            <p>Clients included... BMW Mini, Samsung, Dominos, Adidas, Nectar, Shell, Value Retail.</p>
-                        </div>
-                        <div className="cv__subsection">
-                            <h4 className="p-b-none font-size-xxs font-uppercase colour-light">April 2013 - January 2015</h4>
-                            <h4 className="font-size-md p-b-xxs">Karmarama → Frontend web developer</h4>
-                            <p>Clients included... BT, Honda, Costa, B&amp;Q, British Gas, Fairtrade, Jus Rol, Two Fingers Brewing.</p>
-                        </div>
-                        <div className="cv__subsection">
-                            <h4 className="p-b-none font-size-xxs font-uppercase colour-light">June 2012 - April 2013</h4>
-                            <h4 className="font-size-md p-b-xxs">TBWA\PW → Creative artworker</h4>
-                            <p>Clients included... Glaxosmithkline, Pfizer, Roche, Q-Med, Actelion, and Abbot.</p>
-                        </div>
-                        <div className="cv__subsection">
-                            <h4 className="p-b-none font-size-xxs font-uppercase colour-light">April 2011 - June 2012</h4>
-                            <h4 className="font-size-md p-b-xxs">Freelance for Tag Worldwide in CHI &amp; Partners, Krow, Brooklyn Brothers, Anomaly → Artworker</h4>
-                            <p>Clients included... British Gas, TalkTalk, The Times, Argos, Lexus, Fiat, RBS, Anchor, Samsung and Converse.</p>
-                        </div>
-                        <div className="cv__subsection">
-                            <h4 className="p-b-none font-size-xxs font-uppercase colour-light">September 2009 - April 2011</h4>
-                            <h4 className="font-size-md p-b-xxs">Sports Management Group → Magazine designer</h4>
-                            <p>Clients included... Sony, Ferarri, Deutsche Bank, Swiss Watch.</p>
-                        </div>
-                        <div className="cv__subsection">
-                            <h4 className="p-b-none font-size-xxs font-uppercase colour-light">March 2009 - August 2009</h4>
-                            <h4 className="font-size-md">Principality Group → PA to Group CEO</h4>
-                        </div>
-                        <div className="cv__subsection">
-                            <h4 className="p-b-none font-size-xs font-uppercase colour-light">May 2008 - March 2009</h4>
-                            <h4 className="font-size-md">Freelance: Running Inc., Blur 1, Exposure, Benned Noir Films, Rainbow, Absolute, Partizan, Little Bird → Production Manager, Production Assistant, Runner</h4>
-                        </div>
-                    </div>
-                    <div className="cv__section">
-                        <h3 className="title-with-decoration font-uppercase font-size-lg font-weight-regular p-b-xxs m-b-md">I went to school</h3>
-                        <div className="cv__subsection">
-                            <h4 className="p-b-none font-size-xs font-uppercase colour-light">2011 - 2012</h4>
-                            <h4 className="font-size-md p-b-xxs">Greenwich University → MA Web Design &amp; Content Planning (Distinction)</h4>
-                            <p>Design for the web, Frontend development, PHP, Content Management Systems, Web Marketing</p>
-                        </div>
-                        <div className="cv__subsection">
-                            <h4 className="p-b-none font-size-xs font-uppercase colour-light">2005 - 2008</h4>
-                            <h4 className="font-size-md p-b-xxs">Southampton Solent University → BA Multimedia Design (2.1)</h4>
-                            <p>Web Design, Game Design, Animation, Moving Image, Film</p>
-                        </div>
-                        <div className="cv__subsection">
-                            <h4 className="p-b-none font-size-xs font-uppercase colour-light">2003 - 2005</h4>
-                            <h4 className="font-size-md p-b-xxs">City of Westminster College → AVCE Art &amp; Design (Merit)</h4>
-                            <p>Awarded £1000 prize for Best Digital Animation by Creative in the City Awards at SkillCity</p>
-                        </div>
-                    </div>
+                    { this.renderEmployments() }
+                    { this.renderEducations() }
                     { this.renderInterests() }
                 </div>
             </div>

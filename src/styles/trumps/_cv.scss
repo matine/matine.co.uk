@@ -16,6 +16,18 @@
         margin-bottom: $space-xl;
     }
 
+    &__section--skills {
+        h4 {
+            @include font-size-responsive($font-size-md-mobile, $font-size-md-desktop);
+            padding-bottom: .5em;
+            padding-top: 2em;
+
+            &:first-child {
+                padding-top: 0;
+            }
+        }
+    }
+
     &__subsection {
         margin-bottom: $space-lg;
     }
@@ -48,15 +60,22 @@
 }
 
 @media print {
+    @page {
+        size: auto;
+        margin: 0mm;
+        overflow: auto;
+    }
+
     body {
-      margin: 0mm!important;
+        margin: 10mm 0mm 10mm 0mm!important;
     }
 
     .b-a-frame {
         border-width: 0!important;
     }
 
-    .nav {
+    .nav,
+    footer {
         display: none;
     }
 
@@ -67,6 +86,7 @@
 
         &__subsection {
             margin-bottom: $space-md;
+            page-break-after: auto;
         }
 
         .hero {
@@ -110,8 +130,8 @@
             }
         }
 
-        .print-page-break {
-            page-break-after: always;
-        }
+        // .print-page-break {
+        //     page-break-after: always;
+        // }
     }
 }

@@ -53,7 +53,7 @@ class AboutPage extends Page {
                     onLoad={ this.handleImageLoaded }
                 />
                 { introTitle && <h3 className="title-with-decoration font-uppercase font-size-lg font-weight-regular p-b-xxs m-b-md">{ introTitle[0].text }</h3> }
-                { introText && RichText.render(introText) }
+                <div className="font-size-md">{ introText && RichText.render(introText) }</div>
             </div>
         );
     }
@@ -73,9 +73,9 @@ class AboutPage extends Page {
         }
 
         return (
-            <div className="cv__section">
+            <div className="cv__section cv__section--skills">
                 { skillsTitle && <h3 className="title-with-decoration font-uppercase font-size-lg font-weight-regular p-b-xxs m-b-md">{ skillsTitle[0].text }</h3> }
-                <div className="lists--no-styles font-size-sm">
+                <div className="lists--no-styles font-size-xs">
                     { skillsText && RichText.render(skillsText) }
                 </div>
             </div>
@@ -99,7 +99,7 @@ class AboutPage extends Page {
         return (
             <div className="cv__section">
                 { interestsTitle && <h3 className="title-with-decoration font-uppercase font-size-lg font-weight-regular p-b-xxs m-b-md">{ interestsTitle[0].text }</h3> }
-                { interestsText && RichText.render(interestsText) }
+                <div className="font-size-md">{ interestsText && RichText.render(interestsText) }</div>
             </div>
         );
     }
@@ -117,7 +117,7 @@ class AboutPage extends Page {
         }
 
         return (
-            <div id="about-page" className="container p-b-xxl">
+            <div id="about-page" className="about-page container p-b-xxl">
                 <div className="max-width-text m-centre p-t-lg p-b-xxl cv">
                     { this.renderIntro() }
                     { this.renderSkills() }
