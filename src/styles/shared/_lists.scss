@@ -14,3 +14,7 @@
 .list-inline--xs {
     @include inline-list-gutter(5px);
 }
+
+.list--circle-style {
+    list-style: circle;
+}

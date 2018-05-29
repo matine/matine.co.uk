@@ -1,7 +1,18 @@
 // =============================================================================
-//  BASE - IMPORT ALL
+//  BASE - TYPOGRAPHY
 // =============================================================================
 
-@import '_normalize';
-@import '_typography';
-@import '_button';
+// Remove rid of all default stying
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+ul {
+    padding-left: 1.5em;
+}

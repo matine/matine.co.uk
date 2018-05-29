@@ -15,6 +15,10 @@ a {
 }
 
 // Font sizes
+.font-size-xxs {
+    font-size: $font-size-xxs;
+}
+
 .font-size-xs {
     @include font-size-responsive($font-size-xs-mobile, $font-size-xs-desktop);
 }

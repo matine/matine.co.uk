@@ -63,8 +63,11 @@ class Header extends Component {
         const location = weatherResponse['location']['city'];
         const temp_c = weatherResponse['current_observation']['temp_c'];
         const weather = weatherResponse['current_observation']['weather'];
-        const weatherNoSpaces = weather.toLowerCase().replace(/\s/g, '');
-        const icon = `http://icons.wxug.com/i/c/i/${weatherNoSpaces}.gif`;
+        let weatherNoSpaces = weather.toLowerCase().replace(/\s/g, '');
+        if (weatherNoSpaces === 'scatteredclouds') {
+            weatherNoSpaces = 'partlycloudy';
+        }
+        const icon = `http://icons.wxug.com/i/c/i/${weatherNoSpaces}.gif`; 
         const londonToday = `${location} today is:`;
         const theWeather = `${weather} and ${temp_c} °C`;
 
