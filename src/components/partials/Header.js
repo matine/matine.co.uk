@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Nav from '../ui/Nav';
 import Weather from './Weather';
-import { LinkedInIcon, TwitterIcon, GithubIcon, EmailIcon, PinterestIcon } from '../ui';
+import { LinkedInIcon, GithubIcon, EmailIcon } from '../ui';
 import links from '../../constants/links';
 
 class Header extends Component {
@@ -25,17 +25,17 @@ class Header extends Component {
                             <ul className="remove-link-styles remove-list-styles list-inline list-inline--xs float-right">
                                 <li>
                                     <a href={ links.linkedIn } className="icon-colour-base" target="blank">
-                                        <LinkedInIcon size="25" />
+                                        <LinkedInIcon size={ 25 } />
                                     </a>
                                 </li>
                                 <li>
                                     <a href={ links.email } className="icon-colour-base" target="blank">
-                                        <EmailIcon size="25" />
+                                        <EmailIcon size={ 25 } />
                                     </a>
                                 </li>
                                 <li>
                                     <a href={ links.github } className="icon-colour-base" target="blank">
-                                        <GithubIcon size="25" />
+                                        <GithubIcon size={ 25 } />
                                     </a>
                                 </li>
                             </ul>

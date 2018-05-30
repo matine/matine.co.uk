@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { RichText } from 'prismic-reactjs';
 import { Link } from 'react-router-dom';
@@ -117,15 +116,18 @@ class AboutPage extends Page {
         }
 
         return (
-            <div id="about-page" className="about-page container p-b-xxl">
-                <div className="max-width-text m-centre p-t-lg p-b-xxl cv">
-                    { this.renderIntro() }
-                    { this.renderSkills() }
-                    { this.renderInterests() }
-                    <div className="cv__section">
-                        <p>View my full <Link to={ `/cv` }>CV</Link></p>
-                        <p>Mail me <a href="mailto:matine.chabrier@gmail.com" target="blank">matine.chabrier@gmail.com</a></p>
-                        <p>Peak at my code on <a href="https://github.com/matine/matine.co.uk" target="blank">Github</a></p>
+            <div id="about-page">
+                <div className="about-page container p-b-xxl">
+                    <div className="max-width-text m-centre p-t-lg p-b-xxl cv">
+                        { this.renderIntro() }
+                        { this.renderSkills() }
+                        { this.renderInterests() }
+                        <div className="cv__section">
+                            <p>View my full <Link to={ `/cv` }>CV</Link></p>
+                            <p>Mail me <a href="mailto:matine.chabrier@gmail.com" target="blank">matine.chabrier@gmail.com</a></p>
+                            <p>Peak at my code on <a href="https://github.com/matine/matine.co.uk" target="blank">Github</a></p>
+                            <p>See my favourite <Link to={ `/places` }>places</Link></p>
+                        </div>
                     </div>
                 </div>
             </div>

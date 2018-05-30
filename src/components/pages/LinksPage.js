@@ -1,20 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { RichText } from 'prismic-reactjs';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
 
 class LinksPage extends Page {
-    /**
-     * Component constructor.
-     *
-     * @param {Object} props
-     */
-    constructor(props) {
-        super(props);
-
-    }
-
     /**
      * Things to do when the component recieves props.
      *

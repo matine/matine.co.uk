@@ -5,6 +5,7 @@ import AboutPage from './pages/AboutPage';
 import ProjectsPage from './pages/ProjectsPage';
 import ProjectPage from './pages/ProjectPage';
 import CvPage from './pages/CvPage';
+import PlacesPage from './pages/PlacesPage';
 
 class Routing extends React.Component {
     /**
@@ -40,6 +41,10 @@ class Routing extends React.Component {
                 <Route
                     path='/cv'
                     component={ CvPage }
+                />
+                <Route
+                    path='/places'
+                    component={ PlacesPage }
                 />
             </Switch>
         );

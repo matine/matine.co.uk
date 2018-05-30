@@ -1,8 +1,5 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { RichText } from 'prismic-reactjs';
 import * as actions from '../../state/actions';
 
 export class Page extends Component {

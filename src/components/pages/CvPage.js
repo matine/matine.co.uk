@@ -1,20 +1,10 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import { connect } from 'react-redux';
 import { RichText } from 'prismic-reactjs';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
 import SunIcon from '../ui/icons/SunIcon';
 
 class CvPage extends Page {
-    /**
-     * Component constructor.
-     *
-     * @param {Object} props
-     */
-    constructor(props) {
-        super(props);
-    }
-
     /**
      * Things to do when the component recieves props.
      *
@@ -194,7 +184,7 @@ class CvPage extends Page {
                             <span>{ globalContent.surname[0].text }</span>
                         </h1>
                         <p className="hero__subtitle font-uppercase p-b-xxs">
-                            <span className="font-weight-bold">Frontend developer</span> → <span><a href="#">matine.co.uk</a> → <span><a href="#">matine.chabrier@gmail.com</a></span></span>
+                            <span className="font-weight-bold">Frontend developer</span> → <span><a href="http://matine.co.uk">matine.co.uk</a> → <span><a href="mailto:matine.chabrier@gmail.com">matine.chabrier@gmail.com</a></span></span>
                         </p>
                     </div>
                     { this.renderIntro() }

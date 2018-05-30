@@ -44,6 +44,8 @@ class App extends React.Component {
                             content.global = doc.data;
                         }
                         if (doc.type === 'project') content.projects.push(doc);
+
+                        return true;
                     });
                 }).then(response => {
                     content.projects.sort((a, b) => {

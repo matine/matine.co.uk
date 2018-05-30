@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { RichText } from 'prismic-reactjs';
 import { Link } from 'react-router-dom';
@@ -76,9 +75,9 @@ class ProjectPage extends Page {
         const projectContent = this.state.projectContent.data;
         let minNumOfImages = 0;
 
-        projectContent.project_imac.url ? minNumOfImages += 1 : minNumOfImages = minNumOfImages;
-        projectContent.project_ipad.url ? minNumOfImages += 1 : minNumOfImages = minNumOfImages;
-        projectContent.project_iphone.url ? minNumOfImages += 1 : minNumOfImages = minNumOfImages;
+        projectContent.project_imac.url && (minNumOfImages += 1);
+        projectContent.project_ipad.url && (minNumOfImages += 1);
+        projectContent.project_iphone.url && (minNumOfImages += 1);
 
         this.setState({ minNumOfImages });
     }
@@ -94,7 +93,6 @@ class ProjectPage extends Page {
         } = this.props;
 
         const {
-            projectContent,
             minNumOfImages,
         } = this.state;
 
@@ -119,6 +117,8 @@ class ProjectPage extends Page {
                 this.setState({
                     projectContent: project,
                 }, () => this.countMinNumOfImages());
+
+                return true;
             });
     }
 
@@ -129,7 +129,6 @@ class ProjectPage extends Page {
      */
     getPrevProject() {
         const projectsContent = this.props.content.projects;
-        const numberOfProjects = projectsContent.length;
         const currentProjectPos = projectsContent.map(project => project.uid).indexOf(this.props.match.params.uid);
 
         if (currentProjectPos > 0) {
@@ -252,9 +251,9 @@ class ProjectPage extends Page {
 
         let numOfImgs = 1;
 
-        projectContent.project_imac.url ? numOfImgs += 1 : numOfImgs = numOfImgs;
-        projectContent.project_ipad.url ? numOfImgs += 1 : numOfImgs = numOfImgs;
-        projectContent.project_iphone.url ? numOfImgs += 1 : numOfImgs = numOfImgs;
+        projectContent.project_imac.url && (numOfImgs += 1);
+        projectContent.project_ipad.url && (numOfImgs += 1);
+        projectContent.project_iphone.url && (numOfImgs += 1);
 
         const imacImg = (
             projectContent.project_imac.url ?

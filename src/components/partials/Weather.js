@@ -81,6 +81,7 @@ class Weather extends Component {
         const imageIcon = (
             <img
                 src={ icon }
+                alt={ weather }
                 className="weather__icon"
                 onLoad={ () => this.handleIconLoad() }
             />
@@ -94,7 +95,7 @@ class Weather extends Component {
                 </div>
                 <div className="weather--inverted">
                     <p className="weather--inverted__text font-size-sm font-weight-bold">
-                        <span className="font-size-lg">👻</span>
+                        <span role="img" aria-label="Ghost" className="font-size-lg">👻</span>
                     </p>
                 </div>
             </div>
