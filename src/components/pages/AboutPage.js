@@ -118,7 +118,6 @@ class AboutPage extends Page {
                             <p>View my full <Link to={ `/cv` }>CV</Link></p>
                             <p>Mail me <a href="mailto:matine.chabrier@gmail.com" target="blank">matine.chabrier@gmail.com</a></p>
                             <p>Peak at my code on <a href="https://github.com/matine/matine.co.uk" target="blank">Github</a></p>
-                            <p>See my favourite <Link to={ `/places` }>places</Link></p>
                         </div>
                     </div>
                 </div>
