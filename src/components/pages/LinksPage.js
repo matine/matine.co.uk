@@ -34,7 +34,7 @@ class LinksPage extends Page {
                 const linkContent = slice.items.map((link, linkIndex) => {
                     return (
                         <li key={ linkIndex } className="b-b-thin m-b-sm p-b-sm">
-                            <p className="p-b-xxs"><a href={ link.link_url.url } target="blank" className="remove-link-style font-weight-bold">{ link.link_name }</a></p>
+                            <p className="p-b-xxs font-size-xs font-uppercase"><a href={ link.link_url.url } target="blank" className="remove-link-style font-weight-bold">{ link.link_name } →</a></p>
                             <div className="font-size-xs">{ RichText.render(link.link_description) }</div>
                         </li>
                     );

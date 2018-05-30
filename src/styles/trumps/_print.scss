@@ -1,63 +1,6 @@
 // =============================================================================
-//  COMPONENTS - CV
+//  TRUMPS - PRINT
 // =============================================================================
-
-.cv {
-    position: relative;
-
-    .me {
-        @include position(absolute, 80px null null -180px);
-        border-radius: 50%;
-        max-width: 100%;
-        max-width: 150px;
-    }
-
-    &__section {
-        margin-bottom: $space-xl;
-    }
-
-    &__section--skills {
-        h4 {
-            @include font-size-responsive($font-size-md-mobile, $font-size-md-desktop);
-            padding-bottom: .5em;
-            padding-top: 2em;
-
-            &:first-child {
-                padding-top: 0;
-            }
-        }
-    }
-
-    &__subsection {
-        margin-bottom: $space-lg;
-    }
-
-    .description-text {
-        @include font-size-responsive($font-size-md-mobile, $font-size-md-desktop);
-    }
-
-    .hero {
-        padding: 100px 0 40px 0!important;
-
-        &__title {
-            font-size: 3rem;
-        }
-    
-        &__sun svg {
-            width: 3rem;
-        }
-    
-        &__subtitle {
-            font-size: $font-size-xs-desktop;
-        }
-    }
-
-    ul {
-        li {
-            padding-bottom: .5em;
-        }
-    }
-}
 
 @media print {
     @page {

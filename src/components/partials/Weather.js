@@ -82,15 +82,16 @@ class Weather extends Component {
             <img
                 src={ icon }
                 alt={ weather }
-                className="weather__icon"
+                className={`weather__icon ${weatherIconLoaded ? 'block' : 'hidden'}`}
                 onLoad={ () => this.handleIconLoad() }
+
             />
         );
 
         return (
             <div>
                 <div className="weather">
-                    { weatherIconLoaded && imageIcon }
+                    { imageIcon }
                     <p className="weather__text font-size-xs font-weight-bold">{ londonToday } { theWeather }</p>
                 </div>
                 <div className="weather--inverted">

@@ -30,6 +30,26 @@ class AboutPage extends Page {
     }
 
     /**
+     * Renders the image.
+     *
+     * @return {XML}
+     */
+    renderImage() {
+        const globalContent = this.props.content.global;
+
+        return (
+            <div className="m-b-lg">
+                <img
+                    src={ globalContent.about_me_image.url }
+                    alt={ globalContent.about_me_image.alt }
+                    className="me"
+                    onLoad={ this.handleImageLoaded }
+                />
+            </div>
+        );
+    }
+
+    /**
      * Renders the intro text.
      *
      * @return {XML}
@@ -45,12 +65,6 @@ class AboutPage extends Page {
 
         return (
             <div className="cv__section">
-                <img
-                    src={ globalContent.about_me_image.url }
-                    alt={ globalContent.about_me_image.alt }
-                    className="me"
-                    onLoad={ this.handleImageLoaded }
-                />
                 { introTitle && <h3 className="title-with-decoration font-uppercase font-size-lg font-weight-regular p-b-xxs m-b-md">{ introTitle[0].text }</h3> }
                 <div className="font-size-md">{ introText && RichText.render(introText) }</div>
             </div>
@@ -82,28 +96,6 @@ class AboutPage extends Page {
     }
 
     /**
-     * Renders the interests text.
-     *
-     * @return {XML}
-     */
-    renderInterests() {
-        const globalContent = this.props.content.global;
-        const interestsTitle = globalContent.me_interests_title;
-        const interestsText = globalContent.me_interests_text;
-
-        if (!interestsTitle && !interestsText) {
-            return null;
-        }
-
-        return (
-            <div className="cv__section">
-                { interestsTitle && <h3 className="title-with-decoration font-uppercase font-size-lg font-weight-regular p-b-xxs m-b-md">{ interestsTitle[0].text }</h3> }
-                <div className="font-size-md">{ interestsText && RichText.render(interestsText) }</div>
-            </div>
-        );
-    }
-
-    /**
      * Renders the component.
      *
      * @return {XML}
@@ -119,9 +111,9 @@ class AboutPage extends Page {
             <div id="about-page">
                 <div className="about-page container p-b-xxl">
                     <div className="max-width-text m-centre p-t-lg p-b-xxl cv">
+                        { this.renderImage() }
                         { this.renderIntro() }
                         { this.renderSkills() }
-                        { this.renderInterests() }
                         <div className="cv__section">
                             <p>View my full <Link to={ `/cv` }>CV</Link></p>
                             <p>Mail me <a href="mailto:matine.chabrier@gmail.com" target="blank">matine.chabrier@gmail.com</a></p>
