@@ -192,6 +192,8 @@ class CvPage extends Page {
                     { this.renderEmployments() }
                     { this.renderEducations() }
                     { this.renderInterests() }
+
+                    <p><a href="">Print me</a></p>
                 </div>
             </div>
         );

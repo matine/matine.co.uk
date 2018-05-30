@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as Scroll from 'react-scroll';
 import { RichText } from 'prismic-reactjs';
-import { LinkedInIcon, TwitterIcon, GithubIcon, EmailIcon, PinterestIcon } from '../ui';
+import { LinkedInIcon, TwitterIcon, GithubIcon, EmailIcon } from '../ui';
 import links from '../../constants/links';
 
 class Footer extends Component {
@@ -53,11 +53,6 @@ class Footer extends Component {
                         <li>
                             <a href={ links.email } className="icon-colour-primary" target="blank">
                                 <EmailIcon />
-                            </a>
-                        </li>
-                        <li>
-                            <a href={ links.pinterest } className="icon-colour-primary" target="blank">
-                                <PinterestIcon />
                             </a>
                         </li>
                     </ul>
