@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { RichText } from 'prismic-reactjs';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
 import SunIcon from '../ui/icons/SunIcon';
+import PrintIcon from '../ui/icons/PrintIcon';
 
 class CvPage extends Page {
     /**
@@ -193,7 +194,11 @@ class CvPage extends Page {
                     { this.renderEducations() }
                     { this.renderInterests() }
 
-                    <p><a href="">Print me</a></p>
+                    <div>
+                        <button>
+                            <PrintIcon />
+                        </button>
+                    </div>
                 </div>
             </div>
         );
