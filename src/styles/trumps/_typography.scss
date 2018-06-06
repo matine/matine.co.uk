@@ -12,6 +12,11 @@ a {
     color: inherit;
     text-decoration: none;
     border-bottom: 1px dashed $font-colour-base;
+
+    &:hover {
+        color: $highlight-colour;
+        border-bottom-color: $highlight-colour;
+    }
 }
 
 // Font sizes
@@ -77,6 +82,10 @@ h3 {
 
     a {
         border-bottom-color: $font-colour-base !important;
+
+        &:hover {
+            border-bottom-color: $font-colour-base!important;
+        }
     }
 }
 
@@ -85,6 +94,10 @@ h3 {
 
     a {
         border-bottom-color: $primary-colour !important;
+
+        &:hover {
+            border-bottom-color: $primary-colour!important;
+        }
     }
 }
 
@@ -94,6 +107,10 @@ h3 {
 
         a {
             border-bottom-color: $font-colour-base !important;
+
+            &:hover {
+                border-bottom-color: $highlight-colour!important;
+            }
         }
     }
 }

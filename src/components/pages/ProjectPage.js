@@ -315,8 +315,8 @@ class ProjectPage extends Page {
                                 { this.renderProjectScreenshotCarousel() }
                             </div>
                             <div className="projects-nav remove-link-styles font-size-xl">
-                                <div className="projects-nav__prev">{ prevProject ? this.renderProjectLink(prevProject, '←') : null }</div>
-                                <div className="projects-nav__next">{ nextProject ? this.renderProjectLink(nextProject, '→') : null }</div>
+                                <div className="projects-nav__prev hover">{ prevProject ? this.renderProjectLink(prevProject, '←') : null }</div>
+                                <div className="projects-nav__next hover">{ nextProject ? this.renderProjectLink(nextProject, '→') : null }</div>
                             </div>
                         </div>
                     </div>

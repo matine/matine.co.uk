@@ -24,17 +24,17 @@ class Header extends Component {
                         <div className="grid__col grid__col-md-4 hidden block-md">
                             <ul className="remove-link-styles remove-list-styles list-inline list-inline--xs float-right">
                                 <li>
-                                    <a href={ links.linkedIn } className="icon-colour-base" target="blank">
+                                    <a href={ links.linkedIn } className="icon-colour-base hover hover--big hover--header-social" target="blank">
                                         <LinkedInIcon size={ 25 } />
                                     </a>
                                 </li>
                                 <li>
-                                    <a href={ links.email } className="icon-colour-base" target="blank">
+                                    <a href={ links.email } className="icon-colour-base hover hover--big hover--header-social" target="blank">
                                         <EmailIcon size={ 25 } />
                                     </a>
                                 </li>
                                 <li>
-                                    <a href={ links.github } className="icon-colour-base" target="blank">
+                                    <a href={ links.github } className="icon-colour-base hover hover--big hover--header-social" target="blank">
                                         <GithubIcon size={ 25 } />
                                     </a>
                                 </li>

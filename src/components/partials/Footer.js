@@ -25,10 +25,10 @@ class Footer extends Component {
                     <div className="m-b-sm">
                         <button
                             onClick={ scroll.scrollToTop }
-                            className="colour-primary font-weight-bold font-uppercase"
+                            className="colour-primary font-weight-bold font-uppercase hover hover--arrow"
                         >
-                            <span className="block font-size-lg">&uarr;</span>
-                            <span>Top</span>
+                            <span className="block font-size-lg hover__text hover--arrow__arrow">&uarr;</span>
+                            <span className="hover__text">Top</span>
                         </button>
                     </div>
                     <div className="colour-primary m-b-md">
@@ -36,22 +36,22 @@ class Footer extends Component {
                     </div>
                     <ul className="remove-link-styles remove-list-styles list-inline list-inline--xs">
                         <li>
-                            <a href={ links.linkedIn } className="icon-colour-primary" target="blank">
+                            <a href={ links.linkedIn } className="icon-colour-primary hover hover--big hover--header-social" target="blank">
                                 <LinkedInIcon />
                             </a>
                         </li>
                         <li>
-                            <a href={ links.twitter } className="icon-colour-primary" target="blank">
+                            <a href={ links.twitter } className="icon-colour-primary hover hover--big hover--header-social" target="blank">
                                 <TwitterIcon />
                             </a>
                         </li>
                         <li>
-                            <a href={ links.github } className="icon-colour-primary" target="blank">
+                            <a href={ links.github } className="icon-colour-primary hover hover--big hover--header-social" target="blank">
                                 <GithubIcon />
                             </a>
                         </li>
                         <li>
-                            <a href={ links.email } className="icon-colour-primary" target="blank">
+                            <a href={ links.email } className="icon-colour-primary hover hover--big hover--header-social" target="blank">
                                 <EmailIcon />
                             </a>
                         </li>

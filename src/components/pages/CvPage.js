@@ -195,7 +195,7 @@ class CvPage extends Page {
                     { this.renderInterests() }
 
                     <div>
-                        <button>
+                        <button className="hover">
                             <PrintIcon />
                         </button>
                     </div>
