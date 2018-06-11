@@ -27,6 +27,7 @@
     }
 
     @include screen-md-min {
+        padding-top: 70px;
         margin-bottom: 320px;
     }
 }

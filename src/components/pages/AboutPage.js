@@ -6,14 +6,16 @@ import { Page, mapStateToProps, mapDispatchToProps } from './Page';
 
 class AboutPage extends Page {
     /**
-     * Component constructor.
+     * Things to do when the component recieves props.
      *
-     * @param {Object} props
+     * @return {void}
      */
-    constructor(props) {
-        super(props);
+    componentWillReceiveProps(props) {
+        super.componentWillReceiveProps(props);
 
-        this.handleImageLoaded = this.handleImageLoaded.bind(this);
+        setTimeout(() => {
+            this.props.setImgsLoading(false);
+        }, 1);
     }
 
     /**
@@ -39,12 +41,7 @@ class AboutPage extends Page {
 
         return (
             <div className="m-b-lg">
-                <img
-                    src={ globalContent.about_me_image.url }
-                    alt={ globalContent.about_me_image.alt }
-                    className="me"
-                    onLoad={ this.handleImageLoaded }
-                />
+                <div className="me" style={{ backgroundImage: `url(${globalContent.about_me_image.url})` }} />
             </div>
         );
     }
@@ -109,15 +106,17 @@ class AboutPage extends Page {
 
         return (
             <div id="about-page">
-                <div className="about-page container p-b-xxl">
-                    <div className="max-width-text m-centre p-t-lg p-b-xxl cv">
-                        { this.renderImage() }
-                        { this.renderIntro() }
-                        { this.renderSkills() }
-                        <div className="cv__section">
-                            <p>View my full <Link to={ `/cv` }>CV</Link></p>
-                            <p>Mail me <a href="mailto:matine.chabrier@gmail.com" target="blank">matine.chabrier@gmail.com</a></p>
-                            <p>Peak at my code on <a href="https://github.com/matine/matine.co.uk" target="blank">Github</a></p>
+                <div className="about-page p-b-xxl cv">
+                    { this.renderImage() }
+                    <div className="container p-t-sm">
+                        <div className="max-width-text m-centre">
+                            { this.renderIntro() }
+                            { this.renderSkills() }
+                            <div className="cv__section">
+                                <p>View my full <Link to={ `/cv` }>CV</Link></p>
+                                <p>Mail me <a href="mailto:matine.chabrier@gmail.com" target="blank">matine.chabrier@gmail.com</a></p>
+                                <p>Peak at my code on <a href="https://github.com/matine/matine.co.uk" target="blank">Github</a></p>
+                            </div>
                         </div>
                     </div>
                 </div>

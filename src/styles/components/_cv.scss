@@ -6,11 +6,9 @@
     position: relative;
 
     .me {
-        display: block;
-        margin: 0 auto;
-        border-radius: 50%;
-        max-width: 100%;
-        max-width: 200px;
+        background-size: 200px;
+        height: 200px;
+        width: 100%;
     }
 
     &__section {
@@ -38,7 +36,7 @@
     }
 
     .hero {
-        padding: 100px 0 40px 0!important;
+        padding: 60px 0 40px 0!important;
 
         &__title {
             font-size: 3rem;

@@ -3,14 +3,15 @@
 // =============================================================================
 
 .hero {
-    padding: rem(100) 0 rem(50) 0;
+    padding: rem(120) 0 rem(30) 0;
 
     @include screen-sm-min {
-        padding: rem(210) 0 rem(130) 0;
+        padding: rem(140) 0 rem(50) 0;
     }
 
     @include screen-md-min {
-        padding-bottom: rem(140);
+        padding-top: rem(170);
+        padding-bottom: rem(100);
     }
 
     &__title {
