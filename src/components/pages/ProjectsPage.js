@@ -14,7 +14,6 @@ class ProjectsPage extends Page {
         super(props);
 
         this.state = {
-            thumbnailVisible: false,
             numImagesLoaded: 1,
         }
 
@@ -38,49 +37,10 @@ class ProjectsPage extends Page {
 
         if (this.state.numImagesLoaded === numOfImages) {
             setImgsLoading(false);
-            this.scrollEvents();
         }
     }
 
-    /**
-     * Scroll events.
-     *
-     * @return {void}
-     */
-    scrollEvents() {
-        const pageHeight = document.getElementById('projects-page').getBoundingClientRect().height;
-        const iterationAmount = 50;
-        const numberOfTimes = Math.floor(pageHeight / iterationAmount);
-
-        let scrollArray = [];
-
-        for (var i = 0; i < numberOfTimes; i++) {
-            let j = i++;
-
-            scrollArray.push({
-                end: iterationAmount * i,
-                start: iterationAmount * j,
-            });
-        };
-
-        window.onscroll = () => {
-            scrollArray.forEach((scrollNumbers, index) => {
-                const start = scrollNumbers.start;
-                const end = scrollNumbers.end;
-                const offset = window.pageYOffset;
-
-                if (index % 2) {
-                    if (offset > start && offset < end)
-                        this.setState({thumbnailVisible: true});
-                } else {
-                    if (offset > start && offset < end)
-                        this.setState({thumbnailVisible: false});
-                }
-            });
-        };
-    }
-
-    hoverOnThumbnail() {
+    hoverOnThumbnail(index) {
         const {
             setTheme,
         } = this.props;
@@ -130,7 +90,7 @@ class ProjectsPage extends Page {
                                     className="width-100"
                                 />
                                 <img
-                                    className={ this.state.thumbnailVisible ? "width-100 pos-abs pin-top-left thumbnail-2" : "width-100 pos-abs pin-top-left thumbnail-2 hidden"}
+                                    className="width-100 pos-abs pin-top-left thumbnail-2"
                                     src={ projectData.project_thumbnail_2.url }
                                     alt={ projectData.project_thumbnail_2.alt }
                                 />

@@ -41,6 +41,10 @@
             background-color: $primary-base;
             transition: all .25s ease-out;
         }
+
+        .thumbnail-2 {
+            animation: show-hide 2s infinite;
+        }
     }
 }
 

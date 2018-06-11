@@ -1,7 +1,14 @@
 // =============================================================================
-//  ANIMATIONS - IMPORT ALL
+//  TOOLS - ANIMATION SHOW HIDE
 // =============================================================================
 
-@import '_rotate';
-@import '_fade';
-@import '_show-hide';
+// Show hide
+@keyframes show-hide {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
