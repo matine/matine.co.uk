@@ -5,10 +5,10 @@
 // Show hide
 @keyframes show-hide {
     0% {
-        opacity: 1;
+        opacity: 0;
     }
 
     50% {
-        opacity: 0;
+        opacity: 1;
     }
 }

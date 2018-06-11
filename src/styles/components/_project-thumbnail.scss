@@ -35,6 +35,10 @@
         }
     }
 
+    .thumbnail-2 {
+        opacity: 0;
+    }
+
     &:hover {
         .project-thumbnail__hover {
             opacity: 1;
