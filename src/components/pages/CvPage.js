@@ -162,6 +162,16 @@ class CvPage extends Page {
     }
 
     /**
+     * Prints the page.
+     *
+     * @return {void}
+     */
+    printPage() {
+        window.print();
+        return false;
+    }
+
+    /**
      * Renders the component.
      *
      * @return {XML}
@@ -195,7 +205,7 @@ class CvPage extends Page {
                     { this.renderInterests() }
 
                     <div>
-                        <button className="hover">
+                        <button onClick={ () => this.printPage() } className="print-button hover">
                             <PrintIcon />
                         </button>
                     </div>

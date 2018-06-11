@@ -40,7 +40,7 @@ class AboutPage extends Page {
         const globalContent = this.props.content.global;
 
         return (
-            <div className="m-b-lg">
+            <div className="m-b-xl">
                 <div className="me" style={{ backgroundImage: `url(${globalContent.about_me_image.url})` }} />
             </div>
         );
@@ -107,9 +107,9 @@ class AboutPage extends Page {
         return (
             <div id="about-page">
                 <div className="about-page p-b-xxl cv">
-                    { this.renderImage() }
-                    <div className="container p-t-sm">
+                    <div className="container">
                         <div className="max-width-text m-centre">
+                            { this.renderImage() }
                             { this.renderIntro() }
                             { this.renderSkills() }
                             <div className="cv__section">
