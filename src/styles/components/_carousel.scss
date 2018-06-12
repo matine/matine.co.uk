@@ -16,12 +16,13 @@
 
             &:before {
                 font-size: 16px !important;
+                opacity: 1 !important;
+                color: $grey-base !important;
             }
 
             &:focus {
                 &:before {
                     color: $grey !important;
-                    opacity: 1 !important;
                 }
             }
 
@@ -29,7 +30,6 @@
             &:active {
                 &:before {
                     color: $primary-colour !important;
-                    opacity: 1 !important;
                 }
             }
         }
@@ -38,7 +38,6 @@
             button {
                 &:before {
                     color: $primary-colour !important;
-                    opacity: 1 !important;
                 }
             }
         }
