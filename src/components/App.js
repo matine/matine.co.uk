@@ -82,11 +82,11 @@ class App extends React.Component {
                         <div className="app-wrapper">
                             <Loading />
                             <Header />
-                            <ThemeDefault bg border>
-                                <main className="main pos-rel z-index-1">
+                            <main className="main pos-rel z-index-1">
+                                <ThemeDefault bg border>
                                     <Routing />
-                                </main>
-                            </ThemeDefault>
+                                </ThemeDefault>
+                            </main>
                             <Footer />
                         </div>
                     </ThemeDefault>

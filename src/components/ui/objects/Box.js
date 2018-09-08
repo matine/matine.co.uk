@@ -6,7 +6,6 @@ const Box = styled.div`
     ${bg}
     ${space}
     ${maxWidth}
-    background-color: ${props => props.theme.colors.primary};
 `
 
 export default Box;

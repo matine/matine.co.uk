@@ -19,7 +19,7 @@
 }
 
 .main {
-    padding-top: 58px;
+    padding-top: 63px;
     margin-bottom: 230px;
 
     @include screen-sm-min {
@@ -27,7 +27,7 @@
     }
 
     @include screen-md-min {
-        padding-top: 70px;
+        padding-top: 63px;
         margin-bottom: 320px;
     }
 }

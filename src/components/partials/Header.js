@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Nav from '../ui/Nav';
 import Weather from './Weather';
-import { LinkedInIcon, GithubIcon, EmailIcon, ThemeDefault } from '../ui';
+import { LinkedInIcon, GithubIcon, EmailIcon, ThemeDefault, Box } from '../ui';
 import links from '../../constants/links';
 
 class Header extends Component {
@@ -14,7 +14,7 @@ class Header extends Component {
         return (
             <header className="pos-fix width-100 pin-top-left z-index-99">
                 <ThemeDefault bg border>
-                    <div className="p-h-md">
+                    <Box py={ 3 } px={ 3 }>
                         <div className="grid grid--v-gutter-none">
                             <div className="grid__col grid__col-md-4 hidden block-md">
                                 <Weather />
@@ -42,7 +42,7 @@ class Header extends Component {
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </Box>
                 </ThemeDefault>
             </header>
         );
