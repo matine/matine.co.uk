@@ -4,6 +4,7 @@ import { RichText } from 'prismic-reactjs';
 import { Link } from 'react-router-dom';
 import Carousel from '../partials/Carousel';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
+import { BackgroundMain } from '../ui';
 
 class ProjectPage extends Page {
     /**
@@ -289,7 +290,7 @@ class ProjectPage extends Page {
             <div id="project-page">
                 <div className="project-banner" style={ bannerStyle }></div>
                 <div className="project-wrap">
-                    <div className="bg-texture">
+                    <BackgroundMain>
                         <div className="container">
                             <div className="project-desc">
                                 <h1 className="text-centre font-uppercase p-b-sm">{ projectContent.project_title[0].text }</h1>
@@ -319,7 +320,7 @@ class ProjectPage extends Page {
                                 <div className="projects-nav__next hover">{ nextProject ? this.renderProjectLink(nextProject, '→') : null }</div>
                             </div>
                         </div>
-                    </div>
+                    </BackgroundMain>
                 </div>
             </div>
         );

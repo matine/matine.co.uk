@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { RichText } from 'prismic-reactjs';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
+import { Container, Box } from '../ui';
 
 class LinksPage extends Page {
     /**
@@ -71,15 +72,21 @@ class LinksPage extends Page {
         }
 
         return (
-            <div id="links-page" className="container text-centre p-b-xxl">
-                <h1 className="font-uppercase p-v-xxl m-v-xxl">
-                    { globalContent.links_title[0].text }
-                    <br/>
-                    <span className="font-weight-regular">{ globalContent.links_subtitle[0].text }</span>
-                </h1>
-                <div className="grid">
-                    { this.renderListOfLinks() }
-                </div>
+            <div id="links-page">
+                <Box pb={ 5 }>
+                    <Container>
+                        <div className="text-centre">
+                            <h1 className="font-uppercase p-v-xxl m-v-xxl">
+                                { globalContent.links_title[0].text }
+                                <br/>
+                                <span className="font-weight-regular">{ globalContent.links_subtitle[0].text }</span>
+                            </h1>
+                            <div className="grid">
+                                { this.renderListOfLinks() }
+                            </div>
+                        </div>
+                    </Container>
+                </Box>
             </div>
         );
     }

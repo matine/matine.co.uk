@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
+import { Text } from '../ui';
 import SunIcon from '../ui/icons/SunIcon';
 
 class ProjectsPage extends Page {
@@ -126,6 +127,7 @@ class ProjectsPage extends Page {
                         <span>{ globalContent.surname[0].text }</span>
                     </h1>
                     <p className="font-uppercase font-weight-bold font-size-lg">Frontend developer</p>
+                    <Text>Frontend developer</Text>
                 </div>
                 <div className="grid grid--gutter-none">
                     { this.renderProjectListItems() }

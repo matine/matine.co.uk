@@ -1,6 +1,7 @@
 import React from 'react';
 import Prismic from 'prismic-javascript';
 import PrismicConfig from '../prismic-configuration';
+import { ThemeProvider } from 'styled-components';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types'
@@ -9,6 +10,7 @@ import Loading from './partials/Loading';
 import Header from './partials/Header';
 import Footer from './partials/Footer';
 import Routing from './Routing';
+import { AppWrap, BackgroundMain } from './ui';
 
 class App extends React.Component {
     /**
@@ -73,15 +75,23 @@ class App extends React.Component {
             return <Loading />;
         }
 
+        console.log(theme);
+
         return (
-            <div className={ `app-wrapper theme--${theme}`}>
-                <Loading />
-                <Header />
-                <main className="main bg-texture b-a-frame b-b-none pos-rel z-index-1">
-                    <Routing />
-                </main>
-                <Footer />
-            </div>
+            <ThemeProvider theme={{ mode: theme }}>
+                <AppWrap>
+                    <div className="app-wrapper">
+                        <Loading />
+                        <Header />
+                        <BackgroundMain>
+                            <main className="main b-a-frame b-b-none pos-rel z-index-1">
+                                <Routing />
+                            </main>
+                        </BackgroundMain>
+                        <Footer />
+                    </div>
+                </AppWrap>
+            </ThemeProvider>
         );
     }
 }

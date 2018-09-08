@@ -4,6 +4,7 @@ import { RichText } from 'prismic-reactjs';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
 import SunIcon from '../ui/icons/SunIcon';
 import PrintIcon from '../ui/icons/PrintIcon';
+import { Container, Box } from '../ui';
 
 class CvPage extends Page {
     /**
@@ -184,32 +185,36 @@ class CvPage extends Page {
         }
 
         return (
-            <div id="cv-page" className="container p-b-xxl">
-                <div className="cv font-size-xs max-width-text m-centre p-b-xxl">
-                    <div className="hero">
-                        <h1 className="hero__title font-uppercase">
-                            <span className="pos-rel">
-                                <span className="hero__sun"><SunIcon size={ 80 }/></span>
-                                { globalContent.first_name[0].text }&nbsp;
-                            </span>
-                            <span>{ globalContent.surname[0].text }</span>
-                        </h1>
-                        <p className="hero__subtitle font-uppercase p-b-xxs">
-                            <span className="font-weight-bold">Frontend developer</span> → <span><a href="http://matine.co.uk">matine.co.uk</a> → <span><a href="mailto:matine.chabrier@gmail.com">matine.chabrier@gmail.com</a></span></span>
-                        </p>
-                    </div>
-                    { this.renderIntro() }
-                    { this.renderSkills() }
-                    { this.renderEmployments() }
-                    { this.renderEducations() }
-                    { this.renderInterests() }
+            <div id="cv-page">
+                <Box pb={ 5 }>
+                    <Container>
+                        <div className="cv font-size-xs max-width-text m-centre p-b-xxl">
+                            <div className="hero">
+                                <h1 className="hero__title font-uppercase">
+                                    <span className="pos-rel">
+                                        <span className="hero__sun"><SunIcon size={ 80 }/></span>
+                                        { globalContent.first_name[0].text }&nbsp;
+                                    </span>
+                                    <span>{ globalContent.surname[0].text }</span>
+                                </h1>
+                                <p className="hero__subtitle font-uppercase p-b-xxs">
+                                    <span className="font-weight-bold">Frontend developer</span> → <span><a href="http://matine.co.uk">matine.co.uk</a> → <span><a href="mailto:matine.chabrier@gmail.com">matine.chabrier@gmail.com</a></span></span>
+                                </p>
+                            </div>
+                            { this.renderIntro() }
+                            { this.renderSkills() }
+                            { this.renderEmployments() }
+                            { this.renderEducations() }
+                            { this.renderInterests() }
 
-                    <div>
-                        <button onClick={ () => this.printPage() } className="print-button hover">
-                            <PrintIcon />
-                        </button>
-                    </div>
-                </div>
+                            <div>
+                                <button onClick={ () => this.printPage() } className="print-button hover">
+                                    <PrintIcon />
+                                </button>
+                            </div>
+                        </div>
+                    </Container>
+                </Box>
             </div>
         );
     }

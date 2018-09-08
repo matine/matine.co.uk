@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { RichText } from 'prismic-reactjs';
 import { Link } from 'react-router-dom';
+import { Box, Container, Text, Heading, Button } from '../ui';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
 
 class AboutPage extends Page {
@@ -105,21 +106,25 @@ class AboutPage extends Page {
         }
 
         return (
-            <div id="about-page">
-                <div className="about-page p-b-xxl cv">
-                    <div className="container">
-                        <div className="max-width-text m-centre">
+            <div id="about-page" className="about-page cv">
+                <Box pb={ 5 }>
+                    <Container>
+                        <div className="max-width-text">
                             { this.renderImage() }
                             { this.renderIntro() }
                             { this.renderSkills() }
+                            <Heading size="lg">I am a heading</Heading>
+                            <Text>Hello</Text>
+                            <Button>I am button</Button>
                             <div className="cv__section">
+                                <Text>View my full <Link to={ `/cv` }>CV</Link></Text>
                                 <p>View my full <Link to={ `/cv` }>CV</Link></p>
                                 <p>Mail me <a href="mailto:matine.chabrier@gmail.com" target="blank">matine.chabrier@gmail.com</a></p>
                                 <p>Peak at my code on <a href="https://github.com/matine/matine.co.uk" target="blank">Github</a></p>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </Container>
+                </Box>
             </div>
         );
     }
