@@ -10,7 +10,7 @@ import Loading from './partials/Loading';
 import Header from './partials/Header';
 import Footer from './partials/Footer';
 import Routing from './Routing';
-import { AppWrap, BackgroundMain } from './ui';
+import { ThemeDefault, ThemeInverted } from './ui';
 
 class App extends React.Component {
     /**
@@ -75,22 +75,22 @@ class App extends React.Component {
             return <Loading />;
         }
 
-        console.log(theme);
-
         return (
             <ThemeProvider theme={{ mode: theme }}>
-                <AppWrap>
-                    <div className="app-wrapper">
-                        <Loading />
-                        <Header />
-                        <BackgroundMain>
-                            <main className="main b-a-frame b-b-none pos-rel z-index-1">
-                                <Routing />
-                            </main>
-                        </BackgroundMain>
-                        <Footer />
-                    </div>
-                </AppWrap>
+                <ThemeInverted bg>
+                    <ThemeDefault color svg>
+                        <div className="app-wrapper">
+                            <Loading />
+                            <Header />
+                            <ThemeDefault bg border>
+                                <main className="main pos-rel z-index-1">
+                                    <Routing />
+                                </main>
+                            </ThemeDefault>
+                            <Footer />
+                        </div>
+                    </ThemeDefault>
+                </ThemeInverted>
             </ThemeProvider>
         );
     }

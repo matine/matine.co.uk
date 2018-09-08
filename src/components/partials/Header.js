@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Nav from '../ui/Nav';
 import Weather from './Weather';
-import { LinkedInIcon, GithubIcon, EmailIcon, BackgroundMain } from '../ui';
+import { LinkedInIcon, GithubIcon, EmailIcon, ThemeDefault } from '../ui';
 import links from '../../constants/links';
 
 class Header extends Component {
@@ -12,8 +12,8 @@ class Header extends Component {
      */
     render() {
         return (
-            <BackgroundMain>
-                <header className="b-a-frame b-b-none pos-fix width-100 pin-top-left z-index-99 p-v-md">
+            <header className="pos-fix width-100 pin-top-left z-index-99">
+                <ThemeDefault bg border>
                     <div className="p-h-md">
                         <div className="grid grid--v-gutter-none">
                             <div className="grid__col grid__col-md-4 hidden block-md">
@@ -25,17 +25,17 @@ class Header extends Component {
                             <div className="grid__col grid__col-md-4 hidden block-md">
                                 <ul className="remove-link-styles remove-list-styles list-inline list-inline--xs float-right">
                                     <li>
-                                        <a href={ links.linkedIn } className="icon-colour-base hover hover--big hover--header-social" target="blank">
+                                        <a href={ links.linkedIn } className="hover hover--big hover--header-social" target="blank">
                                             <LinkedInIcon size={ 25 } />
                                         </a>
                                     </li>
                                     <li>
-                                        <a href={ links.email } className="icon-colour-base hover hover--big hover--header-social" target="blank">
+                                        <a href={ links.email } className="hover hover--big hover--header-social" target="blank">
                                             <EmailIcon size={ 25 } />
                                         </a>
                                     </li>
                                     <li>
-                                        <a href={ links.github } className="icon-colour-base hover hover--big hover--header-social" target="blank">
+                                        <a href={ links.github } className="hover hover--big hover--header-social" target="blank">
                                             <GithubIcon size={ 25 } />
                                         </a>
                                     </li>
@@ -43,8 +43,8 @@ class Header extends Component {
                             </div>
                         </div>
                     </div>
-                </header>
-            </BackgroundMain>
+                </ThemeDefault>
+            </header>
         );
     }
 }

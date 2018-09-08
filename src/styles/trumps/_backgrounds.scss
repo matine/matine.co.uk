@@ -2,36 +2,6 @@
 //  TRUMPS - BACKGROUNDS
 // =============================================================================
 
-.bg-texture {
-    background-color: white;
-    background-image: url($img-path + 'bg-texture.jpg');
-    background-repeat: repeat;
-    background-position: center center;
-}
-
-.theme--inverted {
-    .bg-texture {
-        transition: background-color 1s ease-out;
-        background-color: $grey-very-dark;
-        background-image: url('');
-    }
-    color: $primary-colour;
-}
-
-.bg-primary {
-    background-color: $primary-colour;
-}
-
-.bg-primary-light {
-    background-color: $primary-colour-light;
-}
-
-.theme--inverted {
-    .bg-primary {
-        background-color: $grey-very-dark;
-    }
-}
-
 .bg-dark-grey {
     background-color: $grey-very-dark;
 }

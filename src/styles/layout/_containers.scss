@@ -2,10 +2,6 @@
 //  LAYOUT - CONTAINERS
 // =============================================================================
 
-// body {
-//     background-color: $grey-very-dark;
-// }
-
 .container {
     @include container;
     box-sizing: border-box;
@@ -38,8 +34,4 @@
 
 .app-wrapper {
     height: 100%;
-}
-
-.app-wrapper.theme--inverted {
-    background-color: $primary-colour;
 }

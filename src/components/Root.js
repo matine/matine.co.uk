@@ -18,6 +18,9 @@ injectGlobal`
         font-family: ${fonts.base};
         background-color: ${colors.text};
     }
+    a:visited {
+        fill: inherit;
+    }
 `
 
 class Root extends React.Component {

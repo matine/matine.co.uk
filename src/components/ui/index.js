@@ -10,9 +10,9 @@ import Box from './objects/Box';
 import Container from './objects/Container';
 import Text from './typography/Text';
 import Heading from './typography/Heading';
-import AppWrap from './objects/AppWrap';
 import Button from './buttons/Button';
-import BackgroundMain from './objects/BackgroundMain';
+import ThemeDefault from './themes/ThemeDefault';
+import ThemeInverted from './themes/ThemeInverted';
 
 export {
     Nav,
@@ -27,7 +27,7 @@ export {
     Container,
     Text,
     Heading,
-    AppWrap,
     Button,
-    BackgroundMain,
+    ThemeDefault,
+    ThemeInverted,
 };
