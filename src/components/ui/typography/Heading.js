@@ -1,31 +1,14 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { fontSizesResp } from '../../../styles/theme';
-import { color, fontSize, space, fontWeight } from 'styled-system';
+import { HeadingStyled } from './_styled';
 
-const HeadingStyled = styled.h2`
-    ${color}
-    ${space}
-    ${fontSize}
-    ${fontWeight}
-`
-const Heading = ({
-    size,
-    ...props
-}) => (
-    <HeadingStyled
-        { ...props }
-        fontSize={ fontSizesResp[size] }
-    />
-);
+const Heading = HeadingStyled;
 
 Heading.propTypes = {
-    size: PropTypes.shape(),
+    size: PropTypes.string,
 };
 
 Heading.defaultProps = {
-    size: 'md',
+    size: 3,
 };
 
 export default Heading;

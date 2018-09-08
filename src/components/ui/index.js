@@ -8,11 +8,15 @@ import EmailIcon from './icons/EmailIcon';
 import TwitterIcon from './icons/TwitterIcon';
 import Box from './objects/Box';
 import Container from './objects/Container';
+import Contained from './objects/Contained';
 import Text from './typography/Text';
+import Span from './typography/Span';
+import TextWrap from './typography/TextWrap';
 import Heading from './typography/Heading';
 import Button from './buttons/Button';
 import ThemeDefault from './themes/ThemeDefault';
 import ThemeInverted from './themes/ThemeInverted';
+import HeadingDecorated from './typography/HeadingDecorated';
 
 export {
     Nav,
@@ -25,9 +29,13 @@ export {
     TwitterIcon,
     Box,
     Container,
+    Contained,
     Text,
+    Span,
     Heading,
+    TextWrap,
     Button,
     ThemeDefault,
     ThemeInverted,
+    HeadingDecorated,
 };

@@ -17,6 +17,7 @@ injectGlobal`
         text-size-adjust: 100%;
         font-family: ${fonts.base};
         background-color: ${colors.text};
+        line-height: 1.5;
     }
     a:visited {
         fill: inherit;

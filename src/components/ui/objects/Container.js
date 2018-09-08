@@ -1,8 +1,8 @@
 import React from 'react';
-import { Box } from '../../ui';
+import { BoxStyled } from './_styled';
 
-const Container = ({ ...props }) => (
-    <Box
+const Container = ({...props }) => (
+    <BoxStyled
         { ...props }
         px={[ 3, 4 ]}
         mx="auto"

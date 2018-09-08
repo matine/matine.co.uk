@@ -1,11 +1,5 @@
-import styled from 'styled-components';
-import { color, bg, space, maxWidth } from 'styled-system';
+import { BoxStyled } from './_styled';
 
-const Box = styled.div`
-    ${color}
-    ${bg}
-    ${space}
-    ${maxWidth}
-`
+const Box = BoxStyled;
 
 export default Box;

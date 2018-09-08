@@ -4,7 +4,7 @@ import { RichText } from 'prismic-reactjs';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
 import SunIcon from '../ui/icons/SunIcon';
 import PrintIcon from '../ui/icons/PrintIcon';
-import { Container, Box } from '../ui';
+import { Container, Box, Contained, TextWrap, HeadingDecorated, Text, Span, Heading } from '../ui';
 
 class CvPage extends Page {
     /**
@@ -35,10 +35,10 @@ class CvPage extends Page {
         }
 
         return (
-            <div className="cv__section">
-                { introTitle && <h3 className="title-with-decoration font-uppercase font-size-lg font-weight-regular p-b-xxs m-b-md">{ introTitle[0].text }</h3> }
-                <div className="font-size-sm">{ introText && RichText.render(introText) }</div>
-            </div>
+            <Box mb={ 5 }>
+                { introTitle && <HeadingDecorated>{ introTitle[0].text }</HeadingDecorated> }
+                <TextWrap size={ 0 }>{ introText && RichText.render(introText) }</TextWrap>
+            </Box>
         );
     }
 
@@ -57,12 +57,12 @@ class CvPage extends Page {
         }
 
         return (
-            <div className="cv__section cv__section--skills">
-                { skillsTitle && <h3 className="title-with-decoration font-uppercase font-size-lg font-weight-regular p-b-xxs m-b-md">{ skillsTitle[0].text }</h3> }
-                <div className="lists--no-styles font-size-xs">
+            <Box mb={ 5 }>
+                { skillsTitle && <HeadingDecorated>{ skillsTitle[0].text }</HeadingDecorated> }
+                <TextWrap size={ 0 } listStyle="none">
                     { skillsText && RichText.render(skillsText) }
-                </div>
-            </div>
+                </TextWrap>
+            </Box>
         );
     }
 
@@ -84,23 +84,21 @@ class CvPage extends Page {
             const employmentDate = element.me_employment_date;
             const employmentTitle = element.me_employment_title;
             const employmentDesc = element.me_employment_description;
-            const pageBreak = element.me_employment_page_break;
 
             return (
-                <div key={ index } className="cv__subsection">
-                    { employmentDate && <h4 className="p-b-none font-size-xxs font-uppercase colour-light">{ employmentDate[0].text }</h4> }
-                    { employmentTitle && <h4 className="font-size-md p-b-xxs">{ employmentTitle[0].text }</h4> }
-                    { employmentDesc && RichText.render(employmentDesc) }
-                    { pageBreak && <div className="print-page-break"></div> }
-                </div>
+                <Box key={ index } mb={ 3 }>
+                    { employmentDate && <Heading caps size={ 1 } color="light" mb={ 1 }>{ employmentDate[0].text }</Heading> }
+                    { employmentTitle && <Heading mb={ 0 }>{ employmentTitle[0].text }</Heading> }
+                    { employmentDesc && <TextWrap>{ RichText.render(employmentDesc) }</TextWrap> }
+                </Box>
             );
         });
 
         return (
-            <div className="cv__section">
-                { employmentsTitle && <h3 className="title-with-decoration font-uppercase font-size-lg font-weight-regular p-b-xxs m-b-md">{ employmentsTitle[0].text }</h3> }
+            <Box mb={ 5 }>
+                { employmentsTitle && <HeadingDecorated>{ employmentsTitle[0].text }</HeadingDecorated> }
                 { renderEmployments }
-            </div>
+            </Box>
         );
     }
 
@@ -124,19 +122,19 @@ class CvPage extends Page {
             const educationDesc = element.me_education_description;
 
             return (
-                <div key={ index } className="cv__subsection">
-                    { educationDate && <h4 className="p-b-none font-size-xxs font-uppercase colour-light">{ educationDate[0].text }</h4> }
-                    { educationTitle && <h4 className="font-size-md p-b-xxs">{ educationTitle[0].text }</h4> }
-                    { educationDesc && RichText.render(educationDesc) }
-                </div>
+                <Box key={ index } mb={ 3 }>
+                    { educationDate && <Heading caps size={ 1 } color="light" mb={ 1 }>{ educationDate[0].text }</Heading> }
+                    { educationDate && <Heading mb={ 0 }>{ educationTitle[0].text }</Heading> }
+                    { educationDesc && <TextWrap>{ RichText.render(educationDesc) }</TextWrap> }
+                </Box>
             );
         });
 
         return (
-            <div className="cv__section">
-                { educationsTitle && <h3 className="title-with-decoration font-uppercase font-size-lg font-weight-regular p-b-xxs m-b-md">{ educationsTitle[0].text }</h3> }
+            <Box mb={ 5 }>
+                { educationsTitle && <HeadingDecorated>{ educationsTitle[0].text }</HeadingDecorated> }
                 { renderEducations }
-            </div>
+            </Box>
         );
     }
 
@@ -155,10 +153,10 @@ class CvPage extends Page {
         }
 
         return (
-            <div className="cv__section">
-                { interestsTitle && <h3 className="title-with-decoration font-uppercase font-size-lg font-weight-regular p-b-xxs m-b-md">{ interestsTitle[0].text }</h3> }
-                <div className="font-size-sm">{ interestsText && RichText.render(interestsText) }</div>
-            </div>
+            <Box mb={ 5 }>
+                { interestsTitle && <HeadingDecorated>{ interestsTitle[0].text }</HeadingDecorated> }
+                <TextWrap size={ 0 }>{ interestsText && RichText.render(interestsText) }</TextWrap>
+            </Box>
         );
     }
 
@@ -185,37 +183,35 @@ class CvPage extends Page {
         }
 
         return (
-            <div id="cv-page">
-                <Box pb={ 5 }>
-                    <Container>
-                        <div className="cv font-size-xs max-width-text m-centre p-b-xxl">
-                            <div className="hero">
-                                <h1 className="hero__title font-uppercase">
-                                    <span className="pos-rel">
-                                        <span className="hero__sun"><SunIcon size={ 80 }/></span>
-                                        { globalContent.first_name[0].text }&nbsp;
-                                    </span>
-                                    <span>{ globalContent.surname[0].text }</span>
-                                </h1>
-                                <p className="hero__subtitle font-uppercase p-b-xxs">
-                                    <span className="font-weight-bold">Frontend developer</span> → <span><a href="http://matine.co.uk">matine.co.uk</a> → <span><a href="mailto:matine.chabrier@gmail.com">matine.chabrier@gmail.com</a></span></span>
-                                </p>
-                            </div>
-                            { this.renderIntro() }
-                            { this.renderSkills() }
-                            { this.renderEmployments() }
-                            { this.renderEducations() }
-                            { this.renderInterests() }
+            <Box id="cv-page" pb={ 5 }>
+                <Container>
+                    <Contained maxWidth={ 4 } pb={ 5 }>
+                        <Box py={ 4 }>
+                            <Heading fontSize={ 8 } caps>
+                                <span className="pos-rel">
+                                    <span className="hero__sun"><SunIcon size={ 80 }/></span>
+                                    { globalContent.first_name[0].text }&nbsp;
+                                </span>
+                                <span>{ globalContent.surname[0].text }</span>
+                            </Heading>
+                            <Text size={ 1 } pb={ 1 } caps>
+                                <Span fontWeight="bold">Frontend developer</Span> → <Span><a href="http://matine.co.uk">matine.co.uk</a> → <Span><a href="mailto:matine.chabrier@gmail.com">matine.chabrier@gmail.com</a></Span></Span>
+                            </Text>
+                        </Box>
+                        { this.renderIntro() }
+                        { this.renderSkills() }
+                        { this.renderEmployments() }
+                        { this.renderEducations() }
+                        { this.renderInterests() }
 
-                            <div>
-                                <button onClick={ () => this.printPage() } className="print-button hover">
-                                    <PrintIcon />
-                                </button>
-                            </div>
+                        <div>
+                            <button onClick={ () => this.printPage() } className="print-button hover">
+                                <PrintIcon />
+                            </button>
                         </div>
-                    </Container>
-                </Box>
-            </div>
+                    </Contained>
+                </Container>
+            </Box>
         );
     }
 }

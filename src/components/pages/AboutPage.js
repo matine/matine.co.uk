@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { RichText } from 'prismic-reactjs';
 import { Link } from 'react-router-dom';
-import { Box, Container, Text, Heading, Button } from '../ui';
+import { Box, Container, Text, TextWrap, HeadingDecorated, Contained } from '../ui';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
 
 class AboutPage extends Page {
@@ -41,9 +41,9 @@ class AboutPage extends Page {
         const globalContent = this.props.content.global;
 
         return (
-            <div className="m-b-xl">
+            <Box mb={ 5 }>
                 <div className="me" style={{ backgroundImage: `url(${globalContent.about_me_image.url})` }} />
-            </div>
+            </Box>
         );
     }
 
@@ -62,10 +62,10 @@ class AboutPage extends Page {
         }
 
         return (
-            <div className="cv__section">
-                { introTitle && <h3 className="title-with-decoration font-uppercase font-size-lg font-weight-regular p-b-xxs m-b-md">{ introTitle[0].text }</h3> }
-                <div className="font-size-md">{ introText && RichText.render(introText) }</div>
-            </div>
+            <Box mb={ 5 }>
+                { introTitle && <HeadingDecorated>{ introTitle[0].text }</HeadingDecorated> }
+                <TextWrap>{ introText && RichText.render(introText) }</TextWrap>
+            </Box>
         );
     }
 
@@ -84,12 +84,12 @@ class AboutPage extends Page {
         }
 
         return (
-            <div className="cv__section cv__section--skills">
-                { skillsTitle && <h3 className="title-with-decoration font-uppercase font-size-lg font-weight-regular p-b-xxs m-b-md">{ skillsTitle[0].text }</h3> }
-                <div className="lists--no-styles font-size-xs">
+            <Box mb={ 5 }>
+                { skillsTitle && <HeadingDecorated>{ skillsTitle[0].text }</HeadingDecorated> }
+                <TextWrap size={ 1 } listStyle="none">
                     { skillsText && RichText.render(skillsText) }
-                </div>
-            </div>
+                </TextWrap>
+            </Box>
         );
     }
 
@@ -106,23 +106,19 @@ class AboutPage extends Page {
         }
 
         return (
-            <div id="about-page" className="about-page cv">
+            <div id="about-page">
                 <Box pb={ 5 }>
                     <Container>
-                        <div className="max-width-text">
+                        <Contained maxWidth={ 3 }>
                             { this.renderImage() }
                             { this.renderIntro() }
                             { this.renderSkills() }
-                            <Heading size="lg">I am a heading</Heading>
-                            <Text>Hello</Text>
-                            <Button>I am button</Button>
-                            <div className="cv__section">
+                            <Box mb={ 5 }>
                                 <Text>View my full <Link to={ `/cv` }>CV</Link></Text>
-                                <p>View my full <Link to={ `/cv` }>CV</Link></p>
-                                <p>Mail me <a href="mailto:matine.chabrier@gmail.com" target="blank">matine.chabrier@gmail.com</a></p>
-                                <p>Peak at my code on <a href="https://github.com/matine/matine.co.uk" target="blank">Github</a></p>
-                            </div>
-                        </div>
+                                <Text>Mail me <a href="mailto:matine.chabrier@gmail.com" target="blank">matine.chabrier@gmail.com</a></Text>
+                                <Text>Peak at my code on <a href="https://github.com/matine/matine.co.uk" target="blank">Github</a></Text>
+                            </Box>
+                        </Contained>
                     </Container>
                 </Box>
             </div>

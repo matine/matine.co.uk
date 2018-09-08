@@ -2,14 +2,14 @@
 //  COMPONENTS - CV
 // =============================================================================
 
+.me {
+    background-size: 200px;
+    height: 200px;
+    width: 100%;
+}
+
 .cv {
     position: relative;
-
-    .me {
-        background-size: 200px;
-        height: 200px;
-        width: 100%;
-    }
 
     &__section {
         margin-bottom: $space-xl;
