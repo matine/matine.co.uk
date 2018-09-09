@@ -37,6 +37,11 @@ const ThemeDefault = styled.div`
         border-style: solid;
         border-bottom: none;
     `}
+    ${props => props.links && css`
+        a {
+            border-bottom-color: ${color};
+        }
+    `}
 `;
 
 export default ThemeDefault;

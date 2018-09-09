@@ -22,6 +22,11 @@ const ThemeInverted = styled.div`
     ${props => props.svg && css`
         fill: ${color};
     `}
+    ${props => props.links && css`
+        a {
+            border-bottom-color: ${color};
+        }
+    `}
 `;
 
 export default ThemeInverted;

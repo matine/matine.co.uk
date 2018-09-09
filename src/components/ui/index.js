@@ -14,6 +14,7 @@ import Text, { TextXs, TextSm, TextMd, TextLg, TextXl } from './typography/Text'
 import Heading, { HeadingXs, HeadingSm, HeadingMd, HeadingLg, HeadingXl } from './typography/Heading';
 import TextWrap, { TextWrapXs, TextWrapSm, TextWrapMd, TextWrapLg, TextWrapXl } from './typography/TextWrap';
 import Span from './typography/Span';
+import List from './typography/List';
 import Button from './buttons/Button';
 import ThemeDefault from './themes/ThemeDefault';
 import ThemeInverted from './themes/ThemeInverted';
@@ -56,4 +57,5 @@ export {
     HeadingDecorated,
     Grid,
     Col,
+    List,
 };

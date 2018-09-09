@@ -35,6 +35,14 @@ export const TextWrap = styled.div`
             padding-bottom: .5em;
         }
     `}
+    ${props => props.linkStyle === 'none' && css`
+        a {
+            color: inherit;
+            font-weight: inherit;
+            text-decoration: none;
+            border-bottom: none;
+        }
+    `}
 `
 
 export const TextWrapXs = styled(TextWrap)``
