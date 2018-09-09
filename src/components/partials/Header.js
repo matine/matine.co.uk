@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Nav from '../ui/Nav';
 import Weather from './Weather';
-import { LinkedInIcon, GithubIcon, EmailIcon, ThemeDefault, Box } from '../ui';
+import { LinkedInIcon, GithubIcon, EmailIcon, ThemeDefault, Box, Grid, Col, TextWrap } from '../ui';
 import links from '../../constants/links';
 
 class Header extends Component {
@@ -15,14 +15,16 @@ class Header extends Component {
             <header className="pos-fix width-100 pin-top-left z-index-99">
                 <ThemeDefault bg border>
                     <Box py={ 3 } px={ 3 }>
-                        <div className="grid grid--v-gutter-none">
-                            <div className="grid__col grid__col-md-4 hidden block-md">
+                        <Grid gutterY={ 0 }>
+                            <Col width={[ 1, 1, 1/3 ]} className="hidden block-md">
                                 <Weather />
-                            </div>
-                            <div className="grid__col grid__col-md-4 text-centre">
-                                <Nav />
-                            </div>
-                            <div className="grid__col grid__col-md-4 hidden block-md">
+                            </Col>
+                            <Col width={[ 1, 1, 1/3 ]}>
+                                <TextWrap textAlign="center">
+                                    <Nav />
+                                </TextWrap>
+                            </Col>
+                            <Col width={[ 1, 1, 1/3 ]} className="hidden block-md">
                                 <ul className="remove-link-styles remove-list-styles list-inline list-inline--xs float-right">
                                     <li>
                                         <a href={ links.linkedIn } className="hover hover--big hover--header-social" target="blank">
@@ -40,8 +42,8 @@ class Header extends Component {
                                         </a>
                                     </li>
                                 </ul>
-                            </div>
-                        </div>
+                            </Col>
+                        </Grid>
                     </Box>
                 </ThemeDefault>
             </header>

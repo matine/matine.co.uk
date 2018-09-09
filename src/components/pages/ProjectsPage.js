@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
-import { TextMd } from '../ui';
+import { TextMd, Grid, Col } from '../ui';
 import SunIcon from '../ui/icons/SunIcon';
 
 class ProjectsPage extends Page {
@@ -74,9 +74,9 @@ class ProjectsPage extends Page {
             const projectTitle = projectData.project_title[0].text;
 
             return (
-                <div
+                <Col
                     key={ index }
-                    className="grid__col grid__col-md-4"
+                    width={[ 1, 1, 1, 1/3 ]}
                     onMouseEnter={ this.hoverOnThumbnail }
                     onMouseLeave={ this.hoverOffThumbnail }
                 >
@@ -103,7 +103,7 @@ class ProjectsPage extends Page {
                             </div>
                         </Link>
                     </div>
-                </div>
+                </Col>
             );
         });
     }
@@ -128,9 +128,9 @@ class ProjectsPage extends Page {
                     </h1>
                     <TextMd caps fontWeight="bold" size={ 4 }>Frontend developer</TextMd>
                 </div>
-                <div className="grid grid--gutter-none">
+                <Grid gutter={ 0 }>
                     { this.renderProjectListItems() }
-                </div>
+                </Grid>
             </div>
         )
     }
