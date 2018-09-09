@@ -4,7 +4,7 @@ import { RichText } from 'prismic-reactjs';
 import { Link } from 'react-router-dom';
 import Carousel from '../partials/Carousel';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
-import { ThemeDefault } from '../ui';
+import { ThemeDefault, Container, Banner, Image, Iphone, Ipad, Imac, TextMd, Span, Box, Contained, HeadingXl, TextWrapMd, TouchDevices, ProjectsNav, TextWrap, BrowserWindow } from '../ui';
 
 class ProjectPage extends Page {
     /**
@@ -192,11 +192,11 @@ class ProjectPage extends Page {
 
             return (
                 <div key={ carouselImage.alt }>
-                    <div className="browser-window">
-                        <div className="browser-window__controls"><span></span><span></span><span></span></div>
-                    </div>
-                    <img
-                        className="width-100"
+                    <BrowserWindow>
+                        <div className="controls"><span></span><span></span><span></span></div>
+                    </BrowserWindow>
+                    <Image
+                        width={ 1 }
                         src={ carouselImage.url }
                         alt={ carouselImage.alt }
                         onLoad={ this.handleImageLoaded.bind(this) }
@@ -238,17 +238,17 @@ class ProjectPage extends Page {
         const projectContent = this.state.projectContent.data;
         const prevProject = this.getPrevProject();
         const nextProject = this.getNextProject();
-        const roleContent = projectContent.project_role[0] ? projectContent.project_role[0].text : null;
-        const techStackContent = projectContent.project_tech_stack[0] ? projectContent.project_tech_stack[0].text : null;
-        const visitWebsiteContent = projectContent.project_visit_website_link ? projectContent.project_visit_website_link.url : null;
+        const roleContent = projectContent.project_role[0] && projectContent.project_role[0].text;
+        const techStackContent = projectContent.project_tech_stack[0] && projectContent.project_tech_stack[0].text;
+        const visitWebsiteContent = projectContent.project_visit_website_link && projectContent.project_visit_website_link.url;
 
         const bannerStyle = {
             backgroundImage: 'url(' + projectContent.project_banner.url + ')',
         };
 
-        const role = roleContent ? <p><span className="font-weight-bold">Role: </span>{ roleContent }</p> : null;
-        const techStack = techStackContent ? <p><span className="font-weight-bold">Tech stack: </span>{ techStackContent }</p> : null;
-        const visitWebsite = visitWebsiteContent ? <p><a href={ visitWebsiteContent } target="_blank">Visit website</a></p> : null;
+        const role = roleContent && <TextMd><Span fontWeight="bold">Role: </Span>{ roleContent }</TextMd>;
+        const techStack = techStackContent && <TextMd><Span fontWeight="bold">Tech stack: </Span>{ techStackContent }</TextMd>;
+        const visitWebsite = visitWebsiteContent && <TextMd><a href={ visitWebsiteContent } target="_blank">Visit website</a></TextMd>;
 
         let numOfImgs = 1;
 
@@ -257,71 +257,77 @@ class ProjectPage extends Page {
         projectContent.project_iphone.url && (numOfImgs += 1);
 
         const imacImg = (
-            projectContent.project_imac.url ?
-                <img
+            projectContent.project_imac.url && (
+                <Imac
                     src={ projectContent.project_imac.url }
                     alt={ projectContent.project_imac.alt }
-                    className="project__imac block m-centre"
                     onLoad={ this.handleImageLoaded.bind(this) }
-                /> : null
+                />
+            )
         );
 
         const ipadImg = (
-            projectContent.project_ipad.url ?
-            <img
-                src={ projectContent.project_ipad.url }
-                alt={ projectContent.project_ipad.alt }
-                className="project__ipad inline-block"
-                onLoad={ this.handleImageLoaded.bind(this) }
-            /> : null
+            projectContent.project_ipad.url && (
+                <Ipad
+                    src={ projectContent.project_ipad.url }
+                    alt={ projectContent.project_ipad.alt }
+                    onLoad={ this.handleImageLoaded.bind(this) }
+                />
+            )
         );
 
         const iphoneImg = (
-            projectContent.project_iphone.url ?
-            <img
-                src={ projectContent.project_iphone.url }
-                alt={ projectContent.project_iphone.alt }
-                className="project__iphone inline-block"
-                onLoad={ this.handleImageLoaded.bind(this) }
-            /> : null
+            projectContent.project_iphone.url && (
+                <Iphone
+                    src={ projectContent.project_iphone.url }
+                    alt={ projectContent.project_iphone.alt }
+                    onLoad={ this.handleImageLoaded.bind(this) }
+                />
+            )
         );
 
         return (
             <div id="project-page">
-                <div className="project-banner" style={ bannerStyle }></div>
-                <div className="project-wrap">
+                <Banner style={ bannerStyle } />
+                <Box position="relative" mt={[0, 0, 0, 300]} zIndex={ 2 }>
                     <ThemeDefault bg>
-                        <div className="container">
-                            <div className="project-desc">
-                                <h1 className="text-centre font-uppercase p-b-sm">{ projectContent.project_title[0].text }</h1>
-                                <div className="width-100 max-width-lg m-centre">
-                                    { RichText.render(projectContent.project_main_text) }
-                                    <div className="m-t-md">
+                        <Container>
+                            <Box pt={[2, 3, 4]}>
+                                <HeadingXl textAlign="center" pb={ 2 } caps>{ projectContent.project_title[0].text }</HeadingXl>
+                                <Contained maxWidth={ 0 }>
+                                    <TextWrapMd>
+                                        { RichText.render(projectContent.project_main_text) }
+                                    </TextWrapMd>
+                                    <Box mt={ 4 }>
                                         { role }
                                         { techStack }
                                         { visitWebsite }
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="project-bg">
-                            <div className="project-container container pos-rel">
-                                { imacImg }
-                                <div className="project__touch-devices text-centre">
-                                    { ipadImg }
-                                    { iphoneImg }
-                                </div>
-                            </div>
-                            <div className="project-screenshots-container container p-b-xxl">
-                                { this.renderProjectScreenshotCarousel() }
-                            </div>
-                            <div className="projects-nav remove-link-styles font-size-xl">
-                                <div className="projects-nav__prev hover">{ prevProject ? this.renderProjectLink(prevProject, '←') : null }</div>
-                                <div className="projects-nav__next hover">{ nextProject ? this.renderProjectLink(nextProject, '→') : null }</div>
-                            </div>
-                        </div>
+                                    </Box>
+                                </Contained>
+                            </Box>
+                        </Container>
+                        <Box mt={ 500 } bg="gray.3">
+                            <Box position="relative" top={ -500 } mb={ -500 }>
+                                <Container>
+                                    { imacImg }
+                                    <TouchDevices>
+                                        { ipadImg }
+                                        { iphoneImg }
+                                    </TouchDevices>
+                                </Container>
+                            </Box>
+                            <Box position="relative" zIndex={ 1 } mt={ 5 } pb={ 6 }>
+                                <Container>
+                                    { this.renderProjectScreenshotCarousel() }
+                                </Container>
+                            </Box>
+                            <TextWrap fontSize={[26, 26, 40]} linkStyle="none">
+                                <ProjectsNav direction="prev">{ prevProject && this.renderProjectLink(prevProject, '←') }</ProjectsNav>
+                                <ProjectsNav direction="next">{ nextProject && this.renderProjectLink(nextProject, '→') }</ProjectsNav>
+                            </TextWrap>
+                        </Box>
                     </ThemeDefault>
-                </div>
+                </Box>
             </div>
         );
     }
