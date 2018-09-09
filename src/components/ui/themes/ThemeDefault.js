@@ -18,6 +18,11 @@ const color = theme("mode", {
     inverted: colors.primary,
 });
 
+const opacity = theme("mode", {
+    default: 1,
+    inverted: .3,
+});
+
 const ThemeDefault = styled.div`
     ${props => props.bg && css`
         background-color: ${backgroundColor};
@@ -40,6 +45,16 @@ const ThemeDefault = styled.div`
     ${props => props.links && css`
         a {
             border-bottom-color: ${color};
+        }
+    `}
+    ${props => props.projectThumbnails && css`
+        .project-thumbnail__images {
+            opacity: ${opacity};
+        }
+        .project-thumbnail:hover {
+            .project-thumbnail__images {
+                opacity: 1;
+            }
         }
     `}
 `;

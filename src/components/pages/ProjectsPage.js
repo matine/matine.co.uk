@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
-import { TextMd, Grid, Col } from '../ui';
+import { TextMd, Grid, Col, Heading, ProjectThumbnail, Fixed, Box, Image, ThemeDefault } from '../ui';
 import SunIcon from '../ui/icons/SunIcon';
 
 class ProjectsPage extends Page {
@@ -80,29 +80,35 @@ class ProjectsPage extends Page {
                     onMouseEnter={ this.hoverOnThumbnail }
                     onMouseLeave={ this.hoverOffThumbnail }
                 >
-                    <div className="project-thumbnail pos-rel">
-                        <Link
-                            to={ `/work/${project.uid}` }>
-                            <div className="project-thumbnail__img pos-rel z-index-1">
-                                <img
-                                    src={ projectData.project_thumbnail.url }
-                                    alt={ projectData.project_thumbnail.alt }
-                                    onLoad={ this.handleImageLoaded.bind(this) }
-                                    className="width-100"
-                                />
-                                <img
-                                    className="width-100 pos-abs pin-top-left thumbnail-2"
-                                    src={ projectData.project_thumbnail_2.url }
-                                    alt={ projectData.project_thumbnail_2.alt }
-                                />
-                            </div>
-                            <div className="project-thumbnail__hover width-100 height-100 pos-abs pin-top-left">
-                                <div className="width-100 pos-abs pin-bottom-left text-centre">
-                                    <h3 className="project-thumbnail__title font-uppercase font-weight-bold remove-link-style colour-base">{ projectTitle }</h3>
-                                </div>
-                            </div>
-                        </Link>
-                    </div>
+                    <ThemeDefault projectThumbnails>
+                        <ProjectThumbnail className="project-thumbnail">
+                            <Link
+                                to={ `/work/${project.uid}` }>
+                                <Box position="relative" zIndex={ 1 } className="project-thumbnail__images">
+                                    <Image
+                                        src={ projectData.project_thumbnail.url }
+                                        alt={ projectData.project_thumbnail.alt }
+                                        onLoad={ this.handleImageLoaded.bind(this) }
+                                        width={ 1 }
+                                    />
+                                    <Image
+                                        width={ 1 }
+                                        position="absolute"
+                                        top={ 0 }
+                                        left={ 0 }
+                                        className="project-thumbnail__image2"
+                                        src={ projectData.project_thumbnail_2.url }
+                                        alt={ projectData.project_thumbnail_2.alt }
+                                    />
+                                </Box>
+                                <Fixed className="project-thumbnail__hover">
+                                    <Box width={ 1 } position="absolute" bottom={ 0 } left={ 0 }>
+                                        <Heading caps fontSize={[12, 14, 16, 20]} mb={[3, 3, 2, 4]} fontWeight="bold" textAlign="center">{ projectTitle }</Heading>
+                                    </Box>
+                                </Fixed>
+                            </Link>
+                        </ProjectThumbnail>
+                    </ThemeDefault>
                 </Col>
             );
         });

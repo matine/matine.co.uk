@@ -28,6 +28,7 @@ import BackgroundImage from './objects/BackgroundImage';
 import Banner from './components/Banner';
 import Image from './objects/Image';
 import { Iphone, Ipad, Imac, TouchDevices, ProjectsNav, BrowserWindow } from './components/Projects';
+import ProjectThumbnail from './components/ProjectThumbnail';
 
 export {
     Nav,
@@ -81,4 +82,5 @@ export {
     TouchDevices,
     ProjectsNav,
     BrowserWindow,
+    ProjectThumbnail,
 };
