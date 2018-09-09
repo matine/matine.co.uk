@@ -1,11 +1,11 @@
 import styled, { css } from 'styled-components';
-import { space } from '../../../styles/theme';
+import { space, borders, colors } from '../../../styles/theme';
 
 const List = styled.ul`
     li {
         list-style: circle;
     }
-    ${props => props.linkStyle === 'none' && css`
+    ${props => props.listStyle === 'none' && css`
         padding: 0;
         margin: 0;
         li {
@@ -14,7 +14,19 @@ const List = styled.ul`
             padding-bottom: .5em;
         }
     `}
-    ${props => props.linkStyle === 'inline' && css`
+    ${props => props.listStyle === 'bordered' && css`
+        padding: 0;
+        margin: 0;
+        li {
+            list-style: none;
+            padding-left: 0;
+            padding-bottom: 1em;
+            margin-bottom: 1em;
+            border-bottom: ${borders[1]};
+            border-color: ${colors.keyline}
+        }
+    `}
+    ${props => props.listStyle === 'inline' && css`
         padding: 0;
         margin: ${props => `-${space[props.inlineGutter]}px;`}
         li {

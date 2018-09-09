@@ -8,6 +8,8 @@ export const colors = {
     primary: '#f5e78e',
     text: '#333',
     textLight: '#333',
+    highlight: '#ff2c7b',
+    keyline: '#ccc',
     gray: [
         '#333',
         '#666',

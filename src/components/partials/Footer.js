@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as Scroll from 'react-scroll';
 import { RichText } from 'prismic-reactjs';
-import { LinkedInIcon, TwitterIcon, GithubIcon, EmailIcon, ThemeInverted, TextWrap, List, Box, Container, TextWrapMd } from '../ui';
+import { LinkedInIcon, TwitterIcon, GithubIcon, EmailIcon, ThemeInverted, TextWrap, List, Box, Container, TextWrapMd, LinkHover, ButtonHover, Text, TextMd } from '../ui';
 import links from '../../constants/links';
 
 class Footer extends Component {
@@ -25,38 +25,38 @@ class Footer extends Component {
                     <Container>
                         <TextWrapMd textAlign="center">
                             <Box mb={ 3 }>
-                                <button
+                                <ButtonHover
                                     onClick={ scroll.scrollToTop }
-                                    className="font-weight-bold font-uppercase hover hover--arrow"
+                                    hover="arrow"
                                 >
-                                    <span className="block font-size-lg hover__text hover--arrow__arrow">&uarr;</span>
-                                    <span className="hover__text">Top</span>
-                                </button>
+                                    <Text fontSize={ 28 } className="arrow" pb={ 0 } mb={ -1 }>&uarr;</Text>
+                                    <TextMd>Top</TextMd>
+                                </ButtonHover>
                             </Box>
                             <Box mb={ 3 }>
                                 { RichText.render(globalContent.footer_text) }
                             </Box>
                             <TextWrap linkStyle="none">
-                                <List linkStyle="inline">
+                                <List listStyle="inline">
                                     <li>
-                                        <a href={ links.linkedIn } className="hover hover--big hover--header-social" target="blank">
+                                        <LinkHover href={ links.linkedIn } target="blank" hover="big">
                                             <LinkedInIcon />
-                                        </a>
+                                        </LinkHover>
                                     </li>
                                     <li>
-                                        <a href={ links.twitter } className="hover hover--big hover--header-social" target="blank">
+                                        <LinkHover href={ links.twitter } target="blank" hover="big">
                                             <TwitterIcon />
-                                        </a>
+                                        </LinkHover>
                                     </li>
                                     <li>
-                                        <a href={ links.github } className="hover hover--big hover--header-social" target="blank">
+                                        <LinkHover href={ links.github } target="blank" hover="big">
                                             <GithubIcon />
-                                        </a>
+                                        </LinkHover>
                                     </li>
                                     <li>
-                                        <a href={ links.email } className="hover hover--big hover--header-social" target="blank">
+                                        <LinkHover href={ links.email } target="blank" hover="big">
                                             <EmailIcon />
-                                        </a>
+                                        </LinkHover>
                                     </li>
                                 </List>
                             </TextWrap>

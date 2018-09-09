@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { color, space, fontWeight } from 'styled-system';
 import { fontSizesResp, breakpoints, colors, spacePx, fontWeights, textStyles } from '../../../styles/theme';
 
-export const Hero = styled.div`
+const Hero = styled.div`
     ${color}
     ${space}
     ${fontWeight}
@@ -15,3 +15,5 @@ export const Hero = styled.div`
         }
     `}
 `
+
+export default Hero;

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { RichText } from 'prismic-reactjs';
 import { Link } from 'react-router-dom';
-import { Box, Container, TextMd, TextWrapMd, TextWrapSm, HeadingDecorated, Contained } from '../ui';
+import { Box, Container, TextMd, TextWrapMd, TextWrapSm, HeadingDecorated, Contained, Me } from '../ui';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
 
 class AboutPage extends Page {
@@ -42,7 +42,7 @@ class AboutPage extends Page {
 
         return (
             <Box mb={ 5 }>
-                <div className="me" style={{ backgroundImage: `url(${globalContent.about_me_image.url})` }} />
+                <Me style={{ backgroundImage: `url(${globalContent.about_me_image.url})` }} />
             </Box>
         );
     }
