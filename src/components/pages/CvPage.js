@@ -4,7 +4,7 @@ import { RichText } from 'prismic-reactjs';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
 import SunIcon from '../ui/icons/SunIcon';
 import PrintIcon from '../ui/icons/PrintIcon';
-import { Container, Box, Contained, TextWrap, HeadingDecorated, Text, Span, Heading } from '../ui';
+import { Container, Box, Contained, TextWrapXs, TextWrapSm, HeadingDecorated, TextXs, Span, Heading, HeadingXs, HeadingSm } from '../ui';
 
 class CvPage extends Page {
     /**
@@ -37,7 +37,7 @@ class CvPage extends Page {
         return (
             <Box mb={ 5 }>
                 { introTitle && <HeadingDecorated>{ introTitle[0].text }</HeadingDecorated> }
-                <TextWrap size={ 0 }>{ introText && RichText.render(introText) }</TextWrap>
+                <TextWrapSm>{ introText && RichText.render(introText) }</TextWrapSm>
             </Box>
         );
     }
@@ -59,9 +59,10 @@ class CvPage extends Page {
         return (
             <Box mb={ 5 }>
                 { skillsTitle && <HeadingDecorated>{ skillsTitle[0].text }</HeadingDecorated> }
-                <TextWrap size={ 0 } listStyle="none">
+                <TextWrapXs listStyle="none">
+                    <h2>Hello</h2>
                     { skillsText && RichText.render(skillsText) }
-                </TextWrap>
+                </TextWrapXs>
             </Box>
         );
     }
@@ -86,10 +87,10 @@ class CvPage extends Page {
             const employmentDesc = element.me_employment_description;
 
             return (
-                <Box key={ index } mb={ 3 }>
-                    { employmentDate && <Heading caps size={ 1 } color="light" mb={ 1 }>{ employmentDate[0].text }</Heading> }
-                    { employmentTitle && <Heading mb={ 0 }>{ employmentTitle[0].text }</Heading> }
-                    { employmentDesc && <TextWrap>{ RichText.render(employmentDesc) }</TextWrap> }
+                <Box key={ index } mb={ 4 }>
+                    { employmentDate && <HeadingXs caps color="light" mb={ 1 }>{ employmentDate[0].text }</HeadingXs> }
+                    { employmentTitle && <HeadingSm mb={ 0 }>{ employmentTitle[0].text }</HeadingSm> }
+                    { employmentDesc && <TextWrapSm mb={ 0 }>{ RichText.render(employmentDesc) }</TextWrapSm> }
                 </Box>
             );
         });
@@ -122,10 +123,10 @@ class CvPage extends Page {
             const educationDesc = element.me_education_description;
 
             return (
-                <Box key={ index } mb={ 3 }>
-                    { educationDate && <Heading caps size={ 1 } color="light" mb={ 1 }>{ educationDate[0].text }</Heading> }
-                    { educationDate && <Heading mb={ 0 }>{ educationTitle[0].text }</Heading> }
-                    { educationDesc && <TextWrap>{ RichText.render(educationDesc) }</TextWrap> }
+                <Box key={ index } mb={ 4 }>
+                    { educationDate && <HeadingXs caps color="light" mb={ 1 }>{ educationDate[0].text }</HeadingXs> }
+                    { educationDate && <HeadingSm mb={ 0 }>{ educationTitle[0].text }</HeadingSm> }
+                    { educationDesc && <TextWrapSm mb={ 0 }>{ RichText.render(educationDesc) }</TextWrapSm> }
                 </Box>
             );
         });
@@ -155,7 +156,7 @@ class CvPage extends Page {
         return (
             <Box mb={ 5 }>
                 { interestsTitle && <HeadingDecorated>{ interestsTitle[0].text }</HeadingDecorated> }
-                <TextWrap size={ 0 }>{ interestsText && RichText.render(interestsText) }</TextWrap>
+                <TextWrapSm>{ interestsText && RichText.render(interestsText) }</TextWrapSm>
             </Box>
         );
     }
@@ -186,17 +187,17 @@ class CvPage extends Page {
             <Box id="cv-page" pb={ 5 }>
                 <Container>
                     <Contained maxWidth={ 4 } pb={ 5 }>
-                        <Box py={ 4 }>
-                            <Heading fontSize={ 8 } caps>
+                        <Box py={ 5 }>
+                            <Heading fontSize={ 8 } mb={ 0 } caps>
                                 <span className="pos-rel">
                                     <span className="hero__sun"><SunIcon size={ 80 }/></span>
                                     { globalContent.first_name[0].text }&nbsp;
                                 </span>
                                 <span>{ globalContent.surname[0].text }</span>
                             </Heading>
-                            <Text size={ 1 } pb={ 1 } caps>
+                            <TextXs pb={ 1 } caps>
                                 <Span fontWeight="bold">Frontend developer</Span> → <Span><a href="http://matine.co.uk">matine.co.uk</a> → <Span><a href="mailto:matine.chabrier@gmail.com">matine.chabrier@gmail.com</a></Span></Span>
-                            </Text>
+                            </TextXs>
                         </Box>
                         { this.renderIntro() }
                         { this.renderSkills() }

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { RichText } from 'prismic-reactjs';
 import { Link } from 'react-router-dom';
-import { Box, Container, Text, TextWrap, HeadingDecorated, Contained } from '../ui';
+import { Box, Container, TextMd, TextWrapMd, TextWrapSm, HeadingDecorated, Contained } from '../ui';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
 
 class AboutPage extends Page {
@@ -64,7 +64,7 @@ class AboutPage extends Page {
         return (
             <Box mb={ 5 }>
                 { introTitle && <HeadingDecorated>{ introTitle[0].text }</HeadingDecorated> }
-                <TextWrap>{ introText && RichText.render(introText) }</TextWrap>
+                <TextWrapMd>{ introText && RichText.render(introText) }</TextWrapMd>
             </Box>
         );
     }
@@ -86,9 +86,9 @@ class AboutPage extends Page {
         return (
             <Box mb={ 5 }>
                 { skillsTitle && <HeadingDecorated>{ skillsTitle[0].text }</HeadingDecorated> }
-                <TextWrap size={ 1 } listStyle="none">
+                <TextWrapSm listStyle="none">
                     { skillsText && RichText.render(skillsText) }
-                </TextWrap>
+                </TextWrapSm>
             </Box>
         );
     }
@@ -114,9 +114,9 @@ class AboutPage extends Page {
                             { this.renderIntro() }
                             { this.renderSkills() }
                             <Box mb={ 5 }>
-                                <Text>View my full <Link to={ `/cv` }>CV</Link></Text>
-                                <Text>Mail me <a href="mailto:matine.chabrier@gmail.com" target="blank">matine.chabrier@gmail.com</a></Text>
-                                <Text>Peak at my code on <a href="https://github.com/matine/matine.co.uk" target="blank">Github</a></Text>
+                                <TextMd>View my full <Link to={ `/cv` }>CV</Link></TextMd>
+                                <TextMd>Mail me <a href="mailto:matine.chabrier@gmail.com" target="blank">matine.chabrier@gmail.com</a></TextMd>
+                                <TextMd>Peak at my code on <a href="https://github.com/matine/matine.co.uk" target="blank">Github</a></TextMd>
                             </Box>
                         </Contained>
                     </Container>

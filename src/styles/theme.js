@@ -29,15 +29,6 @@ export const fontSizes = [
     10, 12, 14, 16, 20, 24, 32, 48, 64, 96, 128,
 ];
 
-export const fontSizesResp = [
-    [`${fontSizes[0]}px`, `${fontSizes[1]}px`],
-    [`${fontSizes[0]}px`, `${fontSizes[1]}px`],
-    [`${fontSizes[1]}px`, `${fontSizes[2]}px`],
-    [`${fontSizes[2]}px`, `${fontSizes[3]}px`],
-    [`${fontSizes[3]}px`, `${fontSizes[4]}px`],
-    [`${fontSizes[4]}px`, `${fontSizes[5]}px`],
-];
-
 export const lineHeights = [
     1, 1.125, 1.25, 1.5,
 ];
@@ -81,11 +72,11 @@ export const textStyles = {
 };
 
 export const widths = [
-    '100px', '150px', '200px', '300px', '400px', '500px', '600px', '700px', '800px', '900px', '1000px',
+    50, 100, 150, 200, 300, 400, 500, 600, 700, 800, 900, 1000,
 ];
 
 export const containerWidths = [
-    '400px', '540px', '600px', '640px', '700px', '800px', '960px', '1100px', '1300px', '1500px',
+    400, 540, 600, 640, 700, 800, 960, 1100, 1300, 1500,
 ];
 
 export const themeDefault = {

@@ -1,14 +1,27 @@
-import PropTypes from 'prop-types';
-import { HeadingDecoratedStyled } from './_styled';
+import styled from 'styled-components';
+import { colors } from '../../../styles/theme';
+import Heading from './Heading';
 
-const HeadingDecorated = HeadingDecoratedStyled;
+export const HeadingDecorated = styled(Heading)`
+    position: relative;
+    padding-bottom: 5px;
 
-HeadingDecorated.propTypes = {
-    size: PropTypes.string,
-};
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 18px;
+        height: 5px;
+        background-color: ${colors.primary};
+    }
+`
 
 HeadingDecorated.defaultProps = {
-    size: 3,
+    caps: true,
+    fontWeight: 'regular',
+    mb: 4,
 };
 
 export default HeadingDecorated;

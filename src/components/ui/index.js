@@ -9,10 +9,10 @@ import TwitterIcon from './icons/TwitterIcon';
 import Box from './objects/Box';
 import Container from './objects/Container';
 import Contained from './objects/Contained';
-import Text from './typography/Text';
+import Text, { TextXs, TextSm, TextMd, TextLg, TextXl } from './typography/Text';
+import Heading, { HeadingXs, HeadingSm, HeadingMd, HeadingLg, HeadingXl } from './typography/Heading';
+import TextWrap, { TextWrapXs, TextWrapSm, TextWrapMd, TextWrapLg, TextWrapXl } from './typography/TextWrap';
 import Span from './typography/Span';
-import TextWrap from './typography/TextWrap';
-import Heading from './typography/Heading';
 import Button from './buttons/Button';
 import ThemeDefault from './themes/ThemeDefault';
 import ThemeInverted from './themes/ThemeInverted';
@@ -31,9 +31,24 @@ export {
     Container,
     Contained,
     Text,
-    Span,
+    TextXs,
+    TextSm,
+    TextMd,
+    TextLg,
+    TextXl,
     Heading,
+    HeadingXs,
+    HeadingSm,
+    HeadingMd,
+    HeadingLg,
+    HeadingXl,
     TextWrap,
+    TextWrapXs,
+    TextWrapSm,
+    TextWrapMd,
+    TextWrapLg,
+    TextWrapXl,
+    Span,
     Button,
     ThemeDefault,
     ThemeInverted,

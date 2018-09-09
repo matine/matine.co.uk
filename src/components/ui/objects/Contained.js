@@ -1,16 +1,13 @@
-import React from 'react';
-import { BoxStyled } from './_styled';
+import styled from 'styled-components';
+import Box from './Box';
 import { containerWidths } from '../../../styles/theme';
 
-const Contained = ({
-    ...props,
-    maxWidth,
-}) => (
-    <BoxStyled
-        { ...props }
-        mx="auto"
-        maxWidth={ containerWidths[maxWidth] }
-    />
-);
+const Contained = styled(Box)`
+    max-width: ${props => `${containerWidths[props.maxWidth]}px`}
+`
+Contained.defaultProps = {
+    mx: 'auto',
+    maxWidth: 3,
+}
 
 export default Contained;
