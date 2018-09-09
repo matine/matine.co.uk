@@ -21,10 +21,6 @@ export const space = [
     0, 4, 8, 16, 32, 64, 128, 256, 512,
 ];
 
-export const spacePx = [
-    '0px', '4px', '8px', '16px', '32px', '64px', '128px', '256px', '512px',
-];
-
 export const fontSizes = [
     10, 12, 14, 16, 20, 24, 32, 48, 64, 96, 128,
 ];

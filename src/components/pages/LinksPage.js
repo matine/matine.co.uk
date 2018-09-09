@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { RichText } from 'prismic-reactjs';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
-import { Container, TextXs, TextWrapXs, TextWrapMd, HeadingDecorated, Heading, Span } from '../ui';
+import { Container, TextXs, TextWrapXs, TextWrapMd, HeadingDecorated, Heading, Span, Col, Grid } from '../ui';
 
 class LinksPage extends Page {
     /**
@@ -44,14 +44,14 @@ class LinksPage extends Page {
                 });
 
                 return (
-                    <div key={ sliceIndex } className="grid__col grid__col-sm-6 grid__col-md-3 text-left">
+                    <Col key={ sliceIndex } width={[ 1, 1, 1/2, 1/4 ]}>
                         <HeadingDecorated size={ 4 }>{ listOfLinksTitle }</HeadingDecorated>
                         <TextWrapMd listStyle="none">
                             <ul>
                                 { linkContent }
                             </ul>
                         </TextWrapMd>
-                    </div>
+                    </Col>
                 );
 
             // Return null by default
@@ -82,9 +82,9 @@ class LinksPage extends Page {
                     <br/>
                     <Span fontWeight="regular">{ globalContent.links_subtitle[0].text }</Span>
                 </Heading>
-                <div className="grid">
+                <Grid>
                     { this.renderListOfLinks() }
-                </div>
+                </Grid>
             </Container>
         );
     }

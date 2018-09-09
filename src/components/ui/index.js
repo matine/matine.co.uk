@@ -9,6 +9,7 @@ import TwitterIcon from './icons/TwitterIcon';
 import Box from './objects/Box';
 import Container from './objects/Container';
 import Contained from './objects/Contained';
+import { Grid, Col } from './objects/Grid';
 import Text, { TextXs, TextSm, TextMd, TextLg, TextXl } from './typography/Text';
 import Heading, { HeadingXs, HeadingSm, HeadingMd, HeadingLg, HeadingXl } from './typography/Heading';
 import TextWrap, { TextWrapXs, TextWrapSm, TextWrapMd, TextWrapLg, TextWrapXl } from './typography/TextWrap';
@@ -53,4 +54,6 @@ export {
     ThemeDefault,
     ThemeInverted,
     HeadingDecorated,
+    Grid,
+    Col,
 };
