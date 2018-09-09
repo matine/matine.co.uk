@@ -1,11 +1,12 @@
 import styled, { css } from 'styled-components';
-import { color, space, fontWeight } from 'styled-system';
+import { color, space, fontWeight, textAlign } from 'styled-system';
 import { fontSizesResp, breakpoints, spacePx, fontWeights, textStyles, colors } from '../../../styles/theme';
 
 export const HeadingStyled = styled.h2`
     ${textStyles.headings}
     ${space}
     ${fontWeight}
+    ${textAlign}
     ${props => props.size && css`
         font-size: ${fontSizesResp[props.size][0]};
 

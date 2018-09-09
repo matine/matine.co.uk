@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { RichText } from 'prismic-reactjs';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
-import { Container, Box } from '../ui';
+import { Container, Box, Text, TextWrap, HeadingDecorated, Heading, Span } from '../ui';
 
 class LinksPage extends Page {
     /**
@@ -35,18 +35,22 @@ class LinksPage extends Page {
                 const linkContent = slice.items.map((link, linkIndex) => {
                     return (
                         <li key={ linkIndex } className="b-b-thin m-b-sm p-b-sm">
-                            <p className="p-b-xxs font-size-xs font-uppercase"><a href={ link.link_url.url } target="blank" className="remove-link-style font-weight-bold">{ link.link_name } →</a></p>
-                            <div className="font-size-xs">{ RichText.render(link.link_description) }</div>
+                            <Text size={ 1 } caps pb={ 1 }>
+                                <a href={ link.link_url.url } target="blank" className="remove-link-style font-weight-bold">{ link.link_name } →</a>
+                            </Text>
+                            <TextWrap size={ 1 }>{ RichText.render(link.link_description) }</TextWrap>
                         </li>
                     );
                 });
 
                 return (
                     <div key={ sliceIndex } className="grid__col grid__col-sm-6 grid__col-md-3 text-left">
-                        <h3 className="title-with-decoration font-uppercase font-size-lg font-weight-regular p-b-xxs m-b-lg">{ listOfLinksTitle }</h3>
-                        <ul className="list--no-styles">
-                            { linkContent }
-                        </ul>
+                        <HeadingDecorated size={ 4 }>{ listOfLinksTitle }</HeadingDecorated>
+                        <TextWrap listStyle="none">
+                            <ul>
+                                { linkContent }
+                            </ul>
+                        </TextWrap>
                     </div>
                 );
 
@@ -72,22 +76,16 @@ class LinksPage extends Page {
         }
 
         return (
-            <div id="links-page">
-                <Box pb={ 5 }>
-                    <Container>
-                        <div className="text-centre">
-                            <h1 className="font-uppercase p-v-xxl m-v-xxl">
-                                { globalContent.links_title[0].text }
-                                <br/>
-                                <span className="font-weight-regular">{ globalContent.links_subtitle[0].text }</span>
-                            </h1>
-                            <div className="grid">
-                                { this.renderListOfLinks() }
-                            </div>
-                        </div>
-                    </Container>
-                </Box>
-            </div>
+            <Container id="links-page" pb={ 5 }>
+                <Heading caps py={ 6 } fontWeight="bold" size={ 5 } textAlign="center">
+                    { globalContent.links_title[0].text }
+                    <br/>
+                    <Span fontWeight="regular">{ globalContent.links_subtitle[0].text }</Span>
+                </Heading>
+                <div className="grid">
+                    { this.renderListOfLinks() }
+                </div>
+            </Container>
         );
     }
 }
