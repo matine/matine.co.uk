@@ -290,7 +290,7 @@ class ProjectPage extends Page {
             <div id="project-page">
                 <Banner style={ bannerStyle } />
                 <Box position="relative" mt={[0, 0, 0, 300]} zIndex={ 2 }>
-                    <ThemeDefault bg>
+                    <ThemeDefault themeBg>
                         <Container>
                             <Box pt={[2, 3, 4]}>
                                 <HeadingXl textAlign="center" pb={ 2 } caps>{ projectContent.project_title[0].text }</HeadingXl>

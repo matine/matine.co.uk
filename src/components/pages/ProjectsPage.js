@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
-import { TextMd, Grid, Col, Heading, ProjectThumbnail, Fixed, Box, Image, ThemeDefault } from '../ui';
+import { Text, Grid, Col, Heading, ProjectThumbnail, Fixed, Box, Image, ThemeDefault, Container, SvgWrap } from '../ui';
 import SunIcon from '../ui/icons/SunIcon';
 
 class ProjectsPage extends Page {
@@ -80,7 +80,7 @@ class ProjectsPage extends Page {
                     onMouseEnter={ this.hoverOnThumbnail }
                     onMouseLeave={ this.hoverOffThumbnail }
                 >
-                    <ThemeDefault projectThumbnails>
+                    <ThemeDefault themeProjectThumbnails>
                         <ProjectThumbnail className="project-thumbnail">
                             <Link
                                 to={ `/work/${project.uid}` }>
@@ -123,20 +123,31 @@ class ProjectsPage extends Page {
         const globalContent = this.props.content.global;
 
         return (
-            <div id="projects-page" className="container container--wide text-centre p-b-xxl">
-                <div className="hero">
-                    <h1 className="hero__title font-uppercase">
-                        <span className="pos-rel">
-                            <span className="hero__sun"><SunIcon size={ 80 }/></span>
-                            { globalContent.first_name[0].text } 
-                        </span><br/>
-                        <span>{ globalContent.surname[0].text }</span>
-                    </h1>
-                    <TextMd caps fontWeight="bold" size={ 4 }>Frontend developer</TextMd>
-                </div>
-                <Grid gutter={ 0 }>
-                    { this.renderProjectListItems() }
-                </Grid>
+            <div id="projects-page">
+                <Container pb={ 5 } maxWidth={ 1500 }>
+                    <Box py={[5, 5, 6]} mt={ 5 }>
+                        <Heading caps fontSize={[46, 46, 90]} textAlign="center" lineHeight={ .85 } mb={[3, 3, 4]}>
+                            <Box display="inline-block" position="relative">
+                                <Box
+                                    display="inline-block"
+                                    position="absolute"
+                                    top={['-38px', '-38px', '-75px',]}
+                                    left="39%"
+                                >
+                                    <SvgWrap color="primary" width={[46, 46, 90]}>
+                                        <SunIcon />
+                                    </SvgWrap>
+                                </Box>
+                                { globalContent.first_name[0].text } 
+                            </Box><br/>
+                            <span>{ globalContent.surname[0].text }</span>
+                        </Heading>
+                        <Text caps fontWeight="bold" textAlign="center" fontSize={[16, 16, 26]}>Frontend developer</Text>
+                    </Box>
+                    <Grid gutter={ 0 }>
+                        { this.renderProjectListItems() }
+                    </Grid>
+                </Container>
             </div>
         )
     }

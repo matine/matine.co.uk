@@ -34,7 +34,7 @@ const onlyShowInverted = theme("mode", {
 });
 
 const ThemeDefault = styled.div`
-    ${props => props.displays && css`
+    ${props => props.themeDisplays && css`
         .only-show-default {
             display: ${onlyShowDefault};
         }
@@ -42,30 +42,30 @@ const ThemeDefault = styled.div`
             display: ${onlyShowInverted};
         }
     `}
-    ${props => props.bg && css`
+    ${props => props.themeBg && css`
         background-color: ${backgroundColor};
         background-image: ${backgroundImage};
         background-repeat: repeat;
         background-position: center center;
     `}
-    ${props => props.color && css`
+    ${props => props.themeColor && css`
         color: ${color};
     `}
-    ${props => props.svg && css`
+    ${props => props.themeSvg && css`
         fill: ${color};
     `}
-    ${props => props.border && css`
+    ${props => props.themeBorder && css`
         border-color: ${color};
         border-width: 15px;
         border-style: solid;
         border-bottom: none;
     `}
-    ${props => props.links && css`
+    ${props => props.themeLinks && css`
         a {
             border-bottom-color: ${color};
         }
     `}
-    ${props => props.projectThumbnails && css`
+    ${props => props.themeProjectThumbnails && css`
         .project-thumbnail__images {
             opacity: ${opacity};
         }

@@ -13,16 +13,17 @@ const color = theme("mode", {
 });
 
 const ThemeInverted = styled.div`
-    ${props => props.bg && css`
+    ${props => props.themeBg && css`
+        height: 100%;
         background-color: ${backgroundColor};
     `}
-    ${props => props.color && css`
+    ${props => props.themeColor && css`
         color: ${color};
     `}
-    ${props => props.svg && css`
+    ${props => props.themeSvg && css`
         fill: ${color};
     `}
-    ${props => props.links && css`
+    ${props => props.themeLinks && css`
         a {
             border-bottom-color: ${color};
         }

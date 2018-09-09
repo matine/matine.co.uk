@@ -10,7 +10,7 @@ import Loading from './partials/Loading';
 import Header from './partials/Header';
 import Footer from './partials/Footer';
 import Routing from './Routing';
-import { ThemeDefault, ThemeInverted } from './ui';
+import { ThemeDefault, ThemeInverted, Box } from './ui';
 
 class App extends React.Component {
     /**
@@ -77,18 +77,18 @@ class App extends React.Component {
 
         return (
             <ThemeProvider theme={{ mode: theme }}>
-                <ThemeInverted bg>
-                    <ThemeDefault color svg>
-                        <div className="app-wrapper">
+                <ThemeInverted themeBg>
+                    <ThemeDefault themeColor themeSvg>
+                        <Box height="100%">
                             <Loading />
                             <Header />
-                            <main className="main pos-rel z-index-1">
-                                <ThemeDefault bg border>
+                            <Box zIndex={ 1 } position="relative" pt={ 63 } mb={['223px', '223px', '293px', '263px']} className="no-margin-for-print">
+                                <ThemeDefault themeBg themeBorder className="no-border-for-print">
                                     <Routing />
                                 </ThemeDefault>
-                            </main>
+                            </Box>
                             <Footer />
-                        </div>
+                        </Box>
                     </ThemeDefault>
                 </ThemeInverted>
             </ThemeProvider>

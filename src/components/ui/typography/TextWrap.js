@@ -48,7 +48,7 @@ export const TextWrap = styled.div`
 export const TextWrapXs = styled(TextWrap)``
 
 TextWrapXs.defaultProps = {
-    fontSize: [fontSizes[0], fontSizes[1]],
+    fontSize: ['10px', fontSizes[1]],
 };
 
 export const TextWrapSm = styled(TextWrap)``

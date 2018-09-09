@@ -4,7 +4,7 @@ import { RichText } from 'prismic-reactjs';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
 import SunIcon from '../ui/icons/SunIcon';
 import PrintIcon from '../ui/icons/PrintIcon';
-import { Container, Box, Contained, TextWrapXs, TextWrapSm, HeadingDecorated, TextXs, Span, Heading, HeadingXs, HeadingSm } from '../ui';
+import { Container, Box, Contained, TextWrapXs, TextWrapSm, HeadingDecorated, TextXs, Span, Heading, HeadingXs, HeadingSm, SvgWrap, ButtonHover } from '../ui';
 
 class CvPage extends Page {
     /**
@@ -60,7 +60,6 @@ class CvPage extends Page {
             <Box mb={ 5 }>
                 { skillsTitle && <HeadingDecorated>{ skillsTitle[0].text }</HeadingDecorated> }
                 <TextWrapXs listStyle="none">
-                    <h2>Hello</h2>
                     { skillsText && RichText.render(skillsText) }
                 </TextWrapXs>
             </Box>
@@ -188,11 +187,20 @@ class CvPage extends Page {
                 <Container>
                     <Contained maxWidth={ 4 } pb={ 5 }>
                         <Box py={ 5 }>
-                            <Heading fontSize={ 8 } mb={ 0 } caps>
-                                <span className="pos-rel">
-                                    <span className="hero__sun"><SunIcon size={ 80 }/></span>
+                            <Heading fontSize={ [40, 40, 50] } mb={ 2 } ml={ -1 } lineHeight={ .85 } caps>
+                                <Box position="relative" display="inline-block">
+                                    <Box
+                                        display="inline-block"
+                                        position="absolute"
+                                        top={['-35px', '-35px', '-43px',]}
+                                        left="36%"
+                                    >
+                                        <SvgWrap color="primary" width={[40, 40, 50]}>
+                                            <SunIcon />
+                                        </SvgWrap>
+                                    </Box>
                                     { globalContent.first_name[0].text }&nbsp;
-                                </span>
+                                </Box>
                                 <span>{ globalContent.surname[0].text }</span>
                             </Heading>
                             <TextXs pb={ 1 } caps>
@@ -206,9 +214,13 @@ class CvPage extends Page {
                         { this.renderInterests() }
 
                         <div>
-                            <button onClick={ () => this.printPage() } className="print-button hover">
+                            <ButtonHover
+                                hover="big"
+                                onClick={ () => this.printPage() }
+                                className="hide-for-print"
+                            >
                                 <PrintIcon />
-                            </button>
+                            </ButtonHover>
                         </div>
                     </Contained>
                 </Container>

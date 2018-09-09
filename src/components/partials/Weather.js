@@ -91,7 +91,7 @@ class Weather extends Component {
         );
 
         return (
-            <ThemeDefault displays>
+            <ThemeDefault themeDisplays>
                 <div className="only-show-default">
                     <Flex flexDirection="row" alignItems="center" mt="-6px" minHeight={ 37 }>
                             { imageIcon }

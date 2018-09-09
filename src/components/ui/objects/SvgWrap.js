@@ -9,8 +9,4 @@ const SvgWrap = styled.div`
     }
 `
 
-SvgWrap.defaultProps = {
-    color: 'text',
-}
-
 export default SvgWrap;

@@ -1,10 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const GithubIcon = ({
-    size,
-}) => (
-    <svg width={ size } height={ size } viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+const GithubIcon = () => (
+    <svg width="100%" height="100%" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
         <path d="M249.8,8.7C114.1,8.7,4,118.8,4,254.6c0,108.6,70.4,200.8,168.1,233.3c12.3,2.3,16.8-5.3,16.8-11.9
             c0-5.8-0.2-21.3-0.3-41.8c-68.4,14.9-82.8-33-82.8-33c-11.2-28.4-27.3-36-27.3-36c-22.3-15.3,1.7-14.9,1.7-14.9
             c24.7,1.7,37.7,25.3,37.7,25.3c21.9,37.6,57.5,26.7,71.6,20.4c2.2-15.9,8.6-26.7,15.6-32.9C150.4,357,93,335.9,93,241.7
@@ -14,13 +11,5 @@ const GithubIcon = ({
             C495.7,118.8,385.6,8.7,249.8,8.7z"/>
     </svg>
 );
-
-GithubIcon.defaultProps = {
-    size: 30,
-};
-
-GithubIcon.propTypes = {
-    size: PropTypes.number,
-};
 
 export default GithubIcon;
