@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { width } from 'styled-system';
-import { colors } from '../../styles/theme';
+import { colors } from '../../../styles/theme';
 
 const SvgWrap = styled.div`
     ${width}
@@ -12,6 +12,5 @@ const SvgWrap = styled.div`
 SvgWrap.defaultProps = {
     color: 'text',
 }
-
 
 export default SvgWrap;

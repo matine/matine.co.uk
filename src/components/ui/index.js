@@ -1,5 +1,3 @@
-import Nav from './Nav';
-import NavItem from './NavItem';
 import LoadingIcon from './icons/LoadingIcon';
 import GithubIcon from './icons/GithubIcon';
 import LinkedInIcon from './icons/LinkedInIcon';
@@ -22,17 +20,17 @@ import Button from './buttons/Button';
 import ThemeDefault from './themes/ThemeDefault';
 import ThemeInverted from './themes/ThemeInverted';
 import HeadingDecorated from './typography/HeadingDecorated';
-import SvgWrap from './SvgWrap';
+import SvgWrap from './objects/SvgWrap';
 import Me from './components/Me';
 import BackgroundImage from './objects/BackgroundImage';
 import Banner from './components/Banner';
 import Image from './objects/Image';
 import { Iphone, Ipad, Imac, TouchDevices, ProjectsNav, BrowserWindow } from './components/Projects';
 import ProjectThumbnail from './components/ProjectThumbnail';
+import NavWrap from './components/NavWrap';
 
 export {
-    Nav,
-    NavItem,
+    NavWrap,
     LoadingIcon,
     GithubIcon,
     LinkedInIcon,

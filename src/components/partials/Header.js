@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Weather from './Weather';
-import { Nav, LinkedInIcon, GithubIcon, EmailIcon, ThemeDefault, Box, Grid, Col, TextWrap, List, LinkHover } from '../ui';
+import Nav from './Nav';
+import { LinkedInIcon, GithubIcon, EmailIcon, ThemeDefault, Box, Grid, Col, TextWrap, List, LinkHover } from '../ui';
 import links from '../../constants/links';
 
 class Header extends Component {
