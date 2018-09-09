@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Slider from 'react-slick';
+import { Contained } from '../ui';
 
 class Carousel extends React.PureComponent {
     /**
@@ -33,14 +34,14 @@ class Carousel extends React.PureComponent {
 
         if (items.length < 2) {
             return (
-                <div className="m-centre max-width-screenshots width-100">
+                <Contained width={ 1 } maxWidth={ 5 }>
                     { items[0] }
-                </div>
+                </Contained>
             );
         }
 
         return (
-            <div className="m-centre max-width-screenshots width-100">
+            <Contained width={ 1 } maxWidth={ 5 }>
                 <Slider { ...settings }>
                     {
                         items.map(item => (
@@ -48,7 +49,7 @@ class Carousel extends React.PureComponent {
                         ))
                     }
                 </Slider>
-            </div>
+            </Contained>
         );
     }
 }

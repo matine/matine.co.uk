@@ -8,6 +8,7 @@ import Box from './objects/Box';
 import Container from './objects/Container';
 import Contained from './objects/Contained';
 import Fixed from './objects/Fixed';
+import Flex from './objects/Flex';
 import { Grid, Col } from './objects/Grid';
 import Text, { TextXs, TextSm, TextMd, TextLg, TextXl } from './typography/Text';
 import Heading, { HeadingXs, HeadingSm, HeadingMd, HeadingLg, HeadingXl } from './typography/Heading';
@@ -41,6 +42,7 @@ export {
     Container,
     Contained,
     Fixed,
+    Flex,
     Text,
     TextXs,
     TextSm,

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, bg, space, maxWidth, display, position, zIndex, top, right, bottom , left, width, alignItems, justifyContent } from 'styled-system';
+import { color, bg, space, maxWidth, minHeight, display, position, zIndex, top, right, bottom , left, width, flex, justifySelf, alignSelf } from 'styled-system';
 
 const Box = styled.div`
     ${color}
@@ -7,15 +7,17 @@ const Box = styled.div`
     ${space}
     ${width}
     ${maxWidth}
+    ${minHeight}
     ${display}
-    ${alignItems}
     ${position}
     ${zIndex}
     ${top}
     ${right}
     ${bottom}
     ${left}
-    ${justifyContent}
+    ${flex}
+    ${alignSelf}
+    ${justifySelf}
 `
 
 export default Box;

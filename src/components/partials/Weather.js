@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Flex, Box, TextXs, Span, Image, ThemeDefault } from '../ui';
 
 class Weather extends Component {
     /**
@@ -79,27 +80,32 @@ class Weather extends Component {
         const theWeather = `${weather} and ${temp_c} °C`;
 
         const imageIcon = (
-            <img
+            <Image
                 src={ icon }
                 alt={ weather }
-                className={`weather__icon ${weatherIconLoaded ? 'block' : 'hidden'}`}
+                display={`${weatherIconLoaded ? 'block' : 'none'}`}
                 onLoad={ () => this.handleIconLoad() }
+                width="35px"
 
             />
         );
 
         return (
-            <div>
-                <div className="weather">
-                    { imageIcon }
-                    <p className="weather__text font-size-xs font-weight-bold">{ londonToday } { theWeather }</p>
+            <ThemeDefault displays>
+                <div className="only-show-default">
+                    <Flex flexDirection="row" alignItems="center" mt="-6px" minHeight={ 37 }>
+                            { imageIcon }
+                        <Box ml={ 1 } flex={ 1 }>
+                            <TextXs fontWeight="bold">{ londonToday } { theWeather }</TextXs>
+                        </Box>
+                    </Flex>
                 </div>
-                <div className="weather--inverted">
-                    <p className="weather--inverted__text font-size-sm font-weight-bold">
-                        <span role="img" aria-label="Ghost" className="font-size-lg">👻</span>
-                    </p>
+                <div className="only-show-inverted">
+                    <TextXs fontWeight="bold" mt="-6px">
+                        <Span fontSize={ 26 }><span role="img" aria-label="Ghost">👻</span></Span>
+                    </TextXs>
                 </div>
-            </div>
+            </ThemeDefault>
         );
     }
 }

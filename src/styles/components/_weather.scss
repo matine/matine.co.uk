@@ -2,31 +2,28 @@
 //  COMPONENTS - WEATHER
 // =============================================================================
 
-.weather {
-    min-height: 37px;
-    margin-top: -6px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+// .weather {
+//     min-height: 37px;
+//     margin-top: -6px;
 
-    &__icon {
-        width: 35px;
-        margin-right: 10px;
-    }
+//     &__icon {
+//         width: 35px;
+//         margin-right: 10px;
+//     }
 
-    &__text {
-        flex: 1;
-    }
+//     &__text {
+//         flex: 1;
+//     }
 
-    .theme--inverted & {
-        display: none;
-    }
-}
+//     .theme--inverted & {
+//         display: none;
+//     }
+// }
 
-.weather--inverted {
-    display: none;
+// .weather--inverted {
+//     display: none;
 
-    .theme--inverted & {
-        display: block;
-    }
-}
+//     .theme--inverted & {
+//         display: block;
+//     }
+// }

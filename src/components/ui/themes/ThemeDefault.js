@@ -23,7 +23,25 @@ const opacity = theme("mode", {
     inverted: .3,
 });
 
+const onlyShowDefault = theme("mode", {
+    default: 'block',
+    inverted: 'none',
+});
+
+const onlyShowInverted = theme("mode", {
+    default: 'none',
+    inverted: 'block',
+});
+
 const ThemeDefault = styled.div`
+    ${props => props.displays && css`
+        .only-show-default {
+            display: ${onlyShowDefault};
+        }
+        .only-show-inverted {
+            display: ${onlyShowInverted};
+        }
+    `}
     ${props => props.bg && css`
         background-color: ${backgroundColor};
         background-image: ${backgroundImage};

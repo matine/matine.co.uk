@@ -1,29 +1,29 @@
-// =============================================================================
-//  COMPONENTS - NAV
-// =============================================================================
+// // =============================================================================
+// //  COMPONENTS - NAV
+// // =============================================================================
 
-.nav {
-    li {
-        a {
-            position: relative;
+// .nav {
+//     li {
+//         a {
+//             position: relative;
 
-            &::before {
-                @include position(absolute, null 50% -9px null);
-                content: '';
-                margin-right: -9px;
-                display: block;
-                width: 18px;
-                height: 5px;
-                background-color: $primary-colour;
-                opacity: 0;
-            }
+//             &::before {
+//                 @include position(absolute, null 50% -9px null);
+//                 content: '';
+//                 margin-right: -9px;
+//                 display: block;
+//                 width: 18px;
+//                 height: 5px;
+//                 background-color: $primary-colour;
+//                 opacity: 0;
+//             }
 
-            &:hover,
-            &.active {
-                &::before {
-                    opacity: 1;
-                }
-            }
-        }
-    }
-}
+//             &:hover,
+//             &.active {
+//                 &::before {
+//                     opacity: 1;
+//                 }
+//             }
+//         }
+//     }
+// }
