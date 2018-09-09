@@ -9,6 +9,7 @@ import TwitterIcon from './icons/TwitterIcon';
 import Box from './objects/Box';
 import Container from './objects/Container';
 import Contained from './objects/Contained';
+import Fixed from './objects/Fixed';
 import { Grid, Col } from './objects/Grid';
 import Text, { TextXs, TextSm, TextMd, TextLg, TextXl } from './typography/Text';
 import Heading, { HeadingXs, HeadingSm, HeadingMd, HeadingLg, HeadingXl } from './typography/Heading';
@@ -19,6 +20,7 @@ import Button from './buttons/Button';
 import ThemeDefault from './themes/ThemeDefault';
 import ThemeInverted from './themes/ThemeInverted';
 import HeadingDecorated from './typography/HeadingDecorated';
+import SvgWrap from './SvgWrap';
 
 export {
     Nav,
@@ -32,6 +34,7 @@ export {
     Box,
     Container,
     Contained,
+    Fixed,
     Text,
     TextXs,
     TextSm,
@@ -58,4 +61,5 @@ export {
     Grid,
     Col,
     List,
+    SvgWrap,
 };

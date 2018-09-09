@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { LoadingIcon, Box } from '../ui';
+import { LoadingIcon, Fixed, SvgWrap } from '../ui';
 import { CSSTransitionGroup } from 'react-transition-group';
 
 class Loading extends Component {
@@ -12,24 +12,20 @@ class Loading extends Component {
      */
     renderLoading() {
         return (
-            <Box
+            <Fixed
                 key="one" 
                 width={ 1 }
                 position="fixed"
-                top={ 0 }
-                left={ 0 }
-                right={ 0 }
-                bottom={ 0 }
                 zIndex={ 999 }
                 display="flex"
                 alignItems="center"
                 justifyContent="center"
-                className="bg-dark-grey"
+                bg="gray.0"
             >
-                <div className="max-width-xxs icon-colour-primary">
-                    <LoadingIcon colour="#59edd6" />
-                </div>
-            </Box>
+                <SvgWrap width={ 100 } color="primary">
+                    <LoadingIcon />
+                </SvgWrap>
+            </Fixed>
         )
     }
 
