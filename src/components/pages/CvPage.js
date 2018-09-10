@@ -201,13 +201,15 @@ class CvPage extends Page {
                         { this.renderInterests() }
 
                         <div>
-                            <ButtonHover
-                                hover="big"
-                                onClick={ () => this.printPage() }
-                                className="hide-for-print"
-                            >
-                                <PrintIcon />
-                            </ButtonHover>
+                            <SvgWrap width={ 30 }>
+                                <ButtonHover
+                                    hover="big"
+                                    onClick={ () => this.printPage() }
+                                    className="hide-for-print"
+                                >
+                                    <PrintIcon />
+                                </ButtonHover>
+                            </SvgWrap>
                         </div>
                     </Contained>
                 </Container>
