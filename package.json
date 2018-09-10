@@ -3,9 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@rebass/grid": "^6.0.0-0",
     "babel-polyfill": "^6.26.0",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.10",
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "^4.1.2",
     "prismic-javascript": "^1.5.0-beta.1",
@@ -36,5 +35,10 @@
     "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "hoek": "^4.2.1",
+    "sshpk": "^1.14.2",
+    "url-parse": "^1.4.3"
   }
 }
