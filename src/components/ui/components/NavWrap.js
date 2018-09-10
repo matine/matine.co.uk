@@ -1,6 +1,6 @@
 
 import styled from 'styled-components';
-import { colors } from '../../../styles/theme';
+import { colors } from '../../ui/theme';
 
 const NavWrap = styled.nav`
     li {

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import theme from 'styled-theming';
-import { colors } from '../../../styles/theme';
+import { colors } from '../../ui/theme';
 
 const backgroundColor = theme("mode", {
     default: colors.gray[0],

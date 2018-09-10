@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { space, borders, colors } from '../../../styles/theme';
+import { space, borders, colors } from '../../ui/theme';
 
 const List = styled.ul`
     li {

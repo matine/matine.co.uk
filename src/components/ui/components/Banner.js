@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import BackgroundImage from '../objects/BackgroundImage';
-import { breakpoints } from '../../../styles/theme';
+import { breakpoints } from '../../ui/theme';
 
 const Banner = styled(BackgroundImage)`
     @media (min-width: ${breakpoints[2]}) {

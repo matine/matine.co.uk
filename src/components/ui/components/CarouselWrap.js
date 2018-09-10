@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import slickCarousel from 'slick-carousel/slick/slick.css';
 import slickCarouselTheme from 'slick-carousel/slick/slick-theme.css';
-import { colors } from '../../../styles/theme';
+import { colors } from '../../ui/theme';
 
 const CarouselWrap = styled.div`
     ${slickCarousel};

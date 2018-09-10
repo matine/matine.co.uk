@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { space, fontWeight, fontSize, textAlign } from 'styled-system';
-import { textStyles, colors, fontWeights, fontSizes, breakpoints  } from '../../../styles/theme';
+import { textStyles, colors, fontWeights, fontSizes, breakpoints  } from '../../ui/theme';
 
 export const TextWrap = styled.div`
     ${space}

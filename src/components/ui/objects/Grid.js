@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import Box from './Box';
 import { width } from 'styled-system';
-import { space } from '../../../styles/theme';
+import { space } from '../../ui/theme';
 
 export const Grid = styled(Box)`
     display: flex;

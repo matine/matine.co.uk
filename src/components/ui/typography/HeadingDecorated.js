@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '../../../styles/theme';
+import { colors } from '../../ui/theme';
 import { HeadingLg } from './Heading';
 
 export const HeadingDecorated = styled(HeadingLg)`

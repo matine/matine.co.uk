@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { colors } from '../../../styles/theme';
+import { colors } from '../../ui/theme';
 
 const LinkHover = styled.a`
     ${props => props.hover && css`

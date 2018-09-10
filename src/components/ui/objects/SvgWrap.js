@@ -1,6 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 import { width, height } from 'styled-system';
-import { colors } from '../../../styles/theme';
+import { colors } from '../../ui/theme';
 
 const rotate360 = keyframes`
     from {

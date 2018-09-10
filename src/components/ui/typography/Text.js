@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { space, fontWeight, fontSize, textAlign } from 'styled-system';
-import { textStyles, fontSizes, colors } from '../../../styles/theme';
+import { textStyles, fontSizes, colors } from '../../ui/theme';
 
 const Text = styled.p`
     ${space}

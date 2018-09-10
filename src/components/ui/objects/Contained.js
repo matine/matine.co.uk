@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Box from './Box';
-import { containerWidths } from '../../../styles/theme';
+import { containerWidths } from '../../ui/theme';
 
 const Contained = styled(Box)`
     max-width: ${props => `${containerWidths[props.maxWidth]}px`}

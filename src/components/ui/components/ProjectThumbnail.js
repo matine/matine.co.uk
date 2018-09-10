@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { breakpoints, colors } from '../../../styles/theme';
+import { breakpoints, colors } from '../../ui/theme';
 
 const ProjectThumbnail = styled.div`
     position: relative;

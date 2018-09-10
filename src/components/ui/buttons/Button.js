@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { space, fontWeight, fontSize, textAlign } from 'styled-system';
-import { textStyles } from '../../../styles/theme';
+import { textStyles } from '../../ui/theme';
 
 const Button = styled.button`
     color: inherit;

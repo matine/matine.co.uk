@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { space, fontSize, textAlign, lineHeight, display } from 'styled-system';
-import { textStyles } from '../../../styles/theme';
+import { textStyles } from '../../ui/theme';
 
 const PageHeading = styled.h1`
     ${textStyles.headings}

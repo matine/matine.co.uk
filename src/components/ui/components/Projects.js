@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import Image from '../objects/Image';
-import { breakpoints } from '../../../styles/theme';
+import { breakpoints } from '../../ui/theme';
 
 export const Ipad = styled(Image)`
     width: 40%;
