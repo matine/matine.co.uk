@@ -6,19 +6,6 @@ import { Container, TextXs, TextWrapXs, HeadingDecorated, PageHeading, Span, Col
 
 class LinksPage extends Page {
     /**
-     * Things to do when the component recieves props.
-     *
-     * @return {void}
-     */
-    componentWillReceiveProps(props) {
-        super.componentWillReceiveProps(props);
-
-        setTimeout(() => {
-            this.props.setImgsLoading(false);
-        }, 1);
-    }
-
-    /**
      * Render all the lists of links with titles
      *
      * @return {XML}

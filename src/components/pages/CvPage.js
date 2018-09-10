@@ -8,19 +8,6 @@ import { Container, Box, Contained, TextWrapXs, TextWrapSm, HeadingDecorated, Te
 
 class CvPage extends Page {
     /**
-     * Things to do when the component recieves props.
-     *
-     * @return {void}
-     */
-    componentWillReceiveProps(props) {
-        super.componentWillReceiveProps(props);
-
-        setTimeout(() => {
-            this.props.setImgsLoading(false);
-        }, 1);
-    }
-
-    /**
      * Renders the intro text.
      *
      * @return {XML}

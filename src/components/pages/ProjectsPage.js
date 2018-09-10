@@ -14,6 +14,8 @@ class ProjectsPage extends Page {
     constructor(props) {
         super(props);
 
+        props.setImgsLoading(true);
+
         this.state = {
             numImagesLoaded: 1,
         }

@@ -13,7 +13,6 @@ export class Page extends Component {
 
         window.scroll(0, 0);
         props.setTheme('default');
-        props.setImgsLoading(true);
     }
 
     /**
@@ -24,7 +23,6 @@ export class Page extends Component {
     componentWillReceiveProps(props) {
         if (props.match.url !== this.props.match.url) {
             window.scroll(0, 0);
-            this.props.setImgsLoading(true);
         }
     }
 

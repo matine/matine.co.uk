@@ -15,6 +15,8 @@ class ProjectPage extends Page {
     constructor(props) {
         super(props);
 
+        props.setImgsLoading(true);
+
         this.state = {
             projectUid: this.props.match.params.uid,
             projectContent: null,
@@ -34,6 +36,7 @@ class ProjectPage extends Page {
         super.componentWillReceiveProps(props);
 
         if (props.match.params.uid !== this.state.projectUid) {
+            props.setImgsLoading(true);
             this.onPageChange(props.match.params.uid);
         }
     }

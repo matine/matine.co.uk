@@ -7,32 +7,6 @@ import { Page, mapStateToProps, mapDispatchToProps } from './Page';
 
 class AboutPage extends Page {
     /**
-     * Things to do when the component recieves props.
-     *
-     * @return {void}
-     */
-    componentWillReceiveProps(props) {
-        super.componentWillReceiveProps(props);
-
-        setTimeout(() => {
-            this.props.setImgsLoading(false);
-        }, 1);
-    }
-
-    /**
-     * Handles when an image is loaded.
-     *
-     * @return {void}
-     */
-    handleImageLoaded() {
-        const {
-            setImgsLoading,
-        } = this.props;
-
-        setImgsLoading(false);
-    }
-
-    /**
      * Renders the image.
      *
      * @return {XML}
