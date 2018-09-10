@@ -14,12 +14,38 @@ import { ThemeDefault, ThemeInverted, Box } from './ui';
 
 class App extends React.Component {
     /**
+     * Constructing the App component.
+     *
+     * @return {void}
+     */
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            footerHeight: 0,
+        }
+    }
+
+    /**
      * Things to do before the component renders.
      *
      * @return {void}
      */
     componentWillMount() {
         this.getPrismicContent();
+    }
+
+    /**
+     * Things to do after the component renders.
+     *
+     * @return {void}
+     */
+    componentDidMount() {
+        const footerHeight = document.getElementById('footer').clientHeight;
+
+        this.setState({
+            footerHeight,
+        })
     }
 
     /**
@@ -71,6 +97,10 @@ class App extends React.Component {
             theme,
         } = this.props;
 
+        const {
+            footerHeight,
+        } = this.state;
+
         if (ui.isLoading) {
             return <Loading />;
         }
@@ -82,7 +112,7 @@ class App extends React.Component {
                         <Box height="100%">
                             <Loading />
                             <Header />
-                            <Box zIndex={ 1 } position="relative" pt={ 61 } mb={['223px', '223px', '293px', '263px']} className="no-margin-for-print">
+                            <Box zIndex={ 1 } position="relative" pt={ 61 } mb={ footerHeight } className="no-margin-for-print">
                                 <ThemeDefault themeBg themeBorder className="no-border-for-print">
                                     <Routing />
                                 </ThemeDefault>

@@ -18,7 +18,7 @@ const SvgWrap = styled.div`
     svg path {
         fill: ${props => `${colors[props.color]}`}
     }
-    ${props => props.rotate && css`
+    ${props => props.rotate360 && css`
         animation: ${rotate360} 2s linear infinite;
     `}
 `

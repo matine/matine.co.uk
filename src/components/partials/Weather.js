@@ -101,7 +101,7 @@ class Weather extends Component {
                     </Flex>
                 </div>
                 <div className="only-show-inverted">
-                    <TextXs fontWeight="bold" mt="-6px">
+                    <TextXs fontWeight="bold">
                         <Span fontSize={ 26 }><span role="img" aria-label="Ghost">👻</span></Span>
                     </TextXs>
                 </div>

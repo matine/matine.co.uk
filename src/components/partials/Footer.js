@@ -21,7 +21,7 @@ class Footer extends Component {
 
         return (
             <ThemeInverted className="hide-for-print" themeColor themeSvg themeLinks>
-                <Box width={ 1 } position="fixed" bottom={ 0 } left={ 0 } zIndex={ 0 } py={[ 4, 4, 5]}>
+                <Box width={ 1 } position="fixed" bottom={ 0 } left={ 0 } zIndex={ 0 } py={[ 4, 4, 5]} id="footer">
                     <Container>
                         <TextWrapMd textAlign="center" linkStyle="default">
                             <Box mb={ 3 }>
