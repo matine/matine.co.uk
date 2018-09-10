@@ -21,6 +21,7 @@ const NavWrap = styled.nav`
                 width: 18px;
                 height: 5px;
                 background-color: ${colors.primary};
+                border: 1px solid ${colors.primaryDark};
                 opacity: 0;
             }
 

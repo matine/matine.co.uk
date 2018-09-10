@@ -4,7 +4,7 @@ import { RichText } from 'prismic-reactjs';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
 import SunIcon from '../ui/icons/SunIcon';
 import PrintIcon from '../ui/icons/PrintIcon';
-import { Container, Box, Contained, TextWrapXs, TextWrapSm, HeadingDecorated, TextXs, Span, Heading, HeadingXs, HeadingMd, SvgWrap, ButtonHover } from '../ui';
+import { Container, Box, Contained, TextWrapXs, TextWrapSm, HeadingDecorated, TextXs, TextSm, Span, Heading, HeadingXs, HeadingMd, SvgWrap, ButtonHover } from '../ui';
 
 class CvPage extends Page {
     /**
@@ -22,8 +22,8 @@ class CvPage extends Page {
         }
 
         return (
-            <Box mb={ 5 }>
-                { introTitle && <HeadingDecorated>{ introTitle[0].text }</HeadingDecorated> }
+            <Box mb={ 5 } className="cv-section">
+                { introTitle && <HeadingDecorated className="cv-section__heading">{ introTitle[0].text }</HeadingDecorated> }
                 <TextWrapSm textSpacing>{ introText && RichText.render(introText) }</TextWrapSm>
             </Box>
         );
@@ -44,8 +44,8 @@ class CvPage extends Page {
         }
 
         return (
-            <Box mb={ 5 }>
-                { skillsTitle && <HeadingDecorated>{ skillsTitle[0].text }</HeadingDecorated> }
+            <Box mb={ 5 } className="cv-section">
+                { skillsTitle && <HeadingDecorated className="cv-section__heading">{ skillsTitle[0].text }</HeadingDecorated> }
                 <TextWrapXs textSpacing headings listStyle="none">
                     { skillsText && RichText.render(skillsText) }
                 </TextWrapXs>
@@ -82,8 +82,8 @@ class CvPage extends Page {
         });
 
         return (
-            <Box mb={ 5 }>
-                { employmentsTitle && <HeadingDecorated>{ employmentsTitle[0].text }</HeadingDecorated> }
+            <Box mb={ 5 } className="cv-section">
+                { employmentsTitle && <HeadingDecorated className="cv-section__heading">{ employmentsTitle[0].text }</HeadingDecorated> }
                 { renderEmployments }
             </Box>
         );
@@ -118,8 +118,8 @@ class CvPage extends Page {
         });
 
         return (
-            <Box mb={ 5 }>
-                { educationsTitle && <HeadingDecorated>{ educationsTitle[0].text }</HeadingDecorated> }
+            <Box mb={ 5 } className="cv-section">
+                { educationsTitle && <HeadingDecorated className="cv-section__heading">{ educationsTitle[0].text }</HeadingDecorated> }
                 { renderEducations }
             </Box>
         );
@@ -140,8 +140,8 @@ class CvPage extends Page {
         }
 
         return (
-            <Box mb={ 5 }>
-                { interestsTitle && <HeadingDecorated>{ interestsTitle[0].text }</HeadingDecorated> }
+            <Box mb={ 5 } className="cv-section">
+                { interestsTitle && <HeadingDecorated className="cv-section__heading">{ interestsTitle[0].text }</HeadingDecorated> }
                 <TextWrapSm textSpacing>{ interestsText && RichText.render(interestsText) }</TextWrapSm>
             </Box>
         );
@@ -173,7 +173,7 @@ class CvPage extends Page {
             <Box id="cv-page" pb={ 5 }>
                 <Container>
                     <Contained maxWidth={ 4 } pb={ 5 }>
-                        <Box py={ 5 }>
+                        <Box pt={ 5 } pb={ 4 }>
                             <Heading fontSize={ [40, 40, 50] } mb={ 2 } ml={ -1 } lineHeight={ .85 } caps>
                                 <Box position="relative" display="inline-block">
                                     <Box
@@ -200,16 +200,19 @@ class CvPage extends Page {
                         { this.renderEducations() }
                         { this.renderInterests() }
 
-                        <div>
-                            <SvgWrap width={ 30 }>
-                                <ButtonHover
-                                    hover="big"
-                                    onClick={ () => this.printPage() }
-                                    className="hide-for-print"
-                                >
+                        <div>                            
+                            <ButtonHover
+                                hover="big"
+                                onClick={ () => this.printPage() }
+                                className="hide-for-print"
+                            >
+                                <SvgWrap width={ 30 }>
                                     <PrintIcon />
-                                </ButtonHover>
-                            </SvgWrap>
+                                </SvgWrap>
+                                <Box className="show-on-hover" position="absolute" mt="50px">
+                                    <TextSm fontWeight="bold">Prints best in Chrome!</TextSm>
+                                </Box>
+                            </ButtonHover>
                         </div>
                     </Contained>
                 </Container>

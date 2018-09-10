@@ -14,10 +14,16 @@ const ButtonHover = styled(Button)`
         }
     `}
     ${props => props.hover === 'big' && css`
+        .show-on-hover {
+            display: none;
+        }
         &:hover {
             svg {
                 transform: scale(4);
                 position: relative;
+            }
+            .show-on-hover {
+                display: block;
             }
         }
     `}

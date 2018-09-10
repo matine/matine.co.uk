@@ -15,6 +15,7 @@ export const HeadingDecorated = styled(HeadingLg)`
         width: 18px;
         height: 5px;
         background-color: ${colors.primary};
+        border: 1px solid ${colors.primaryDark};
     }
 `
 

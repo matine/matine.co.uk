@@ -15,18 +15,20 @@ const Footer = ({
         <Box width={ 1 } position="fixed" bottom={ 0 } left={ 0 } zIndex={ 0 } py={[ 4, 4, 5]} id="footer">
             <Container>
                 <TextWrapMd textAlign="center" linkStyle="default">
-                    <Box mb={ 3 }>
+                    <Box mb={ 4 }>
                         <ButtonHover
                             onClick={ scroll.scrollToTop }
                             hover="arrow"
                         >
-                            <Text fontSize={ 28 } className="arrow" pb={ 0 } mb={ 1 }>&uarr;</Text>
-                            <TextMd>Top</TextMd>
+                            <Text fontSize={ 28 } className="arrow" pb={ 0 } mb="0px">&uarr;</Text>
+                            <TextMd fontWeight="bold">Up</TextMd>
                         </ButtonHover>
                     </Box>
-                    <Box mb={ 3 }>
-                        { RichText.render(globalContent.footer_text) }
-                    </Box>
+                    <TextWrap textSpacing>
+                        <Box mb={ 4 }>
+                            { RichText.render(globalContent.footer_text) }
+                        </Box>
+                    </TextWrap>
                     <TextWrap linkStyle="none">
                         <List listStyle="inline">
                             <li>
