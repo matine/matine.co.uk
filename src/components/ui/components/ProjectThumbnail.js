@@ -10,8 +10,6 @@ const ProjectThumbnail = styled.div`
         }
     }
     .project-thumbnail__hover {
-        width: 100%;
-        height: 100%;
         background-color: transparent;
     }
     @media (min-width: ${breakpoints[3]}) {

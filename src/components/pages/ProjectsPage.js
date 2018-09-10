@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
-import { Text, Grid, Col, Heading, ProjectThumbnail, Fixed, Box, Image, ThemeDefault, Container, SvgWrap } from '../ui';
+import { Text, Grid, Col, Heading, ProjectThumbnail, Fixed, Box, Image, ThemeDefault, Container, SvgWrap, Flex } from '../ui';
 import SunIcon from '../ui/icons/SunIcon';
 
 class ProjectsPage extends Page {
@@ -101,9 +101,15 @@ class ProjectsPage extends Page {
                                         alt={ projectData.project_thumbnail_2.alt }
                                     />
                                 </Box>
-                                <Fixed className="project-thumbnail__hover">
+                                <Fixed width={ 1 } height="100%" className="project-thumbnail__hover">
                                     <Box width={ 1 } position="absolute" bottom={ 0 } left={ 0 }>
-                                        <Heading caps fontSize={[12, 14, 16, 20]} mb={[3, 3, 2, 4]} fontWeight="bold" textAlign="center">{ projectTitle }</Heading>
+                                        <Box width="100%" pt="22.66%">
+                                            <Fixed px={ 2 }>
+                                                <Flex flex={ 1 } alignItems="center" justifyContent="center" height="100%">
+                                                    <Heading caps fontSize={[16, 18, 22, 16, 20]} mb={ 0 } pb={ 0 } fontWeight="bold" textAlign="center">{ projectTitle }</Heading>
+                                                </Flex>
+                                            </Fixed>
+                                        </Box>
                                     </Box>
                                 </Fixed>
                             </Link>
