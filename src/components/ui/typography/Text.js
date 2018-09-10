@@ -28,7 +28,7 @@ const Text = styled.p`
 export const TextXs = styled(Text)``
 
 TextXs.defaultProps = {
-    fontSize: ['10px', fontSizes[1]],
+    fontSize: [fontSizes[1], fontSizes[1]],
 };
 
 export const TextSm = styled(Text)``

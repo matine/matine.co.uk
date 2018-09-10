@@ -11,7 +11,7 @@ class Nav extends Component {
     render() {
         return (
             <NavWrap>
-                <TextWrapSm fontWeight="bold" caps linkStyle="none">
+                <TextWrapSm fontWeight="bold" caps linkStyle="none" pt={ 1 }>
                     <List listStyle="inline" inlineGutter={ 2 }>
                         <li><NavItem to="/about">About</NavItem></li>
                         <li><NavItem to="/work">Work</NavItem></li>

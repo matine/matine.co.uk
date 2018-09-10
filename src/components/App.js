@@ -82,7 +82,7 @@ class App extends React.Component {
                         <Box height="100%">
                             <Loading />
                             <Header />
-                            <Box zIndex={ 1 } position="relative" pt={ 63 } mb={['223px', '223px', '293px', '263px']} className="no-margin-for-print">
+                            <Box zIndex={ 1 } position="relative" pt={ 61 } mb={['223px', '223px', '293px', '263px']} className="no-margin-for-print">
                                 <ThemeDefault themeBg themeBorder className="no-border-for-print">
                                     <Routing />
                                 </ThemeDefault>

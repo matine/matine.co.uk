@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { space, fontWeight, fontSize, textAlign, lineHeight } from 'styled-system';
+import { space, fontWeight, fontSize, textAlign, lineHeight, display } from 'styled-system';
 import { textStyles, fontSizes, colors } from '../../../styles/theme';
 
 const Heading = styled.h2`
@@ -9,6 +9,7 @@ const Heading = styled.h2`
     ${fontSize}
     ${textAlign}
     ${lineHeight}
+    ${display}
     ${props => props.caps && css`
         ${textStyles.caps}
     `}
@@ -20,7 +21,7 @@ const Heading = styled.h2`
 export const HeadingXs = styled(Heading)``
 
 HeadingXs.defaultProps = {
-    fontSize: ['10px', fontSizes[1]],
+    fontSize: [fontSizes[1], fontSizes[1]],
 };
 
 export const HeadingSm = styled(Heading)``

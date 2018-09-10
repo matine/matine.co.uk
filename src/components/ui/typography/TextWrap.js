@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { space, fontWeight, fontSize, textAlign } from 'styled-system';
-import { textStyles, colors, fontWeights, fontSizes  } from '../../../styles/theme';
+import { textStyles, colors, fontWeights, fontSizes, breakpoints  } from '../../../styles/theme';
 
 export const TextWrap = styled.div`
     ${space}
@@ -21,6 +21,32 @@ export const TextWrap = styled.div`
         h6 {
             ${textStyles.headings}
             font-weight: ${fontWeights.bold};
+        }
+        h2 {
+            font-size: ${fontSizes[4]}
+            @media (min-width: ${breakpoints[1]}) {
+                font-size: ${fontSizes[5]}
+            }
+        }
+        h3 {
+            font-size: ${fontSizes[3]}
+            @media (min-width: ${breakpoints[1]}) {
+                font-size: ${fontSizes[4]}
+            }
+        }
+        h4 {
+            font-size: ${fontSizes[2]}
+            @media (min-width: ${breakpoints[1]}) {
+                font-size: ${fontSizes[3]}
+            }
+        }
+        h4,
+        h5,
+        h6 {
+            font-size: ${fontSizes[1]}
+            @media (min-width: ${breakpoints[1]}) {
+                font-size: ${fontSizes[1]}
+            }
         }
     `}
     ${props => props.textSpacing && css`

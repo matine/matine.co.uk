@@ -4,7 +4,7 @@ import { RichText } from 'prismic-reactjs';
 import { Link } from 'react-router-dom';
 import Carousel from '../partials/Carousel';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
-import { ThemeDefault, Container, Banner, Image, Iphone, Ipad, Imac, Span, Box, Contained, HeadingXl, TextWrapMd, TouchDevices, ProjectsNav, TextWrap, BrowserWindow, CarouselWrap } from '../ui';
+import { ThemeDefault, Container, Banner, Image, Iphone, Ipad, Imac, Span, Box, Contained, PageHeading, TextWrapMd, TouchDevices, ProjectsNav, TextWrap, BrowserWindow, CarouselWrap } from '../ui';
 
 class ProjectPage extends Page {
     /**
@@ -292,10 +292,14 @@ class ProjectPage extends Page {
                 <Box position="relative" mt={[0, 0, 0, 300]} zIndex={ 2 }>
                     <ThemeDefault themeBg>
                         <Container>
-                            <Box pt={[2, 3, 4]}>
-                                <HeadingXl textAlign="center" pb={ 2 } caps>{ projectContent.project_title[0].text }</HeadingXl>
-                                <Contained maxWidth={ 0 }>
-                                    <TextWrapMd textSpacing>
+                            <TextWrap textAlign="center">
+                                <Box position="relative" top={[-33, -33, -37, -50]} display="inline-block">
+                                    <ThemeDefault themeBg>
+                                        <PageHeading py={ 2 } px={ 3 } mb={ 0 } display="inline-block">{ projectContent.project_title[0].text }</PageHeading>
+                                    </ThemeDefault>
+                                </Box>
+                                <Contained maxWidth={ 0 } mt={ 3 }>
+                                    <TextWrapMd textSpacing mt={[-33, -33, -37, -50]} linkStyle="default">
                                         { RichText.render(projectContent.project_main_text) }
                                         <Box mt={ 4 }>
                                             { role }
@@ -304,7 +308,7 @@ class ProjectPage extends Page {
                                         </Box>
                                     </TextWrapMd>
                                 </Contained>
-                            </Box>
+                            </TextWrap>
                         </Container>
                         <Box mt={ 500 } bg="gray.3">
                             <Box position="relative" top={ -500 } mb={ -500 }>

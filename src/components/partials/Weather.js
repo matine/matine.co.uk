@@ -93,10 +93,10 @@ class Weather extends Component {
         return (
             <ThemeDefault themeDisplays>
                 <div className="only-show-default">
-                    <Flex flexDirection="row" alignItems="center" mt="-6px" minHeight={ 37 }>
+                    <Flex flexDirection="row" alignItems="center" minHeight={ 37 }>
                             { imageIcon }
-                        <Box ml={ 1 } flex={ 1 }>
-                            <TextXs fontWeight="bold">{ londonToday } { theWeather }</TextXs>
+                        <Box ml={ 2 } flex={ 1 }>
+                            <TextXs fontWeight="bold" fontStyle="italic">{ londonToday } { theWeather }</TextXs>
                         </Box>
                     </Flex>
                 </div>

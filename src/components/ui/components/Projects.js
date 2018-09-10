@@ -58,7 +58,7 @@ export const ProjectsNav = styled.div`
     }
 
     @media (min-width: ${breakpoints[2]}) {
-        top: 460px;
+        top: 400px;
     }
 
     ${props => props.direction === 'next' && css`

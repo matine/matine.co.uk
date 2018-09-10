@@ -12,6 +12,7 @@ import Flex from './objects/Flex';
 import { Grid, Col } from './objects/Grid';
 import Text, { TextXs, TextSm, TextMd, TextLg, TextXl } from './typography/Text';
 import Heading, { HeadingXs, HeadingSm, HeadingMd, HeadingLg, HeadingXl } from './typography/Heading';
+import PageHeading from './typography/PageHeading';
 import TextWrap, { TextWrapXs, TextWrapSm, TextWrapMd, TextWrapLg, TextWrapXl } from './typography/TextWrap';
 import Span from './typography/Span';
 import LinkHover from './typography/LinkHover';
@@ -57,6 +58,7 @@ export {
     HeadingMd,
     HeadingLg,
     HeadingXl,
+    PageHeading,
     TextWrap,
     TextWrapXs,
     TextWrapSm,

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { RichText } from 'prismic-reactjs';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
-import { Container, TextXs, TextWrapXs, HeadingDecorated, Heading, Span, Col, Grid, List } from '../ui';
+import { Container, TextXs, TextWrapXs, HeadingDecorated, PageHeading, Span, Col, Grid, List } from '../ui';
 
 class LinksPage extends Page {
     /**
@@ -45,7 +45,7 @@ class LinksPage extends Page {
 
                 return (
                     <Col key={ sliceIndex } width={[ 1, 1, 1/2, 1/4 ]}>
-                        <HeadingDecorated size={ 4 }>{ listOfLinksTitle }</HeadingDecorated>
+                        <HeadingDecorated>{ listOfLinksTitle }</HeadingDecorated>
                         <List listStyle="bordered">
                             { linkContent }
                         </List>
@@ -75,11 +75,11 @@ class LinksPage extends Page {
 
         return (
             <Container id="links-page" pb={ 5 }>
-                <Heading caps py={ 6 } fontWeight="bold" size={ 5 } textAlign="center">
+                <PageHeading>
                     { globalContent.links_title[0].text }
                     <br/>
                     <Span fontWeight="regular">{ globalContent.links_subtitle[0].text }</Span>
-                </Heading>
+                </PageHeading>
                 <Grid>
                     { this.renderListOfLinks() }
                 </Grid>

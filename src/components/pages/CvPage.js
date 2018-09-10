@@ -4,7 +4,7 @@ import { RichText } from 'prismic-reactjs';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
 import SunIcon from '../ui/icons/SunIcon';
 import PrintIcon from '../ui/icons/PrintIcon';
-import { Container, Box, Contained, TextWrapXs, TextWrapSm, HeadingDecorated, TextXs, Span, Heading, HeadingXs, HeadingSm, SvgWrap, ButtonHover } from '../ui';
+import { Container, Box, Contained, TextWrapXs, TextWrapSm, HeadingDecorated, TextXs, Span, Heading, HeadingXs, HeadingMd, SvgWrap, ButtonHover } from '../ui';
 
 class CvPage extends Page {
     /**
@@ -88,7 +88,7 @@ class CvPage extends Page {
             return (
                 <Box key={ index } mb={ 4 }>
                     { employmentDate && <HeadingXs caps color="light" mb={ 1 }>{ employmentDate[0].text }</HeadingXs> }
-                    { employmentTitle && <HeadingSm mb={ 0 }>{ employmentTitle[0].text }</HeadingSm> }
+                    { employmentTitle && <HeadingMd mb={ 0 }>{ employmentTitle[0].text }</HeadingMd> }
                     { employmentDesc && <TextWrapSm textSpacing mb={ 0 }>{ RichText.render(employmentDesc) }</TextWrapSm> }
                 </Box>
             );
@@ -124,7 +124,7 @@ class CvPage extends Page {
             return (
                 <Box key={ index } mb={ 4 }>
                     { educationDate && <HeadingXs caps color="light" mb={ 1 }>{ educationDate[0].text }</HeadingXs> }
-                    { educationDate && <HeadingSm mb={ 0 }>{ educationTitle[0].text }</HeadingSm> }
+                    { educationDate && <HeadingMd mb={ 0 }>{ educationTitle[0].text }</HeadingMd> }
                     { educationDesc && <TextWrapSm textSpacing mb={ 0 }>{ RichText.render(educationDesc) }</TextWrapSm> }
                 </Box>
             );
