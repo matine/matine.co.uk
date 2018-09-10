@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Flex, Box, TextXs, Span, Image, ThemeDefault } from '../ui';
 
-class Weather extends Component {
+class Weather extends PureComponent {
     /**
      * Component constructor.
      *

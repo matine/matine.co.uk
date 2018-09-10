@@ -1,59 +1,43 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { LoadingIcon, Fixed, SvgWrap, Flex } from '../ui';
 import { CSSTransitionGroup } from 'react-transition-group';
 
-class Loading extends Component {
-    /**
-     * Renders the component.
-     *
-     * @return {XML}
-     */
-    renderLoading() {
-        return (
-            <Fixed
-                key="one" 
-                width={ 1 }
-                position="fixed"
-                zIndex={ 999 }
-                bg="gray.0"
+const Loading = ({
+    isLoading,
+    imgsLoading,
+}) => {
+    const renderLoading = () => (
+        <Fixed
+            key="one" 
+            width={ 1 }
+            position="fixed"
+            zIndex={ 999 }
+            bg="gray.0"
+        >
+            <Flex
+                flex={ 1 }
+                height="100%"
+                alignItems="center"
+                justifyContent="center"
             >
-                <Flex
-                    flex={ 1 }
-                    height="100%"
-                    alignItems="center"
-                    justifyContent="center"
-                >
-                    <SvgWrap width={ 100 } height={ 100 } rotate360 color="primary">
-                        <LoadingIcon />
-                    </SvgWrap>
-                </Flex>
-            </Fixed>
-        )
-    }
+                <SvgWrap width={ 100 } height={ 100 } rotate360 color="primary">
+                    <LoadingIcon />
+                </SvgWrap>
+            </Flex>
+        </Fixed>
+    );
 
-    /**
-     * Renders the component.
-     *
-     * @return {XML}
-     */
-    render() {
-        const {
-            isLoading,
-            imgsLoading,
-        } = this.props;
-
-        return (
-            <CSSTransitionGroup
-                transitionName="item"
-                transitionEnter={ false }
-                transitionLeaveTimeout={ 1000 }
-            >
-                { !isLoading && !imgsLoading ? null : this.renderLoading() }
-            </CSSTransitionGroup>
-        )
-    }
+    return (
+        <CSSTransitionGroup
+            transitionName="item"
+            transitionEnter={ false }
+            transitionLeaveTimeout={ 1000 }
+        >
+            { !isLoading && !imgsLoading ? null : renderLoading() }
+        </CSSTransitionGroup>
+    );
 }
 
 Loading.propTypes = {
