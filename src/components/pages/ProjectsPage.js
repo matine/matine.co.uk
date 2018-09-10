@@ -152,7 +152,7 @@ class ProjectsPage extends Page {
                         </Heading>
                         <Text caps fontWeight="bold" textAlign="center" fontSize={[16, 16, 26]}>Frontend developer</Text>
                     </Box>
-                    <Grid gutter={ 0 }>
+                    <Grid gutter="adf">
                         { this.renderProjectListItems() }
                     </Grid>
                 </Container>

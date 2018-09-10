@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { colors } from '../../ui/theme';
-import Button from '../buttons/Button';
+import Button from './Button';
 
 const ButtonHover = styled(Button)`
     ${props => props.hover && css`
