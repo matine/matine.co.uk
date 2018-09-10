@@ -13,6 +13,16 @@ const Text = styled.p`
     ${props => props.color === 'light' && css`
         color: ${colors.gray[2]}
     `}
+    ${props => props.linkStyle === 'none' && css`
+        a {
+            font-weight: inherit;
+            border-bottom: none;
+    
+            &:hover {
+                color: inherit;
+            }
+        }
+    `}
 `
 
 export const TextXs = styled(Text)``

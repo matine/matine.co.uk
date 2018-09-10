@@ -4,7 +4,7 @@ import { RichText } from 'prismic-reactjs';
 import { Link } from 'react-router-dom';
 import Carousel from '../partials/Carousel';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
-import { ThemeDefault, Container, Banner, Image, Iphone, Ipad, Imac, TextMd, Span, Box, Contained, HeadingXl, TextWrapMd, TouchDevices, ProjectsNav, TextWrap, BrowserWindow } from '../ui';
+import { ThemeDefault, Container, Banner, Image, Iphone, Ipad, Imac, Span, Box, Contained, HeadingXl, TextWrapMd, TouchDevices, ProjectsNav, TextWrap, BrowserWindow, CarouselWrap } from '../ui';
 
 class ProjectPage extends Page {
     /**
@@ -209,7 +209,7 @@ class ProjectPage extends Page {
             return null;
         }
 
-        return <Carousel items={ carouselItems } initialSlide={ 0 } />;
+        return <CarouselWrap><Carousel items={ carouselItems } initialSlide={ 0 } /></CarouselWrap>;
     }
 
     /**
@@ -246,9 +246,9 @@ class ProjectPage extends Page {
             backgroundImage: 'url(' + projectContent.project_banner.url + ')',
         };
 
-        const role = roleContent && <TextMd><Span fontWeight="bold">Role: </Span>{ roleContent }</TextMd>;
-        const techStack = techStackContent && <TextMd><Span fontWeight="bold">Tech stack: </Span>{ techStackContent }</TextMd>;
-        const visitWebsite = visitWebsiteContent && <TextMd><a href={ visitWebsiteContent } target="_blank">Visit website</a></TextMd>;
+        const role = roleContent && <p><Span fontWeight="bold">Role: </Span>{ roleContent }</p>;
+        const techStack = techStackContent && <p><Span fontWeight="bold">Tech stack: </Span>{ techStackContent }</p>;
+        const visitWebsite = visitWebsiteContent && <p><a href={ visitWebsiteContent } target="_blank">Visit website</a></p>;
 
         let numOfImgs = 1;
 
@@ -295,14 +295,14 @@ class ProjectPage extends Page {
                             <Box pt={[2, 3, 4]}>
                                 <HeadingXl textAlign="center" pb={ 2 } caps>{ projectContent.project_title[0].text }</HeadingXl>
                                 <Contained maxWidth={ 0 }>
-                                    <TextWrapMd>
+                                    <TextWrapMd textSpacing>
                                         { RichText.render(projectContent.project_main_text) }
+                                        <Box mt={ 4 }>
+                                            { role }
+                                            { techStack }
+                                            { visitWebsite }
+                                        </Box>
                                     </TextWrapMd>
-                                    <Box mt={ 4 }>
-                                        { role }
-                                        { techStack }
-                                        { visitWebsite }
-                                    </Box>
                                 </Contained>
                             </Box>
                         </Container>
@@ -321,7 +321,7 @@ class ProjectPage extends Page {
                                     { this.renderProjectScreenshotCarousel() }
                                 </Container>
                             </Box>
-                            <TextWrap fontSize={[26, 26, 40]} linkStyle="none">
+                            <TextWrap fontSize={[26, 26, 40]}>
                                 <ProjectsNav direction="prev">{ prevProject && this.renderProjectLink(prevProject, '←') }</ProjectsNav>
                                 <ProjectsNav direction="next">{ nextProject && this.renderProjectLink(nextProject, '→') }</ProjectsNav>
                             </TextWrap>

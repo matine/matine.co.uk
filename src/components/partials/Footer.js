@@ -23,13 +23,13 @@ class Footer extends Component {
             <ThemeInverted className="hide-for-print" themeColor themeSvg themeLinks>
                 <Box width={ 1 } position="fixed" bottom={ 0 } left={ 0 } zIndex={ 0 } py={[ 4, 4, 5]}>
                     <Container>
-                        <TextWrapMd textAlign="center">
+                        <TextWrapMd textAlign="center" linkStyle="default">
                             <Box mb={ 3 }>
                                 <ButtonHover
                                     onClick={ scroll.scrollToTop }
                                     hover="arrow"
                                 >
-                                    <Text fontSize={ 28 } className="arrow" pb={ 0 } mb={ -1 }>&uarr;</Text>
+                                    <Text fontSize={ 28 } className="arrow" pb={ 0 } mb={ 1 }>&uarr;</Text>
                                     <TextMd>Top</TextMd>
                                 </ButtonHover>
                             </Box>

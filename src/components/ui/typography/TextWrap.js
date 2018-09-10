@@ -13,17 +13,24 @@ export const TextWrap = styled.div`
     ${props => props.color === 'light' && css`
         color: ${colors.gray[2]}
     `}
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        ${textStyles.headings}
-        font-weight: ${fontWeights.bold};
-    }
-    li {
-        list-style: circle;
-    }
+    ${props => props.headings && css`
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            ${textStyles.headings}
+            font-weight: ${fontWeights.bold};
+        }
+    `}
+    ${props => props.textSpacing && css`
+        p {
+            margin-bottom: 1em;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    `}
     ${props => props.listStyle === 'none' && css`
         ul {
             padding: 0;
@@ -35,12 +42,27 @@ export const TextWrap = styled.div`
             padding-bottom: .5em;
         }
     `}
+    ${props => props.listStyle === 'default' && css`
+        li {
+            list-style: circle;
+        }
+    `}
+    ${props => props.linkStyle === 'default' && css`
+        a {
+            border-bottom: 1px dashed ${colors.text};
+            &:hover {
+                border-bottom-color: ${colors.highlight};
+            }
+        }
+    `}
     ${props => props.linkStyle === 'none' && css`
         a {
-            color: inherit;
             font-weight: inherit;
-            text-decoration: none;
             border-bottom: none;
+    
+            &:hover {
+                color: inherit;
+            }
         }
     `}
 `

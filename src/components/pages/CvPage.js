@@ -37,7 +37,7 @@ class CvPage extends Page {
         return (
             <Box mb={ 5 }>
                 { introTitle && <HeadingDecorated>{ introTitle[0].text }</HeadingDecorated> }
-                <TextWrapSm>{ introText && RichText.render(introText) }</TextWrapSm>
+                <TextWrapSm textSpacing>{ introText && RichText.render(introText) }</TextWrapSm>
             </Box>
         );
     }
@@ -59,7 +59,7 @@ class CvPage extends Page {
         return (
             <Box mb={ 5 }>
                 { skillsTitle && <HeadingDecorated>{ skillsTitle[0].text }</HeadingDecorated> }
-                <TextWrapXs listStyle="none">
+                <TextWrapXs textSpacing headings listStyle="none">
                     { skillsText && RichText.render(skillsText) }
                 </TextWrapXs>
             </Box>
@@ -89,7 +89,7 @@ class CvPage extends Page {
                 <Box key={ index } mb={ 4 }>
                     { employmentDate && <HeadingXs caps color="light" mb={ 1 }>{ employmentDate[0].text }</HeadingXs> }
                     { employmentTitle && <HeadingSm mb={ 0 }>{ employmentTitle[0].text }</HeadingSm> }
-                    { employmentDesc && <TextWrapSm mb={ 0 }>{ RichText.render(employmentDesc) }</TextWrapSm> }
+                    { employmentDesc && <TextWrapSm textSpacing mb={ 0 }>{ RichText.render(employmentDesc) }</TextWrapSm> }
                 </Box>
             );
         });
@@ -125,7 +125,7 @@ class CvPage extends Page {
                 <Box key={ index } mb={ 4 }>
                     { educationDate && <HeadingXs caps color="light" mb={ 1 }>{ educationDate[0].text }</HeadingXs> }
                     { educationDate && <HeadingSm mb={ 0 }>{ educationTitle[0].text }</HeadingSm> }
-                    { educationDesc && <TextWrapSm mb={ 0 }>{ RichText.render(educationDesc) }</TextWrapSm> }
+                    { educationDesc && <TextWrapSm textSpacing mb={ 0 }>{ RichText.render(educationDesc) }</TextWrapSm> }
                 </Box>
             );
         });
@@ -155,7 +155,7 @@ class CvPage extends Page {
         return (
             <Box mb={ 5 }>
                 { interestsTitle && <HeadingDecorated>{ interestsTitle[0].text }</HeadingDecorated> }
-                <TextWrapSm>{ interestsText && RichText.render(interestsText) }</TextWrapSm>
+                <TextWrapSm textSpacing>{ interestsText && RichText.render(interestsText) }</TextWrapSm>
             </Box>
         );
     }

@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
 import { colors } from '../../../styles/theme';
+import Button from '../buttons/Button';
 
-const ButtonHover = styled.button`
+const ButtonHover = styled(Button)`
     ${props => props.hover && css`
         &:hover {
             svg {

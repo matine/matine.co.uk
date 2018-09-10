@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { RichText } from 'prismic-reactjs';
 import { Link } from 'react-router-dom';
-import { Box, Container, TextMd, TextWrapMd, TextWrapSm, HeadingDecorated, Contained, Me } from '../ui';
+import { Box, Container, TextWrapMd, TextWrapSm, HeadingDecorated, Contained, Me } from '../ui';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
 
 class AboutPage extends Page {
@@ -64,7 +64,7 @@ class AboutPage extends Page {
         return (
             <Box mb={ 5 }>
                 { introTitle && <HeadingDecorated>{ introTitle[0].text }</HeadingDecorated> }
-                <TextWrapMd>{ introText && RichText.render(introText) }</TextWrapMd>
+                <TextWrapMd textSpacing>{ introText && RichText.render(introText) }</TextWrapMd>
             </Box>
         );
     }
@@ -86,7 +86,7 @@ class AboutPage extends Page {
         return (
             <Box mb={ 5 }>
                 { skillsTitle && <HeadingDecorated>{ skillsTitle[0].text }</HeadingDecorated> }
-                <TextWrapSm listStyle="none">
+                <TextWrapSm listStyle="none" textSpacing headings>
                     { skillsText && RichText.render(skillsText) }
                 </TextWrapSm>
             </Box>
@@ -114,9 +114,11 @@ class AboutPage extends Page {
                             { this.renderIntro() }
                             { this.renderSkills() }
                             <Box mb={ 5 }>
-                                <TextMd>View my full <Link to={ `/cv` }>CV</Link></TextMd>
-                                <TextMd>Mail me <a href="mailto:matine.chabrier@gmail.com" target="blank">matine.chabrier@gmail.com</a></TextMd>
-                                <TextMd>Peak at my code on <a href="https://github.com/matine/matine.co.uk" target="blank">Github</a></TextMd>
+                                <TextWrapMd textSpacing linkStyle="default">
+                                    <p>View my full <Link to={ `/cv` }>CV</Link></p>
+                                    <p>Mail me <a href="mailto:matine.chabrier@gmail.com" target="blank">matine.chabrier@gmail.com</a></p>
+                                    <p>Peak at my code on <a href="https://github.com/matine/matine.co.uk" target="blank">Github</a></p>
+                                </TextWrapMd>
                             </Box>
                         </Contained>
                     </Container>

@@ -16,8 +16,8 @@ import TextWrap, { TextWrapXs, TextWrapSm, TextWrapMd, TextWrapLg, TextWrapXl } 
 import Span from './typography/Span';
 import LinkHover from './typography/LinkHover';
 import ButtonHover from './typography/ButtonHover';
-import List from './typography/List';
 import Button from './buttons/Button';
+import List from './typography/List';
 import ThemeDefault from './themes/ThemeDefault';
 import ThemeInverted from './themes/ThemeInverted';
 import HeadingDecorated from './typography/HeadingDecorated';
@@ -29,8 +29,10 @@ import Image from './objects/Image';
 import { Iphone, Ipad, Imac, TouchDevices, ProjectsNav, BrowserWindow } from './components/Projects';
 import ProjectThumbnail from './components/ProjectThumbnail';
 import NavWrap from './components/NavWrap';
+import CarouselWrap from './components/CarouselWrap';
 
 export {
+    CarouselWrap,
     NavWrap,
     LoadingIcon,
     GithubIcon,
