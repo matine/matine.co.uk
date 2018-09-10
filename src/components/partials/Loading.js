@@ -25,7 +25,7 @@ class Loading extends Component {
                     alignItems="center"
                     justifyContent="center"
                 >
-                    <SvgWrap width={ 100 } color="primary">
+                    <SvgWrap width={ 100 } height={ 100 } rotate color="primary">
                         <LoadingIcon />
                     </SvgWrap>
                 </Flex>

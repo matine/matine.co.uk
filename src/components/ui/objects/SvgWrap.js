@@ -1,12 +1,26 @@
-import styled from 'styled-components';
-import { width } from 'styled-system';
+import styled, { css, keyframes } from 'styled-components';
+import { width, height } from 'styled-system';
 import { colors } from '../../../styles/theme';
+
+const rotate360 = keyframes`
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+`;
 
 const SvgWrap = styled.div`
     ${width}
+    ${height}
     svg path {
         fill: ${props => `${colors[props.color]}`}
     }
+    ${props => props.rotate && css`
+        animation: ${rotate360} 2s linear infinite;
+    `}
 `
 
 export default SvgWrap;
