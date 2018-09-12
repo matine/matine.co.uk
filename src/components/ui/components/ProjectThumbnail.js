@@ -1,5 +1,15 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { breakpoints, colors } from '../../ui/theme';
+
+const showHide = keyframes`
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+`;
 
 const ProjectThumbnail = styled.div`
     position: relative;
@@ -29,7 +39,7 @@ const ProjectThumbnail = styled.div`
         }
 
         .project-thumbnail__image2 {
-            animation: show-hide 2s infinite;
+            animation: ${showHide} 2s infinite;
         }
     }
     .project-thumbnail__images {
