@@ -185,6 +185,7 @@ class ProjectPage extends Page {
     renderProjectScreenshotCarousel() {
         const projectContent = this.state.projectContent.data;
         const projectScreenshots = projectContent.project_screenshots;
+        const projectType = projectContent.project_type;
 
         if (!projectScreenshots[0]) {
             return null;
@@ -195,9 +196,11 @@ class ProjectPage extends Page {
 
             return (
                 <div key={ carouselImage.alt }>
-                    <BrowserWindow>
-                        <div className="controls"><span></span><span></span><span></span></div>
-                    </BrowserWindow>
+                    { projectType !== 'app' && (
+                        <BrowserWindow>
+                            <div className="controls"><span></span><span></span><span></span></div>
+                        </BrowserWindow>
+                    ) }
                     <Image
                         width={ 1 }
                         src={ carouselImage.url }
