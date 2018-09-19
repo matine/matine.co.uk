@@ -25,7 +25,7 @@ import ThemeInverted from './themes/ThemeInverted';
 import SvgWrap from './objects/SvgWrap';
 import BackgroundImage from './objects/BackgroundImage';
 import Image from './objects/Image';
-import { Iphone, Ipad, Imac, TouchDevices, ProjectsNav, BrowserWindow } from './components/Projects';
+import { Iphone, Ipad, Imac, TouchDevices, ProjectsNav, BrowserWindow, BannerOverlay } from './components/Projects';
 import Me from './components/Me';
 import Banner from './components/Banner';
 import ProjectThumbnail from './components/ProjectThumbnail';
@@ -87,6 +87,7 @@ export {
     TouchDevices,
     ProjectsNav,
     BrowserWindow,
+    BannerOverlay,
     ProjectThumbnail,
     FadeOut,
 };

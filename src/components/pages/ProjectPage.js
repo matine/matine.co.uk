@@ -5,7 +5,7 @@ import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 import { Link } from 'react-router-dom';
 import Carousel from '../partials/Carousel';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
-import { ThemeDefault, Container, Banner, Image, Iphone, Ipad, Imac, Span, Box, Contained, PageHeading, TextWrapMd, TouchDevices, ProjectsNav, TextWrap, BrowserWindow, CarouselWrap } from '../ui';
+import { ThemeDefault, Container, Banner, Image, Iphone, Ipad, Imac, Span, Box, Contained, PageHeading, TextWrapMd, TouchDevices, ProjectsNav, TextWrap, BrowserWindow, CarouselWrap, BannerOverlay } from '../ui';
 
 class ProjectPage extends Page {
     /**
@@ -244,6 +244,7 @@ class ProjectPage extends Page {
         }
 
         const projectContent = this.state.projectContent.data;
+        const projectType = projectContent.project_type;
         const prevProject = this.getPrevProject();
         const nextProject = this.getNextProject();
         const roleContent = projectContent.project_role[0] && projectContent.project_role[0].text;
@@ -252,7 +253,13 @@ class ProjectPage extends Page {
 
         const role = roleContent && <p><Span fontWeight="bold">Role: </Span>{ roleContent }</p>;
         const techStack = techStackContent && <p><Span fontWeight="bold">Tech stack: </Span>{ techStackContent }</p>;
-        const visitWebsite = visitWebsiteContent && <p><a href={ visitWebsiteContent } target="_blank">Visit website</a></p>;
+        const visitWebsite = visitWebsiteContent && (
+            <p>
+                <a href={ visitWebsiteContent } target="_blank">
+                    { projectType === 'app' ? 'Download app' : 'Visit website' }
+                </a>
+            </p>
+        );
 
         let numOfImgs = 1;
 
@@ -311,7 +318,8 @@ class ProjectPage extends Page {
                     >
                         { bannerImg }
                     </Parallax>
-                    <ThemeDefault themeBg position="relative" mt={ -15 } zIndex={ 2 }>
+                    <ThemeDefault themeBg position="relative" zIndex={ 2 } height="100%">
+                        <BannerOverlay />
                         <Container>
                             <TextWrap textAlign="center">
                                 <ThemeDefault themeBg position="relative" top={[-33, -33, -37, -50]} display="inline-block">
@@ -329,7 +337,7 @@ class ProjectPage extends Page {
                                 </Contained>
                             </TextWrap>
                         </Container>
-                        <Box mt={ 500 } bg="gray.3">
+                        <Box mt={ 500 } bg={['transparent', 'transparent', 'transparent', 'transparent', 'gray.3']}>
                             <Box position="relative" top={ -500 } mb={ -500 }>
                                 <Container>
                                     { imacImg }

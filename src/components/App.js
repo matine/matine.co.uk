@@ -111,7 +111,7 @@ class App extends React.Component {
                     <ThemeDefault themeColor themeSvg height="100%">
                         <Loading />
                         <Header />
-                        <Box zIndex={ 1 } position="relative" pt={ [40, 40, 40, 60] } mb={ footerHeight } className="no-margin-for-print">
+                        <Box zIndex={ 1 } position="relative" pt={ [25, 25, 25, 40] } mb={ footerHeight } className="no-margin-for-print">
                             <ThemeDefault themeBg themeBorder className="no-border-for-print">
                                 <Routing />
                             </ThemeDefault>

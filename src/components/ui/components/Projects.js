@@ -98,16 +98,32 @@ export const BrowserWindow = styled.div`
 
             &:nth-child(1) {
                 border: 1px solid #db3e39;
-                background: radial-gradient(circle, #ff7b76 0%, #ff544d 100%);
+                background: #ff544d;
             }
             &:nth-child(2) {
                 border: 1px solid #da9617;
-                background: radial-gradient(circle, #ffcc6d 0%, #ffb429 100%);
+                background: #ffb429;
             }
             &:nth-child(3) {
                 border: 1px solid #12a127;
-                background: radial-gradient(circle, #83c48c 0%, #24c238 100%);
+                background: #24c238;
             }
         }
+    }
+`
+
+export const BannerOverlay = styled.div`
+    width: 100%;
+
+    &:before {
+        content: '';
+        width: 100%;
+        height: 300px;
+        position: absolute;
+        z-index: 0;
+        top: -300px;
+        background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 80%);
+        background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 80%);
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.3) 80%)
     }
 `
