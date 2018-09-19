@@ -60,6 +60,7 @@ const ThemeDefault = styled(Box)`
         border-width: 15px;
         border-style: solid;
         border-bottom: none;
+        border-bottom: none;
     `}
     ${props => props.themeLinks && css`
         a {

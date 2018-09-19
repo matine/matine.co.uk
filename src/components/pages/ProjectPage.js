@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { RichText } from 'prismic-reactjs';
+import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 import { Link } from 'react-router-dom';
 import Carousel from '../partials/Carousel';
 import { Page, mapStateToProps, mapDispatchToProps } from './Page';
@@ -301,48 +302,56 @@ class ProjectPage extends Page {
         );
 
         return (
-            <div id="project-page">
-                { bannerImg }
-                <ThemeDefault themeBg position="relative" mt={[0, 0, 0, 300]} zIndex={ 2 }>
-                    <Container>
-                        <TextWrap textAlign="center">
-                            <ThemeDefault themeBg position="relative" top={[-33, -33, -37, -50]} display="inline-block">
-                                <PageHeading py={ 2 } px={ 3 } mb={ 0 } display="inline-block">{ projectContent.project_title[0].text }</PageHeading>
-                            </ThemeDefault>
-                            <Contained maxWidth={ 0 } mt={ 3 }>
-                                <TextWrapMd textSpacing mt={[-33, -33, -37, -50]} linkStyle="default">
-                                    { RichText.render(projectContent.project_main_text) }
-                                    <Box mt={ 4 }>
-                                        { role }
-                                        { techStack }
-                                        { visitWebsite }
-                                    </Box>
-                                </TextWrapMd>
-                            </Contained>
-                        </TextWrap>
-                    </Container>
-                    <Box mt={ 500 } bg="gray.3">
-                        <Box position="relative" top={ -500 } mb={ -500 }>
-                            <Container>
-                                { imacImg }
-                                <TouchDevices>
-                                    { ipadImg }
-                                    { iphoneImg }
-                                </TouchDevices>
-                            </Container>
+            <ParallaxProvider>
+                <div id="project-page">
+                    <Parallax
+                        offsetYMax={ 60 }
+                        offsetYMin={ -100 }
+                        slowerScrollRate
+                    >
+                        { bannerImg }
+                    </Parallax>
+                    <ThemeDefault themeBg position="relative" mt={ -15 } zIndex={ 2 }>
+                        <Container>
+                            <TextWrap textAlign="center">
+                                <ThemeDefault themeBg position="relative" top={[-33, -33, -37, -50]} display="inline-block">
+                                    <PageHeading py={ 2 } px={ 3 } mb={ 0 } display="inline-block">{ projectContent.project_title[0].text }</PageHeading>
+                                </ThemeDefault>
+                                <Contained maxWidth={ 0 } mt={ 3 }>
+                                    <TextWrapMd textSpacing mt={[-33, -33, -37, -50]} linkStyle="default">
+                                        { RichText.render(projectContent.project_main_text) }
+                                        <Box mt={ 4 }>
+                                            { role }
+                                            { techStack }
+                                            { visitWebsite }
+                                        </Box>
+                                    </TextWrapMd>
+                                </Contained>
+                            </TextWrap>
+                        </Container>
+                        <Box mt={ 500 } bg="gray.3">
+                            <Box position="relative" top={ -500 } mb={ -500 }>
+                                <Container>
+                                    { imacImg }
+                                    <TouchDevices>
+                                        { ipadImg }
+                                        { iphoneImg }
+                                    </TouchDevices>
+                                </Container>
+                            </Box>
+                            <Box position="relative" zIndex={ 1 } mt={ 5 } pb={ 6 }>
+                                <Container>
+                                    { this.renderProjectScreenshotCarousel() }
+                                </Container>
+                            </Box>
+                            <TextWrap fontSize={[26, 26, 40]}>
+                                <ProjectsNav direction="prev">{ prevProject && this.renderProjectLink(prevProject, '←') }</ProjectsNav>
+                                <ProjectsNav direction="next">{ nextProject && this.renderProjectLink(nextProject, '→') }</ProjectsNav>
+                            </TextWrap>
                         </Box>
-                        <Box position="relative" zIndex={ 1 } mt={ 5 } pb={ 6 }>
-                            <Container>
-                                { this.renderProjectScreenshotCarousel() }
-                            </Container>
-                        </Box>
-                        <TextWrap fontSize={[26, 26, 40]}>
-                            <ProjectsNav direction="prev">{ prevProject && this.renderProjectLink(prevProject, '←') }</ProjectsNav>
-                            <ProjectsNav direction="next">{ nextProject && this.renderProjectLink(nextProject, '→') }</ProjectsNav>
-                        </TextWrap>
-                    </Box>
-                </ThemeDefault>
-            </div>
+                    </ThemeDefault>
+                </div>
+            </ParallaxProvider>
         );
     }
 }
