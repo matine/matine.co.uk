@@ -13,14 +13,19 @@ const globalStyles = css`
         line-height: 1.5;
         margin: 0;
     }
-    a:visited {
-        fill: inherit;
-    }
     a {
+        background-color: transparent;
         color: inherit;
         text-decoration: none;
+        &:active,
+        &:hover {
+            outline: 0;
+        }
         &:hover {
             color: ${colors.highlight};
+        }
+        &:visited {
+            fill: inherit;
         }
     }
     html {
@@ -32,14 +37,6 @@ const globalStyles = css`
     *::before,
     *::after {
         box-sizing: inherit;
-    }
-    a {
-        background-color: transparent;
-    
-        &:active,
-        &:hover {
-            outline: 0;
-        }
     }
     img {
         border: 0;
