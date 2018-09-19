@@ -108,17 +108,15 @@ class App extends React.Component {
         return (
             <ThemeProvider theme={{ mode: theme }}>
                 <ThemeInverted themeBg>
-                    <ThemeDefault themeColor themeSvg>
-                        <Box height="100%">
-                            <Loading />
-                            <Header />
-                            <Box zIndex={ 1 } position="relative" pt={ 61 } mb={ footerHeight } className="no-margin-for-print">
-                                <ThemeDefault themeBg themeBorder className="no-border-for-print">
-                                    <Routing />
-                                </ThemeDefault>
-                            </Box>
-                            <Footer />
+                    <ThemeDefault themeColor themeSvg height="100%">
+                        <Loading />
+                        <Header />
+                        <Box zIndex={ 1 } position="relative" pt={ 61 } mb={ footerHeight } className="no-margin-for-print">
+                            <ThemeDefault themeBg themeBorder className="no-border-for-print">
+                                <Routing />
+                            </ThemeDefault>
                         </Box>
+                        <Footer />
                     </ThemeDefault>
                 </ThemeInverted>
             </ThemeProvider>

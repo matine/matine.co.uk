@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { width, maxWidth, display, position, top, right, bottom, left, zIndex } from 'styled-system';
+import { width, maxWidth, display, position, top, right, bottom, left, zIndex, height } from 'styled-system';
 
 const Image = styled.img`
     ${width}
@@ -11,6 +11,7 @@ const Image = styled.img`
     ${right}
     ${bottom}
     ${left}
+    ${height}
 `
 
 export default Image;

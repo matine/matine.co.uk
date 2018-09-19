@@ -79,6 +79,7 @@ class ProjectPage extends Page {
         const projectContent = this.state.projectContent.data;
         let minNumOfImages = 0;
 
+        projectContent.project_banner.url && (minNumOfImages += 1);
         projectContent.project_imac.url && (minNumOfImages += 1);
         projectContent.project_ipad.url && (minNumOfImages += 1);
         projectContent.project_iphone.url && (minNumOfImages += 1);
@@ -248,10 +249,6 @@ class ProjectPage extends Page {
         const techStackContent = projectContent.project_tech_stack[0] && projectContent.project_tech_stack[0].text;
         const visitWebsiteContent = projectContent.project_visit_website_link && projectContent.project_visit_website_link.url;
 
-        const bannerStyle = {
-            backgroundImage: 'url(' + projectContent.project_banner.url + ')',
-        };
-
         const role = roleContent && <p><Span fontWeight="bold">Role: </Span>{ roleContent }</p>;
         const techStack = techStackContent && <p><Span fontWeight="bold">Tech stack: </Span>{ techStackContent }</p>;
         const visitWebsite = visitWebsiteContent && <p><a href={ visitWebsiteContent } target="_blank">Visit website</a></p>;
@@ -261,6 +258,17 @@ class ProjectPage extends Page {
         projectContent.project_imac.url && (numOfImgs += 1);
         projectContent.project_ipad.url && (numOfImgs += 1);
         projectContent.project_iphone.url && (numOfImgs += 1);
+
+        const bannerImg = (
+            projectContent.project_banner.url && (
+                <Banner
+                    src={ projectContent.project_banner.url }
+                    alt={ projectContent.project_banner.alt }
+                    onLoad={ this.handleImageLoaded.bind(this) }
+                    height={[200, 200, 200, 300]}
+                />
+            )
+        );
 
         const imacImg = (
             projectContent.project_imac.url && (
@@ -294,50 +302,46 @@ class ProjectPage extends Page {
 
         return (
             <div id="project-page">
-                <Banner style={ bannerStyle } />
-                <Box position="relative" mt={[0, 0, 0, 300]} zIndex={ 2 }>
-                    <ThemeDefault themeBg>
-                        <Container>
-                            <TextWrap textAlign="center">
-                                <Box position="relative" top={[-33, -33, -37, -50]} display="inline-block">
-                                    <ThemeDefault themeBg>
-                                        <PageHeading py={ 2 } px={ 3 } mb={ 0 } display="inline-block">{ projectContent.project_title[0].text }</PageHeading>
-                                    </ThemeDefault>
-                                </Box>
-                                <Contained maxWidth={ 0 } mt={ 3 }>
-                                    <TextWrapMd textSpacing mt={[-33, -33, -37, -50]} linkStyle="default">
-                                        { RichText.render(projectContent.project_main_text) }
-                                        <Box mt={ 4 }>
-                                            { role }
-                                            { techStack }
-                                            { visitWebsite }
-                                        </Box>
-                                    </TextWrapMd>
-                                </Contained>
-                            </TextWrap>
-                        </Container>
-                        <Box mt={ 500 } bg="gray.3">
-                            <Box position="relative" top={ -500 } mb={ -500 }>
-                                <Container>
-                                    { imacImg }
-                                    <TouchDevices>
-                                        { ipadImg }
-                                        { iphoneImg }
-                                    </TouchDevices>
-                                </Container>
-                            </Box>
-                            <Box position="relative" zIndex={ 1 } mt={ 5 } pb={ 6 }>
-                                <Container>
-                                    { this.renderProjectScreenshotCarousel() }
-                                </Container>
-                            </Box>
-                            <TextWrap fontSize={[26, 26, 40]}>
-                                <ProjectsNav direction="prev">{ prevProject && this.renderProjectLink(prevProject, '←') }</ProjectsNav>
-                                <ProjectsNav direction="next">{ nextProject && this.renderProjectLink(nextProject, '→') }</ProjectsNav>
-                            </TextWrap>
+                { bannerImg }
+                <ThemeDefault themeBg position="relative" mt={[0, 0, 0, 300]} zIndex={ 2 }>
+                    <Container>
+                        <TextWrap textAlign="center">
+                            <ThemeDefault themeBg position="relative" top={[-33, -33, -37, -50]} display="inline-block">
+                                <PageHeading py={ 2 } px={ 3 } mb={ 0 } display="inline-block">{ projectContent.project_title[0].text }</PageHeading>
+                            </ThemeDefault>
+                            <Contained maxWidth={ 0 } mt={ 3 }>
+                                <TextWrapMd textSpacing mt={[-33, -33, -37, -50]} linkStyle="default">
+                                    { RichText.render(projectContent.project_main_text) }
+                                    <Box mt={ 4 }>
+                                        { role }
+                                        { techStack }
+                                        { visitWebsite }
+                                    </Box>
+                                </TextWrapMd>
+                            </Contained>
+                        </TextWrap>
+                    </Container>
+                    <Box mt={ 500 } bg="gray.3">
+                        <Box position="relative" top={ -500 } mb={ -500 }>
+                            <Container>
+                                { imacImg }
+                                <TouchDevices>
+                                    { ipadImg }
+                                    { iphoneImg }
+                                </TouchDevices>
+                            </Container>
                         </Box>
-                    </ThemeDefault>
-                </Box>
+                        <Box position="relative" zIndex={ 1 } mt={ 5 } pb={ 6 }>
+                            <Container>
+                                { this.renderProjectScreenshotCarousel() }
+                            </Container>
+                        </Box>
+                        <TextWrap fontSize={[26, 26, 40]}>
+                            <ProjectsNav direction="prev">{ prevProject && this.renderProjectLink(prevProject, '←') }</ProjectsNav>
+                            <ProjectsNav direction="next">{ nextProject && this.renderProjectLink(nextProject, '→') }</ProjectsNav>
+                        </TextWrap>
+                    </Box>
+                </ThemeDefault>
             </div>
         );
     }

@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import theme from 'styled-theming';
 import { colors } from '../../ui/theme';
 import bgTexture from '../../../img/bg-texture.jpg';
+import Box from '../objects/Box';
 
 const backgroundColor = theme("mode", {
     default: colors.white,
@@ -33,7 +34,7 @@ const onlyShowInverted = theme("mode", {
     inverted: 'block',
 });
 
-const ThemeDefault = styled.div`
+const ThemeDefault = styled(Box)`
     ${props => props.themeDisplays && css`
         .only-show-default {
             display: ${onlyShowDefault};
