@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { LoadingIcon, Fixed, SvgWrap, Flex } from '../ui';
-import { CSSTransitionGroup } from 'react-transition-group';
+import { LoadingIcon, Fixed, SvgWrap, Flex, FadeOut } from '../ui';
 
 const Loading = ({
     isLoading,
@@ -30,13 +29,9 @@ const Loading = ({
     );
 
     return (
-        <CSSTransitionGroup
-            transitionName="item"
-            transitionEnter={ false }
-            transitionLeaveTimeout={ 1000 }
-        >
+        <FadeOut>
             { !isLoading && !imgsLoading ? null : renderLoading() }
-        </CSSTransitionGroup>
+        </FadeOut>
     );
 }
 

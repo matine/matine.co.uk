@@ -31,6 +31,7 @@ import Banner from './components/Banner';
 import ProjectThumbnail from './components/ProjectThumbnail';
 import NavWrap from './components/NavWrap';
 import CarouselWrap from './components/CarouselWrap';
+import FadeOut from './animations/FadeOut';
 
 export {
     CarouselWrap,
@@ -87,4 +88,5 @@ export {
     ProjectsNav,
     BrowserWindow,
     ProjectThumbnail,
+    FadeOut,
 };
