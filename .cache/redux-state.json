@@ -1055,12 +1055,12 @@
       "host": "localhost",
       "pathPrefix": "",
       "polyfill": true,
-      "buildTime": "2018-11-01T00:49:31.990Z",
+      "buildTime": "2018-11-01T12:01:12.167Z",
       "id": "Site",
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "7a3225f72867d31776832c958c723d4d",
+        "contentDigest": "25457a82b812fb9acd0885815d848c9b",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -1070,7 +1070,7 @@
       "children": [],
       "parent": "___SOURCE___",
       "internal": {
-        "contentDigest": "78c4f2c2ef57ec1ab9b8031d67a7cac9",
+        "contentDigest": "744fae3aa71ef0b89e4dca604c9029be",
         "type": "Directory",
         "description": "Directory \"src/images\"",
         "owner": "gatsby-source-filesystem"
@@ -1079,12 +1079,12 @@
       "absolutePath": "/Users/matinechabrier/Sites/matine.co.uk/src/images",
       "relativePath": "",
       "extension": "",
-      "size": 192,
-      "prettySize": "192 B",
-      "modifiedTime": "2018-10-31T21:26:50.212Z",
-      "accessTime": "2018-11-01T00:49:37.181Z",
-      "changeTime": "2018-11-01T00:43:56.393Z",
-      "birthTime": "2018-05-23T21:26:18.275Z",
+      "size": 160,
+      "prettySize": "160 B",
+      "modifiedTime": "2018-11-01T11:31:58.565Z",
+      "accessTime": "2018-11-01T12:01:18.099Z",
+      "changeTime": "2018-11-01T11:31:58.565Z",
+      "birthTime": "2018-11-01T11:31:58.553Z",
       "root": "/",
       "dir": "/Users/matinechabrier/Sites/matine.co.uk/src",
       "base": "images",
@@ -1093,21 +1093,21 @@
       "relativeDirectory": "..",
       "dev": 16777220,
       "mode": 16877,
-      "nlink": 6,
+      "nlink": 5,
       "uid": 501,
       "gid": 20,
       "rdev": 0,
       "blksize": 4194304,
-      "ino": 2869378,
+      "ino": 8611431515,
       "blocks": 0,
-      "atimeMs": 1541033377181.469,
-      "mtimeMs": 1541021210211.9927,
-      "ctimeMs": 1541033036392.899,
-      "birthtimeMs": 1527110778275.4805,
-      "atime": "2018-11-01T00:49:37.181Z",
-      "mtime": "2018-10-31T21:26:50.212Z",
-      "ctime": "2018-11-01T00:43:56.393Z",
-      "birthtime": "2018-05-23T21:26:18.275Z"
+      "atimeMs": 1541073678098.5002,
+      "mtimeMs": 1541071918564.791,
+      "ctimeMs": 1541071918564.791,
+      "birthtimeMs": 1541071918552.9246,
+      "atime": "2018-11-01T12:01:18.099Z",
+      "mtime": "2018-11-01T11:31:58.565Z",
+      "ctime": "2018-11-01T11:31:58.565Z",
+      "birthtime": "2018-11-01T11:31:58.553Z"
     },
     "ad7298a8-7620-50d2-8cc0-b088151c230a": {
       "id": "ad7298a8-7620-50d2-8cc0-b088151c230a",
@@ -1428,9 +1428,7 @@
   },
   "componentDataDependencies": {
     "nodes": {
-      "Site": [
-        "sq--src-components-layout-js"
-      ],
+      "Site": [],
       "3c9af040-869b-57c1-8be8-3ad8649b7dfa": [
         "sq--src-components-image-js"
       ],
@@ -1490,14 +1488,6 @@
       "jsonName": "sq--src-components-image-js",
       "query": "query usersMatinechabrierSitesMatineCoUkSrcComponentsImageJs2011440971 {\n  placeholderImage: file(relativePath: {eq: \"gatsby-astronaut.png\"}) {\n    childImageSharp {\n      fluid(maxWidth: 300) {\n        ...GatsbyImageSharpFluid\n      }\n    }\n  }\n}\n\nfragment GatsbyImageSharpFluid on ImageSharpFluid {\n  base64\n  aspectRatio\n  src\n  srcSet\n  sizes\n}\n",
       "hash": 2011440971
-    },
-    "sq--src-components-layout-js": {
-      "name": "SiteTitleQuery",
-      "componentPath": "/Users/matinechabrier/Sites/matine.co.uk/src/components/layout.js",
-      "id": "sq--src-components-layout-js",
-      "jsonName": "sq--src-components-layout-js",
-      "query": "query SiteTitleQuery {\n  site {\n    siteMetadata {\n      title\n    }\n  }\n}\n",
-      "hash": 755544856
     }
   }
 }
