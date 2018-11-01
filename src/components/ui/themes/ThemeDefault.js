@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import theme from 'styled-theming';
 import { colors } from '../../ui/theme';
-import bgTexture from '../../../img/bg-texture.jpg';
+import bgTexture from '../../../images/bg-texture.jpg';
 import Box from '../objects/Box';
 
 const backgroundColor = theme("mode", {

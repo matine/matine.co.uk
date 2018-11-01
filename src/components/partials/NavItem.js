@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'gatsby';
 
 const NavItem = ({
     ...props
-}) => <NavLink { ...props } activeClassName="active"/>;
+}) => <Link { ...props } activeClassName="active"/>;
 
 NavItem.propTypes = {
     to: PropTypes.string.isRequired,

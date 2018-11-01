@@ -7,7 +7,7 @@ const Nav = () => (
         <TextWrapSm fontWeight="bold" caps linkStyle="none" pt={ 1 }>
             <List listStyle="inline" inlineGutter={ 2 }>
                 <li><NavItem to="/about">About</NavItem></li>
-                <li><NavItem to="/work">Work</NavItem></li>
+                <li><NavItem to="/">Work</NavItem></li>
                 <li><NavItem to="/links">Links</NavItem></li>
             </List>
         </TextWrapSm>
