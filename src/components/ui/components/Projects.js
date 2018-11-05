@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
-import Image from '../objects/Image';
+import { Box } from '../index';
 import { breakpoints } from '../../ui/theme';
 
-export const Ipad = styled(Image)`
+export const Ipad = styled(Box)`
     width: 40%;
     display: inline-block;
 
@@ -12,7 +12,7 @@ export const Ipad = styled(Image)`
     }
 `
 
-export const Iphone = styled(Image)`
+export const Iphone = styled(Box)`
     width: 22%;
     display: inline-block;
 
@@ -25,7 +25,7 @@ export const Iphone = styled(Image)`
     }
 `
 
-export const Imac = styled(Image)`
+export const Imac = styled(Box)`
     width: 100%;
     max-width: 800px;
     display: block;

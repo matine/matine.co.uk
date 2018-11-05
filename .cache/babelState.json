@@ -1,6 +1,11 @@
 {
     "develop": {
-        "plugins": [],
+        "plugins": [
+            {
+                "name": "babel-plugin-lodash",
+                "options": {}
+            }
+        ],
         "presets": [],
         "options": {
             "cacheDirectory": true,
@@ -8,7 +13,12 @@
         }
     },
     "develop-html": {
-        "plugins": [],
+        "plugins": [
+            {
+                "name": "babel-plugin-lodash",
+                "options": {}
+            }
+        ],
         "presets": [],
         "options": {
             "cacheDirectory": true,
@@ -16,7 +26,12 @@
         }
     },
     "build-html": {
-        "plugins": [],
+        "plugins": [
+            {
+                "name": "babel-plugin-lodash",
+                "options": {}
+            }
+        ],
         "presets": [],
         "options": {
             "cacheDirectory": true,
@@ -24,7 +39,12 @@
         }
     },
     "build-javascript": {
-        "plugins": [],
+        "plugins": [
+            {
+                "name": "babel-plugin-lodash",
+                "options": {}
+            }
+        ],
         "presets": [],
         "options": {
             "cacheDirectory": true,

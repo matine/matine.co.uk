@@ -12,14 +12,15 @@ module.exports = {
     },
     plugins: [
         'gatsby-plugin-react-helmet',
-        'gatsby-plugin-emotion',
         {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `images`,
-                path: `${__dirname}/src/images`,
+                path: path.join(__dirname, `src`, `images`),
             },
         },
+        'gatsby-plugin-sharp',
+        'gatsby-transformer-sharp',
         {
             resolve: "gatsby-source-prismic",
             options: {
@@ -32,8 +33,6 @@ module.exports = {
                 lang: '*',
             }
         },
-        'gatsby-transformer-sharp',
-        'gatsby-plugin-sharp',
         'gatsby-plugin-lodash',
         {
             resolve: 'gatsby-plugin-typography',
