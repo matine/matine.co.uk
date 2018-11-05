@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
-import Prismic from 'prismic-javascript';
-import PrismicConfig from '../../prismic-configuration';
 import { ThemeProvider, injectGlobal } from 'styled-components';
 import styledNormalize from 'styled-normalize';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types'
 import * as actions from '../../state/actions';
-import Loading from '../partials/Loading';
 import Header from '../partials/Header';
 import Footer from '../partials/Footer';
 import { ThemeDefault, ThemeInverted, Box } from '../ui';

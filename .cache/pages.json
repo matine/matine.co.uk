@@ -70,6 +70,11 @@
         "path": "/leon"
     },
     {
+        "componentChunkName": "component---src-pages-links-jsx",
+        "jsonName": "links-5ea",
+        "path": "/links/"
+    },
+    {
         "componentChunkName": "component---src-templates-project-jsx",
         "jsonName": "minicombobulator-7cd",
         "path": "/minicombobulator"

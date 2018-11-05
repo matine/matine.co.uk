@@ -1556,12 +1556,12 @@
       "host": "localhost",
       "pathPrefix": "",
       "polyfill": true,
-      "buildTime": "2018-11-05T23:28:33.406Z",
+      "buildTime": "2018-11-05T23:43:45.079Z",
       "id": "Site",
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "0f15ff9e8463bdd3ba394a7dacaad688",
+        "contentDigest": "e8477d5999cc8376a6adcbbf54804571",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -1571,7 +1571,7 @@
       "children": [],
       "parent": "___SOURCE___",
       "internal": {
-        "contentDigest": "c6754d79aa630e998e70af5d8cd01c65",
+        "contentDigest": "c1fe3ece996995edb06f39e0ad4c5d84",
         "type": "Directory",
         "description": "Directory \"src/images\"",
         "owner": "gatsby-source-filesystem"
@@ -1583,7 +1583,7 @@
       "size": 160,
       "prettySize": "160 B",
       "modifiedTime": "2018-11-01T11:31:58.565Z",
-      "accessTime": "2018-11-05T23:28:44.286Z",
+      "accessTime": "2018-11-05T23:43:51.714Z",
       "changeTime": "2018-11-01T11:31:58.565Z",
       "birthTime": "2018-11-01T11:31:58.553Z",
       "root": "/",
@@ -1601,11 +1601,11 @@
       "blksize": 4194304,
       "ino": 8611431515,
       "blocks": 0,
-      "atimeMs": 1541460524286.1406,
+      "atimeMs": 1541461431713.8088,
       "mtimeMs": 1541071918564.791,
       "ctimeMs": 1541071918564.791,
       "birthtimeMs": 1541071918552.9246,
-      "atime": "2018-11-05T23:28:44.286Z",
+      "atime": "2018-11-05T23:43:51.714Z",
       "mtime": "2018-11-01T11:31:58.565Z",
       "ctime": "2018-11-01T11:31:58.565Z",
       "birthtime": "2018-11-01T11:31:58.553Z"
@@ -22685,6 +22685,26 @@
         "owner": "internal-data-bridge"
       }
     },
+    "SitePage /links/": {
+      "jsonName": "links-5ea",
+      "internalComponentName": "ComponentLinks",
+      "path": "/links/",
+      "component": "/Users/matinechabrier/Sites/matine.co.uk/src/pages/links.jsx",
+      "componentChunkName": "component---src-pages-links-jsx",
+      "context": {},
+      "pluginCreator___NODE": "Plugin gatsby-plugin-page-creator",
+      "pluginCreatorId": "Plugin gatsby-plugin-page-creator",
+      "componentPath": "/Users/matinechabrier/Sites/matine.co.uk/src/pages/links.jsx",
+      "id": "SitePage /links/",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "4ad5b2a6674c56c2ff5b9e32b5e3797e",
+        "description": "Plugin gatsby-plugin-page-creator",
+        "owner": "internal-data-bridge"
+      }
+    },
     "SitePage /404.html": {
       "jsonName": "404-html-516",
       "internalComponentName": "Component404Html",
@@ -24142,6 +24162,22 @@
       ],
       "f57f0aa3-eea2-566f-a52e-85aef13602b4": [
         "/adidastangoleague"
+      ],
+      "Prismic__GlobalBodyLinks__Prismic__Global__WkO0cC0AAKGvNsTh__body__0": [
+        "/",
+        "/links/"
+      ],
+      "Prismic__GlobalBodyLinks__Prismic__Global__WkO0cC0AAKGvNsTh__body__1": [
+        "/",
+        "/links/"
+      ],
+      "Prismic__GlobalBodyLinks__Prismic__Global__WkO0cC0AAKGvNsTh__body__2": [
+        "/",
+        "/links/"
+      ],
+      "Prismic__GlobalBodyLinks__Prismic__Global__WkO0cC0AAKGvNsTh__body__3": [
+        "/",
+        "/links/"
       ]
     },
     "connections": {
@@ -24170,7 +24206,8 @@
         "/adidastangoleague"
       ],
       "PrismicGlobal": [
-        "/"
+        "/",
+        "/links/"
       ]
     }
   },
@@ -24200,7 +24237,8 @@
     "index": "357/path---index-6a9-xdPOyLPPkgWQ7OoHFy4DwP0RTk4",
     "404-html-516": "164/path---404-html-516-62a-NZuapzHg3X9TaN1iIixfv1W23E",
     "jusrol-5c4": "798/path---jusrol-5-c-4-3cf-2JZxqHxLhSXuqf8KTjJDKA9NR8",
-    "adidastangoleague-f07": "66/path---adidastangoleague-f-07-829-B50Oln6NmLHHfPRAQsrT9z8"
+    "adidastangoleague-f07": "66/path---adidastangoleague-f-07-829-B50Oln6NmLHHfPRAQsrT9z8",
+    "links-5ea": "234/path---links-5-ea-ba4-QU1lkQPHUr3evE5V1enQV5E"
   },
   "components": {
     "/Users/matinechabrier/Sites/matine.co.uk/src/templates/project.jsx": {
@@ -24218,6 +24256,10 @@
     "/Users/matinechabrier/Sites/matine.co.uk/src/pages/index.jsx": {
       "query": "query IndexQuery {\n  projects: allPrismicProject(sort: {fields: [data___project_order], order: DESC}) {\n    edges {\n      node {\n        uid\n        data {\n          project_title {\n            text\n          }\n          project_thumbnail {\n            localFile {\n              childImageSharp {\n                fluid(maxWidth: 1200, maxHeight: 1200, quality: 90, traceSVG: {color: \"#021212\"}, cropFocus: ENTROPY) {\n                  ...GatsbyImageSharpFluid_withWebp_tracedSVG\n                }\n              }\n            }\n          }\n          project_thumbnail_2 {\n            localFile {\n              childImageSharp {\n                fluid(maxWidth: 1200, maxHeight: 1200, quality: 90, traceSVG: {color: \"#021212\"}, cropFocus: ENTROPY) {\n                  ...GatsbyImageSharpFluid_withWebp_tracedSVG\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n  global: allPrismicGlobal(sort: {fields: [last_publication_date], order: DESC}) {\n    edges {\n      node {\n        uid\n        data {\n          first_name {\n            text\n          }\n          surname {\n            text\n          }\n        }\n      }\n    }\n  }\n}\n\nfragment GatsbyImageSharpFluid_withWebp_tracedSVG on ImageSharpFluid {\n  tracedSVG\n  aspectRatio\n  src\n  srcSet\n  srcWebp\n  srcSetWebp\n  sizes\n}\n",
       "componentPath": "/Users/matinechabrier/Sites/matine.co.uk/src/pages/index.jsx"
+    },
+    "/Users/matinechabrier/Sites/matine.co.uk/src/pages/links.jsx": {
+      "query": "query LinksQuery {\n  global: allPrismicGlobal(sort: {fields: [last_publication_date], order: DESC}) {\n    edges {\n      node {\n        uid\n        data {\n          links_title {\n            text\n          }\n          links_subtitle {\n            text\n          }\n          body {\n            items {\n              link_name\n              link_url {\n                url\n              }\n              link_description {\n                html\n              }\n            }\n            slice_type\n            primary {\n              list_of_links_title {\n                text\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}\n",
+      "componentPath": "/Users/matinechabrier/Sites/matine.co.uk/src/pages/links.jsx"
     }
   },
   "staticQueryComponents": {
