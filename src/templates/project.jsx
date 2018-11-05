@@ -7,7 +7,7 @@ import Carousel from '../components/partials/Carousel';
 import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 import withLayout from '../components/hoc/withLayout';
 import * as actions from '../state/actions';
-import { ThemeDefault, Container, Span, Box, Contained, PageHeading, TextWrapMd, TextWrap, BannerOverlay, TouchDevices, ProjectsNav, Imac, Ipad, Iphone, CarouselWrap, BrowserWindow } from '../components/ui';
+import { ThemeDefault, Container, Span, Box, Contained, PageHeading, TextWrapMd, TextWrap, BannerOverlay, TouchDevices, ProjectsNav, Imac, Ipad, Iphone, CarouselWrap, BrowserWindow, Banner } from '../components/ui';
 
 class ProjectTemplate extends Component {
     /**
@@ -88,6 +88,7 @@ class ProjectTemplate extends Component {
 
         const projectContent = data.prismicProject.data;
         const projectType = projectContent.project_type;
+        const projectBanner = projectContent.project_banner.localFile.childImageSharp.sizes;
         const projectImac = projectContent.project_imac.localFile.childImageSharp.sizes;
         const projectIpad = projectContent.project_ipad.localFile.childImageSharp.sizes;
         const projectIphone = projectContent.project_iphone.localFile.childImageSharp.sizes;
@@ -129,6 +130,15 @@ class ProjectTemplate extends Component {
                 <div
                     id="project-page"
                 >
+                    <Parallax
+                        offsetYMax={ 60 }
+                        offsetYMin={ -100 }
+                        slowerScrollRate
+                    >
+                        <Image
+                            sizes={ projectBanner }
+                        />
+                    </Parallax>
                     <ThemeDefault
                         themeBg
                         position="relative"
@@ -273,6 +283,21 @@ export const pageQuery = graphql`
                 project_main_text {
                     html
                 }
+                project_banner {
+                    localFile {
+                        childImageSharp {
+                            sizes(
+                                maxWidth: 2000
+                                maxHeight: 462
+                                quality: 90
+                                traceSVG: { color: "#021212" }
+                                cropFocus: ENTROPY
+                            ) {
+                                ...GatsbyImageSharpSizes_withWebp_tracedSVG
+                            }
+                        }
+                    }
+                }
                 project_imac {
                     localFile {
                         childImageSharp {
@@ -323,8 +348,7 @@ export const pageQuery = graphql`
                         localFile {
                             childImageSharp {
                                 sizes(
-                                    maxWidth: 400
-                                    maxHeight: 800
+                                    maxWidth: 1600
                                     quality: 90
                                     traceSVG: { color: "#021212" }
                                     cropFocus: ENTROPY

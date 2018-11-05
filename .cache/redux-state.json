@@ -1556,12 +1556,12 @@
       "host": "localhost",
       "pathPrefix": "",
       "polyfill": true,
-      "buildTime": "2018-11-05T18:35:36.943Z",
+      "buildTime": "2018-11-05T20:52:13.730Z",
       "id": "Site",
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "0cd8a772999a4d9252b532e2d22babc0",
+        "contentDigest": "77a614f3d658708a31f23a0ba30af25f",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -1571,7 +1571,7 @@
       "children": [],
       "parent": "___SOURCE___",
       "internal": {
-        "contentDigest": "659778deb767ee18fb6aaa99273a1562",
+        "contentDigest": "c53210b99479e57d279c7d18bfc3e3b0",
         "type": "Directory",
         "description": "Directory \"src/images\"",
         "owner": "gatsby-source-filesystem"
@@ -1583,7 +1583,7 @@
       "size": 160,
       "prettySize": "160 B",
       "modifiedTime": "2018-11-01T11:31:58.565Z",
-      "accessTime": "2018-11-05T18:35:43.385Z",
+      "accessTime": "2018-11-05T20:52:21.400Z",
       "changeTime": "2018-11-01T11:31:58.565Z",
       "birthTime": "2018-11-01T11:31:58.553Z",
       "root": "/",
@@ -1601,11 +1601,11 @@
       "blksize": 4194304,
       "ino": 8611431515,
       "blocks": 0,
-      "atimeMs": 1541442943384.9639,
+      "atimeMs": 1541451141400.1074,
       "mtimeMs": 1541071918564.791,
       "ctimeMs": 1541071918564.791,
       "birthtimeMs": 1541071918552.9246,
-      "atime": "2018-11-05T18:35:43.385Z",
+      "atime": "2018-11-05T20:52:21.400Z",
       "mtime": "2018-11-01T11:31:58.565Z",
       "ctime": "2018-11-01T11:31:58.565Z",
       "birthtime": "2018-11-01T11:31:58.553Z"
@@ -24016,6 +24016,132 @@
       ],
       "e74c44f6-165a-5110-b2de-192846f48ac9": [
         "/"
+      ],
+      "af0eb49c-3421-574b-af86-ac286a7e2f34": [
+        "/minicombobulator"
+      ],
+      "777aa8c0-39dc-595e-aff7-4ae6fbf10fbd": [
+        "/minicombobulator"
+      ],
+      "c3da7ba5-23fa-51aa-a5bc-58b390e68184": [
+        "/leon"
+      ],
+      "fa609ebb-9ed0-512d-8a3d-d8c00b2944fd": [
+        "/leon"
+      ],
+      "5dac220a-1988-5b11-81b4-4d769a3c52a5": [
+        "/samsungseriftv"
+      ],
+      "017fcfd6-224e-5a5e-b315-89d33a335fdd": [
+        "/samsungseriftv"
+      ],
+      "8ec4c2fb-a60b-5b3a-85c8-7fd2145c3593": [
+        "/smithsgrocers"
+      ],
+      "b4291fa6-d945-58a2-8748-8c14ffbf2412": [
+        "/smithsgrocers"
+      ],
+      "9f2d0182-85e4-5644-b798-9515086aa2fc": [
+        "/thinkfmsolutions"
+      ],
+      "a893ef7a-edbc-5c22-b919-359b6b267edd": [
+        "/thinkfmsolutions"
+      ],
+      "e1a640b9-2d91-5671-bc66-49731d906c88": [
+        "/bicycledoctor"
+      ],
+      "b7a4485e-8f0a-5d9d-a51a-ed5dabdf835b": [
+        "/bicycledoctor"
+      ],
+      "06bb0d22-69a2-5a02-9571-c474f4548d75": [
+        "/helmetsforheroines"
+      ],
+      "dcbdf0e7-824e-5419-94d5-449de7d21890": [
+        "/helmetsforheroines"
+      ],
+      "849209b3-2d0f-5576-adfd-3104d01a229c": [
+        "/podpointopenchargeapp"
+      ],
+      "63911567-6935-5df6-bd16-b90785e20737": [
+        "/podpointopenchargeapp"
+      ],
+      "6260720f-1faf-5fef-85d2-d76444f465c9": [
+        "/endelltreats"
+      ],
+      "1a6ad5cd-7f91-5e4f-ba6e-e9a877aae82c": [
+        "/endelltreats"
+      ],
+      "f558a4e5-c5d1-5dfb-8046-d23028d29ef7": [
+        "/bqunlovedrooms"
+      ],
+      "3b768cf2-18f6-55e0-be02-c5e0392910a6": [
+        "/bqunlovedrooms"
+      ],
+      "3e57838b-6f75-5bd1-b6f4-2040d22fbc4c": [
+        "/irismyris"
+      ],
+      "de9b9cbe-b591-5049-948e-ee0730a59e42": [
+        "/irismyris"
+      ],
+      "25233b69-555f-56f1-abf1-758b90e6650b": [
+        "/runningfilms"
+      ],
+      "6530efe1-b1a2-5445-a8e9-cca406cf4bfb": [
+        "/runningfilms"
+      ],
+      "13ef6026-2729-5715-94df-892fc69c9944": [
+        "/roxanevacca"
+      ],
+      "b71b5bd9-e28a-5b7e-a3e1-bd99675647a7": [
+        "/roxanevacca"
+      ],
+      "8663ce63-d23b-52f1-8d25-d89736ed2f97": [
+        "/bounce"
+      ],
+      "21568789-8470-55b1-bdf6-834f3c372e04": [
+        "/bounce"
+      ],
+      "b973e68e-ae96-531b-bd61-ce6687f8ad21": [
+        "/twofingersbrewing"
+      ],
+      "cf94d4df-586a-5bb5-b838-e7ed4dab6719": [
+        "/twofingersbrewing"
+      ],
+      "6029c146-5d5b-51d6-a88e-c1ce79b55a0d": [
+        "/fairtradefoncho"
+      ],
+      "1cd63046-cc7b-5a13-802f-f5a0d8976a6e": [
+        "/fairtradefoncho"
+      ],
+      "5d701f69-2d3e-59e1-aaab-af2729b7cdae": [
+        "/valueretail"
+      ],
+      "80270cbb-b9dd-520d-9d3c-2b3af1d68854": [
+        "/valueretail"
+      ],
+      "01a02c89-a382-54cb-92d4-c32f7e41ecf3": [
+        "/podpointwebsite"
+      ],
+      "af073b57-ea90-50b1-aa97-e95bdcb2ac3c": [
+        "/podpointwebsite"
+      ],
+      "2459a486-d72d-555c-96db-1d52f74a7e80": [
+        "/sunwrae"
+      ],
+      "c577d6da-ae8c-53cb-ac6e-32e847cb9ac7": [
+        "/sunwrae"
+      ],
+      "2e917b36-53c1-5a1a-91fd-30d99b86e6e6": [
+        "/jusrol"
+      ],
+      "1105c53d-b8b5-53ff-b53d-306f8218113b": [
+        "/jusrol"
+      ],
+      "876d2f99-b22c-59c5-9419-f921867e926e": [
+        "/adidastangoleague"
+      ],
+      "f57f0aa3-eea2-566f-a52e-85aef13602b4": [
+        "/adidastangoleague"
       ]
     },
     "connections": {
@@ -24029,35 +24155,35 @@
   },
   "jsonDataPaths": {
     "sq--src-components-image-js": 2011440971,
-    "minicombobulator-7cd": "521/path---minicombobulator-7-cd-e4f-9sKJEfqoNGAQ1zbDjunqE2LIc",
-    "leon-b25": "102/path---leon-b-25-6ae-JgOUqg3Eq0SpvsCppQw0Sgko8",
-    "samsungseriftv-bf6": "858/path---samsungseriftv-bf-6-a4f-SFwOy47fqLJctxXGrQdrvYW4H8",
-    "smithsgrocers-6b8": "807/path---smithsgrocers-6-b-8-eb2-SPiXg0fPOAQlA4k4DeslcV1k",
-    "thinkfmsolutions-aec": "229/path---thinkfmsolutions-aec-8b6-WJjF9RJbIX2ex1kUB4BOaFXgRIc",
-    "podpointopenchargeapp-d44": "24/path---podpointopenchargeapp-d-44-5ea-jLh143sV7GttinhZK6PLPyk4r14",
-    "helmetsforheroines-f56": "262/path---helmetsforheroines-f-56-f88-T8PW9OoFZASCGsj9ggpLeY0Sto",
-    "bicycledoctor-2a9": "548/path---bicycledoctor-2-a-9-f88-R6SWqL6WQlVvLa8KjIXgtezdxo",
-    "bqunlovedrooms-2bf": "917/path---bqunlovedrooms-2-bf-e82-HrLxKwHJKIj6LwVJ9hFOrW2lPU",
-    "endelltreats-420": "917/path---endelltreats-420-0d5-90pb1iUoObbs27982xnu4BUa8H8",
-    "irismyris-825": "874/path---irismyris-825-021-j4p38axYxXYon1MX9xB0yvbibsg",
-    "runningfilms-cb6": "312/path---runningfilms-cb-6-4c2-pYRYkmOxvkyGrtZ77iC7f0NQCE",
-    "twofingersbrewing-c6f": "755/path---twofingersbrewing-c-6-f-3d2-zrNVcAIkrY6cZd3OGWRwASzkEM",
-    "bounce-8a5": "1/path---bounce-8-a-5-e03-VcAFzGXw3FaBe62H82yqg5XX3I",
-    "fairtradefoncho-3b2": "965/path---fairtradefoncho-3-b-2-c3a-TqLQtW5A5s0wdfgV2EwRlg8B8",
-    "podpointwebsite-198": "99/path---podpointwebsite-198-f5b-iFYZKyqVrrMNKYuysakaERBCJo",
-    "roxanevacca-237": "137/path---roxanevacca-237-f1c-M8A8qR5KIFdVAQ58BoMUMEXg",
-    "valueretail-033": "585/path---valueretail-033-ba2-rVAH7OBdu7gsB41iPkqtjcWZ6oc",
-    "sunwrae-379": "984/path---sunwrae-379-3cf-PJGxHyo4yuxpUCYXIQW3LODuLgI",
+    "minicombobulator-7cd": "521/path---minicombobulator-7-cd-e4f-oRpl1V1zyNXOftM4CQ0sDRgQs",
+    "leon-b25": "926/path---leon-b-25-6ae-z2s0m7utfCOAlWSw3oBdMsqGDQE",
+    "samsungseriftv-bf6": "627/path---samsungseriftv-bf-6-a4f-r4XQRlkduQZlqmbaXCeDD6MZ94",
+    "smithsgrocers-6b8": "377/path---smithsgrocers-6-b-8-eb2-5FjxPlos7hOJlSz27ctGNlF5OM0",
+    "thinkfmsolutions-aec": "633/path---thinkfmsolutions-aec-8b6-JAblxFMvtob1twuQYQXWs2GBLo",
+    "podpointopenchargeapp-d44": "287/path---podpointopenchargeapp-d-44-5ea-qoeD9fE0Jds3alp2XmX9Ht6M",
+    "helmetsforheroines-f56": "617/path---helmetsforheroines-f-56-f88-E6YonUXxS60ilKDgC1rygrKc2o",
+    "bicycledoctor-2a9": "146/path---bicycledoctor-2-a-9-f88-M9pNo7cnv1t0LPxYQVDIB9RK8Y0",
+    "bqunlovedrooms-2bf": "24/path---bqunlovedrooms-2-bf-e82-4mFASrmUBekgqY6I9JtnwyAX0Uo",
+    "endelltreats-420": "655/path---endelltreats-420-0d5-0JkOlZMXOV61I6fnRIDtbHtjUK4",
+    "irismyris-825": "233/path---irismyris-825-021-wCqGLgJPIMr4o6J6ZYnk3Nta8",
+    "runningfilms-cb6": "295/path---runningfilms-cb-6-4c2-hj3cqVmYtb9XYaMJPqjW3xlY",
+    "twofingersbrewing-c6f": "81/path---twofingersbrewing-c-6-f-3d2-1IinJc6aVngmvYdbuFHLnQnG1Hs",
+    "bounce-8a5": "695/path---bounce-8-a-5-e03-PwkIQ8yCtu8XKQNmB5Labg1WFc",
+    "fairtradefoncho-3b2": "397/path---fairtradefoncho-3-b-2-c3a-Knr7DVzbbezjypwaQTzszirGf08",
+    "podpointwebsite-198": "988/path---podpointwebsite-198-f5b-lPYwETyZVosIYqr45MA9FNZKzEU",
+    "roxanevacca-237": "429/path---roxanevacca-237-f1c-XJ2AlB4D0E1i5jTpXD1vlLYl3M",
+    "valueretail-033": "285/path---valueretail-033-ba2-5qPWcWdB46PXBTyFujmoZRmKwhM",
+    "sunwrae-379": "18/path---sunwrae-379-3cf-vtd5El5e0DsVISb4nDeRdMm3zk",
     "dev-404-page-5f9": "920/path---dev-404-page-5-f-9-fab-NZuapzHg3X9TaN1iIixfv1W23E",
     "404-22d": "44/path---404-22-d-bce-NZuapzHg3X9TaN1iIixfv1W23E",
     "index": "702/path---index-6a9-ncxmf4k9d647to9m389s5Pb0g",
     "404-html-516": "164/path---404-html-516-62a-NZuapzHg3X9TaN1iIixfv1W23E",
-    "jusrol-5c4": "636/path---jusrol-5-c-4-3cf-ek6wmOmx6yxLGLDZaOw4PK23Re0",
-    "adidastangoleague-f07": "984/path---adidastangoleague-f-07-829-k1xsduhMKaG1eRyPzutyqLTVQ"
+    "jusrol-5c4": "153/path---jusrol-5-c-4-3cf-lwsa0ijEqmufg73UGFxnKCDIrOg",
+    "adidastangoleague-f07": "310/path---adidastangoleague-f-07-829-j6DlJSkKVuVvTOF0Ouzb5FLRGWQ"
   },
   "components": {
     "/Users/matinechabrier/Sites/matine.co.uk/src/templates/project.jsx": {
-      "query": "query ProjectBySlug(\n  $uid: String!\n) {\n  prismicProject(uid: {eq: $uid}) {\n    uid\n    first_publication_date\n    last_publication_date\n    data {\n      project_title {\n        text\n      }\n      project_role {\n        text\n      }\n      project_tech_stack {\n        text\n      }\n      project_type\n      project_visit_website_link {\n        url\n      }\n      project_main_text {\n        html\n      }\n      project_imac {\n        localFile {\n          childImageSharp {\n            sizes(maxWidth: 1600, maxHeight: 1266, quality: 90, traceSVG: {color: \"#021212\"}, cropFocus: ENTROPY) {\n              ...GatsbyImageSharpSizes_withWebp_tracedSVG\n            }\n          }\n        }\n      }\n      project_ipad {\n        localFile {\n          childImageSharp {\n            sizes(maxWidth: 600, maxHeight: 820, quality: 90, traceSVG: {color: \"#021212\"}, cropFocus: ENTROPY) {\n              ...GatsbyImageSharpSizes_withWebp_tracedSVG\n            }\n          }\n        }\n      }\n      project_iphone {\n        localFile {\n          childImageSharp {\n            sizes(maxWidth: 400, maxHeight: 800, quality: 90, traceSVG: {color: \"#021212\"}, cropFocus: ENTROPY) {\n              ...GatsbyImageSharpSizes_withWebp_tracedSVG\n            }\n          }\n        }\n      }\n      project_screenshots {\n        screenshot {\n          localFile {\n            childImageSharp {\n              sizes(maxWidth: 400, maxHeight: 800, quality: 90, traceSVG: {color: \"#021212\"}, cropFocus: ENTROPY) {\n                ...GatsbyImageSharpSizes_withWebp_tracedSVG\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}\n\nfragment GatsbyImageSharpSizes_withWebp_tracedSVG on ImageSharpSizes {\n  tracedSVG\n  aspectRatio\n  src\n  srcSet\n  srcWebp\n  srcSetWebp\n  sizes\n}\n",
+      "query": "query ProjectBySlug(\n  $uid: String!\n) {\n  prismicProject(uid: {eq: $uid}) {\n    uid\n    first_publication_date\n    last_publication_date\n    data {\n      project_title {\n        text\n      }\n      project_role {\n        text\n      }\n      project_tech_stack {\n        text\n      }\n      project_type\n      project_visit_website_link {\n        url\n      }\n      project_main_text {\n        html\n      }\n      project_banner {\n        localFile {\n          childImageSharp {\n            sizes(maxWidth: 2000, maxHeight: 462, quality: 90, traceSVG: {color: \"#021212\"}, cropFocus: ENTROPY) {\n              ...GatsbyImageSharpSizes_withWebp_tracedSVG\n            }\n          }\n        }\n      }\n      project_imac {\n        localFile {\n          childImageSharp {\n            sizes(maxWidth: 1600, maxHeight: 1266, quality: 90, traceSVG: {color: \"#021212\"}, cropFocus: ENTROPY) {\n              ...GatsbyImageSharpSizes_withWebp_tracedSVG\n            }\n          }\n        }\n      }\n      project_ipad {\n        localFile {\n          childImageSharp {\n            sizes(maxWidth: 600, maxHeight: 820, quality: 90, traceSVG: {color: \"#021212\"}, cropFocus: ENTROPY) {\n              ...GatsbyImageSharpSizes_withWebp_tracedSVG\n            }\n          }\n        }\n      }\n      project_iphone {\n        localFile {\n          childImageSharp {\n            sizes(maxWidth: 400, maxHeight: 800, quality: 90, traceSVG: {color: \"#021212\"}, cropFocus: ENTROPY) {\n              ...GatsbyImageSharpSizes_withWebp_tracedSVG\n            }\n          }\n        }\n      }\n      project_screenshots {\n        screenshot {\n          localFile {\n            childImageSharp {\n              sizes(maxWidth: 1600, quality: 90, traceSVG: {color: \"#021212\"}, cropFocus: ENTROPY) {\n                ...GatsbyImageSharpSizes_withWebp_tracedSVG\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}\n\nfragment GatsbyImageSharpSizes_withWebp_tracedSVG on ImageSharpSizes {\n  tracedSVG\n  aspectRatio\n  src\n  srcSet\n  srcWebp\n  srcSetWebp\n  sizes\n}\n",
       "componentPath": "/Users/matinechabrier/Sites/matine.co.uk/src/templates/project.jsx"
     },
     "/Users/matinechabrier/Sites/matine.co.uk/.cache/dev-404-page.js": {
