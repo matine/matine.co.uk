@@ -92,6 +92,7 @@ class IndexPage extends Component {
                                         position="absolute"
                                         top={ 0 }
                                         left={ 0 }
+                                        width={ 1 }
                                     >
                                         <Image
                                             sizes={ projectThumbnail2 }

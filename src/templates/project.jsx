@@ -33,6 +33,7 @@ class ProjectTemplate extends Component {
             data,
         } = this.props;
 
+        const projectUid = data.prismicProject.uid;
         const projectContent = data.prismicProject.data;
         const projectScreenshots = projectContent.project_screenshots;
         const projectType = projectContent.project_type;
@@ -41,11 +42,12 @@ class ProjectTemplate extends Component {
             return null;
         }
 
-        const carouselItems = projectScreenshots.map(carouselItem => {
+        const carouselItems = projectScreenshots.map((carouselItem, index) => {
             const carouselImage = carouselItem.screenshot.localFile.childImageSharp.sizes;
+            const key = `${projectUid}-${index}`;
 
             return (
-                <div key={ carouselImage.alt }>
+                <div key={ key }>
                     { projectType !== 'app' && (
                         <BrowserWindow>
                             <div
@@ -96,7 +98,7 @@ class ProjectTemplate extends Component {
             <p>
                 <Span
                     fontWeight="bold"
-                >   Role: 
+                >   Role:&nbsp;
                 </Span>
                 { roleContent }
             </p>
@@ -106,7 +108,7 @@ class ProjectTemplate extends Component {
                 <Span
                     fontWeight="bold"
                 >
-                    Tech stack: 
+                    Tech stack:&nbsp;
                 </Span>
                 { techStackContent }
             </p>
@@ -164,11 +166,19 @@ class ProjectTemplate extends Component {
                                     >
                                         <Box
                                             mt={ 4 }
+                                            mb={ 3 }
                                         >
-                                            { role }
-                                            { techStack }
-                                            { visitWebsite }
+                                            <div
+                                                dangerouslySetInnerHTML={
+                                                    {
+                                                        __html: projectContent.project_main_text.html,
+                                                    }
+                                                }
+                                            />
                                         </Box>
+                                        { role }
+                                        { techStack }
+                                        { visitWebsite }
                                     </TextWrapMd>
                                 </Contained>
                             </TextWrap>
@@ -261,7 +271,7 @@ export const pageQuery = graphql`
                     url
                 }
                 project_main_text {
-                    text
+                    html
                 }
                 project_imac {
                     localFile {
