@@ -1,30 +1,73 @@
+require('dotenv').config({
+    path: `.env.${process.env.NODE_ENV}`,
+});
+const config = require('./config/website');
+const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
+
 module.exports = {
-  siteMetadata: {
-    title: 'Gatsby Default Starter',
-  },
-  plugins: [
-    'gatsby-plugin-react-helmet',
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
+    pathPrefix: config.pathPrefix,
+    siteMetadata: {
+        siteUrl: config.siteUrl + pathPrefix,
+        title: config.siteTitle,
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
-        start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
-        display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
-      },
-    },
-    'gatsby-plugin-offline',
-  ],
+    plugins: [
+        'gatsby-plugin-react-helmet',
+        'gatsby-plugin-emotion',
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `images`,
+                path: `${__dirname}/src/images`,
+            },
+        },
+        {
+            resolve: "gatsby-source-prismic",
+            options: {
+                repositoryName: "matine",
+                accessToken: `${process.env.API_KEY}`,
+                linkResolver: ({ node, key, value }) => doc => `/${doc.uid}`,
+                htmlSerializer: ({ node, key, value }) => (type, element, content, children) => {
+                  // Your HTML serializer
+                },
+                lang: '*',
+            }
+        },
+        'gatsby-transformer-sharp',
+        'gatsby-plugin-sharp',
+        'gatsby-plugin-lodash',
+        {
+            resolve: 'gatsby-plugin-typography',
+            options: {
+                pathToConfigModule: 'config/typography.js',
+            },
+        },
+        'gatsby-plugin-sitemap',
+        {
+            resolve: 'gatsby-plugin-manifest',
+            options: {
+                name: config.siteTitle,
+                short_name: config.siteTitleAlt,
+                description: config.siteDescription,
+                start_url: config.pathPrefix,
+                background_color: config.backgroundColor,
+                theme_color: config.themeColor,
+                display: 'fullscreen',
+                icons: [
+                    {
+                        src: '/favicons/android-chrome-192x192.png',
+                        sizes: '192x192',
+                        type: 'image/png',
+                    },
+                    {
+                        src: '/favicons/android-chrome-512x512.png',
+                        sizes: '512x512',
+                        type: 'image/png',
+                    },
+                ],
+            },
+        },
+        /* Must be placed at the end */
+        'gatsby-plugin-offline',
+        'gatsby-plugin-netlify',
+    ],
 }

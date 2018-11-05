@@ -1,11 +1,30 @@
-// Implement the Gatsby API “onCreatePage”. This is
-// called after every page is created.
-exports.onCreatePage = ({ page, actions }) => {
-    const { createPage } = actions
-    // Make the front page match everything client side.
-    // Normally your paths should be a bit more judicious.
-    if (page.path === `/`) {
-      page.matchPath = `/*`
-      createPage(page)
-    }
-  }
+const path = require('path');
+
+exports.createPages = async ({ graphql, actions }) => {
+    const { createPage } = actions;
+
+    const pages = await graphql(`
+        {
+            allPrismicProject {
+                edges {
+                    node {
+                        id
+                        uid
+                    }
+                }
+            }
+        }
+    `);
+
+    const projectTemplate = path.resolve('src/templates/project.jsx');
+
+    pages.data.allPrismicProject.edges.forEach(edge => {
+        createPage({
+            path: `/${edge.node.uid}`,
+            component: projectTemplate,
+            context: {
+                uid: edge.node.uid,
+            },
+        });
+    });
+};
