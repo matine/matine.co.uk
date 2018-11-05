@@ -1556,12 +1556,12 @@
       "host": "localhost",
       "pathPrefix": "",
       "polyfill": true,
-      "buildTime": "2018-11-05T20:52:13.730Z",
+      "buildTime": "2018-11-05T23:28:33.406Z",
       "id": "Site",
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "77a614f3d658708a31f23a0ba30af25f",
+        "contentDigest": "0f15ff9e8463bdd3ba394a7dacaad688",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -1571,7 +1571,7 @@
       "children": [],
       "parent": "___SOURCE___",
       "internal": {
-        "contentDigest": "c53210b99479e57d279c7d18bfc3e3b0",
+        "contentDigest": "c6754d79aa630e998e70af5d8cd01c65",
         "type": "Directory",
         "description": "Directory \"src/images\"",
         "owner": "gatsby-source-filesystem"
@@ -1583,7 +1583,7 @@
       "size": 160,
       "prettySize": "160 B",
       "modifiedTime": "2018-11-01T11:31:58.565Z",
-      "accessTime": "2018-11-05T20:52:21.400Z",
+      "accessTime": "2018-11-05T23:28:44.286Z",
       "changeTime": "2018-11-01T11:31:58.565Z",
       "birthTime": "2018-11-01T11:31:58.553Z",
       "root": "/",
@@ -1601,11 +1601,11 @@
       "blksize": 4194304,
       "ino": 8611431515,
       "blocks": 0,
-      "atimeMs": 1541451141400.1074,
+      "atimeMs": 1541460524286.1406,
       "mtimeMs": 1541071918564.791,
       "ctimeMs": 1541071918564.791,
       "birthtimeMs": 1541071918552.9246,
-      "atime": "2018-11-05T20:52:21.400Z",
+      "atime": "2018-11-05T23:28:44.286Z",
       "mtime": "2018-11-01T11:31:58.565Z",
       "ctime": "2018-11-01T11:31:58.565Z",
       "birthtime": "2018-11-01T11:31:58.553Z"
@@ -24146,7 +24146,28 @@
     },
     "connections": {
       "PrismicProject": [
-        "/"
+        "/",
+        "/podpointwebsite",
+        "/minicombobulator",
+        "/leon",
+        "/samsungseriftv",
+        "/smithsgrocers",
+        "/thinkfmsolutions",
+        "/bicycledoctor",
+        "/helmetsforheroines",
+        "/podpointopenchargeapp",
+        "/endelltreats",
+        "/bqunlovedrooms",
+        "/irismyris",
+        "/runningfilms",
+        "/roxanevacca",
+        "/bounce",
+        "/twofingersbrewing",
+        "/fairtradefoncho",
+        "/valueretail",
+        "/sunwrae",
+        "/jusrol",
+        "/adidastangoleague"
       ],
       "PrismicGlobal": [
         "/"
@@ -24155,35 +24176,35 @@
   },
   "jsonDataPaths": {
     "sq--src-components-image-js": 2011440971,
-    "minicombobulator-7cd": "521/path---minicombobulator-7-cd-e4f-oRpl1V1zyNXOftM4CQ0sDRgQs",
-    "leon-b25": "926/path---leon-b-25-6ae-z2s0m7utfCOAlWSw3oBdMsqGDQE",
-    "samsungseriftv-bf6": "627/path---samsungseriftv-bf-6-a4f-r4XQRlkduQZlqmbaXCeDD6MZ94",
-    "smithsgrocers-6b8": "377/path---smithsgrocers-6-b-8-eb2-5FjxPlos7hOJlSz27ctGNlF5OM0",
-    "thinkfmsolutions-aec": "633/path---thinkfmsolutions-aec-8b6-JAblxFMvtob1twuQYQXWs2GBLo",
-    "podpointopenchargeapp-d44": "287/path---podpointopenchargeapp-d-44-5ea-qoeD9fE0Jds3alp2XmX9Ht6M",
-    "helmetsforheroines-f56": "617/path---helmetsforheroines-f-56-f88-E6YonUXxS60ilKDgC1rygrKc2o",
-    "bicycledoctor-2a9": "146/path---bicycledoctor-2-a-9-f88-M9pNo7cnv1t0LPxYQVDIB9RK8Y0",
-    "bqunlovedrooms-2bf": "24/path---bqunlovedrooms-2-bf-e82-4mFASrmUBekgqY6I9JtnwyAX0Uo",
-    "endelltreats-420": "655/path---endelltreats-420-0d5-0JkOlZMXOV61I6fnRIDtbHtjUK4",
-    "irismyris-825": "233/path---irismyris-825-021-wCqGLgJPIMr4o6J6ZYnk3Nta8",
-    "runningfilms-cb6": "295/path---runningfilms-cb-6-4c2-hj3cqVmYtb9XYaMJPqjW3xlY",
-    "twofingersbrewing-c6f": "81/path---twofingersbrewing-c-6-f-3d2-1IinJc6aVngmvYdbuFHLnQnG1Hs",
-    "bounce-8a5": "695/path---bounce-8-a-5-e03-PwkIQ8yCtu8XKQNmB5Labg1WFc",
-    "fairtradefoncho-3b2": "397/path---fairtradefoncho-3-b-2-c3a-Knr7DVzbbezjypwaQTzszirGf08",
-    "podpointwebsite-198": "988/path---podpointwebsite-198-f5b-lPYwETyZVosIYqr45MA9FNZKzEU",
-    "roxanevacca-237": "429/path---roxanevacca-237-f1c-XJ2AlB4D0E1i5jTpXD1vlLYl3M",
-    "valueretail-033": "285/path---valueretail-033-ba2-5qPWcWdB46PXBTyFujmoZRmKwhM",
-    "sunwrae-379": "18/path---sunwrae-379-3cf-vtd5El5e0DsVISb4nDeRdMm3zk",
+    "minicombobulator-7cd": "276/path---minicombobulator-7-cd-e4f-Bouw6oar8zjR6zjS7jnEOTsB7dQ",
+    "leon-b25": "500/path---leon-b-25-6ae-pY17fhu9Y90zWlFHGaRg78lCw",
+    "samsungseriftv-bf6": "254/path---samsungseriftv-bf-6-a4f-PyVxEypSZis7pNZgZ3nO13Rvxrc",
+    "smithsgrocers-6b8": "493/path---smithsgrocers-6-b-8-eb2-gJvq5ZmDJ9NJjuuY1XFYvgvBak",
+    "thinkfmsolutions-aec": "650/path---thinkfmsolutions-aec-8b6-j4gnLQeuZlD8er1bECpgkJaek",
+    "podpointopenchargeapp-d44": "54/path---podpointopenchargeapp-d-44-5ea-BEACz9XM1yX6tMY4055mnz3To7k",
+    "helmetsforheroines-f56": "609/path---helmetsforheroines-f-56-f88-lmsJ9aazWRU00U5KoHcUhU4CZs0",
+    "bicycledoctor-2a9": "940/path---bicycledoctor-2-a-9-f88-ndZOxGbGE5G5VchnwzOGfBlAZkI",
+    "bqunlovedrooms-2bf": "220/path---bqunlovedrooms-2-bf-e82-FTq7MGZuQWdjMHJP6WrCyjedrEc",
+    "endelltreats-420": "893/path---endelltreats-420-0d5-t0cC7qc8S4pyFGnyT4qmb5P9icA",
+    "irismyris-825": "559/path---irismyris-825-021-D8DgTABi6YTA63AC99qeki80",
+    "runningfilms-cb6": "729/path---runningfilms-cb-6-4c2-iEyWC0TVNCfjG6LNDqULNEYWXJg",
+    "twofingersbrewing-c6f": "268/path---twofingersbrewing-c-6-f-3d2-tbASia1JQR3ofhQO4UAtgHy8y0",
+    "bounce-8a5": "453/path---bounce-8-a-5-e03-o5MhKAzSodfJZDj18PU8MsGZgQA",
+    "fairtradefoncho-3b2": "935/path---fairtradefoncho-3-b-2-c3a-8co3rGSAjaxFgMPsoxAOpaQOg",
+    "podpointwebsite-198": "80/path---podpointwebsite-198-f5b-ck2rmEShQfi26o5UCqt3aVFV4MM",
+    "roxanevacca-237": "235/path---roxanevacca-237-f1c-83QEIZpbPS9gtjq6wWlbfyPk1og",
+    "valueretail-033": "98/path---valueretail-033-ba2-DTcPiXjvbihzc7AiEHb1eeqEYc",
+    "sunwrae-379": "625/path---sunwrae-379-3cf-ew0mV0I15x6HDw6ZviXrgu1PJQ",
     "dev-404-page-5f9": "920/path---dev-404-page-5-f-9-fab-NZuapzHg3X9TaN1iIixfv1W23E",
     "404-22d": "44/path---404-22-d-bce-NZuapzHg3X9TaN1iIixfv1W23E",
-    "index": "702/path---index-6a9-ncxmf4k9d647to9m389s5Pb0g",
+    "index": "357/path---index-6a9-xdPOyLPPkgWQ7OoHFy4DwP0RTk4",
     "404-html-516": "164/path---404-html-516-62a-NZuapzHg3X9TaN1iIixfv1W23E",
-    "jusrol-5c4": "153/path---jusrol-5-c-4-3cf-lwsa0ijEqmufg73UGFxnKCDIrOg",
-    "adidastangoleague-f07": "310/path---adidastangoleague-f-07-829-j6DlJSkKVuVvTOF0Ouzb5FLRGWQ"
+    "jusrol-5c4": "798/path---jusrol-5-c-4-3cf-2JZxqHxLhSXuqf8KTjJDKA9NR8",
+    "adidastangoleague-f07": "66/path---adidastangoleague-f-07-829-B50Oln6NmLHHfPRAQsrT9z8"
   },
   "components": {
     "/Users/matinechabrier/Sites/matine.co.uk/src/templates/project.jsx": {
-      "query": "query ProjectBySlug(\n  $uid: String!\n) {\n  prismicProject(uid: {eq: $uid}) {\n    uid\n    first_publication_date\n    last_publication_date\n    data {\n      project_title {\n        text\n      }\n      project_role {\n        text\n      }\n      project_tech_stack {\n        text\n      }\n      project_type\n      project_visit_website_link {\n        url\n      }\n      project_main_text {\n        html\n      }\n      project_banner {\n        localFile {\n          childImageSharp {\n            sizes(maxWidth: 2000, maxHeight: 462, quality: 90, traceSVG: {color: \"#021212\"}, cropFocus: ENTROPY) {\n              ...GatsbyImageSharpSizes_withWebp_tracedSVG\n            }\n          }\n        }\n      }\n      project_imac {\n        localFile {\n          childImageSharp {\n            sizes(maxWidth: 1600, maxHeight: 1266, quality: 90, traceSVG: {color: \"#021212\"}, cropFocus: ENTROPY) {\n              ...GatsbyImageSharpSizes_withWebp_tracedSVG\n            }\n          }\n        }\n      }\n      project_ipad {\n        localFile {\n          childImageSharp {\n            sizes(maxWidth: 600, maxHeight: 820, quality: 90, traceSVG: {color: \"#021212\"}, cropFocus: ENTROPY) {\n              ...GatsbyImageSharpSizes_withWebp_tracedSVG\n            }\n          }\n        }\n      }\n      project_iphone {\n        localFile {\n          childImageSharp {\n            sizes(maxWidth: 400, maxHeight: 800, quality: 90, traceSVG: {color: \"#021212\"}, cropFocus: ENTROPY) {\n              ...GatsbyImageSharpSizes_withWebp_tracedSVG\n            }\n          }\n        }\n      }\n      project_screenshots {\n        screenshot {\n          localFile {\n            childImageSharp {\n              sizes(maxWidth: 1600, quality: 90, traceSVG: {color: \"#021212\"}, cropFocus: ENTROPY) {\n                ...GatsbyImageSharpSizes_withWebp_tracedSVG\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}\n\nfragment GatsbyImageSharpSizes_withWebp_tracedSVG on ImageSharpSizes {\n  tracedSVG\n  aspectRatio\n  src\n  srcSet\n  srcWebp\n  srcSetWebp\n  sizes\n}\n",
+      "query": "query ProjectBySlug(\n  $uid: String!\n) {\n  projects: allPrismicProject(sort: {fields: [data___project_order], order: DESC}) {\n    edges {\n      node {\n        uid\n        data {\n          project_title {\n            text\n          }\n        }\n      }\n    }\n  }\n  prismicProject(uid: {eq: $uid}) {\n    uid\n    first_publication_date\n    last_publication_date\n    data {\n      project_title {\n        text\n      }\n      project_role {\n        text\n      }\n      project_tech_stack {\n        text\n      }\n      project_type\n      project_visit_website_link {\n        url\n      }\n      project_main_text {\n        html\n      }\n      project_banner {\n        localFile {\n          childImageSharp {\n            fluid(maxWidth: 2000, maxHeight: 462, quality: 90, traceSVG: {color: \"#021212\"}, cropFocus: ENTROPY) {\n              ...GatsbyImageSharpFluid_withWebp_tracedSVG\n            }\n          }\n        }\n      }\n      project_imac {\n        localFile {\n          childImageSharp {\n            fluid(maxWidth: 1600, maxHeight: 1266, quality: 90, traceSVG: {color: \"#021212\"}, cropFocus: ENTROPY) {\n              ...GatsbyImageSharpFluid_withWebp_tracedSVG\n            }\n          }\n        }\n      }\n      project_ipad {\n        localFile {\n          childImageSharp {\n            fluid(maxWidth: 600, maxHeight: 820, quality: 90, traceSVG: {color: \"#021212\"}, cropFocus: ENTROPY) {\n              ...GatsbyImageSharpFluid_withWebp_tracedSVG\n            }\n          }\n        }\n      }\n      project_iphone {\n        localFile {\n          childImageSharp {\n            fluid(maxWidth: 400, maxHeight: 800, quality: 90, traceSVG: {color: \"#021212\"}, cropFocus: ENTROPY) {\n              ...GatsbyImageSharpFluid_withWebp_tracedSVG\n            }\n          }\n        }\n      }\n      project_screenshots {\n        screenshot {\n          localFile {\n            childImageSharp {\n              fluid(maxWidth: 1600, quality: 90, traceSVG: {color: \"#021212\"}, cropFocus: ENTROPY) {\n                ...GatsbyImageSharpFluid_withWebp_tracedSVG\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}\n\nfragment GatsbyImageSharpFluid_withWebp_tracedSVG on ImageSharpFluid {\n  tracedSVG\n  aspectRatio\n  src\n  srcSet\n  srcWebp\n  srcSetWebp\n  sizes\n}\n",
       "componentPath": "/Users/matinechabrier/Sites/matine.co.uk/src/templates/project.jsx"
     },
     "/Users/matinechabrier/Sites/matine.co.uk/.cache/dev-404-page.js": {
@@ -24195,7 +24216,7 @@
       "componentPath": "/Users/matinechabrier/Sites/matine.co.uk/src/pages/404.jsx"
     },
     "/Users/matinechabrier/Sites/matine.co.uk/src/pages/index.jsx": {
-      "query": "query IndexQuery {\n  projects: allPrismicProject(sort: {fields: [last_publication_date], order: DESC}) {\n    edges {\n      node {\n        uid\n        data {\n          project_title {\n            text\n          }\n          project_thumbnail {\n            localFile {\n              childImageSharp {\n                sizes(maxWidth: 1200, maxHeight: 1200, quality: 90, traceSVG: {color: \"#021212\"}, cropFocus: ENTROPY) {\n                  ...GatsbyImageSharpSizes_withWebp_tracedSVG\n                }\n              }\n            }\n          }\n          project_thumbnail_2 {\n            localFile {\n              childImageSharp {\n                sizes(maxWidth: 1200, maxHeight: 1200, quality: 90, traceSVG: {color: \"#021212\"}, cropFocus: ENTROPY) {\n                  ...GatsbyImageSharpSizes_withWebp_tracedSVG\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n  global: allPrismicGlobal(sort: {fields: [last_publication_date], order: DESC}) {\n    edges {\n      node {\n        uid\n        data {\n          first_name {\n            text\n          }\n          surname {\n            text\n          }\n        }\n      }\n    }\n  }\n}\n\nfragment GatsbyImageSharpSizes_withWebp_tracedSVG on ImageSharpSizes {\n  tracedSVG\n  aspectRatio\n  src\n  srcSet\n  srcWebp\n  srcSetWebp\n  sizes\n}\n",
+      "query": "query IndexQuery {\n  projects: allPrismicProject(sort: {fields: [data___project_order], order: DESC}) {\n    edges {\n      node {\n        uid\n        data {\n          project_title {\n            text\n          }\n          project_thumbnail {\n            localFile {\n              childImageSharp {\n                fluid(maxWidth: 1200, maxHeight: 1200, quality: 90, traceSVG: {color: \"#021212\"}, cropFocus: ENTROPY) {\n                  ...GatsbyImageSharpFluid_withWebp_tracedSVG\n                }\n              }\n            }\n          }\n          project_thumbnail_2 {\n            localFile {\n              childImageSharp {\n                fluid(maxWidth: 1200, maxHeight: 1200, quality: 90, traceSVG: {color: \"#021212\"}, cropFocus: ENTROPY) {\n                  ...GatsbyImageSharpFluid_withWebp_tracedSVG\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n  global: allPrismicGlobal(sort: {fields: [last_publication_date], order: DESC}) {\n    edges {\n      node {\n        uid\n        data {\n          first_name {\n            text\n          }\n          surname {\n            text\n          }\n        }\n      }\n    }\n  }\n}\n\nfragment GatsbyImageSharpFluid_withWebp_tracedSVG on ImageSharpFluid {\n  tracedSVG\n  aspectRatio\n  src\n  srcSet\n  srcWebp\n  srcSetWebp\n  sizes\n}\n",
       "componentPath": "/Users/matinechabrier/Sites/matine.co.uk/src/pages/index.jsx"
     }
   },

@@ -59,8 +59,8 @@ class IndexPage extends Component {
             const projectUid = project.node.uid;
             const projectData = project.node.data;
             const projectTitle = projectData.project_title.text;
-            const projectThumbnail = projectData.project_thumbnail.localFile.childImageSharp.sizes;
-            const projectThumbnail2 = projectData.project_thumbnail_2.localFile.childImageSharp.sizes;
+            const projectThumbnail = projectData.project_thumbnail.localFile.childImageSharp.fluid;
+            const projectThumbnail2 = projectData.project_thumbnail_2.localFile.childImageSharp.fluid;
             const linkToProjectUrl = `/${projectUid}`;
 
             return (
@@ -85,7 +85,7 @@ class IndexPage extends Component {
                                     zIndex={ 1 }
                                 >
                                     <Image
-                                        sizes={ projectThumbnail }
+                                        fluid={ projectThumbnail }
                                     />
                                     <Box
                                         className="project-thumbnail__image2"
@@ -95,7 +95,7 @@ class IndexPage extends Component {
                                         width={ 1 }
                                     >
                                         <Image
-                                            sizes={ projectThumbnail2 }
+                                            fluid={ projectThumbnail2 }
                                         />
                                     </Box>
                                 </Box>
@@ -241,7 +241,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(withLayout(IndexPage
 
 export const pageQuery = graphql`
     query IndexQuery {
-        projects: allPrismicProject(sort: { fields: [last_publication_date], order: DESC }) {
+        projects: allPrismicProject(sort: { fields: [data___project_order], order: DESC }) {
             edges {
                 node {
                     uid
@@ -252,14 +252,14 @@ export const pageQuery = graphql`
                         project_thumbnail {
                             localFile {
                                 childImageSharp {
-                                    sizes(
+                                    fluid(
                                         maxWidth: 1200
                                         maxHeight: 1200
                                         quality: 90
                                         traceSVG: { color: "#021212" }
                                         cropFocus: ENTROPY
                                     ) {
-                                        ...GatsbyImageSharpSizes_withWebp_tracedSVG
+                                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
                                     }
                                 }
                             }
@@ -267,14 +267,14 @@ export const pageQuery = graphql`
                         project_thumbnail_2 {
                             localFile {
                                 childImageSharp {
-                                    sizes(
+                                    fluid(
                                         maxWidth: 1200
                                         maxHeight: 1200
                                         quality: 90
                                         traceSVG: { color: "#021212" }
                                         cropFocus: ENTROPY
                                     ) {
-                                        ...GatsbyImageSharpSizes_withWebp_tracedSVG
+                                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
                                     }
                                 }
                             }

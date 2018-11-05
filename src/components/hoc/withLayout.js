@@ -35,15 +35,6 @@ export default function (WrappedComponent) {
         }
 
         /**
-         * Things to do before the component renders.
-         *
-         * @return {void}
-         */
-        componentWillMount() {
-            this.getPrismicContent();
-        }
-
-        /**
          * Things to do after the component renders.
          *
          * @return {void}
@@ -57,51 +48,12 @@ export default function (WrappedComponent) {
         }
 
         /**
-         * Get content from Prismic and save to the store.
-         *
-         * @return {void}
-         */
-        getPrismicContent() {
-            const {
-                setContent,
-                setIsLoading,
-            } = this.props;
-
-            let content = {
-                global: null,
-                projects: [],
-            }
-
-            Prismic.api(PrismicConfig.apiEndpoint).then(api => {
-                if (api) {
-                    api.query('', { pageSize: 30 }).then(response => {
-                        response.results.map((doc, index) => {
-                            if (doc.type === 'global') {
-                                content.global = doc.data;
-                            }
-                            if (doc.type === 'project') content.projects.push(doc);
-
-                            return true;
-                        });
-                    }).then(response => {
-                        content.projects.sort((a, b) => {
-                            return b.data.project_order - a.data.project_order;
-                        })
-                        setContent(content);
-                        setIsLoading(false);
-                    });
-                }
-            });
-        }
-
-        /**
          * Renders the component.
          *
          * @return {XML}
          */
         render() {
             const {
-                ui,
                 theme,
             } = this.props;
 
@@ -109,15 +61,10 @@ export default function (WrappedComponent) {
                 footerHeight,
             } = this.state;
 
-            // if (ui.isLoading) {
-            //     return <Loading />;
-            // }
-
             return (
                 <ThemeProvider theme={{ mode: theme }}>
                     <ThemeInverted themeBg>
                         <ThemeDefault themeColor themeSvg height="100%">
-                            {/* <Loading /> */}
                             <Header />
                             <Box zIndex={ 1 } position="relative" pt={ [25, 25, 25, 40] } mb={ footerHeight } className="no-margin-for-print">
                                 <ThemeDefault themeBg themeBorder className="no-border-for-print">
@@ -132,16 +79,7 @@ export default function (WrappedComponent) {
         }
     }
 
-    Layout.propTypes = {
-        ui: PropTypes.shape(),
-    };
-
-    Layout.defaultProps = {
-        ui: null,
-    };
-
     const mapStateToProps = state => ({
-        ui: state.ui,
         theme: state.theme,
     });
 
