@@ -6,13 +6,13 @@ module.exports = {
     siteUrl: 'https://matine.netlify.com', // Domain of your site. No trailing slash!
     siteLanguage: 'en', // Language Tag on <html> element
     siteLogo: '/logos/logo-1024.png', // Used for SEO and manifest
-    siteDescription: 'A portfolio site for Matine Chabrier.',
+    siteDescription: 'A portfolio site for Matine Chabrier, Frontend Developer.',
     author: 'MatineChabrier', // Author for schemaORGJSONLD
   
     // siteFBAppID: '123456789', // Facebook App ID - Optional
-    userTwitter: '@bella', // Twitter Username
-    ogSiteName: 'bella', // Facebook Site Name
-    ogLanguage: 'en_US', // Facebook Language
+    userTwitter: '@matine', // Twitter Username
+    ogSiteName: 'matinec', // Facebook Site Name
+    ogLanguage: 'en_GB', // Facebook Language
   
     // Manifest and Progress color
     themeColor: '#b710a1',

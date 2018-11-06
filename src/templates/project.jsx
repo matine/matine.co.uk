@@ -67,10 +67,12 @@ class ProjectTemplate extends Component {
                     >
                     { project_banner && (
                         <Box
-                            height={[200, 200, 200, 300]}
+                            height={ [260, 260, 260, 300] }
+                            mt={ [-60, -60, -60, 0 ] }
                         >
                             <Image
-                                fixed={ projectBanner }
+                                fluid={ projectBanner }
+                                style={ { height: '100%' } }
                             />
                         </Box>
                     ) }
@@ -170,14 +172,13 @@ export const pageQuery = graphql`
                 project_banner {
                     localFile {
                         childImageSharp {
-                            fixed(
-                                width: 2000
-                                height: 462
+                            fluid(
+                                maxWidth: 1300
+                                maxHeight: 300
                                 quality: 90
-                                traceSVG: { color: "#021212" }
                                 cropFocus: ENTROPY
                             ) {
-                                ...GatsbyImageSharpFixed_withWebp_tracedSVG
+                                ...GatsbyImageSharpFluid_withWebp
                             }
                         }
                     }
@@ -189,10 +190,9 @@ export const pageQuery = graphql`
                                 maxWidth: 1600
                                 maxHeight: 1266
                                 quality: 90
-                                traceSVG: { color: "#021212" }
                                 cropFocus: ENTROPY
                             ) {
-                                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                                ...GatsbyImageSharpFluid_withWebp
                             }
                         }
                     }
@@ -204,10 +204,9 @@ export const pageQuery = graphql`
                                 maxWidth: 600
                                 maxHeight: 820
                                 quality: 90
-                                traceSVG: { color: "#021212" }
                                 cropFocus: ENTROPY
                             ) {
-                                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                                ...GatsbyImageSharpFluid_withWebp
                             }
                         }
                     }
@@ -219,10 +218,9 @@ export const pageQuery = graphql`
                                 maxWidth: 400
                                 maxHeight: 800
                                 quality: 90
-                                traceSVG: { color: "#021212" }
                                 cropFocus: ENTROPY
                             ) {
-                                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                                ...GatsbyImageSharpFluid_withWebp
                             }
                         }
                     }
@@ -234,10 +232,9 @@ export const pageQuery = graphql`
                                 fluid(
                                     maxWidth: 1600
                                     quality: 90
-                                    traceSVG: { color: "#021212" }
                                     cropFocus: ENTROPY
                                 ) {
-                                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                                    ...GatsbyImageSharpFluid_withWebp
                                 }
                             }
                         }

@@ -1,10 +1,34 @@
-import React from 'react'
+import React, { PureComponent } from 'react';
+import withLayout from '../components/hoc/withLayout';
+import { Box, Container, Text, PageHeading } from '../components/ui';
 
-const NotFoundPage = () => (
-  <div>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </div>
-)
+class NotFoundPage extends PureComponent {
+    /**
+     * Renders the component.
+     *
+     * @return {ReactNode}
+     */
+    render() {
+        const pageName = 'not-found';
 
-export default NotFoundPage
+        return (
+            <Container
+                id={ `${pageName}-page` }
+                pb={ 5 }
+            >
+                <PageHeading>
+                    404
+                </PageHeading>
+                <Box pb={ 5 }>
+                    <Text
+                        textAlign="center"
+                    >
+                        The page you were looking for could not be found!
+                    </Text>
+                </Box>
+            </Container>
+        )
+    }
+}
+
+export default withLayout(NotFoundPage);

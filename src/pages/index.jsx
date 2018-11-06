@@ -240,10 +240,9 @@ export const pageQuery = graphql`
                                         maxWidth: 1200
                                         maxHeight: 1200
                                         quality: 90
-                                        traceSVG: { color: "#021212" }
                                         cropFocus: ENTROPY
                                     ) {
-                                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                                        ...GatsbyImageSharpFluid_withWebp
                                     }
                                 }
                             }
@@ -255,10 +254,9 @@ export const pageQuery = graphql`
                                         maxWidth: 1200
                                         maxHeight: 1200
                                         quality: 90
-                                        traceSVG: { color: "#021212" }
                                         cropFocus: ENTROPY
                                     ) {
-                                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                                        ...GatsbyImageSharpFluid_withWebp
                                     }
                                 }
                             }

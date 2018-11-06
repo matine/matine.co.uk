@@ -6,7 +6,7 @@ var plugins = [{
       options: {"plugins":[]},
     },{
       plugin: require('/Users/matinechabrier/Sites/matine.co.uk/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
-      options: {"plugins":[],"name":"Matine Chabrier - Frontend Developer","short_name":"Matine Chabrier","description":"A portfolio site for Matine Chabrier.","start_url":"/","background_color":"#350d27","theme_color":"#b710a1","display":"fullscreen","icons":[{"src":"/favicons/android-chrome-192x192.png","sizes":"192x192","type":"image/png"},{"src":"/favicons/android-chrome-512x512.png","sizes":"512x512","type":"image/png"}]},
+      options: {"plugins":[],"name":"Matine Chabrier - Frontend Developer","short_name":"Matine Chabrier","description":"A portfolio site for Matine Chabrier, Frontend Developer.","start_url":"/","background_color":"#350d27","theme_color":"#b710a1","display":"fullscreen","icons":[{"src":"/favicons/android-chrome-192x192.png","sizes":"192x192","type":"image/png"},{"src":"/favicons/android-chrome-512x512.png","sizes":"512x512","type":"image/png"}]},
     },{
       plugin: require('/Users/matinechabrier/Sites/matine.co.uk/gatsby-ssr'),
       options: {"plugins":[]},

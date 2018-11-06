@@ -89,6 +89,7 @@ class LinksPage extends Component {
         } = this.props;
 
         const globalContent = data.global.edges[0].node.data;
+        const pageName = 'links';
 
         if (!globalContent) {
             return null;
@@ -96,7 +97,7 @@ class LinksPage extends Component {
 
         return (
             <Container
-                id="links-page"
+                id={ `${pageName}-page` }
                 pb={ 5 }
             >
                 <PageHeading>

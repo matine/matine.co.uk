@@ -113,12 +113,11 @@ export const pageQuery = graphql`
                             localFile {
                                 childImageSharp {
                                     fluid(
-                                        maxWidth: 300
+                                        maxWidth: 1000
                                         quality: 90
-                                        traceSVG: { color: "#021212" }
                                         cropFocus: ENTROPY
                                     ) {
-                                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                                        ...GatsbyImageSharpFluid_withWebp
                                     }
                                 }
                             }
