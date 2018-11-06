@@ -21,7 +21,7 @@ export const HeadingDecorated = styled(HeadingLg)`
 
 HeadingDecorated.defaultProps = {
     caps: true,
-    fontWeight: 'regular',
+    fontWeight: '100',
     mb: 4,
 };
 

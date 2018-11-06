@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { ThemeDefault, Container, Span, Box, Contained, PageHeading, TextWrapMd, TextWrap } from '../ui';
+import { PropTypeGatsbyText, PropTypeGatsbyHtml, PropTypeGatsbyLink } from '../../propTypes';
 
 function ProjectTextContent({
     projectTitle,
@@ -40,6 +41,7 @@ function ProjectTextContent({
             <a
                 href={ visitWebsiteContent }
                 target="_blank"
+                rel="noopener noreferrer"
             >
                 { projectType === 'app' ? 'Download app' : 'Visit website' }
             </a>
@@ -107,11 +109,11 @@ ProjectTextContent.defaultProps = {
 };
 
 ProjectTextContent.propTypes = {
-    projectTitle: PropTypes.shape(),
-    projectMainText: PropTypes.shape(),
-    projectRole: PropTypes.shape(),
-    projectTechStack: PropTypes.shape(),
-    projectVisitWebsiteLink: PropTypes.shape(),
+    projectTitle: PropTypeGatsbyText,
+    projectMainText: PropTypeGatsbyHtml,
+    projectRole: PropTypeGatsbyText,
+    projectTechStack: PropTypeGatsbyText,
+    projectVisitWebsiteLink: PropTypeGatsbyLink,
     projectType: PropTypes.string,
 };
 

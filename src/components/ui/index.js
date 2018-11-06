@@ -27,7 +27,6 @@ import BackgroundImage from './objects/BackgroundImage';
 import Image from './objects/Image';
 import { Iphone, Ipad, Imac, TouchDevices, ProjectsNav, BrowserWindow, BannerOverlay } from './components/Projects';
 import Me from './components/Me';
-import Banner from './components/Banner';
 import ProjectThumbnail from './components/ProjectThumbnail';
 import NavWrap from './components/NavWrap';
 import CarouselWrap from './components/CarouselWrap';
@@ -79,7 +78,6 @@ export {
     SvgWrap,
     Me,
     BackgroundImage,
-    Banner,
     Image,
     Iphone,
     Ipad,

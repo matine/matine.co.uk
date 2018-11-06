@@ -1,105 +1,16 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import Image from 'gatsby-image';
 import { connect } from 'react-redux';
 import withLayout from '../components/hoc/withLayout';
-import * as actions from '../state/actions';
-import { Box, Container, TextWrapMd, TextWrapSm, HeadingDecorated, Contained } from '../components/ui';
+import MyIntro from '../components/partials/MyIntro';
+import MySkills from '../components/partials/MySkills';
+import MyInfo from '../components/partials/MyInfo';
+import { Box, Container, Contained } from '../components/ui';
+import { PropTypeGatsbyGlobalData } from '../propTypes';
 
-class AboutPage extends Component {
-    /**
-     * Renders the intro text.
-     *
-     * @return {XML}
-     */
-    renderIntro() {
-        const {
-            data,
-        } = this.props;
-
-        const globalContent = data.global.edges[0].node.data;
-
-        const {
-            me_intro_title,
-            me_intro_text,
-        } = globalContent;
-
-        if (!me_intro_title && !me_intro_text) {
-            return null;
-        }
-
-        return (
-            <Box mb={ 5 }>
-                { me_intro_title &&
-                    <HeadingDecorated>
-                        { me_intro_title.text }
-                    </HeadingDecorated>
-                }
-                <TextWrapMd
-                    textSpacing
-                >
-                    { me_intro_text &&
-                        <div
-                            dangerouslySetInnerHTML={
-                                {
-                                    __html: me_intro_text.html,
-                                }
-                            }
-                        />
-                    }
-                </TextWrapMd>
-            </Box>
-        );
-    }
-
-    /**
-     * Renders the skills text.
-     *
-     * @return {XML}
-     */
-    renderSkills() {
-        const {
-            data,
-        } = this.props;
-
-        const globalContent = data.global.edges[0].node.data;
-
-        const {
-            me_skills_title,
-            me_skills_text,
-        } = globalContent;
-
-        if (!me_skills_title && !me_skills_text) {
-            return null;
-        }
-
-        return (
-            <Box mb={ 5 }>
-                { me_skills_title &&
-                    <HeadingDecorated>
-                        { me_skills_title.text }
-                    </HeadingDecorated>
-                }
-                <TextWrapSm
-                    listStyle="none"
-                    textSpacing
-                    headings
-                >
-                    { me_skills_text &&
-                        <div
-                            dangerouslySetInnerHTML={
-                                {
-                                    __html: me_skills_text.html,
-                                }
-                            }
-                        />
-                    }
-                </TextWrapSm>
-            </Box>
-        );
-    }
-
+class AboutPage extends PureComponent {
     /**
      * Renders the component.
      *
@@ -117,24 +28,47 @@ class AboutPage extends Component {
             return null;
         }
 
+        const {
+            me_intro_title,
+            me_intro_text,
+            me_skills_title,
+            me_skills_text,
+        } = globalContent;
+
+        const pageName = 'about';
+
         return (
-            <div id="about-page">
-                <Box pb={ 5 }>
+            <div
+                id={ `${pageName}-page` }
+            >
+                <Box
+                    pb={ 5 }
+                >
                     <Container>
-                        <Contained maxWidth={ 3 }>
-                            <Box mb={ 5 }>
+                        <Contained
+                            maxWidth={ 3 }
+                        >
+                            <Box
+                                mb={ 5 }
+                            >
                                 <Image
                                     fluid={ meImage }
                                 />
                             </Box>
-                            { this.renderIntro() }
-                            { this.renderSkills() }
-                            <Box mb={ 5 }>
-                                <TextWrapMd textSpacing linkStyle="default">
-                                    <p>View my full <Link to={ `/cv` }>CV</Link></p>
-                                    <p>Mail me <a href="mailto:matine.chabrier@gmail.com" target="blank">matine.chabrier@gmail.com</a></p>
-                                    <p>Peak at my code on <a href="https://github.com/matine/matine.co.uk" target="blank">Github</a></p>
-                                </TextWrapMd>
+                            <MyIntro
+                                meIntroTitle={ me_intro_title }
+                                meIntroText={ me_intro_text }
+                                sectionName={ pageName }
+                            />
+                            <MySkills
+                                meSkillsTitle={ me_skills_title }
+                                meSkillsText={ me_skills_text }
+                                sectionName={ pageName }
+                            />
+                            <Box
+                                mb={ 5 }
+                            >
+                                <MyInfo />
                             </Box>
                         </Contained>
                     </Container>
@@ -146,9 +80,7 @@ class AboutPage extends Component {
 
 AboutPage.propTypes = {
     data: PropTypes.shape({
-        projects: PropTypes.shape({
-            edges: PropTypes.array.isRequired,
-        }),
+        PropTypeGatsbyGlobalData,
     }).isRequired,
 };
 
@@ -156,11 +88,7 @@ export const mapStateToProps = state => ({
     theme: state.theme,
 });
 
-export const mapDispatchToProps = dispatch => ({
-    setTheme: theme => dispatch(actions.setTheme(theme)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(withLayout(AboutPage));
+export default connect(mapStateToProps)(withLayout(AboutPage));
 
 export const pageQuery = graphql`
     query AboutQuery {

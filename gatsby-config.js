@@ -34,12 +34,6 @@ module.exports = {
             }
         },
         'gatsby-plugin-lodash',
-        {
-            resolve: 'gatsby-plugin-typography',
-            options: {
-                pathToConfigModule: 'config/typography.js',
-            },
-        },
         'gatsby-plugin-sitemap',
         {
             resolve: 'gatsby-plugin-manifest',

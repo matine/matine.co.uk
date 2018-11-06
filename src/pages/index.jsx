@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 import Image from 'gatsby-image';
 import { connect } from 'react-redux';
 import withLayout from '../components/hoc/withLayout';
+import LogoLockup from '../components/partials/LogoLockup';
 import * as actions from '../state/actions';
-import { Container, Grid, Box, ProjectThumbnail, ThemeDefault, Col, Text, SvgWrap, Fixed, Flex, Heading } from '../components/ui';
-import SunIcon from '../components/ui/icons/SunIcon';
+import { Container, Grid, Box, ProjectThumbnail, ThemeDefault, Col, Text, Fixed, Flex, Heading } from '../components/ui';
+import { PropTypeGatsbyProjectsData, PropTypeGatsbyGlobalData } from '../propTypes';
 
-class IndexPage extends Component {
+class IndexPage extends PureComponent {
     /**
      * Component constructor.
      *
@@ -157,11 +158,22 @@ class IndexPage extends Component {
         } = this.props;
 
         const globalContent = data.global.edges[0].node.data;
-        const globalFirstName = globalContent.first_name.text;
-        const globalSurname = globalContent.surname.text;
+
+        if (!globalContent) {
+            return null;
+        }
+
+        const {
+            first_name,
+            surname,
+        } = globalContent;
+
+        const pageName = 'projects';
 
         return (
-            <div id="projects-page">
+            <div
+                id={ `${pageName}-page` }
+            >
                 <Container
                     pb={ 5 }
                     maxWidth={ 1500 }
@@ -170,37 +182,10 @@ class IndexPage extends Component {
                         py={[5, 5, 6]}
                         mt={ 5 }
                     >
-                        <Heading
-                            caps
-                            fontSize={[46, 46, 90]}
-                            textAlign="center"
-                            lineHeight={ .85 }
-                            mb={[3, 3, 4]}
-                        >
-                            <Box
-                                display="inline-block"
-                                position="relative"
-                            >
-                                <Box
-                                    display="inline-block"
-                                    position="absolute"
-                                    top={['-38px', '-38px', '-75px',]}
-                                    left="39%"
-                                >
-                                    <SvgWrap
-                                        color="primary"
-                                        width={[46, 46, 90]}
-                                    >
-                                        <SunIcon />
-                                    </SvgWrap>
-                                </Box>
-                                { globalFirstName } 
-                            </Box>
-                            <br/>
-                            <span>
-                                { globalSurname }
-                            </span>
-                        </Heading>
+                        <LogoLockup
+                            firstName={ first_name }
+                            surname={ surname }
+                        />
                         <Text
                             caps
                             fontWeight="bold"
@@ -223,9 +208,8 @@ class IndexPage extends Component {
 
 IndexPage.propTypes = {
     data: PropTypes.shape({
-        projects: PropTypes.shape({
-            edges: PropTypes.array.isRequired,
-        }),
+        PropTypeGatsbyProjectsData,
+        PropTypeGatsbyGlobalData,
     }).isRequired,
 };
 

@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import Image from 'gatsby-image';
 import { Container, Box, TouchDevices, Imac, Ipad, Iphone } from '../ui';
+import { PropTypeGatsbyImage } from '../../propTypes';
 
 function ProjectImagesInsitu({
     projectImac,
@@ -58,9 +58,9 @@ ProjectImagesInsitu.defaultProps = {
 };
 
 ProjectImagesInsitu.propTypes = {
-    projectImac: PropTypes.shape(),
-    projectIpad: PropTypes.shape(),
-    projectIphone: PropTypes.shape(),
+    projectImac: PropTypeGatsbyImage,
+    projectIpad: PropTypeGatsbyImage,
+    projectIphone: PropTypeGatsbyImage,
 };
 
 export default ProjectImagesInsitu;

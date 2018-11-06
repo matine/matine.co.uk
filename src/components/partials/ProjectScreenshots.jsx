@@ -9,7 +9,6 @@ function ProjectScreenshots({
     projectUid,
     projectType,
 }) {
-
     if (!projectScreenshots[0]) {
         return null;
     }

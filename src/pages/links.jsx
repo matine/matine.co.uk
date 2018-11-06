@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { connect } from 'react-redux';
 import withLayout from '../components/hoc/withLayout';
-import * as actions from '../state/actions';
 import { Container, TextXs, TextWrapXs, HeadingDecorated, PageHeading, Span, Col, Grid, List } from '../components/ui';
+import { PropTypeGatsbyGlobalData } from '../propTypes';
 
 class LinksPage extends Component {
     /**
      * Render all the lists of links with titles
      *
-     * @return {XML}
+     * @return {ReactNode}
      */
     renderListOfLinks() {
         const {
@@ -20,16 +20,27 @@ class LinksPage extends Component {
         const globalContent = data.global.edges[0].node.data;
 
         const sliceContent = globalContent.body.map((slice, sliceIndex) => {
-            // Get the title for the list
             const listOfLinksTitle = slice.primary.list_of_links_title.text;
 
-            // Render the list of links
             if (slice.slice_type === 'links') {
                 const linkContent = slice.items.map((link, linkIndex) => {
                     return (
-                        <li key={ linkIndex }>
-                            <TextXs caps mb={ 1 } fontWeight="bold" linkStyle="hover">
-                                <a href={ link.link_url.url } target="blank">{ link.link_name } →</a>
+                        <li
+                            key={ linkIndex }
+                        >
+                            <TextXs
+                                caps
+                                mb={ 1 }
+                                fontWeight="bold"
+                                linkStyle="hover"
+                            >
+                                <a
+                                    href={ link.link_url.url }
+                                    target="blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    { link.link_name } →
+                                </a>
                             </TextXs>
                             <TextWrapXs>
                                 <div
@@ -45,15 +56,20 @@ class LinksPage extends Component {
                 });
 
                 return (
-                    <Col key={ sliceIndex } width={[ 1, 1, 1/2, 1/4 ]}>
-                        <HeadingDecorated>{ listOfLinksTitle }</HeadingDecorated>
-                        <List listStyle="bordered">
+                    <Col
+                        key={ sliceIndex }
+                        width={[ 1, 1, 1/2, 1/4 ]}
+                    >
+                        <HeadingDecorated>
+                            { listOfLinksTitle }
+                        </HeadingDecorated>
+                        <List
+                            listStyle="bordered"
+                        >
                             { linkContent }
                         </List>
                     </Col>
                 );
-
-            // Return null by default
             } else {
                 return null;
             }
@@ -79,11 +95,16 @@ class LinksPage extends Component {
         }
 
         return (
-            <Container id="links-page" pb={ 5 }>
+            <Container
+                id="links-page"
+                pb={ 5 }
+            >
                 <PageHeading>
                     { globalContent.links_title.text }
                     <br/>
-                    <Span fontWeight="regular">{ globalContent.links_subtitle.text }</Span>
+                    <Span fontWeight="100">
+                        { globalContent.links_subtitle.text }
+                    </Span>
                 </PageHeading>
                 <Grid>
                     { this.renderListOfLinks() }
@@ -95,9 +116,7 @@ class LinksPage extends Component {
 
 LinksPage.propTypes = {
     data: PropTypes.shape({
-        projects: PropTypes.shape({
-            edges: PropTypes.array.isRequired,
-        }),
+        PropTypeGatsbyGlobalData,
     }).isRequired,
 };
 
@@ -105,11 +124,7 @@ export const mapStateToProps = state => ({
     theme: state.theme,
 });
 
-export const mapDispatchToProps = dispatch => ({
-    setTheme: theme => dispatch(actions.setTheme(theme)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(withLayout(LinksPage));
+export default connect(mapStateToProps)(withLayout(LinksPage));
 
 export const pageQuery = graphql`
     query LinksQuery {

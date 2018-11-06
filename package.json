@@ -51,13 +51,12 @@
     "styled-theming": "^2.2.0"
   },
   "keywords": [
-    "gatsby",
-    "starter",
     "portfolio",
     "matine",
     "chabrier",
     "frontend",
     "developer",
+    "gatsby",
     "prismic"
   ],
   "license": "MIT",

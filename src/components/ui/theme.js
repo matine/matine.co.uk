@@ -34,7 +34,7 @@ export const lineHeights = [
 ];
   
 export const fontWeights = {
-    regular: 500,
+    regular: 100,
     bold: 700
 };
   

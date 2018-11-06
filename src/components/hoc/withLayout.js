@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { ThemeProvider, injectGlobal } from 'styled-components';
 import styledNormalize from 'styled-normalize';
 import { connect } from 'react-redux';
-import * as actions from '../../state/actions';
 import Header from '../partials/Header';
 import Footer from '../partials/Footer';
 import { ThemeDefault, ThemeInverted, Box } from '../ui';
@@ -46,7 +45,7 @@ export default function (WrappedComponent) {
         /**
          * Renders the component.
          *
-         * @return {XML}
+         * @return {ReactNode}
          */
         render() {
             const {
@@ -58,13 +57,32 @@ export default function (WrappedComponent) {
             } = this.state;
 
             return (
-                <ThemeProvider theme={{ mode: theme }}>
-                    <ThemeInverted themeBg>
-                        <ThemeDefault themeColor themeSvg height="100%">
+                <ThemeProvider
+                    theme={{ mode: theme }}>
+                    <ThemeInverted
+                        themeBg
+                    >
+                        <ThemeDefault
+                            themeColor
+                            themeSvg
+                            height="100%"
+                        >
                             <Header />
-                            <Box zIndex={ 1 } position="relative" pt={ [25, 25, 25, 40] } mb={ footerHeight } className="no-margin-for-print">
-                                <ThemeDefault themeBg themeBorder className="no-border-for-print">
-                                    <WrappedComponent { ...this.props } />
+                            <Box
+                                zIndex={ 1 }
+                                position="relative"
+                                pt={ [25, 25, 25, 40] }
+                                mb={ footerHeight }
+                                className="no-margin-for-print"
+                            >
+                                <ThemeDefault
+                                    themeBg
+                                    themeBorder
+                                    className="no-border-for-print"
+                                >
+                                    <WrappedComponent
+                                        { ...this.props }
+                                    />
                                 </ThemeDefault>
                             </Box>
                             <Footer />
@@ -79,10 +97,5 @@ export default function (WrappedComponent) {
         theme: state.theme,
     });
 
-    const mapDispatchToProps = dispatch => ({
-        setContent: content => dispatch(actions.setContent(content)),
-        setIsLoading: isLoading => dispatch(actions.setIsLoading(isLoading)),
-    });
-
-    return connect(mapStateToProps, mapDispatchToProps)(Layout);
+    return connect(mapStateToProps)(Layout);
 }

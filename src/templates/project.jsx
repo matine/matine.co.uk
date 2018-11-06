@@ -53,11 +53,12 @@ class ProjectTemplate extends Component {
         } = projectContent;
 
         const projectBanner = project_banner.localFile && project_banner.localFile.childImageSharp.fluid;
+        const pageName = 'project';
 
         return (
             <ParallaxProvider>
                 <div
-                    id="project-page"
+                    id={ `${pageName}-page` }
                 >
                     <Parallax
                         offsetYMax={ 60 }
@@ -65,9 +66,13 @@ class ProjectTemplate extends Component {
                         slowerScrollRate
                     >
                     { project_banner && (
-                        <Image
-                            fluid={ projectBanner }
-                        />
+                        <Box
+                            height={[200, 200, 200, 300]}
+                        >
+                            <Image
+                                fixed={ projectBanner }
+                            />
+                        </Box>
                     ) }
                     </Parallax>
                     <ThemeDefault
@@ -165,14 +170,14 @@ export const pageQuery = graphql`
                 project_banner {
                     localFile {
                         childImageSharp {
-                            fluid(
-                                maxWidth: 2000
-                                maxHeight: 462
+                            fixed(
+                                width: 2000
+                                height: 462
                                 quality: 90
                                 traceSVG: { color: "#021212" }
                                 cropFocus: ENTROPY
                             ) {
-                                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                                ...GatsbyImageSharpFixed_withWebp_tracedSVG
                             }
                         }
                     }

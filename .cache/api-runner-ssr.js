@@ -2,9 +2,6 @@ var plugins = [{
       plugin: require('/Users/matinechabrier/Sites/matine.co.uk/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('/Users/matinechabrier/Sites/matine.co.uk/node_modules/gatsby-plugin-typography/gatsby-ssr'),
-      options: {"plugins":[],"pathToConfigModule":"config/typography.js"},
-    },{
       plugin: require('/Users/matinechabrier/Sites/matine.co.uk/node_modules/gatsby-plugin-sitemap/gatsby-ssr'),
       options: {"plugins":[]},
     },{
