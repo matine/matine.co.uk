@@ -6,7 +6,9 @@ exports.components = {
   "component---cache-dev-404-page-js": () => import("/Users/matinechabrier/Sites/matine.co.uk/.cache/dev-404-page.js" /* webpackChunkName: "component---cache-dev-404-page-js" */),
   "component---src-pages-404-jsx": () => import("/Users/matinechabrier/Sites/matine.co.uk/src/pages/404.jsx" /* webpackChunkName: "component---src-pages-404-jsx" */),
   "component---src-pages-index-jsx": () => import("/Users/matinechabrier/Sites/matine.co.uk/src/pages/index.jsx" /* webpackChunkName: "component---src-pages-index-jsx" */),
-  "component---src-pages-links-jsx": () => import("/Users/matinechabrier/Sites/matine.co.uk/src/pages/links.jsx" /* webpackChunkName: "component---src-pages-links-jsx" */)
+  "component---src-pages-links-jsx": () => import("/Users/matinechabrier/Sites/matine.co.uk/src/pages/links.jsx" /* webpackChunkName: "component---src-pages-links-jsx" */),
+  "component---src-pages-about-jsx": () => import("/Users/matinechabrier/Sites/matine.co.uk/src/pages/about.jsx" /* webpackChunkName: "component---src-pages-about-jsx" */),
+  "component---src-pages-cv-jsx": () => import("/Users/matinechabrier/Sites/matine.co.uk/src/pages/cv.jsx" /* webpackChunkName: "component---src-pages-cv-jsx" */)
 }
 
 exports.data = () => import("/Users/matinechabrier/Sites/matine.co.uk/.cache/data.json")

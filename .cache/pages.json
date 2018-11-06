@@ -15,6 +15,11 @@
         "path": "/404/"
     },
     {
+        "componentChunkName": "component---src-pages-about-jsx",
+        "jsonName": "about-f34",
+        "path": "/about/"
+    },
+    {
         "componentChunkName": "component---src-templates-project-jsx",
         "jsonName": "adidastangoleague-f07",
         "path": "/adidastangoleague"
@@ -33,6 +38,11 @@
         "componentChunkName": "component---src-templates-project-jsx",
         "jsonName": "bqunlovedrooms-2bf",
         "path": "/bqunlovedrooms"
+    },
+    {
+        "componentChunkName": "component---src-pages-cv-jsx",
+        "jsonName": "cv-329",
+        "path": "/cv/"
     },
     {
         "componentChunkName": "component---cache-dev-404-page-js",
