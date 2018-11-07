@@ -36,6 +36,9 @@ module.exports = {
         'gatsby-plugin-lodash',
         'gatsby-plugin-sitemap',
         {
+            resolve: `gatsby-plugin-styled-components`,
+        },
+        {
             resolve: 'gatsby-plugin-manifest',
             options: {
                 name: config.siteTitle,
