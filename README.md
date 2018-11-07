@@ -79,7 +79,7 @@ A quick look at the top-level files and directories you'll see in this Gatsby pr
   
   11.  **`README.md`**: A text file containing useful reference information about this project.
 
-## 🎓 Learning Gatsby
+## Learning Gatsby
 
 Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
 
@@ -87,6 +87,6 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 -   **To dive straight into code samples, head [to the documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
 
-## 💫 Deploy
+## Deploy
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
