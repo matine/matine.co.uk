@@ -18,9 +18,9 @@ function Header () {
                 themeBg
                 themeBorder
                 themeSvg
-                py="12px"
+                py={ 2 }
                 px={ 3 }
-                minHeight={ 77 }
+                minHeight={ [65, 70] }
             >
                 <Grid
                     gutterY={ 0 }

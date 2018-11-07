@@ -11,6 +11,7 @@ import { ParallaxProvider, Parallax } from 'react-scroll-parallax'
 import withLayout from '../components/hoc/withLayout'
 import * as actions from '../state/actions'
 import { ThemeDefault, Box, BannerOverlay } from '../components/ui'
+import { colors } from '../components/ui/theme'
 
 class ProjectTemplate extends Component {
     /**
@@ -94,7 +95,7 @@ class ProjectTemplate extends Component {
                         />
                         <Box
                             mt={ 500 }
-                            bg={ ['transparent', 'transparent', 'transparent', 'transparent', 'gray.3']}
+                            bg={ [colors.transparent, colors.transparent, colors.transparent, colors.gray[3]] }
                         >
                             <ProjectImagesInsitu
                                 projectImac={ project_imac }

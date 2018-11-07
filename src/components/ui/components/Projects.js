@@ -49,7 +49,7 @@ export const TouchDevices = styled.div`
 
 export const ProjectsNav = styled.div`
     position: fixed;
-    top: 300px;
+    top: 240px;
     z-index: 0;
 
     @media (min-width: ${ breakpoints[2] }) {

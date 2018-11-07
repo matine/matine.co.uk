@@ -8,7 +8,7 @@ const CarouselWrap = styled.div`
     ${ slickCarouselTheme };
 
     .slick-dots {
-        top: -40px !important;
+        top: -60px !important;
 
         li {
             button {

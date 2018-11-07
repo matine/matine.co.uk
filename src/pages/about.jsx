@@ -49,7 +49,7 @@ class AboutPage extends PureComponent {
                             maxWidth={ 3 }
                         >
                             <Box
-                                mt={ [30, 30, 30, 20] }
+                                mt={ [25, 15, 10] }
                                 mb={ 5 }
                             >
                                 <Image

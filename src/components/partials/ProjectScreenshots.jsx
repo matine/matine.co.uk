@@ -41,7 +41,7 @@ function ProjectScreenshots ({
         <Box
             position="relative"
             zIndex={ 1 }
-            mt={ 5 }
+            mt={ 6 }
             pb={ 6 }
         >
             <Container>

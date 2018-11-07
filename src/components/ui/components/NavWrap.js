@@ -1,6 +1,6 @@
 
 import styled from 'styled-components'
-import { colors } from '../../ui/theme'
+import { colors, breakpoints } from '../../ui/theme'
 
 const NavWrap = styled.nav`
     li {
@@ -14,7 +14,7 @@ const NavWrap = styled.nav`
             &::before {
                 position: absolute;
                 right: 50%;
-                top: 26px;
+                top: 20px;
                 content: '';
                 margin-right: -9px;
                 display: block;
@@ -23,6 +23,10 @@ const NavWrap = styled.nav`
                 background-color: ${ colors.primary };
                 border: 1px solid ${ colors.primaryDark };
                 opacity: 0;
+
+                @media (min-width: ${ breakpoints[1] }) {
+                    top: 22px;
+                }
             }
 
             &:hover,

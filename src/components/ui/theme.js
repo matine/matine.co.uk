@@ -19,6 +19,7 @@ export const colors = {
         '#eee',
         '#f6f6f6',
     ],
+    'transparent': 'rgba(0,0,0,0)',
 }
 
 export const space = [
