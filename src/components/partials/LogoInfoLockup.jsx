@@ -35,7 +35,11 @@ function LogoInfoLockup ({
                     </Box>
                     { firstName.text }&nbsp;
                 </Box>
-                <span>{ surname.text }</span>
+                <Span
+                    display={['block', 'inline-block']}
+                >
+                    { surname.text }
+                </Span>
             </Heading>
             <TextXs
                 pb={ 1 }
@@ -43,24 +47,37 @@ function LogoInfoLockup ({
             >
                 <Span
                     fontWeight="bold"
+                    display={['block', 'inline-block']}
                 >
-                Frontend developer
+                    Frontend developer
                 </Span>
-            &nbsp;→&nbsp;
-                <Span>
+                <Span
+                    display={['none', 'inline-block']}
+                >
+                    &nbsp;→&nbsp;
+                </Span>
+                <Span
+                    display={['block', 'inline-block']}
+                >
                     <a
                         href="http://matine.co.uk"
                     >
-                    matine.co.uk
+                        matine.co.uk
                     </a>
-                &nbsp;→&nbsp;
-                    <Span>
-                        <a
-                            href="mailto:matine.chabrier@gmail.com"
-                        >
+                </Span>
+                <Span
+                    display={['none', 'inline-block']}
+                >
+                    &nbsp;→&nbsp;
+                </Span>
+                <Span
+                    display={['block', 'inline-block']}
+                >
+                    <a
+                        href="mailto:matine.chabrier@gmail.com"
+                    >
                         matine.chabrier@gmail.com
-                        </a>
-                    </Span>
+                    </a>
                 </Span>
             </TextXs>
         </Fragment>

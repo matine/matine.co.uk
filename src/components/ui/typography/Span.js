@@ -1,8 +1,9 @@
 import styled, { css } from 'styled-components'
-import { space, fontWeight, fontSize } from 'styled-system'
+import { space, fontWeight, fontSize, display } from 'styled-system'
 import { textStyles, colors } from '../../ui/theme'
 
 const Span = styled.span`
+    ${ display }
     ${ space }
     ${ fontWeight }
     ${ fontSize }
