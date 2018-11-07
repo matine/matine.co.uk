@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { colors } from '../../ui/theme';
-import { HeadingLg } from './Heading';
+import styled from 'styled-components'
+import { colors } from '../../ui/theme'
+import { HeadingLg } from './Heading'
 
 export const HeadingDecorated = styled(HeadingLg)`
     position: relative;
@@ -14,8 +14,8 @@ export const HeadingDecorated = styled(HeadingLg)`
         left: 0;
         width: 18px;
         height: 5px;
-        background-color: ${colors.primary};
-        border: 1px solid ${colors.primaryDark};
+        background-color: ${ colors.primary };
+        border: 1px solid ${ colors.primaryDark };
     }
 `
 
@@ -23,6 +23,6 @@ HeadingDecorated.defaultProps = {
     caps: true,
     fontWeight: '100',
     mb: 4,
-};
+}
 
-export default HeadingDecorated;
+export default HeadingDecorated

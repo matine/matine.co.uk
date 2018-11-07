@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import Box from './Box';
+import styled from 'styled-components'
+import Box from './Box'
 
 const Container = styled(Box)``
 
@@ -9,4 +9,4 @@ Container.defaultProps = {
     maxWidth: 1100,
 }
 
-export default Container;
+export default Container

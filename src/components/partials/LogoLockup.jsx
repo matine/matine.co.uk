@@ -1,9 +1,9 @@
-import React from 'react';
-import { Box, Heading, SvgWrap } from '../ui';
-import SunIcon from '../ui/icons/SunIcon';
-import { PropTypeGatsbyText } from '../../propTypes';
+import React from 'react'
+import { Box, Heading, SvgWrap } from '../ui'
+import SunIcon from '../ui/icons/SunIcon'
+import { PropTypeGatsbyText } from '../../propTypes'
 
-function LogoLockup({
+function LogoLockup ({
     firstName,
     surname,
 }) {
@@ -12,7 +12,7 @@ function LogoLockup({
             caps
             fontSize={[46, 46, 90]}
             textAlign="center"
-            lineHeight={ .85 }
+            lineHeight={ 0.85 }
             mb={[3, 3, 4]}
         >
             <Box
@@ -22,7 +22,7 @@ function LogoLockup({
                 <Box
                     display="inline-block"
                     position="absolute"
-                    top={['-38px', '-38px', '-75px',]}
+                    top={['-38px', '-38px', '-75px']}
                     left="39%"
                 >
                     <SvgWrap
@@ -32,24 +32,24 @@ function LogoLockup({
                         <SunIcon />
                     </SvgWrap>
                 </Box>
-                { firstName.text } 
+                { firstName.text }
             </Box>
             <br/>
             <span>
                 { surname.text }
             </span>
         </Heading>
-    );
+    )
 }
 
 LogoLockup.defaultProps = {
     firstName: null,
     surname: null,
-};
+}
 
 LogoLockup.propTypes = {
     firstName: PropTypeGatsbyText,
     surname: PropTypeGatsbyText,
-};
+}
 
-export default LogoLockup;
+export default LogoLockup

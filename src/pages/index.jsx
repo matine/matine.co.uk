@@ -1,13 +1,13 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import { Link, graphql } from 'gatsby';
-import Image from 'gatsby-image';
-import { connect } from 'react-redux';
-import withLayout from '../components/hoc/withLayout';
-import LogoLockup from '../components/partials/LogoLockup';
-import * as actions from '../state/actions';
-import { Container, Grid, Box, ProjectThumbnail, ThemeDefault, Col, Text, Fixed, Flex, Heading } from '../components/ui';
-import { PropTypeGatsbyProjectsData, PropTypeGatsbyGlobalData } from '../propTypes';
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
+import { Link, graphql } from 'gatsby'
+import Image from 'gatsby-image'
+import { connect } from 'react-redux'
+import withLayout from '../components/hoc/withLayout'
+import LogoLockup from '../components/partials/LogoLockup'
+import * as actions from '../state/actions'
+import { Container, Grid, Box, ProjectThumbnail, ThemeDefault, Col, Text, Fixed, Flex, Heading } from '../components/ui'
+import { PropTypeGatsbyProjectsData, PropTypeGatsbyGlobalData } from '../propTypes'
 
 class IndexPage extends PureComponent {
     /**
@@ -15,33 +15,33 @@ class IndexPage extends PureComponent {
      *
      * @param {Object} props
      */
-    constructor(props) {
-        super(props);
+    constructor (props) {
+        super(props)
 
-        this.hoverOnThumbnail = this.hoverOnThumbnail.bind(this);
-        this.hoverOffThumbnail = this.hoverOffThumbnail.bind(this);
+        this.hoverOnThumbnail = this.hoverOnThumbnail.bind(this)
+        this.hoverOffThumbnail = this.hoverOffThumbnail.bind(this)
     }
 
     /**
      * Handle the hover on a thumbnail.
      */
-    hoverOnThumbnail(index) {
+    hoverOnThumbnail (index) {
         const {
             setTheme,
-        } = this.props;
+        } = this.props
 
-        setTheme('inverted');
+        setTheme('inverted')
     }
 
     /**
      * Handle the hover off a thumbnail.
      */
-    hoverOffThumbnail() {
+    hoverOffThumbnail () {
         const {
             setTheme,
-        } = this.props;
+        } = this.props
 
-        setTheme('default');
+        setTheme('default')
     }
 
     /**
@@ -49,25 +49,25 @@ class IndexPage extends PureComponent {
      *
      * @return {ReactNode}
      */
-    renderProjectListItems() {
+    renderProjectListItems () {
         const {
             data,
-        } = this.props;
+        } = this.props
 
-        const projectsContent = data.projects.edges;
+        const projectsContent = data.projects.edges
 
-        return projectsContent.map((project) => {
-            const projectUid = project.node.uid;
-            const projectData = project.node.data;
-            const projectTitle = projectData.project_title.text;
-            const projectThumbnail = projectData.project_thumbnail.localFile.childImageSharp.fluid;
-            const projectThumbnail2 = projectData.project_thumbnail_2.localFile.childImageSharp.fluid;
-            const linkToProjectUrl = `/${projectUid}`;
+        return projectsContent.map(project => {
+            const projectUid = project.node.uid
+            const projectData = project.node.data
+            const projectTitle = projectData.project_title.text
+            const projectThumbnail = projectData.project_thumbnail.localFile.childImageSharp.fluid
+            const projectThumbnail2 = projectData.project_thumbnail_2.localFile.childImageSharp.fluid
+            const linkToProjectUrl = `/${ projectUid }`
 
             return (
                 <Col
                     key={ projectUid }
-                    width={[ 1, 1, 1, 1/3 ]}
+                    width={[ 1, 1, 1, 1 / 3 ]}
                     onMouseEnter={ this.hoverOnThumbnail }
                     onMouseLeave={ this.hoverOffThumbnail }
                 >
@@ -143,8 +143,8 @@ class IndexPage extends PureComponent {
                         </ProjectThumbnail>
                     </ThemeDefault>
                 </Col>
-            );
-        });
+            )
+        })
     }
 
     /**
@@ -152,27 +152,27 @@ class IndexPage extends PureComponent {
      *
      * @return {ReactNode}
      */
-    render() {
+    render () {
         const {
             data,
-        } = this.props;
+        } = this.props
 
-        const globalContent = data.global.edges[0].node.data;
+        const globalContent = data.global.edges[0].node.data
 
         if (!globalContent) {
-            return null;
+            return null
         }
 
         const {
             first_name,
             surname,
-        } = globalContent;
+        } = globalContent
 
-        const pageName = 'projects';
+        const pageName = 'projects'
 
         return (
             <div
-                id={ `${pageName}-page` }
+                id={ `${ pageName }-page` }
             >
                 <Container
                     pb={ 5 }
@@ -211,17 +211,17 @@ IndexPage.propTypes = {
         PropTypeGatsbyProjectsData,
         PropTypeGatsbyGlobalData,
     }).isRequired,
-};
+}
 
 export const mapStateToProps = state => ({
     theme: state.theme,
-});
+})
 
 export const mapDispatchToProps = dispatch => ({
     setTheme: theme => dispatch(actions.setTheme(theme)),
-});
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(withLayout(IndexPage));
+export default connect(mapStateToProps, mapDispatchToProps)(withLayout(IndexPage))
 
 export const pageQuery = graphql`
     query IndexQuery {
@@ -281,4 +281,4 @@ export const pageQuery = graphql`
             }
         }
     }
-`;
+`

@@ -6,4 +6,4 @@ const links = {
     pinterest: 'http://pinterest.com/matine',
 }
 
-export default links;
+export default links

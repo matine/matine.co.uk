@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
-import { Link } from 'gatsby';
-import { TextWrapMd } from '../ui';
+import React, { Fragment } from 'react'
+import { Link } from 'gatsby'
+import { TextWrapMd } from '../ui'
 
-function MyInfo() {
+function MyInfo () {
     return (
         <Fragment>
             <TextWrapMd
@@ -39,7 +39,7 @@ function MyInfo() {
                 </p>
             </TextWrapMd>
         </Fragment>
-    );
+    )
 }
 
-export default MyInfo;
+export default MyInfo

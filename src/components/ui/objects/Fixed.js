@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import Box from './Box';
+import styled from 'styled-components'
+import Box from './Box'
 
 const Fixed = styled(Box)``
 
@@ -11,4 +11,4 @@ Fixed.defaultProps = {
     left: 0,
 }
 
-export default Fixed;
+export default Fixed

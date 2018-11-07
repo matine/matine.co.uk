@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css } from 'styled-components'
 
 const printStyles = css`
     @media print {
@@ -30,6 +30,6 @@ const printStyles = css`
             }
         }
     }
-`;
+`
 
-export default printStyles;
+export default printStyles

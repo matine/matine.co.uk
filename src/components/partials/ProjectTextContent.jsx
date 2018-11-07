@@ -1,9 +1,9 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import { ThemeDefault, Container, Span, Box, Contained, PageHeading, TextWrapMd, TextWrap } from '../ui';
-import { PropTypeGatsbyText, PropTypeGatsbyHtml, PropTypeGatsbyLink } from '../../propTypes';
+import PropTypes from 'prop-types'
+import React from 'react'
+import { ThemeDefault, Container, Span, Box, Contained, PageHeading, TextWrapMd, TextWrap } from '../ui'
+import { PropTypeGatsbyText, PropTypeGatsbyHtml, PropTypeGatsbyLink } from '../../propTypes'
 
-function ProjectTextContent({
+function ProjectTextContent ({
     projectTitle,
     projectMainText,
     projectRole,
@@ -11,11 +11,11 @@ function ProjectTextContent({
     projectVisitWebsiteLink,
     projectType,
 }) {
-    const title = projectTitle && projectTitle.text;
-    const mainText = projectMainText && projectMainText.html;
-    const roleContent = projectRole && projectRole.text;
-    const techStackContent = projectTechStack && projectTechStack.text;
-    const visitWebsiteContent = projectVisitWebsiteLink && projectVisitWebsiteLink.url;
+    const title = projectTitle && projectTitle.text
+    const mainText = projectMainText && projectMainText.html
+    const roleContent = projectRole && projectRole.text
+    const techStackContent = projectTechStack && projectTechStack.text
+    const visitWebsiteContent = projectVisitWebsiteLink && projectVisitWebsiteLink.url
 
     const role = roleContent && (
         <p>
@@ -25,7 +25,7 @@ function ProjectTextContent({
             </Span>
             { roleContent }
         </p>
-    );
+    )
     const techStack = techStackContent && (
         <p>
             <Span
@@ -35,7 +35,7 @@ function ProjectTextContent({
             </Span>
             { techStackContent }
         </p>
-    );
+    )
     const visitWebsite = visitWebsiteContent && (
         <p>
             <a
@@ -46,7 +46,7 @@ function ProjectTextContent({
                 { projectType === 'app' ? 'Download app' : 'Visit website' }
             </a>
         </p>
-    );
+    )
 
     return (
         <Container>
@@ -96,7 +96,7 @@ function ProjectTextContent({
                 </Contained>
             </TextWrap>
         </Container>
-    );
+    )
 }
 
 ProjectTextContent.defaultProps = {
@@ -106,7 +106,7 @@ ProjectTextContent.defaultProps = {
     projectTechStack: null,
     projectVisitWebsiteLink: null,
     projectType: null,
-};
+}
 
 ProjectTextContent.propTypes = {
     projectTitle: PropTypeGatsbyText,
@@ -115,6 +115,6 @@ ProjectTextContent.propTypes = {
     projectTechStack: PropTypeGatsbyText,
     projectVisitWebsiteLink: PropTypeGatsbyLink,
     projectType: PropTypes.string,
-};
+}
 
-export default ProjectTextContent;
+export default ProjectTextContent

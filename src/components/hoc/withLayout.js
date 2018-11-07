@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
-import { ThemeProvider, injectGlobal } from 'styled-components';
-import styledNormalize from 'styled-normalize';
-import { connect } from 'react-redux';
-import Header from '../partials/Header';
-import Footer from '../partials/Footer';
-import { ThemeDefault, ThemeInverted, Box } from '../ui';
-import globalStyles from '../ui/globalStyles';
-import printStyles from '../ui/printStyles';
+import React, { Component } from 'react'
+import { ThemeProvider, injectGlobal } from 'styled-components'
+import styledNormalize from 'styled-normalize'
+import { connect } from 'react-redux'
+import Header from '../partials/Header'
+import Footer from '../partials/Footer'
+import { ThemeDefault, ThemeInverted, Box } from '../ui'
+import globalStyles from '../ui/globalStyles'
+import printStyles from '../ui/printStyles'
 
 injectGlobal`
-    ${styledNormalize}
-    ${globalStyles}
-    ${printStyles}
+    ${ styledNormalize }
+    ${ globalStyles }
+    ${ printStyles }
 `
 
 export default function (WrappedComponent) {
@@ -21,8 +21,8 @@ export default function (WrappedComponent) {
          *
          * @return {void}
          */
-        constructor(props) {
-            super(props);
+        constructor (props) {
+            super(props)
 
             this.state = {
                 footerHeight: 0,
@@ -34,8 +34,8 @@ export default function (WrappedComponent) {
          *
          * @return {void}
          */
-        componentDidMount() {
-            const footerHeight = document.getElementById('footer').clientHeight;
+        componentDidMount () {
+            const footerHeight = document.getElementById('footer').clientHeight
 
             this.setState({
                 footerHeight,
@@ -47,14 +47,14 @@ export default function (WrappedComponent) {
          *
          * @return {ReactNode}
          */
-        render() {
+        render () {
             const {
                 theme,
-            } = this.props;
+            } = this.props
 
             const {
                 footerHeight,
-            } = this.state;
+            } = this.state
 
             return (
                 <ThemeProvider
@@ -89,13 +89,13 @@ export default function (WrappedComponent) {
                         </ThemeDefault>
                     </ThemeInverted>
                 </ThemeProvider>
-            );
+            )
         }
     }
 
     const mapStateToProps = state => ({
         theme: state.theme,
-    });
+    })
 
-    return connect(mapStateToProps)(Layout);
+    return connect(mapStateToProps)(Layout)
 }

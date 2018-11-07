@@ -1,18 +1,18 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
-import { connect } from 'react-redux';
-import withLayout from '../components/hoc/withLayout';
-import MyIntro from '../components/partials/MyIntro';
-import MySkills from '../components/partials/MySkills';
-import MyEmployment from '../components/partials/MyEmployment';
-import MyEducation from '../components/partials/MyEducation';
-import MyInterests from '../components/partials/MyInterests';
-import LogoInfoLockup from '../components/partials/LogoInfoLockup';
-import * as actions from '../state/actions';
-import PrintIcon from '../components/ui/icons/PrintIcon';
-import { Container, Box, Contained, TextSm, SvgWrap, ButtonHover } from '../components/ui';
-import { PropTypeGatsbyGlobalData } from '../propTypes';
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
+import { connect } from 'react-redux'
+import withLayout from '../components/hoc/withLayout'
+import MyIntro from '../components/partials/MyIntro'
+import MySkills from '../components/partials/MySkills'
+import MyEmployment from '../components/partials/MyEmployment'
+import MyEducation from '../components/partials/MyEducation'
+import MyInterests from '../components/partials/MyInterests'
+import LogoInfoLockup from '../components/partials/LogoInfoLockup'
+import * as actions from '../state/actions'
+import PrintIcon from '../components/ui/icons/PrintIcon'
+import { Container, Box, Contained, TextSm, SvgWrap, ButtonHover } from '../components/ui'
+import { PropTypeGatsbyGlobalData } from '../propTypes'
 
 class CvPage extends PureComponent {
     /**
@@ -20,9 +20,9 @@ class CvPage extends PureComponent {
      *
      * @return {void}
      */
-    printPage() {
-        window.print();
-        return false;
+    printPage () {
+        window.print()
+        return false
     }
 
     /**
@@ -30,15 +30,15 @@ class CvPage extends PureComponent {
      *
      * @return {ReactNode}
      */
-    render() {
+    render () {
         const {
             data,
-        } = this.props;
+        } = this.props
 
-        const globalContent = data.global.edges[0].node.data;
+        const globalContent = data.global.edges[0].node.data
 
         if (!globalContent) {
-            return null;
+            return null
         }
 
         const {
@@ -54,13 +54,13 @@ class CvPage extends PureComponent {
             me_educations,
             me_interests_title,
             me_interests_text,
-        } = globalContent;
+        } = globalContent
 
-        const pageName = 'cv';
+        const pageName = 'cv'
 
         return (
             <Box
-                id={ `${pageName}-page` }
+                id={ `${ pageName }-page` }
                 pb={ 5 }
             >
                 <Container>
@@ -96,7 +96,7 @@ class CvPage extends PureComponent {
                             meInterestsText={ me_interests_text }
                             sectionName={ pageName }
                         />
-                        <div>        
+                        <div>
                             <ButtonHover
                                 hover="big"
                                 onClick={ () => this.printPage() }
@@ -113,7 +113,7 @@ class CvPage extends PureComponent {
                     </Contained>
                 </Container>
             </Box>
-        );
+        )
     }
 }
 
@@ -121,17 +121,17 @@ CvPage.propTypes = {
     data: PropTypes.shape({
         PropTypeGatsbyGlobalData,
     }).isRequired,
-};
+}
 
 export const mapStateToProps = state => ({
     theme: state.theme,
-});
+})
 
 export const mapDispatchToProps = dispatch => ({
     setTheme: theme => dispatch(actions.setTheme(theme)),
-});
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(withLayout(CvPage));
+export default connect(mapStateToProps, mapDispatchToProps)(withLayout(CvPage))
 
 export const pageQuery = graphql`
     query CvQuery {
@@ -197,4 +197,4 @@ export const pageQuery = graphql`
             }
         }
     }
-`;
+`

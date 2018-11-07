@@ -1,8 +1,8 @@
 require('dotenv').config({
-    path: `.env.${process.env.NODE_ENV}`,
-});
-const config = require('./config/website');
-const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
+    path: `.env.${ process.env.NODE_ENV }`,
+})
+const config = require('./config/website')
+const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
 
 module.exports = {
     pathPrefix: config.pathPrefix,
@@ -16,19 +16,19 @@ module.exports = {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `images`,
-                path: `${__dirname}/src/images/`,
+                path: `${ __dirname }/src/images/`,
             },
         },
         'gatsby-plugin-sharp',
         'gatsby-transformer-sharp',
         {
-            resolve: "gatsby-source-prismic",
+            resolve: 'gatsby-source-prismic',
             options: {
-                repositoryName: "matine",
-                accessToken: `${process.env.API_KEY}`,
-                linkResolver: ({ node, key, value }) => doc => `/${doc.uid}`,
+                repositoryName: 'matine',
+                accessToken: `${ process.env.PRISMIC_API_KEY }`,
+                linkResolver: ({ node, key, value }) => doc => `/${ doc.uid }`,
                 htmlSerializer: ({ node, key, value }) => (type, element, content, children) => {
-                  // Your HTML serializer
+                    // Your HTML serializer
                 },
                 lang: '*',
             }

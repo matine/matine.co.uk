@@ -1,25 +1,25 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import { Box, HeadingDecorated, TextWrapSm } from '../ui';
-import { PropTypeGatsbyText, PropTypeGatsbyHtml } from '../../propTypes';
+import PropTypes from 'prop-types'
+import React from 'react'
+import { Box, HeadingDecorated, TextWrapSm } from '../ui'
+import { PropTypeGatsbyText, PropTypeGatsbyHtml } from '../../propTypes'
 
-function MySkills({
+function MySkills ({
     meSkillsTitle,
     meSkillsText,
     sectionName,
 }) {
     if (!meSkillsTitle && !meSkillsText) {
-        return null;
+        return null
     }
 
     return (
         <Box
             mb={ 5 }
-            className={ `${sectionName}-section` }
+            className={ `${ sectionName }-section` }
         >
             { meSkillsTitle &&
                 <HeadingDecorated
-                    className={ `${sectionName}-section__heading` }
+                    className={ `${ sectionName }-section__heading` }
                 >
                     { meSkillsTitle.text }
                 </HeadingDecorated>
@@ -40,19 +40,19 @@ function MySkills({
                 </TextWrapSm>
             }
         </Box>
-    );
+    )
 }
 
 MySkills.defaultProps = {
     meSkillsTitle: null,
     meSkillsText: null,
     sectionName: null,
-};
+}
 
 MySkills.propTypes = {
     meSkillsTitle: PropTypeGatsbyText,
     meSkillsText: PropTypeGatsbyHtml,
     sectionName: PropTypes.string,
-};
+}
 
-export default MySkills;
+export default MySkills

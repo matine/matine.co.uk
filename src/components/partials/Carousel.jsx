@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import Slider from 'react-slick';
-import { Contained } from '../ui';
+import PropTypes from 'prop-types'
+import React from 'react'
+import Slider from 'react-slick'
+import { Contained } from '../ui'
 
 const Carousel = ({
     items,
@@ -18,10 +18,10 @@ const Carousel = ({
         pauseOnFocus: true,
         speed: 1200,
         touchMove: true,
-    };
+    }
 
     if (items === null) {
-        return null;
+        return null
     }
 
     if (items.length < 2) {
@@ -29,7 +29,7 @@ const Carousel = ({
             <Contained width={ 1 } maxWidth={ 5 }>
                 { items[0] }
             </Contained>
-        );
+        )
     }
 
     return (
@@ -42,15 +42,15 @@ const Carousel = ({
                 }
             </Slider>
         </Contained>
-    );
+    )
 }
 
 Carousel.defaultProps = {
     items: null,
-};
+}
 
 Carousel.propTypes = {
     items: PropTypes.arrayOf(PropTypes.node),
-};
+}
 
-export default Carousel;
+export default Carousel

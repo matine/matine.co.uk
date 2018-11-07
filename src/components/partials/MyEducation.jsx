@@ -1,21 +1,21 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import { Box, HeadingDecorated, TextWrapSm, HeadingXs, HeadingMd } from '../ui';
-import { PropTypeGatsbyText } from '../../propTypes';
+import PropTypes from 'prop-types'
+import React from 'react'
+import { Box, HeadingDecorated, TextWrapSm, HeadingXs, HeadingMd } from '../ui'
+import { PropTypeGatsbyText } from '../../propTypes'
 
-function MyEducation({
+function MyEducation ({
     meEducationTitle,
     meEducations,
     sectionName,
 }) {
     if (!meEducationTitle && !meEducations) {
-        return null;
+        return null
     }
 
     const renderEducations = meEducations.map((education, index) => {
-        const educationDate = education.me_education_date;
-        const educationTitle = education.me_education_title1;
-        const educationDesc = education.me_education_description;
+        const educationDate = education.me_education_date
+        const educationTitle = education.me_education_title1
+        const educationDesc = education.me_education_description
 
         return (
             <Box key={ index } mb={ 4 }>
@@ -50,35 +50,35 @@ function MyEducation({
                     </TextWrapSm>
                 }
             </Box>
-        );
-    });
+        )
+    })
 
     return (
         <Box
             mb={ 5 }
-            className={ `${sectionName}-section` }
+            className={ `${ sectionName }-section` }
         >
             { meEducationTitle &&
                 <HeadingDecorated
-                    className={ `${sectionName}-section__heading` }
+                    className={ `${ sectionName }-section__heading` }
                 >
                     { meEducationTitle.text }
                 </HeadingDecorated> }
             { renderEducations }
         </Box>
-    );
+    )
 }
 
 MyEducation.defaultProps = {
     meEducationTitle: null,
     meEducations: null,
     sectionName: null,
-};
+}
 
 MyEducation.propTypes = {
     meEducationTitle: PropTypeGatsbyText,
     meEducations: PropTypes.array,
     sectionName: PropTypes.string,
-};
+}
 
-export default MyEducation;
+export default MyEducation

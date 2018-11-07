@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components';
-import { space, fontWeight, fontSize, textAlign } from 'styled-system';
-import { textStyles } from '../../ui/theme';
+import styled, { css } from 'styled-components'
+import { space, fontWeight, fontSize, textAlign } from 'styled-system'
+import { textStyles } from '../../ui/theme'
 
 const Button = styled.button`
     color: inherit;
@@ -16,13 +16,13 @@ const Button = styled.button`
     &:focus {
         outline: none;
     }
-    ${space}
-    ${fontWeight}
-    ${fontSize}
-    ${textAlign}
-    ${props => props.caps && css`
-        ${textStyles.caps}
-    `}
-`;
+    ${ space }
+    ${ fontWeight }
+    ${ fontSize }
+    ${ textAlign }
+    ${ props => props.caps && css`
+        ${ textStyles.caps }
+    ` }
+`
 
-export default Button;
+export default Button

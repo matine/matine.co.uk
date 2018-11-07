@@ -1,16 +1,16 @@
-import React from 'react';
-import * as Scroll from 'react-scroll';
-import { graphql, StaticQuery } from 'gatsby';
-import SocialLinks from './SocialLinks';
-import { ThemeInverted, TextWrap, Box, Container, TextWrapMd, ButtonHover, Text, TextMd } from '../ui';
+import React from 'react'
+import * as Scroll from 'react-scroll'
+import { graphql, StaticQuery } from 'gatsby'
+import SocialLinks from './SocialLinks'
+import { ThemeInverted, TextWrap, Box, Container, TextWrapMd, ButtonHover, Text, TextMd } from '../ui'
 
-const scroll = Scroll.animateScroll;
+const scroll = Scroll.animateScroll
 
 const Footer = ({
     data,
 }) => {
-    const globalContent = data.global.edges[0].node.data;
-    const footerText = globalContent.footer_text;
+    const globalContent = data.global.edges[0].node.data
+    const footerText = globalContent.footer_text
 
     return (
         <ThemeInverted
@@ -25,7 +25,7 @@ const Footer = ({
             bottom={ 0 }
             left={ 0 }
             zIndex={ 0 }
-            py={ [ 4, 4, 5] }
+            py={ [4, 4, 5] }
         >
             <Container>
                 <TextWrapMd
@@ -84,8 +84,8 @@ const Footer = ({
                 </TextWrapMd>
             </Container>
         </ThemeInverted>
-    );
-};
+    )
+}
 
 export default props => (
     <StaticQuery
@@ -107,4 +107,4 @@ export default props => (
         `}
         render={ data => <Footer data={ data } { ...props } /> }
     />
-);
+)

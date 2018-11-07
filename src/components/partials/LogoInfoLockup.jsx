@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
-import { Box, Heading, SvgWrap, TextXs, Span } from '../ui';
-import SunIcon from '../ui/icons/SunIcon';
-import { PropTypeGatsbyText } from '../../propTypes';
+import React, { Fragment } from 'react'
+import { Box, Heading, SvgWrap, TextXs, Span } from '../ui'
+import SunIcon from '../ui/icons/SunIcon'
+import { PropTypeGatsbyText } from '../../propTypes'
 
-function LogoInfoLockup({
+function LogoInfoLockup ({
     firstName,
     surname,
 }) {
@@ -13,68 +13,68 @@ function LogoInfoLockup({
                 fontSize={ [40, 40, 50] }
                 mb={ 2 }
                 ml={ -1 }
-                lineHeight={ .85 }
+                lineHeight={ 0.85 }
                 caps
             >
-            <Box
-                position="relative"
-                display="inline-block"
-            >
                 <Box
+                    position="relative"
                     display="inline-block"
-                    position="absolute"
-                    top={['-35px', '-35px', '-43px',]}
-                    left="36%"
                 >
-                    <SvgWrap
-                        color="primary"
-                        width={[40, 40, 50]}
+                    <Box
+                        display="inline-block"
+                        position="absolute"
+                        top={['-35px', '-35px', '-43px']}
+                        left="36%"
                     >
-                        <SunIcon />
-                    </SvgWrap>
+                        <SvgWrap
+                            color="primary"
+                            width={[40, 40, 50]}
+                        >
+                            <SunIcon />
+                        </SvgWrap>
+                    </Box>
+                    { firstName.text }&nbsp;
                 </Box>
-                { firstName.text }&nbsp;
-            </Box>
-            <span>{ surname.text }</span>
-        </Heading>
-        <TextXs
-            pb={ 1 }
-            caps
-        >
-            <Span
-                fontWeight="bold"
+                <span>{ surname.text }</span>
+            </Heading>
+            <TextXs
+                pb={ 1 }
+                caps
             >
-                Frontend developer
-            </Span>
-            &nbsp;→&nbsp;
-            <Span>
-                <a
-                    href="http://matine.co.uk"
+                <Span
+                    fontWeight="bold"
                 >
-                    matine.co.uk
-                </a>
-                &nbsp;→&nbsp;
+                Frontend developer
+                </Span>
+            &nbsp;→&nbsp;
                 <Span>
                     <a
-                        href="mailto:matine.chabrier@gmail.com"
+                        href="http://matine.co.uk"
                     >
-                        matine.chabrier@gmail.com
+                    matine.co.uk
                     </a>
+                &nbsp;→&nbsp;
+                    <Span>
+                        <a
+                            href="mailto:matine.chabrier@gmail.com"
+                        >
+                        matine.chabrier@gmail.com
+                        </a>
+                    </Span>
                 </Span>
-            </Span>
-        </TextXs>
-    </Fragment>
-    );
+            </TextXs>
+        </Fragment>
+    )
 }
 
 LogoInfoLockup.defaultProps = {
     firstName: null,
     surname: null,
-};
+}
 
 LogoInfoLockup.propTypes = {
     firstName: PropTypeGatsbyText,
     surname: PropTypeGatsbyText,
-};
+}
 
-export default LogoInfoLockup;
+export default LogoInfoLockup

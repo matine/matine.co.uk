@@ -1,6 +1,6 @@
-import React, { PureComponent } from 'react';
-import withLayout from '../components/hoc/withLayout';
-import { Box, Container, Text, PageHeading } from '../components/ui';
+import React, { PureComponent } from 'react'
+import withLayout from '../components/hoc/withLayout'
+import { Box, Container, Text, PageHeading } from '../components/ui'
 
 class NotFoundPage extends PureComponent {
     /**
@@ -8,12 +8,12 @@ class NotFoundPage extends PureComponent {
      *
      * @return {ReactNode}
      */
-    render() {
-        const pageName = 'not-found';
+    render () {
+        const pageName = 'not-found'
 
         return (
             <Container
-                id={ `${pageName}-page` }
+                id={ `${ pageName }-page` }
                 pb={ 5 }
             >
                 <PageHeading>
@@ -31,4 +31,4 @@ class NotFoundPage extends PureComponent {
     }
 }
 
-export default withLayout(NotFoundPage);
+export default withLayout(NotFoundPage)

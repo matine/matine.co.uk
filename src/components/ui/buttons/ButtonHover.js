@@ -1,19 +1,19 @@
-import styled, { css } from 'styled-components';
-import { colors } from '../../ui/theme';
-import Button from './Button';
+import styled, { css } from 'styled-components'
+import { colors } from '../../ui/theme'
+import Button from './Button'
 
 const ButtonHover = styled(Button)`
-    ${props => props.hover && css`
+    ${ props => props.hover && css`
         &:hover {
             svg {
                 path {
-                    fill: ${colors.highlight};
+                    fill: ${ colors.highlight };
                 }
             }
-            color: ${colors.highlight};
+            color: ${ colors.highlight };
         }
-    `}
-    ${props => props.hover === 'big' && css`
+    ` }
+    ${ props => props.hover === 'big' && css`
         .show-on-hover {
             display: none;
         }
@@ -26,8 +26,8 @@ const ButtonHover = styled(Button)`
                 display: block;
             }
         }
-    `}
-    ${props => props.hover === 'arrow' && css`
+    ` }
+    ${ props => props.hover === 'arrow' && css`
         transition: transform 1s;
 
         &:hover {
@@ -35,7 +35,7 @@ const ButtonHover = styled(Button)`
                 transform: translate(0, -10px);
             }
         }
-    `}
+    ` }
 `
 
-export default ButtonHover;
+export default ButtonHover

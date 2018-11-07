@@ -1,6 +1,6 @@
 
-import styled from 'styled-components';
-import { colors } from '../../ui/theme';
+import styled from 'styled-components'
+import { colors } from '../../ui/theme'
 
 const NavWrap = styled.nav`
     li {
@@ -20,8 +20,8 @@ const NavWrap = styled.nav`
                 display: block;
                 width: 18px;
                 height: 5px;
-                background-color: ${colors.primary};
-                border: 1px solid ${colors.primaryDark};
+                background-color: ${ colors.primary };
+                border: 1px solid ${ colors.primaryDark };
                 opacity: 0;
             }
 
@@ -35,4 +35,4 @@ const NavWrap = styled.nav`
     }
 `
 
-export default NavWrap;
+export default NavWrap

@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import Box from './Box';
-import { containerWidths } from '../../ui/theme';
+import styled from 'styled-components'
+import Box from './Box'
+import { containerWidths } from '../../ui/theme'
 
 const Contained = styled(Box)`
-    max-width: ${props => `${containerWidths[props.maxWidth]}px`}
+    max-width: ${ props => `${ containerWidths[props.maxWidth] }px` }
 `
 
 Contained.defaultProps = {
@@ -11,4 +11,4 @@ Contained.defaultProps = {
     maxWidth: 3,
 }
 
-export default Contained;
+export default Contained

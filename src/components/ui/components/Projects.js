@@ -1,12 +1,12 @@
-import styled, { css } from 'styled-components';
-import { Box } from '../index';
-import { breakpoints } from '../../ui/theme';
+import styled, { css } from 'styled-components'
+import { Box } from '../index'
+import { breakpoints } from '../../ui/theme'
 
 export const Ipad = styled(Box)`
     width: 40%;
     display: inline-block;
 
-    @media (min-width: ${breakpoints[3]}) {
+    @media (min-width: ${ breakpoints[3] }) {
         width: 250px;
         margin-left: 180px;
     }
@@ -16,7 +16,7 @@ export const Iphone = styled(Box)`
     width: 22%;
     display: inline-block;
 
-    @media (min-width: ${breakpoints[3]}) {
+    @media (min-width: ${ breakpoints[3] }) {
         position: absolute;
         top: 85px;
         left: 0;
@@ -38,7 +38,7 @@ export const TouchDevices = styled.div`
     max-width: 750px;
     text-align: center;
 
-    @media (min-width: ${breakpoints[3]}) {
+    @media (min-width: ${ breakpoints[3] }) {
         position: absolute;
         top: 250px;
         left: 50%;
@@ -52,32 +52,32 @@ export const ProjectsNav = styled.div`
     top: 300px;
     z-index: 0;
 
-    @media (min-width: ${breakpoints[2]}) {
+    @media (min-width: ${ breakpoints[2] }) {
         top: 318px;
         z-index: 1;
     }
 
-    @media (min-width: ${breakpoints[2]}) {
+    @media (min-width: ${ breakpoints[2] }) {
         top: 400px;
     }
 
-    ${props => props.direction === 'next' && css`
+    ${ props => props.direction === 'next' && css`
         right: 18px;
         text-align: left;
 
-        @media (min-width: ${breakpoints[3]}) {
+        @media (min-width: ${ breakpoints[3] }) {
             right: 40px;
         }
-    `}
+    ` }
 
-    ${props => props.direction === 'prev' && css`
+    ${ props => props.direction === 'prev' && css`
         left: 18px;
         text-align: right;
 
-        @media (min-width: ${breakpoints[3]}) {
+        @media (min-width: ${ breakpoints[3] }) {
             left: 40px;
         }
-    `}
+    ` }
 `
 
 export const BrowserWindow = styled.div`

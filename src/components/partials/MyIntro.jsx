@@ -1,21 +1,21 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import { Box, HeadingDecorated, TextWrapMd } from '../ui';
-import { PropTypeGatsbyText, PropTypeGatsbyHtml } from '../../propTypes';
+import PropTypes from 'prop-types'
+import React from 'react'
+import { Box, HeadingDecorated, TextWrapMd } from '../ui'
+import { PropTypeGatsbyText, PropTypeGatsbyHtml } from '../../propTypes'
 
-function MyIntro({
+function MyIntro ({
     meIntroTitle,
     meIntroText,
     sectionName,
 }) {
     if (!meIntroTitle && !meIntroText) {
-        return null;
+        return null
     }
 
     return (
         <Box
             mb={ 5 }
-            className={ `${sectionName}-section` }
+            className={ `${ sectionName }-section` }
         >
             { meIntroTitle &&
                 <HeadingDecorated>
@@ -36,19 +36,19 @@ function MyIntro({
                 </TextWrapMd>
             }
         </Box>
-    );
+    )
 }
 
 MyIntro.defaultProps = {
     meIntroTitle: null,
     meIntroText: null,
     sectionName: null,
-};
+}
 
 MyIntro.propTypes = {
     meIntroTitle: PropTypeGatsbyText,
     meIntroText: PropTypeGatsbyHtml,
     sectionName: PropTypes.string,
-};
+}
 
-export default MyIntro;
+export default MyIntro

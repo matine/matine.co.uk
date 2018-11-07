@@ -1,9 +1,9 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import { LinkedInIcon, GithubIcon, EmailIcon, List, LinkHover, TwitterIcon, SvgWrap } from '../ui';
-import links from '../../constants/links';
+import PropTypes from 'prop-types'
+import React from 'react'
+import { LinkedInIcon, GithubIcon, EmailIcon, List, LinkHover, TwitterIcon, SvgWrap } from '../ui'
+import links from '../../constants/links'
 
-function SocialLinks({
+function SocialLinks ({
     linkedIn,
     twitter,
     email,
@@ -78,7 +78,7 @@ function SocialLinks({
                 </li>
             }
         </List>
-    );
+    )
 }
 
 SocialLinks.defaultProps = {
@@ -86,13 +86,13 @@ SocialLinks.defaultProps = {
     twitter: false,
     email: false,
     gitHub: false,
-};
+}
 
 SocialLinks.propTypes = {
     linkedIn: PropTypes.bool,
     twitter: PropTypes.bool,
     email: PropTypes.bool,
     gitHub: PropTypes.bool,
-};
+}
 
-export default SocialLinks;
+export default SocialLinks

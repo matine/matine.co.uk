@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
-import { connect } from 'react-redux';
-import withLayout from '../components/hoc/withLayout';
-import { Container, TextXs, TextWrapXs, HeadingDecorated, PageHeading, Span, Col, Grid, List } from '../components/ui';
-import { PropTypeGatsbyGlobalData } from '../propTypes';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
+import { connect } from 'react-redux'
+import withLayout from '../components/hoc/withLayout'
+import { Container, TextXs, TextWrapXs, HeadingDecorated, PageHeading, Span, Col, Grid, List } from '../components/ui'
+import { PropTypeGatsbyGlobalData } from '../propTypes'
 
 class LinksPage extends Component {
     /**
@@ -12,15 +12,15 @@ class LinksPage extends Component {
      *
      * @return {ReactNode}
      */
-    renderListOfLinks() {
+    renderListOfLinks () {
         const {
             data,
-        } = this.props;
+        } = this.props
 
-        const globalContent = data.global.edges[0].node.data;
+        const globalContent = data.global.edges[0].node.data
 
         const sliceContent = globalContent.body.map((slice, sliceIndex) => {
-            const listOfLinksTitle = slice.primary.list_of_links_title.text;
+            const listOfLinksTitle = slice.primary.list_of_links_title.text
 
             if (slice.slice_type === 'links') {
                 const linkContent = slice.items.map((link, linkIndex) => {
@@ -52,13 +52,13 @@ class LinksPage extends Component {
                                 />
                             </TextWrapXs>
                         </li>
-                    );
-                });
+                    )
+                })
 
                 return (
                     <Col
                         key={ sliceIndex }
-                        width={[ 1, 1, 1/2, 1/4 ]}
+                        width={[ 1, 1, 1 / 2, 1 / 4 ]}
                     >
                         <HeadingDecorated>
                             { listOfLinksTitle }
@@ -69,13 +69,13 @@ class LinksPage extends Component {
                             { linkContent }
                         </List>
                     </Col>
-                );
+                )
             } else {
-                return null;
+                return null
             }
-        });
+        })
 
-        return sliceContent;
+        return sliceContent
     }
 
     /**
@@ -83,21 +83,21 @@ class LinksPage extends Component {
      *
      * @return {ReactNode}
      */
-    render() {
+    render () {
         const {
             data,
-        } = this.props;
+        } = this.props
 
-        const globalContent = data.global.edges[0].node.data;
-        const pageName = 'links';
+        const globalContent = data.global.edges[0].node.data
+        const pageName = 'links'
 
         if (!globalContent) {
-            return null;
+            return null
         }
 
         return (
             <Container
-                id={ `${pageName}-page` }
+                id={ `${ pageName }-page` }
                 pb={ 5 }
             >
                 <PageHeading>
@@ -111,7 +111,7 @@ class LinksPage extends Component {
                     { this.renderListOfLinks() }
                 </Grid>
             </Container>
-        );
+        )
     }
 }
 
@@ -119,13 +119,13 @@ LinksPage.propTypes = {
     data: PropTypes.shape({
         PropTypeGatsbyGlobalData,
     }).isRequired,
-};
+}
 
 export const mapStateToProps = state => ({
     theme: state.theme,
-});
+})
 
-export default connect(mapStateToProps)(withLayout(LinksPage));
+export default connect(mapStateToProps)(withLayout(LinksPage))
 
 export const pageQuery = graphql`
     query LinksQuery {
@@ -162,4 +162,4 @@ export const pageQuery = graphql`
             }
         }
     }
-`;
+`

@@ -1,11 +1,11 @@
-import styled from 'styled-components';
-import slickCarousel from 'slick-carousel/slick/slick.css';
-import slickCarouselTheme from 'slick-carousel/slick/slick-theme.css';
-import { colors } from '../../ui/theme';
+import styled from 'styled-components'
+import slickCarousel from 'slick-carousel/slick/slick.css'
+import slickCarouselTheme from 'slick-carousel/slick/slick-theme.css'
+import { colors } from '../../ui/theme'
 
 const CarouselWrap = styled.div`
-    ${slickCarousel};
-    ${slickCarouselTheme};
+    ${ slickCarousel };
+    ${ slickCarouselTheme };
 
     .slick-dots {
         top: -40px !important;
@@ -19,7 +19,7 @@ const CarouselWrap = styled.div`
                 &:before {
                     font-size: 16px !important;
                     opacity: 1 !important;
-                    color: ${colors.gray[2]}!important;
+                    color: ${ colors.gray[2] }!important;
                 }
 
                 &:focus {
@@ -31,7 +31,7 @@ const CarouselWrap = styled.div`
                 &:hover,
                 &:active {
                     &:before {
-                        color: ${colors.primary}!important;
+                        color: ${ colors.primary }!important;
                     }
                 }
             }
@@ -39,7 +39,7 @@ const CarouselWrap = styled.div`
             &.slick-active {
                 button {
                     &:before {
-                        color: ${colors.primary}!important;
+                        color: ${ colors.primary }!important;
                     }
                 }
             }
@@ -47,4 +47,4 @@ const CarouselWrap = styled.div`
     }
 `
 
-export default CarouselWrap;
+export default CarouselWrap

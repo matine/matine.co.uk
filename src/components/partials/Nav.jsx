@@ -1,8 +1,8 @@
-import React from 'react';
-import NavItem from './NavItem';
-import { NavWrap, List, TextWrapSm } from '../ui';
+import React from 'react'
+import NavItem from './NavItem'
+import { NavWrap, List, TextWrapSm } from '../ui'
 
-function Nav() {
+function Nav () {
     return (
         <NavWrap>
             <TextWrapSm fontWeight="bold" caps linkStyle="none" pt={ 1 }>
@@ -13,7 +13,7 @@ function Nav() {
                 </List>
             </TextWrapSm>
         </NavWrap>
-    );
+    )
 };
 
-export default Nav;
+export default Nav

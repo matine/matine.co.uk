@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Me = styled.div`
     background-size: 400px;
@@ -7,4 +7,4 @@ const Me = styled.div`
     margin-top: 15px;
 `
 
-export default Me;
+export default Me

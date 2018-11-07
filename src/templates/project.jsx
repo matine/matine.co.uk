@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
-import Image from 'gatsby-image';
-import { connect } from 'react-redux';
-import ProjectTextContent from '../components/partials/ProjectTextContent';
-import ProjectImagesInsitu from '../components/partials/ProjectImagesInsitu';
-import ProjectScreenshots from '../components/partials/ProjectScreenshots';
-import ProjectPrevNext from '../components/partials/ProjectPrevNext';
-import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
-import withLayout from '../components/hoc/withLayout';
-import * as actions from '../state/actions';
-import { ThemeDefault, Box, BannerOverlay } from '../components/ui';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
+import Image from 'gatsby-image'
+import { connect } from 'react-redux'
+import ProjectTextContent from '../components/partials/ProjectTextContent'
+import ProjectImagesInsitu from '../components/partials/ProjectImagesInsitu'
+import ProjectScreenshots from '../components/partials/ProjectScreenshots'
+import ProjectPrevNext from '../components/partials/ProjectPrevNext'
+import { ParallaxProvider, Parallax } from 'react-scroll-parallax'
+import withLayout from '../components/hoc/withLayout'
+import * as actions from '../state/actions'
+import { ThemeDefault, Box, BannerOverlay } from '../components/ui'
 
 class ProjectTemplate extends Component {
     /**
@@ -18,10 +18,10 @@ class ProjectTemplate extends Component {
      *
      * @param {Object} props
      */
-    constructor(props) {
-        super(props);
+    constructor (props) {
+        super(props)
 
-        props.setTheme('default');
+        props.setTheme('default')
     }
 
     /**
@@ -29,14 +29,14 @@ class ProjectTemplate extends Component {
      *
      * @return {ReactNode}
      */
-    render() {
+    render () {
         const {
             data,
-        } = this.props;
+        } = this.props
 
-        const projectContent = data.prismicProject.data;
-        const projectUid = data.prismicProject.uid;
-        const allProjectsContent = data.projects.edges;
+        const projectContent = data.prismicProject.data
+        const projectUid = data.prismicProject.uid
+        const allProjectsContent = data.projects.edges
 
         const {
             project_title,
@@ -50,32 +50,32 @@ class ProjectTemplate extends Component {
             project_ipad,
             project_iphone,
             project_screenshots,
-        } = projectContent;
+        } = projectContent
 
-        const projectBanner = project_banner.localFile && project_banner.localFile.childImageSharp.fluid;
-        const pageName = 'project';
+        const projectBanner = project_banner.localFile && project_banner.localFile.childImageSharp.fluid
+        const pageName = 'project'
 
         return (
             <ParallaxProvider>
                 <div
-                    id={ `${pageName}-page` }
+                    id={ `${ pageName }-page` }
                 >
                     <Parallax
                         offsetYMax={ 60 }
                         offsetYMin={ -100 }
                         slowerScrollRate
                     >
-                    { project_banner && (
-                        <Box
-                            height={ [260, 260, 260, 300] }
-                            mt={ [-60, -60, -60, 0 ] }
-                        >
-                            <Image
-                                fluid={ projectBanner }
-                                style={ { height: '100%' } }
-                            />
-                        </Box>
-                    ) }
+                        { project_banner && (
+                            <Box
+                                height={ [260, 260, 260, 300] }
+                                mt={ [-60, -60, -60, 0] }
+                            >
+                                <Image
+                                    fluid={ projectBanner }
+                                    style={ { height: '100%' } }
+                                />
+                            </Box>
+                        ) }
                     </Parallax>
                     <ThemeDefault
                         themeBg
@@ -114,7 +114,7 @@ class ProjectTemplate extends Component {
                     </ThemeDefault>
                 </div>
             </ParallaxProvider>
-        );
+        )
     }
 };
 
@@ -122,17 +122,17 @@ ProjectTemplate.propTypes = {
     data: PropTypes.shape({
         prismicProject: PropTypes.shape().isRequired,
     }).isRequired,
-};
+}
 
 export const mapStateToProps = state => ({
     theme: state.theme,
-});
+})
 
 export const mapDispatchToProps = dispatch => ({
     setTheme: theme => dispatch(actions.setTheme(theme)),
-});
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(withLayout(ProjectTemplate));
+export default connect(mapStateToProps, mapDispatchToProps)(withLayout(ProjectTemplate))
 
 export const pageQuery = graphql`
     query ProjectBySlug($uid: String!) {
@@ -243,4 +243,4 @@ export const pageQuery = graphql`
             }
         }
     }
-`;
+`

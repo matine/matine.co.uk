@@ -1,5 +1,5 @@
-import { css } from 'styled-components';
-import { colors } from './theme';
+import { css } from 'styled-components'
+import { colors } from './theme'
 
 const globalStyles = css`
     @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
@@ -9,7 +9,7 @@ const globalStyles = css`
         text-shadow: 'white' 0 0 1px;
         text-size-adjust: 100%;
         font-family: 'Noto Sans', sans-serif;
-        background-color: ${colors.text};
+        background-color: ${ colors.text };
         line-height: 1.5;
         margin: 0;
     }
@@ -22,7 +22,7 @@ const globalStyles = css`
             outline: 0;
         }
         &:hover {
-            color: ${colors.highlight};
+            color: ${ colors.highlight };
         }
         &:visited {
             fill: inherit;
@@ -53,6 +53,6 @@ const globalStyles = css`
     ul {
         padding-left: 1.5em;
     }
-`;
+`
 
-export default globalStyles;
+export default globalStyles

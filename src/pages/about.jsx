@@ -1,14 +1,14 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
-import Image from 'gatsby-image';
-import { connect } from 'react-redux';
-import withLayout from '../components/hoc/withLayout';
-import MyIntro from '../components/partials/MyIntro';
-import MySkills from '../components/partials/MySkills';
-import MyInfo from '../components/partials/MyInfo';
-import { Box, Container, Contained } from '../components/ui';
-import { PropTypeGatsbyGlobalData } from '../propTypes';
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
+import Image from 'gatsby-image'
+import { connect } from 'react-redux'
+import withLayout from '../components/hoc/withLayout'
+import MyIntro from '../components/partials/MyIntro'
+import MySkills from '../components/partials/MySkills'
+import MyInfo from '../components/partials/MyInfo'
+import { Box, Container, Contained } from '../components/ui'
+import { PropTypeGatsbyGlobalData } from '../propTypes'
 
 class AboutPage extends PureComponent {
     /**
@@ -16,16 +16,16 @@ class AboutPage extends PureComponent {
      *
      * @return {ReactNode}
      */
-    render() {
+    render () {
         const {
             data,
-        } = this.props;
+        } = this.props
 
-        const globalContent = data.global.edges[0].node.data;
-        const meImage = globalContent.about_me_image.localFile.childImageSharp.fluid;
+        const globalContent = data.global.edges[0].node.data
+        const meImage = globalContent.about_me_image.localFile.childImageSharp.fluid
 
         if (!globalContent) {
-            return null;
+            return null
         }
 
         const {
@@ -33,13 +33,13 @@ class AboutPage extends PureComponent {
             me_intro_text,
             me_skills_title,
             me_skills_text,
-        } = globalContent;
+        } = globalContent
 
-        const pageName = 'about';
+        const pageName = 'about'
 
         return (
             <div
-                id={ `${pageName}-page` }
+                id={ `${ pageName }-page` }
             >
                 <Box
                     pb={ 5 }
@@ -49,6 +49,7 @@ class AboutPage extends PureComponent {
                             maxWidth={ 3 }
                         >
                             <Box
+                                mt={ [30, 30, 30, 20] }
                                 mb={ 5 }
                             >
                                 <Image
@@ -82,13 +83,13 @@ AboutPage.propTypes = {
     data: PropTypes.shape({
         PropTypeGatsbyGlobalData,
     }).isRequired,
-};
+}
 
 export const mapStateToProps = state => ({
     theme: state.theme,
-});
+})
 
-export default connect(mapStateToProps)(withLayout(AboutPage));
+export default connect(mapStateToProps)(withLayout(AboutPage))
 
 export const pageQuery = graphql`
     query AboutQuery {
@@ -127,4 +128,4 @@ export const pageQuery = graphql`
             }
         }
     }
-`;
+`

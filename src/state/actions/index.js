@@ -1,4 +1,4 @@
-import * as actions from '../../constants/actions';
+import * as actions from '../../constants/actions'
 
 /**
  * Sets the theme.
@@ -9,4 +9,4 @@ import * as actions from '../../constants/actions';
 export const setTheme = theme => ({
     type: actions.SET_THEME,
     theme,
-});
+})

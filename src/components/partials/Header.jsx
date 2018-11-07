@@ -1,10 +1,10 @@
-import React from 'react';
-import Weather from './Weather';
-import Nav from './Nav';
-import SocialLinks from './SocialLinks';
-import { ThemeDefault, Box, Grid, Col, TextWrap } from '../ui';
+import React from 'react'
+import Weather from './Weather'
+import Nav from './Nav'
+import SocialLinks from './SocialLinks'
+import { ThemeDefault, Box, Grid, Col, TextWrap } from '../ui'
 
-function Header() {
+function Header () {
     return (
         <Box
             className="hide-for-print"
@@ -26,13 +26,13 @@ function Header() {
                     gutterY={ 0 }
                 >
                     <Col
-                        width={[ 1, 1, 1/3 ]}
-                        display={[ 'none', 'none', 'none', 'block']}
+                        width={[1, 1, 1 / 3]}
+                        display={['none', 'none', 'none', 'block']}
                     >
                         <Weather />
                     </Col>
                     <Col
-                        width={[ 1, 1, 1, 1/3 ]}
+                        width={[1, 1, 1, 1 / 3]}
                     >
                         <TextWrap
                             textAlign="center"
@@ -41,8 +41,8 @@ function Header() {
                         </TextWrap>
                     </Col>
                     <Col
-                        width={[ 1, 1, 1/3 ]}
-                        display={[ 'none', 'none', 'none', 'block']}
+                        width={[ 1, 1, 1 / 3 ]}
+                        display={['none', 'none', 'none', 'block']}
                     >
                         <TextWrap
                             linkStyle="none"
@@ -59,7 +59,7 @@ function Header() {
                 </Grid>
             </ThemeDefault>
         </Box>
-    );
+    )
 }
 
-export default Header;
+export default Header

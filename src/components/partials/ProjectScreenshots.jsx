@@ -1,21 +1,21 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import Image from 'gatsby-image';
-import Carousel from './Carousel';
-import { CarouselWrap, BrowserWindow, Box, Container } from '../ui';
+import PropTypes from 'prop-types'
+import React from 'react'
+import Image from 'gatsby-image'
+import Carousel from './Carousel'
+import { CarouselWrap, BrowserWindow, Box, Container } from '../ui'
 
-function ProjectScreenshots({
+function ProjectScreenshots ({
     projectScreenshots,
     projectUid,
     projectType,
 }) {
     if (!projectScreenshots[0]) {
-        return null;
+        return null
     }
 
     const carouselItems = projectScreenshots.map((carouselItem, index) => {
-        const carouselImage = carouselItem.screenshot.localFile.childImageSharp.fluid;
-        const key = `${projectUid}-${index}`;
+        const carouselImage = carouselItem.screenshot.localFile.childImageSharp.fluid
+        const key = `${ projectUid }-${ index }`
 
         return (
             <div key={ key }>
@@ -34,8 +34,8 @@ function ProjectScreenshots({
                     fluid={ carouselImage }
                 />
             </div>
-        );
-    });
+        )
+    })
 
     return (
         <Box
@@ -53,19 +53,19 @@ function ProjectScreenshots({
                 </CarouselWrap>
             </Container>
         </Box>
-    );
+    )
 }
 
 ProjectScreenshots.defaultProps = {
     projectScreenshots: null,
     projectUid: null,
     projectType: null,
-};
+}
 
 ProjectScreenshots.propTypes = {
     projectScreenshots: PropTypes.array,
     projectUid: PropTypes.string,
     projectType: PropTypes.string,
-};
+}
 
-export default ProjectScreenshots;
+export default ProjectScreenshots
