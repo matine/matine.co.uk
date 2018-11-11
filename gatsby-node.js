@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions
@@ -27,4 +28,16 @@ exports.createPages = async ({ graphql, actions }) => {
             },
         })
     })
+}
+
+exports.modifyWebpackConfig = function (config) {
+    config.merge({
+        plugins: [
+            new webpack.DefinePlugin({
+                'process.env': {
+                    BUILD_ENV: JSON.stringify(process.env.BUILD_ENV ? process.env.BUILD_ENV : 'test')
+                } })
+        ],
+    })
+    return config
 }
