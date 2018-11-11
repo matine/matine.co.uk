@@ -12,7 +12,7 @@ import ProjectPrevNext from '../components/partials/ProjectPrevNext'
 import { ParallaxProvider, Parallax } from 'react-scroll-parallax'
 import withLayout from '../components/hoc/withLayout'
 import * as actions from '../state/actions'
-import { ThemeDefault, Box, BannerOverlay } from '../components/ui'
+import { ThemeDefault, Box, BannerOverlay, SEO } from '../components/ui'
 import { colors } from '../components/ui/theme'
 
 class ProjectTemplate extends Component {
