@@ -62,7 +62,7 @@ class ProjectTemplate extends Component {
         return (
             <ParallaxProvider>
                 <Helmet title={ `${ project_title } | ${ config.siteTitle }` } />
-                <SEO caseNode={ projectNode } projectPath={ projectUid } projectSEO />
+                <SEO projectNode={ projectNode } projectPath={ projectUid } projectSEO />
                 <div
                     id={ `${ pageName }-page` }
                 >

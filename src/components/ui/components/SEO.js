@@ -22,9 +22,9 @@ const SEO = props => {
             project_role,
             project_imac,
         } = projectNode.data
-        title = project_title.text
-        description = `Matine Chabrier as: ${ project_role.text } on the ${ project_title.text } project.`
-        image = project_imac.localFile.childImageSharp.resize.src
+        title = `${ project_title.text } | ${ config.siteTitleAlt }`
+        description = `${ config.siteTitleAlt } as: ${ project_role.text } on the ${ project_title.text } project.`
+        image = project_imac.localFile.childImageSharp.fluid.src
         postURL = config.siteUrl + config.pathPrefix + projectPath
     } else {
         title = config.siteTitle
