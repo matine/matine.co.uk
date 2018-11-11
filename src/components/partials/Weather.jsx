@@ -31,10 +31,10 @@ class Weather extends PureComponent {
 
         /* eslint-disable-next-line no-undef */
         fetch(url, {
-            mode: 'no-cors',
+            mode: 'cors',
             headers: {
                 'Content-Type': 'multipart/form-data; charset=utf-8'
-            }
+            },
         })
             .then(res => res.json())
             .then(response => {
@@ -80,7 +80,7 @@ class Weather extends PureComponent {
         const temp_c = weatherResponse['current_observation']['temp_c']
         const weather = weatherResponse['current_observation']['weather']
         let weatherNoSpaces = weather.toLowerCase().replace(/\s/g, '')
-        const icon = `http://icons.wxug.com/i/c/i/${ weatherNoSpaces }.gif`
+        const icon = `//icons.wxug.com/i/c/i/${ weatherNoSpaces }.gif`
         const londonToday = `${ location } today is:`
         const theWeather = `${ weather } and ${ temp_c } °C`
 
