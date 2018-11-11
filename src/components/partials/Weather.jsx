@@ -30,6 +30,7 @@ class Weather extends PureComponent {
         const url = `${ apiPath }${ process.env.WEATHER_API_KEY }/geolookup/conditions/q/UK/London.json`
 
         console.log(url)
+        console.log(process.env.PRISMIC_API_KEY)
 
         /* eslint-disable-next-line no-undef */
         fetch(url, {
