@@ -31,6 +31,7 @@ class Weather extends PureComponent {
 
         /* eslint-disable-next-line no-undef */
         fetch(url, {
+            mode: 'no-cors',
             headers: {
                 'Content-Type': 'multipart/form-data; charset=utf-8'
             }
