@@ -34,6 +34,8 @@ const SEO = props => {
     const realPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
     image = config.siteUrl + realPrefix + image
     const blogURL = config.siteUrl + config.pathPrefix
+
+    console.log(image)
     let schemaOrgJSONLD = [
         {
             '@context': 'http://schema.org',

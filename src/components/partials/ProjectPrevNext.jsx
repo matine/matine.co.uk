@@ -11,7 +11,7 @@ function ProjectPrevNext ({
     const currentProjectPos = projectsContent.map(project => project.node.uid).indexOf(currentProjectUid)
 
     const renderProjectLink = (project, linkText) => (
-        <Link to={ `/${ project.uid }` }>
+        <Link to={ `/work/${ project.uid }` }>
             { linkText }
         </Link>
     )

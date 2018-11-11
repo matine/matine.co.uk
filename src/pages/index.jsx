@@ -64,7 +64,7 @@ class IndexPage extends PureComponent {
             const projectTitle = projectData.project_title.text
             const projectThumbnail = projectData.project_thumbnail.localFile.childImageSharp.fluid
             const projectThumbnail2 = projectData.project_thumbnail_2.localFile.childImageSharp.fluid
-            const linkToProjectUrl = `/${ projectUid }`
+            const linkToProjectUrl = `/work/${ projectUid }`
 
             return (
                 <Col

@@ -4,7 +4,7 @@ module.exports = {
 
     siteTitle: 'Matine Chabrier - Frontend Developer', // Navigation and Site Title
     siteTitleAlt: 'Matine Chabrier', // Alternative Site title for SEO
-    siteUrl: 'https://matine.netlify.com', // Domain of your site. No trailing slash!
+    siteUrl: 'https://matine.co.uk', // Domain of your site. No trailing slash!
     siteLanguage: 'en', // Language Tag on <html> element
     siteLogo: '/logos/logo-1024.png', // Used for SEO and manifest
     siteDescription: 'A portfolio site for Matine Chabrier, Frontend Developer.',
