@@ -30,14 +30,16 @@ exports.createPages = async ({ graphql, actions }) => {
     })
 }
 
-exports.modifyWebpackConfig = function (config) {
-    config.merge({
+exports.onCreateWebpackConfig = ({ actions }) => {
+    actions.setWebpackConfig({
+        resolve: {
+            modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+        },
         plugins: [
             new webpack.DefinePlugin({
                 'process.env': {
-                    BUILD_ENV: JSON.stringify(process.env.BUILD_ENV ? process.env.BUILD_ENV : 'test')
+                    NODE_ENV: JSON.stringify(process.env.NODE_ENV)
                 } })
         ],
     })
-    return config
 }
