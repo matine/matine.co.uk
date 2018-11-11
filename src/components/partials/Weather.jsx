@@ -29,24 +29,32 @@ class Weather extends PureComponent {
         const apiPath = '//api.wunderground.com/api/'
         const url = `${ apiPath }${ process.env.WEATHER_API_KEY }/geolookup/conditions/q/UK/London.json`
 
+        console.log(url)
+
         /* eslint-disable-next-line no-undef */
         fetch(url, {
-            mode: 'cors',
             headers: {
-                'Content-Type': 'multipart/form-data; charset=utf-8'
+                'Content-Type': 'text/plain',
             },
         })
-            .then(res => res.json())
+            .then(res => {
+                console.log(res)
+
+                return res.json()
+            })
             .then(response => {
+                console.log(response)
+
                 this.setState({
                     weatherResponse: response,
                 })
             })
             .catch(err => {
+                console.log('err: ', err)
+
                 this.setState({
                     weatherResponse: null,
                 })
-                console.log(err)
             })
     }
 
