@@ -29,8 +29,6 @@ class Weather extends PureComponent {
         const apiPath = '//api.wunderground.com/api/'
         const url = `${ apiPath }${ process.env.WEATHER_API_KEY }/geolookup/conditions/q/UK/London.json`
 
-        console.log(url)
-
         /* eslint-disable-next-line no-undef */
         fetch(url, {
             headers: {
