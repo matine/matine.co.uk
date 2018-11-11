@@ -24,6 +24,8 @@ class IndexPage extends PureComponent {
 
     /**
      * Handle the hover on a thumbnail.
+     *
+     * @param {number} index
      */
     hoverOnThumbnail (index) {
         const {

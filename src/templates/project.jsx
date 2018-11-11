@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Image from 'gatsby-image'
+import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
+import config from '../../config/website'
 import ProjectTextContent from '../components/partials/ProjectTextContent'
 import ProjectImagesInsitu from '../components/partials/ProjectImagesInsitu'
 import ProjectScreenshots from '../components/partials/ProjectScreenshots'
@@ -35,8 +37,9 @@ class ProjectTemplate extends Component {
             data,
         } = this.props
 
-        const projectContent = data.prismicProject.data
-        const projectUid = data.prismicProject.uid
+        const projectNode = data.prismicProject
+        const projectContent = projectNode.data
+        const projectUid = projectNode.uid
         const allProjectsContent = data.projects.edges
 
         const {
@@ -58,6 +61,8 @@ class ProjectTemplate extends Component {
 
         return (
             <ParallaxProvider>
+                <Helmet title={ `${ project_title } | ${ config.siteTitle }` } />
+                <SEO caseNode={ projectNode } projectPath={ projectUid } projectSEO />
                 <div
                     id={ `${ pageName }-page` }
                 >

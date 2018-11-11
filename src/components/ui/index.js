@@ -30,6 +30,7 @@ import Me from './components/Me'
 import ProjectThumbnail from './components/ProjectThumbnail'
 import NavWrap from './components/NavWrap'
 import CarouselWrap from './components/CarouselWrap'
+import SEO from './components/SEO'
 import FadeOut from './animations/FadeOut'
 
 export {
@@ -87,5 +88,6 @@ export {
     BrowserWindow,
     BannerOverlay,
     ProjectThumbnail,
+    SEO,
     FadeOut
 }

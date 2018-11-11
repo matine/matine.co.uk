@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { ThemeProvider, injectGlobal } from 'styled-components'
 import styledNormalize from 'styled-normalize'
 import { connect } from 'react-redux'
 import Header from '../partials/Header'
 import Footer from '../partials/Footer'
-import { ThemeDefault, ThemeInverted, Box } from '../ui'
+import { ThemeDefault, ThemeInverted, Box, SEO } from '../ui'
 import globalStyles from '../ui/globalStyles'
 import printStyles from '../ui/printStyles'
 
@@ -57,38 +57,41 @@ export default function (WrappedComponent) {
             } = this.state
 
             return (
-                <ThemeProvider
-                    theme={{ mode: theme }}>
-                    <ThemeInverted
-                        themeBg
-                    >
-                        <ThemeDefault
-                            themeColor
-                            themeSvg
-                            height="100%"
+                <Fragment>
+                    <SEO />
+                    <ThemeProvider
+                        theme={{ mode: theme }}>
+                        <ThemeInverted
+                            themeBg
                         >
-                            <Header />
-                            <Box
-                                zIndex={ 1 }
-                                position="relative"
-                                pt={ [25, 25, 25, 40] }
-                                mb={ footerHeight }
-                                className="no-margin-for-print"
+                            <ThemeDefault
+                                themeColor
+                                themeSvg
+                                height="100%"
                             >
-                                <ThemeDefault
-                                    themeBg
-                                    themeBorder
-                                    className="no-border-for-print"
+                                <Header />
+                                <Box
+                                    zIndex={ 1 }
+                                    position="relative"
+                                    pt={ [25, 25, 25, 40] }
+                                    mb={ footerHeight }
+                                    className="no-margin-for-print"
                                 >
-                                    <WrappedComponent
-                                        { ...this.props }
-                                    />
-                                </ThemeDefault>
-                            </Box>
-                            <Footer />
-                        </ThemeDefault>
-                    </ThemeInverted>
-                </ThemeProvider>
+                                    <ThemeDefault
+                                        themeBg
+                                        themeBorder
+                                        className="no-border-for-print"
+                                    >
+                                        <WrappedComponent
+                                            { ...this.props }
+                                        />
+                                    </ThemeDefault>
+                                </Box>
+                                <Footer />
+                            </ThemeDefault>
+                        </ThemeInverted>
+                    </ThemeProvider>
+                </Fragment>
             )
         }
     }

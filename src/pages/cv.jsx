@@ -22,6 +22,7 @@ class CvPage extends PureComponent {
      */
     printPage () {
         window.print()
+
         return false
     }
 
