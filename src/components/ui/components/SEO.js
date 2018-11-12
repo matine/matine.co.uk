@@ -35,7 +35,6 @@ const SEO = props => {
     image = config.siteUrl + realPrefix + image
     const blogURL = config.siteUrl + config.pathPrefix
 
-    console.log(image)
     let schemaOrgJSONLD = [
         {
             '@context': 'http://schema.org',
@@ -96,12 +95,11 @@ const SEO = props => {
             <script type="application/ld+json">{ JSON.stringify(schemaOrgJSONLD) }</script>
             <meta property="og:locale" content={ config.ogLanguage } />
             <meta property="og:site_name" content={ config.ogSiteName } />
-            <meta property="og:url" content={ projectSEO ? postURL : blogURL } />
-            { projectSEO && <meta property="og:type" content="article" /> }
+            <meta property="og:url" content={ `${ projectSEO ? postURL : blogURL }/` } />
+            <meta property="og:type" content="website" />
             <meta property="og:title" content={ title } />
             <meta property="og:description" content={ description } />
             <meta property="og:image" content={ image } />
-            <meta property="fb:app_id" content={ config.siteFBAppID ? config.siteFBAppID : '' } />
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:creator" content={ config.userTwitter ? config.userTwitter : '' } />
             <meta name="twitter:title" content={ title } />

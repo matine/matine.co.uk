@@ -10,12 +10,11 @@ module.exports = {
     siteDescription: 'A portfolio site for Matine Chabrier, Frontend Developer.',
     author: 'MatineChabrier', // Author for schemaORGJSONLD
 
-    // siteFBAppID: '123456789', // Facebook App ID - Optional
     userTwitter: '@matine', // Twitter Username
     ogSiteName: 'matinec', // Facebook Site Name
     ogLanguage: 'en_GB', // Facebook Language
 
     // Manifest and Progress color
-    themeColor: '#b710a1',
-    backgroundColor: '#350d27',
+    themeColor: '#f5e78e',
+    backgroundColor: '#333333',
 }
