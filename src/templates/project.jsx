@@ -9,10 +9,11 @@ import ProjectTextContent from '../components/partials/ProjectTextContent'
 import ProjectImagesInsitu from '../components/partials/ProjectImagesInsitu'
 import ProjectScreenshots from '../components/partials/ProjectScreenshots'
 import ProjectPrevNext from '../components/partials/ProjectPrevNext'
+import SEO from '../components/partials/SEO'
 import { ParallaxProvider, Parallax } from 'react-scroll-parallax'
 import withLayout from '../components/hoc/withLayout'
 import * as actions from '../state/actions'
-import { ThemeDefault, Box, BannerOverlay, SEO } from '../components/ui'
+import { ThemeDefault, Box, BannerOverlay } from '../components/ui'
 import { colors } from '../components/ui/theme'
 
 class ProjectTemplate extends Component {
