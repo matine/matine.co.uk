@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Box, HeadingDecorated, TextWrapSm, HeadingXs, HeadingMd } from '../ui'
+import { Box, HeadingDecorated, TextWrapXs, HeadingXs, HeadingMd } from '../ui'
 import { PropTypeGatsbyText } from '../../propTypes'
 
 function MyEmployment ({
@@ -33,13 +33,13 @@ function MyEmployment ({
                 }
                 { employmentTitle &&
                     <HeadingMd
-                        mb={ 0 }
+                        mb={ 2 }
                     >
                         { employmentTitle.text }
                     </HeadingMd>
                 }
                 { employmentDesc &&
-                    <TextWrapSm
+                    <TextWrapXs
                         textSpacing
                         mb={ 0 }
                     >
@@ -50,7 +50,7 @@ function MyEmployment ({
                                 }
                             }
                         />
-                    </TextWrapSm>
+                    </TextWrapXs>
                 }
             </Box>
         )
