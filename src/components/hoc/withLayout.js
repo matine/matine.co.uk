@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react'
 import { ThemeProvider, injectGlobal } from 'styled-components'
-import styledNormalize from 'styled-normalize'
 import { connect } from 'react-redux'
 import Header from '../partials/Header'
 import Footer from '../partials/Footer'
@@ -10,7 +9,6 @@ import globalStyles from '../ui/globalStyles'
 import printStyles from '../ui/printStyles'
 
 injectGlobal`
-    ${ styledNormalize }
     ${ globalStyles }
     ${ printStyles }
 `
