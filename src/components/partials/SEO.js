@@ -16,6 +16,7 @@ const SEO = props => {
     let image
     let postURL
 
+
     if (projectSEO) {
         const {
             project_title,
@@ -24,7 +25,7 @@ const SEO = props => {
         } = projectNode.data
         title = `${ project_title.text } | ${ config.siteTitleAlt }`
         description = `${ config.siteTitleAlt } as: ${ project_role.text } on the ${ project_title.text } project.`
-        image = project_imac.localFile.childImageSharp.fluid.src
+        image = project_imac?.gatsbyImageData?.images?.fallback?.src || ''
         postURL = config.siteUrl + config.pathPrefix + projectPath
     } else {
         title = config.siteTitle

@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { ThemeProvider, injectGlobal } from 'styled-components'
+import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import { connect } from 'react-redux'
 import Header from '../partials/Header'
 import Footer from '../partials/Footer'
@@ -8,7 +8,7 @@ import { ThemeDefault, ThemeInverted, Box } from '../ui'
 import globalStyles from '../ui/globalStyles'
 import printStyles from '../ui/printStyles'
 
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
     ${ globalStyles }
     ${ printStyles }
 `
@@ -58,6 +58,7 @@ export default function (WrappedComponent) {
             return (
                 <Fragment>
                     <SEO />
+                    <GlobalStyle />
                     <ThemeProvider
                         theme={{ mode: theme }}>
                         <ThemeInverted

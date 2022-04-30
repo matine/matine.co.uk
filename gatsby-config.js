@@ -19,6 +19,7 @@ module.exports = {
                 path: `${ __dirname }/src/images/`,
             },
         },
+        'gatsby-plugin-image',
         'gatsby-plugin-sharp',
         'gatsby-transformer-sharp',
         {
@@ -26,9 +27,10 @@ module.exports = {
             options: {
                 repositoryName: 'matine',
                 accessToken: `${ process.env.PRISMIC_API_KEY }`,
-                linkResolver: ({ node, key, value }) => doc => `/${ doc.uid }`,
-                htmlSerializer: ({ node, key, value }) => (type, element, content, children) => {
-                    // Your HTML serializer
+                customTypesApiToken: `${ process.env.PRISMIC_CUSTOM_TYPES_KEY }`,
+                linkResolver: (doc) => `/${ doc.uid }`,
+                htmlSerializer: (type, element, content, children) => {
+                    // Return HTML for an piece of content.
                 },
                 lang: '*',
             }

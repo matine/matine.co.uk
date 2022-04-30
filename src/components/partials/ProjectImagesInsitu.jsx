@@ -1,66 +1,54 @@
 import React from 'react'
-import Image from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { Container, Box, TouchDevices, Imac, Ipad, Iphone } from '../ui'
 import { PropTypeGatsbyImage } from '../../propTypes'
 
 function ProjectImagesInsitu ({
-    projectImac,
-    projectIpad,
-    projectIphone,
+  projectImac = null,
+  projectIpad = null,
+  projectIphone = null,
 }) {
-    const imac = projectImac.localFile && projectImac.localFile.childImageSharp.fluid
-    const ipad = projectIpad.localFile && projectIpad.localFile.childImageSharp.fluid
-    const iphone = projectIphone.localFile && projectIphone.localFile.childImageSharp.fluid
+  const imac = projectImac?.gatsbyImageData
+  const ipad = projectIpad?.gatsbyImageData
+  const iphone = projectIphone?.gatsbyImageData
 
-    const ipadImage = ipad && (
-        <Ipad>
-            <Image
-                fluid={ ipad }
-            />
-        </Ipad>
-    )
-    const iphoneImage = iphone && (
-        <Iphone>
-            <Image
-                fluid={ iphone }
-            />
-        </Iphone>
-    )
-    const imacImage = imac && (
-        <Imac>
-            <Image
-                fluid={ imac }
-            />
-        </Imac>
-    )
+  const ipadImage = ipad && (
+    <Ipad>
+      <GatsbyImage
+        image={ipad}
+      />
+    </Ipad>
+  )
+  const iphoneImage = iphone && (
+    <Iphone>
+      <GatsbyImage
+        image={iphone}
+      />
+    </Iphone>
+  )
+  const imacImage = imac && (
+    <Imac>
+      <GatsbyImage
+        image={imac}
+      />
+    </Imac>
+  )
 
-    return (
-        <Box
-            position="relative"
-            top={ -500 }
-            mb={ -500 }
-        >
-            <Container>
-                { imacImage }
-                <TouchDevices>
-                    { ipadImage }
-                    { iphoneImage }
-                </TouchDevices>
-            </Container>
-        </Box>
-    )
-}
-
-ProjectImagesInsitu.defaultProps = {
-    projectImac: null,
-    projectIpad: null,
-    projectIphone: null,
-}
-
-ProjectImagesInsitu.propTypes = {
-    projectImac: PropTypeGatsbyImage,
-    projectIpad: PropTypeGatsbyImage,
-    projectIphone: PropTypeGatsbyImage,
+  return (
+    <Box
+      position="relative"
+      top={-500}
+      mb={-500}
+    >
+      <Container>
+        {imacImage}
+        <TouchDevices>
+          {ipadImage}
+          {iphoneImage}
+        </TouchDevices>
+      </Container>
+    </Box>
+  )
 }
 
 export default ProjectImagesInsitu
