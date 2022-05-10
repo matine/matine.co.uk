@@ -1,25 +1,22 @@
 import React from 'react'
-import withLayout from '../components/hoc/withLayout'
+import PageLayout from '../components/partials/PageLayout'
 import { Box, Text, PageHeading } from '../components/ui'
 
 const NotFoundPage = () => {
   const pageName = 'not-found'
 
   return (
-    <Box
-      id={`${pageName}-page`}
-      pb={5}
-    >
-      <PageHeading>
-        404
-      </PageHeading>
-      <Box pb={5}>
-        <Text textAlign="center">
-          The page you were looking for could not be found!
-        </Text>
+    <PageLayout>
+      <Box id={`${pageName}-page`} pb={5}>
+        <PageHeading>404</PageHeading>
+        <Box pb={5}>
+          <Text textAlign="center">
+            The page you were looking for could not be found!
+          </Text>
+        </Box>
       </Box>
-    </Box>
+    </PageLayout>
   )
 }
 
-export default withLayout(NotFoundPage)
+export default NotFoundPage

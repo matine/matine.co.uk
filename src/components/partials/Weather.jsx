@@ -1,117 +1,83 @@
-import React, { PureComponent } from 'react'
+import React, { useState, useEffect } from 'react'
 import 'isomorphic-fetch'
 import { Flex, Box, TextXs, Span, Image, ThemeDefault } from '../ui'
 
-class Weather extends PureComponent {
-    /**
-     * Component constructor.
-     *
-     * @param {Object} props
-     * @return {void}
-     */
-    constructor (props) {
-        super(props)
+const Weather = () => {
+  const [weatherIconLoaded, setWeatherIconLoaded] = useState(false)
+  const [weatherResponse, setWeatherResponse] = useState(null)
 
-        this.state = {
-            weatherResponse: null,
-            weatherIconLoaded: false,
-        }
+  const fetchTheWeather = () => {
+    const apiPath = '//api.wunderground.com/api/'
+    const url = `${apiPath}${process.env.WEATHER_API_KEY}/geolookup/conditions/q/UK/London.json`
 
-        this.fetchTheWeather()
-    }
+    console.log(url)
 
-    /**
-     * Fetches the weather for London.
-     *
-     * @return {void}
-     */
-    fetchTheWeather () {
-        const apiPath = '//api.wunderground.com/api/'
-        const url = `${ apiPath }${ process.env.WEATHER_API_KEY }/geolookup/conditions/q/UK/London.json`
+    /* eslint-disable-next-line no-undef */
+    fetch(url, {
+      headers: {
+        'Content-Type': 'text/plain',
+      },
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        console.log('Success!')
+        setWeatherResponse(response)
+      })
+      .catch((err) => {
+        setWeatherResponse(null)
+        console.log('error: ', err)
+      })
+  }
 
-        /* eslint-disable-next-line no-undef */
-        fetch(url, {
-            headers: {
-                'Content-Type': 'text/plain',
-            },
-        })
-            .then(res => res.json())
-            .then(response => {
-                this.setState({
-                    weatherResponse: response,
-                })
-            })
-            .catch(err => {
-                this.setState({
-                    weatherResponse: null,
-                })
-                console.log('error: ', err)
-            })
-    }
+  useEffect(() => {
+    fetchTheWeather()
+  }, [])
 
-    /**
-     * Handles when the icon image loads.
-     *
-     * @return {void}
-     */
-    handleIconLoad () {
-        this.setState({
-            weatherIconLoaded: true,
-        })
-    }
+  if (!weatherResponse) {
+    return null
+  }
 
-    /**
-     * Renders the component.
-     *
-     * @return {ReactNode}
-     */
-    render () {
-        const {
-            weatherResponse,
-            weatherIconLoaded,
-        } = this.state
+  const location = weatherResponse.location.city
+  const { temp_c } = weatherResponse.current_observation
+  const { weather } = weatherResponse.current_observation
+  const weatherNoSpaces = weather.toLowerCase().replace(/\s/g, '')
+  const icon = `//icons.wxug.com/i/c/i/${weatherNoSpaces}.gif`
+  const londonToday = `${location} today is:`
+  const theWeather = `${weather} and ${temp_c} °C`
 
-        if (!weatherResponse) {
-            return null
-        }
+  const imageIcon = (
+    <Image
+      src={icon}
+      alt={weather}
+      display={`${weatherIconLoaded ? 'block' : 'none'}`}
+      onLoad={() => setWeatherIconLoaded(true)}
+      width="35px"
+    />
+  )
 
-        const location = weatherResponse['location']['city']
-        const temp_c = weatherResponse['current_observation']['temp_c']
-        const weather = weatherResponse['current_observation']['weather']
-        let weatherNoSpaces = weather.toLowerCase().replace(/\s/g, '')
-        const icon = `//icons.wxug.com/i/c/i/${ weatherNoSpaces }.gif`
-        const londonToday = `${ location } today is:`
-        const theWeather = `${ weather } and ${ temp_c } °C`
-
-        const imageIcon = (
-            <Image
-                src={ icon }
-                alt={ weather }
-                display={`${ weatherIconLoaded ? 'block' : 'none' }`}
-                onLoad={ () => this.handleIconLoad() }
-                width="35px"
-
-            />
-        )
-
-        return (
-            <ThemeDefault themeDisplays>
-                <div className="only-show-default">
-                    <Flex flexDirection="row" alignItems="center" minHeight={ 37 }>
-                        { imageIcon }
-                        <Box ml={ 2 } flex={ 1 }>
-                            <TextXs fontWeight="bold" fontStyle="italic">{ londonToday } { theWeather }</TextXs>
-                        </Box>
-                    </Flex>
-                </div>
-                <div className="only-show-inverted">
-                    <TextXs fontWeight="bold">
-                        <Span fontSize={ 26 }><span role="img" aria-label="Ghost">👻</span></Span>
-                    </TextXs>
-                </div>
-            </ThemeDefault>
-        )
-    }
+  return (
+    <ThemeDefault themeDisplays>
+      <div className="only-show-default">
+        <Flex flexDirection="row" alignItems="center" minHeight={37}>
+          {imageIcon}
+          <Box ml={2} flex={1}>
+            <TextXs fontWeight="bold" fontStyle="italic">
+              {londonToday} {theWeather}
+            </TextXs>
+          </Box>
+        </Flex>
+      </div>
+      <div className="only-show-inverted">
+        <TextXs fontWeight="bold">
+          <Span fontSize={26}>
+            <span role="img" aria-label="Ghost">
+              👻
+            </span>
+          </Span>
+        </TextXs>
+      </div>
+    </ThemeDefault>
+  )
 }
 
 export default Weather

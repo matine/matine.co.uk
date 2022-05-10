@@ -1,23 +1,35 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { useDispatch } from 'react-redux'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { Box, ProjectThumbnail, ThemeDefault, Col, Fixed, Flex, Heading } from '../../components/ui'
+import { useThemeSwitchContext } from '../../context/ThemeSwitchContext'
+import {
+  Box,
+  ProjectThumbnail,
+  ThemeDefault,
+  Col,
+  Fixed,
+  Flex,
+  Heading,
+} from '../ui'
 
 const ProjectThumbnails = ({ projectData }) => {
-  const dispatch = useDispatch()
   const projects = projectData.projects.edges
+
+  const {
+    setTheme,
+  } = useThemeSwitchContext()
 
   return (
     <>
       {projects.map(({ node: { uid, data } }) => (
         <Col
           key={uid}
-          width={[ 1, 1, 1, 1 / 3 ]}
+          width={[1, 1, 1, 1 / 3]}
+          maxWidth="700px"
+          onMouseOver={() => setTheme('inverted')}
+          onMouseOut={() => setTheme('default')}
         >
-          <ThemeDefault
-            themeProjectThumbnails
-          >
+          <ThemeDefault themeProjectThumbnails>
             <ProjectThumbnail className="project-thumbnail">
               <Link to={`/work/${uid}`}>
                 <Box
@@ -26,7 +38,10 @@ const ProjectThumbnails = ({ projectData }) => {
                   zIndex={1}
                 >
                   <GatsbyImage
+                    className="project-thumbnail__gatsby-image"
+                    objectFit="contain"
                     image={getImage(data.project_thumbnail.gatsbyImageData)}
+                    alt={`${data.project_title.text}-thumbnail-1`}
                   />
                   <Box
                     className="project-thumbnail__image2"
@@ -35,9 +50,12 @@ const ProjectThumbnails = ({ projectData }) => {
                     left={0}
                     width={1}
                   >
-                  <GatsbyImage
-                    image={getImage(data.project_thumbnail_2.gatsbyImageData)}
-                  />
+                    <GatsbyImage
+                      className="project-thumbnail__gatsby-image"
+                      objectFit="contain"
+                      image={getImage(data.project_thumbnail_2.gatsbyImageData)}
+                      alt={`${data.project_title.text}-thumbnail-2`}
+                    />
                   </Box>
                 </Box>
                 <Fixed
@@ -45,19 +63,9 @@ const ProjectThumbnails = ({ projectData }) => {
                   width={1}
                   height="100%"
                 >
-                  <Box
-                    width={1}
-                    position="absolute"
-                    bottom={0}
-                    left={0}
-                  >
-                    <Box
-                      width="100%"
-                      pt="22.66%"
-                    >
-                      <Fixed
-                        px={ 2 }
-                      >
+                  <Box width={1} position="absolute" bottom={0} left={0}>
+                    <Box width="100%" pt="22.66%">
+                      <Fixed px={2}>
                         <Flex
                           flex={1}
                           alignItems="center"
@@ -67,8 +75,8 @@ const ProjectThumbnails = ({ projectData }) => {
                           <Heading
                             caps
                             fontSize={[16, 18, 22, 16, 20]}
-                            mb={ 0 }
-                            pb={ 0 }
+                            mb={0}
+                            pb={0}
                             fontWeight="bold"
                             textAlign="center"
                           >

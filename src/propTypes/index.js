@@ -7,11 +7,11 @@ import PropTypeGatsbyProjectsData from './GatsbyProjectsData'
 import PropTypeGatsbyGlobalData from './GatsbyGlobalData'
 
 export {
-    PropTypeImage,
-    PropTypeGatsbyImage,
-    PropTypeGatsbyHtml,
-    PropTypeGatsbyText,
-    PropTypeGatsbyLink,
-    PropTypeGatsbyProjectsData,
-    PropTypeGatsbyGlobalData
+  PropTypeImage,
+  PropTypeGatsbyImage,
+  PropTypeGatsbyHtml,
+  PropTypeGatsbyText,
+  PropTypeGatsbyLink,
+  PropTypeGatsbyProjectsData,
+  PropTypeGatsbyGlobalData,
 }

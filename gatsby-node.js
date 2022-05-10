@@ -35,11 +35,5 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     resolve: {
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     },
-    plugins: [
-      new webpack.DefinePlugin({
-        'process.env': {
-          WEATHER_API_KEY: JSON.stringify(process.env.WEATHER_API_KEY)
-      } })
-    ],
   })
 }

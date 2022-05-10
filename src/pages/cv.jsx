@@ -1,7 +1,14 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import withLayout from '../components/hoc/withLayout'
-import { Box, Container, Contained, ButtonHover, SvgWrap, TextSm } from '../components/ui'
+import {
+  Box,
+  Container,
+  Contained,
+  ButtonHover,
+  SvgWrap,
+  TextSm,
+} from '../components/ui'
+import PageLayout from '../components/partials/PageLayout'
 import LogoInfoLockup from '../components/partials/LogoInfoLockup'
 import PrintIcon from '../components/ui/icons/PrintIcon'
 import MyIntro from '../components/partials/MyIntro'
@@ -40,64 +47,60 @@ const CVPage = ({ data }) => {
   const pageName = 'cv'
 
   return (
-    <Box
-      id={`${ pageName }-page`}
-      pb={5}
-    >
-      <Container>
-        <Contained maxWidth={4} pb={5}>
-          <Box pt={5} pb={4}>
-            <LogoInfoLockup
-              firstName={first_name}
-              surname={surname}
+    <PageLayout>
+      <Box id={`${pageName}-page`} pb={5}>
+        <Container>
+          <Contained maxWidth={4} pb={5}>
+            <Box pt={5} pb={4}>
+              <LogoInfoLockup firstName={first_name} surname={surname} />
+            </Box>
+            <MyIntro
+              meIntroTitle={me_intro_title}
+              meIntroText={me_intro_text}
+              sectionName={pageName}
             />
-          </Box>
-          <MyIntro
-            meIntroTitle={me_intro_title}
-            meIntroText={me_intro_text}
-            sectionName={pageName}
-          />
-          <MySkills
-            meSkillsTitle={me_skills_title}
-            meSkillsText={me_skills_text}
-            sectionName={pageName}
-          />
-          <MyEmployment
-            meEmploymentTitle={me_employment_title}
-            meEmployments={me_employments}
-            sectionName={pageName}
-          />
-          <MyEducation
-            meEducationTitle={me_education_title}
-            meEducations={me_educations}
-            sectionName={pageName}
-          />
-          <MyInterests
-            meInterestsTitle={me_interests_title}
-            meInterestsText={me_interests_text}
-            sectionName={pageName}
-          />
-          <div>
-            <ButtonHover
-              hover="big"
-              onClick={() => printPage()}
-              className="hide-for-print"
-            >
-              <SvgWrap width={30}>
-                <PrintIcon />
-              </SvgWrap>
-              <Box className="show-on-hover" position="absolute" mt="50px">
-                <TextSm fontWeight="bold">Prints best in Chrome!</TextSm>
-              </Box>
-            </ButtonHover>
-          </div>
-        </Contained>
-      </Container>
-    </Box>
+            <MySkills
+              meSkillsTitle={me_skills_title}
+              meSkillsText={me_skills_text}
+              sectionName={pageName}
+            />
+            <MyEmployment
+              meEmploymentTitle={me_employment_title}
+              meEmployments={me_employments}
+              sectionName={pageName}
+            />
+            <MyEducation
+              meEducationTitle={me_education_title}
+              meEducations={me_educations}
+              sectionName={pageName}
+            />
+            <MyInterests
+              meInterestsTitle={me_interests_title}
+              meInterestsText={me_interests_text}
+              sectionName={pageName}
+            />
+            <div>
+              <ButtonHover
+                hover="big"
+                onClick={() => printPage()}
+                className="hide-for-print"
+              >
+                <SvgWrap width={30}>
+                  <PrintIcon />
+                </SvgWrap>
+                <Box className="show-on-hover" position="absolute" mt="50px">
+                  <TextSm fontWeight="bold">Prints best in Chrome!</TextSm>
+                </Box>
+              </ButtonHover>
+            </div>
+          </Contained>
+        </Container>
+      </Box>
+    </PageLayout>
   )
 }
 
-export default withLayout(CVPage)
+export default CVPage
 
 export const pageQuery = graphql`
   query CvQuery {
@@ -125,7 +128,7 @@ export const pageQuery = graphql`
               html
             }
             me_employment_title {
-                text
+              text
             }
             me_education_title {
               text

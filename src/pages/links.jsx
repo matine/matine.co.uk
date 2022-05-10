@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import withLayout from '../components/hoc/withLayout'
 import { Span, Container, Grid, PageHeading } from '../components/ui'
+import PageLayout from '../components/partials/PageLayout'
 import Links from '../components/partials/Links'
 
 const LinksPage = ({ data }) => {
@@ -14,25 +14,22 @@ const LinksPage = ({ data }) => {
   const pageName = 'links'
 
   return (
-    <Container
-      id={`${pageName}-page`}
-      pb={5}
-    >
-      <PageHeading>
-        {globalContent.links_title.text}
-        <br/>
-        <Span fontWeight="100">
-          {globalContent.links_subtitle.text}
-        </Span>
-      </PageHeading>
-      <Grid>
-        <Links data={globalContent.body} />
-      </Grid>
-    </Container>
+    <PageLayout>
+      <Container id={`${pageName}-page`} pb={5}>
+        <PageHeading>
+          {globalContent.links_title.text}
+          <br />
+          <Span fontWeight="100">{globalContent.links_subtitle.text}</Span>
+        </PageHeading>
+        <Grid>
+          <Links data={globalContent.body} />
+        </Grid>
+      </Container>
+    </PageLayout>
   )
 }
 
-export default withLayout(LinksPage)
+export default LinksPage
 
 export const pageQuery = graphql`
   query LinksQuery {

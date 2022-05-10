@@ -1,6 +1,5 @@
 import React from 'react'
-import { Provider } from 'react-redux'
-import store from './src/state/store'
+import ThemeSwitchProvider from './src/components/providers/ThemeSwitchProvider'
 
 // eslint-disable-next-line react/display-name,react/prop-types
-export default ({ element }) => <Provider store={ store }>{ element }</Provider>
+export default ({ element }) => <ThemeSwitchProvider>{ element }</ThemeSwitchProvider>

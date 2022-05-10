@@ -8,6 +8,7 @@
     "url": "https://github.com/matine/matine.co.uk"
   },
   "dependencies": {
+    "@fontsource/noto-sans": "^4.5.9",
     "@prismicio/react": "^2.3.0",
     "es6-promise": "^4.2.8",
     "gatsby": "^4.13.0",
@@ -38,7 +39,6 @@
     "react-scroll": "^1.8.7",
     "react-scroll-parallax": "^3.1.0",
     "react-slick": "^0.29.0",
-    "react-transition-group": "^4.4.2",
     "redux": "^4.2.0",
     "slash": "^4.0.0",
     "slick-carousel": "^1.8.1",
@@ -63,8 +63,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "lint": "eslint . --ext .js,.jsx --ignore-path .gitignore",
-    "lint:fix": "eslint . --ext .js,.jsx --fix --ignore-path .gitignore"
+    "lint": "eslint --fix --ext .js,.jsx, src",
+    "format": "prettier --write .js,.jsx, src"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
@@ -73,9 +73,11 @@
     "dotenv": "^10.0.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-standard": "^5.0.0",
