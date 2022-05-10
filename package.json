@@ -7,6 +7,9 @@
     "type": "git",
     "url": "https://github.com/matine/matine.co.uk"
   },
+  "engines": {
+    "npm": "17.6.0"
+  },
   "dependencies": {
     "@fontsource/noto-sans": "^4.5.9",
     "@prismicio/react": "^2.3.0",
