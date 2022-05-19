@@ -55,7 +55,7 @@ function ProjectTemplate({ data }) {
             {project_banner && (
               <Box height={[260, 260, 260, 330]} mt={[-60, -60, -60, -30]}>
                 <GatsbyImage
-                  style={{ 'width': '100%' }}
+                  style={{ 'width': '100%', 'height' : '100%' }}
                   image={projectBanner}
                   alt="banner"
                   objectFit="cover"

@@ -54,31 +54,31 @@ const ProjectTextContent = ({
   return (
     <Container>
       <TextWrap textAlign="center">
-        <ThemeDefault
-          themeBg
-          position="relative"
-          top={[-33, -33, -37, -50]}
-          display="inline-block"
-        >
-          <PageHeading py={2} px={3} mb={0} display="inline-block">
-            {title}
-          </PageHeading>
-        </ThemeDefault>
-        <Contained maxWidth={0} mt={3}>
-          <TextWrapMd textSpacing mt={[-33, -33, -37, -50]} linkStyle="default">
-            <Box mt={4} mb={3}>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: mainText,
-                }}
-              />
-            </Box>
-            {role}
-            {techStack}
-            {visitWebsite}
-          </TextWrapMd>
-        </Contained>
+      <ThemeDefault
+        themeBg
+        position="relative"
+        top={[-33, -33, -37, -50]}
+        display="inline-block"
+      >
+        <PageHeading py={2} px={3} mb={0} display="inline-block">
+          {title}
+        </PageHeading>
+      </ThemeDefault>
       </TextWrap>
+      <Contained maxWidth={1} mt={3}>
+        <TextWrapMd textSpacing mt={[-33, -33, -37, -50]} linkStyle="default">
+          <Box mt={4} mb={3}>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: mainText,
+              }}
+            />
+          </Box>
+          {role}
+          {techStack}
+          {visitWebsite}
+        </TextWrapMd>
+      </Contained>
     </Container>
   )
 }

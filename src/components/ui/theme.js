@@ -7,7 +7,7 @@ export const colors = {
   primaryDark: '#f7e366',
   text: '#333',
   textLight: '#333',
-  highlight: '#ff2c7b',
+  highlight: '#ff7e3e',
   keyline: '#ccc',
   gray: ['#333', '#666', '#999', '#ccc', '#eee', '#f6f6f6'],
   transparent: 'rgba(0,0,0,0)',
@@ -58,7 +58,7 @@ export const widths = [
 ]
 
 export const containerWidths = [
-  400, 540, 600, 640, 700, 800, 960, 1100, 1300, 1500,
+  500, 540, 600, 640, 700, 800, 960, 1100, 1300, 1500,
 ]
 
 export const themeDefault = {
