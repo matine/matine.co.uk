@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react'
 import { graphql } from 'gatsby'
-import { GatsbyImage } from 'gatsby-plugin-image'
 import Helmet from 'react-helmet'
-import { ParallaxProvider, Parallax } from 'react-scroll-parallax'
+import { ParallaxProvider } from 'react-scroll-parallax'
 import config from '../../config/website'
 import { useThemeSwitchContext } from '../context/ThemeSwitchContext'
 import ProjectTextContent from '../components/partials/ProjectTextContent'
@@ -11,7 +10,7 @@ import ProjectScreenshots from '../components/partials/ProjectScreenshots'
 import ProjectPrevNext from '../components/partials/ProjectPrevNext'
 import SEO from '../components/partials/SEO'
 import PageLayout from '../components/partials/PageLayout'
-import { ThemeDefault, Box, BannerOverlay } from '../components/ui'
+import { ThemeDefault, Box, PageHeading } from '../components/ui'
 import { colors } from '../components/ui/theme'
 
 function ProjectTemplate({ data }) {
@@ -34,12 +33,10 @@ function ProjectTemplate({ data }) {
     project_screenshots,
   } = projectContent
 
-  const projectBanner = project_banner?.gatsbyImageData
+  const title = project_title && project_title.text
   const pageName = 'project'
 
-  const {
-    setTheme,
-  } = useThemeSwitchContext()
+  const { setTheme } = useThemeSwitchContext()
 
   useEffect(() => {
     setTheme('default')
@@ -51,53 +48,54 @@ function ProjectTemplate({ data }) {
         <Helmet title={`${project_title} | ${config.siteTitle}`} />
         <SEO projectNode={projectNode} projectPath={projectUid} projectSEO />
         <div id={`${pageName}-page`}>
-          <Parallax speed={-10}>
-            {project_banner && (
-              <Box height={[260, 260, 260, 330]} mt={[-60, -60, -60, -30]}>
-                <GatsbyImage
-                  style={{ 'width': '100%', 'height' : '100%' }}
-                  image={projectBanner}
-                  alt="banner"
-                  objectFit="cover"
-                />
-              </Box>
-            )}
-          </Parallax>
           <ThemeDefault themeBg position="relative" zIndex={2} height="100%">
-            <BannerOverlay />
-            <ProjectTextContent
-              projectTitle={project_title}
-              projectMainText={project_main_text}
-              projectRole={project_role}
-              projectTechStack={project_tech_stack}
-              projectVisitWebsiteLink={project_visit_website_link}
-              projectType={project_type}
-            />
-            <Box
-              mt={500}
-              bg={[
-                colors.transparent,
-                colors.transparent,
-                colors.transparent,
-                colors.gray[3],
-              ]}
-            >
+            <Box>
+              <PageHeading mb={-200} py={6}>
+                {title}
+              </PageHeading>
               <ProjectImagesInsitu
                 projectImac={project_imac}
                 projectIpad={project_ipad}
                 projectIphone={project_iphone}
                 projectTitle={project_title}
               />
-              <ProjectScreenshots
-                projectScreenshots={project_screenshots}
-                projectUid={projectUid}
+            </Box>
+            <Box
+              pt={120}
+              bg={[
+                colors.transparent,
+                colors.transparent,
+                colors.transparent,
+                colors.gray[5],
+              ]}
+            >
+              <ProjectTextContent
+                projectMainText={project_main_text}
+                projectRole={project_role}
+                projectTechStack={project_tech_stack}
+                projectVisitWebsiteLink={project_visit_website_link}
                 projectType={project_type}
-                projectTitle={project_title}
               />
-              <ProjectPrevNext
-                projectsContent={allProjectsContent}
-                currentProjectUid={projectUid}
-              />
+              <Box
+                bg={[
+                  colors.transparent,
+                  colors.transparent,
+                  colors.transparent,
+                  colors.gray[3],
+                ]}
+                pt={20}
+              >
+                <ProjectScreenshots
+                  projectScreenshots={project_screenshots}
+                  projectUid={projectUid}
+                  projectType={project_type}
+                  projectTitle={project_title}
+                />
+                <ProjectPrevNext
+                  projectsContent={allProjectsContent}
+                  currentProjectUid={projectUid}
+                />
+              </Box>
             </Box>
           </ThemeDefault>
         </div>

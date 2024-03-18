@@ -6,7 +6,6 @@ import {
   Span,
   Box,
   Contained,
-  PageHeading,
   TextWrapMd,
   TextWrap,
 } from '../ui'
@@ -16,15 +15,13 @@ import {
   PropTypeGatsbyLink,
 } from '../../propTypes'
 
-const ProjectTextContent = ({
-  projectTitle,
+function ProjectTextContent({
   projectMainText,
   projectRole,
   projectTechStack,
   projectVisitWebsiteLink,
   projectType,
-}) => {
-  const title = projectTitle && projectTitle.text
+}) {
   const mainText = projectMainText && projectMainText.html
   const roleContent = projectRole && projectRole.text
   const techStackContent = projectTechStack && projectTechStack.text
@@ -53,18 +50,15 @@ const ProjectTextContent = ({
 
   return (
     <Container>
-      <TextWrap textAlign="center" mb={[-33, -33, -37, -42]}>
-        <ThemeDefault
-          themeBg
-          position="relative"
-          top={[-33, -33, -37, -42]}
-          display="inline-block"
-        >
-          <Contained maxWidth={1} mt={3} px={4}>
-            <PageHeading py={1} mb={0} display="inline-block">
-              {title}
-            </PageHeading>
-            <TextWrapMd textSpacing mt={-3} textAlign="left" linkStyle="default">
+      <TextWrap textAlign="center" mb={100}>
+        <ThemeDefault position="relative" mt={80} display="inline-block">
+          <Contained maxWidth={5} mt={3} px={4}>
+            <TextWrapMd
+              textSpacing
+              mt={-3}
+              textAlign="left"
+              linkStyle="default"
+            >
               <Box mt={4} mb={3}>
                 <div
                   dangerouslySetInnerHTML={{
@@ -72,6 +66,8 @@ const ProjectTextContent = ({
                   }}
                 />
               </Box>
+            </TextWrapMd>
+            <TextWrapMd textAlign="center" linkStyle="default" textSpacing>
               {role}
               {techStack}
               {visitWebsite}

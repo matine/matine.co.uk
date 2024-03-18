@@ -2,12 +2,12 @@ import React from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Container, Box, TouchDevices, Imac, Ipad, Iphone } from '../ui'
 
-const ProjectImagesInsitu = ({
+function ProjectImagesInsitu({
   projectImac = null,
   projectIpad = null,
   projectIphone = null,
   projectTitle = '',
-}) => {
+}) {
   const imac = projectImac?.gatsbyImageData
   const ipad = projectIpad?.gatsbyImageData
   const iphone = projectIphone?.gatsbyImageData
@@ -29,7 +29,7 @@ const ProjectImagesInsitu = ({
   )
 
   return (
-    <Box position="relative" top={-500} mb={-500}>
+    <Box position="relative" bottom={-130}>
       <Container>
         {imacImage}
         <TouchDevices>
