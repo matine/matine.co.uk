@@ -5,7 +5,7 @@ import LogoLockup from '../components/partials/LogoLockup'
 import ProjectThumbnails from '../components/partials/ProjectThumbnails'
 import { Container, Grid, Box, Text } from '../components/ui'
 
-const IndexPage = ({ data }) => {
+function IndexPage({ data }) {
   const globalContent = data.global.edges[0].node.data
 
   if (!globalContent) {
@@ -15,18 +15,13 @@ const IndexPage = ({ data }) => {
   const { first_name, surname } = globalContent
 
   return (
-    <PageLayout>
+    <PageLayout pageName="home">
       <div id="projects-page">
         <Container pb={5} maxWidth={1500}>
-          <Box py={[5, 5, 6]} mt={5}>
+          <Box py={[5, 5, 6]}>
             <LogoLockup firstName={first_name} surname={surname} />
-            <Text
-              caps
-              fontWeight="bold"
-              textAlign="center"
-              fontSize={[16, 16, 26]}
-            >
-              Frontend developer
+            <Text fontWeight="bold" textAlign="center" fontSize={[16, 20, 24]}>
+              Frontend Engineer
             </Text>
           </Box>
           <Grid gutter={1}>
@@ -68,14 +63,10 @@ export const pageQuery = graphql`
               text
             }
             project_thumbnail {
-              gatsbyImageData(
-                placeholder: BLURRED
-              )
+              gatsbyImageData(placeholder: BLURRED)
             }
             project_thumbnail_2 {
-              gatsbyImageData(
-                placeholder: BLURRED
-              )
+              gatsbyImageData(placeholder: BLURRED)
             }
           }
         }

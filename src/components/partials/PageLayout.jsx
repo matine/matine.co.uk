@@ -1,6 +1,6 @@
 import React from 'react'
-import { ThemeProvider } from 'styled-components'
-import { createGlobalStyle } from 'styled-components'
+import PropTypes from 'prop-types'
+import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import { useThemeSwitchContext } from '../../context/ThemeSwitchContext'
 import { ThemeDefault, ThemeInverted, Box } from '../ui'
 import globalStyles from '../ui/globalStyles'
@@ -8,17 +8,15 @@ import printStyles from '../ui/printStyles'
 import SEO from './SEO'
 import Header from './Header'
 import Footer from './Footer'
-import '@fontsource/noto-sans'
+import '@fontsource/raleway'
 
 const GlobalStyle = createGlobalStyle`
   ${globalStyles}
   ${printStyles}
 `
 
-const PageLayout = ({children}) => {
-  const {
-    theme,
-  } = useThemeSwitchContext()
+function PageLayout({ children, pageName }) {
+  const { theme } = useThemeSwitchContext()
 
   return (
     <>
@@ -27,18 +25,9 @@ const PageLayout = ({children}) => {
       <ThemeProvider theme={{ mode: theme }}>
         <ThemeInverted themeBg>
           <ThemeDefault themeColor themeSvg height="100%">
-            <Header />
-            <Box
-              zIndex={1}
-              position="relative"
-              pt={[25, 25, 25, 40]}
-              className="no-margin-for-print"
-            >
-              <ThemeDefault
-                themeBg
-                themeBorder
-                className="no-border-for-print"
-              >
+            <Header pageName={pageName} />
+            <Box zIndex={1} position="relative" className="no-margin-for-print">
+              <ThemeDefault themeBg themeBorder className="no-border-for-print">
                 {children}
               </ThemeDefault>
             </Box>
@@ -48,6 +37,11 @@ const PageLayout = ({children}) => {
       </ThemeProvider>
     </>
   )
+}
+
+PageLayout.propTypes = {
+  pageName: PropTypes.string,
+  children: PropTypes.shape({}),
 }
 
 export default PageLayout

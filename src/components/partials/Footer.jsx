@@ -15,7 +15,7 @@ import {
 
 const scroll = Scroll.animateScroll
 
-const Footer = ({ data }) => {
+function Footer({ data }) {
   const globalContent = data.global.edges[0].node.data
   const footerText = globalContent.footer_text
 
@@ -34,10 +34,7 @@ const Footer = ({ data }) => {
         <TextWrapMd textAlign="center" linkStyle="default">
           <Box mb={4}>
             <ButtonHover onClick={scroll.scrollToTop} hover="arrow">
-              <Text fontSize={28} className="arrow" pb={0} mb="0px">
-                &uarr;
-              </Text>
-              <TextMd fontWeight="bold">Up</TextMd>
+              <TextMd fontWeight="bold">Top</TextMd>
             </ButtonHover>
           </Box>
           {footerText && (

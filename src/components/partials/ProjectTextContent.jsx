@@ -67,7 +67,7 @@ function ProjectTextContent({
                 />
               </Box>
             </TextWrapMd>
-            <TextWrapMd textAlign="center" linkStyle="default" textSpacing>
+            <TextWrapMd textAlign="left" linkStyle="default" textSpacing>
               {role}
               {techStack}
               {visitWebsite}

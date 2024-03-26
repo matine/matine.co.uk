@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import 'isomorphic-fetch'
-import { Flex, Box, TextXs, Span, Image, ThemeDefault } from '../ui'
+import { Box, TextXs, Span, Image, ThemeDefault } from '../ui'
 
-const Weather = () => {
+function Weather() {
   const [weatherIconLoaded, setWeatherIconLoaded] = useState(false)
   const [weatherResponse, setWeatherResponse] = useState(null)
 
@@ -58,14 +58,19 @@ const Weather = () => {
   return (
     <ThemeDefault themeDisplays>
       <div className="only-show-default">
-        <Flex flexDirection="row" alignItems="center" minHeight={37}>
+        <Box
+          display="flex"
+          flexDirection="row"
+          alignItems="center"
+          minHeight={37}
+        >
           {imageIcon}
           <Box ml={2} flex={1}>
             <TextXs fontWeight="bold" fontStyle="italic">
               {londonToday} {theWeather}
             </TextXs>
           </Box>
-        </Flex>
+        </Box>
       </div>
       <div className="only-show-inverted">
         <TextXs fontWeight="bold">

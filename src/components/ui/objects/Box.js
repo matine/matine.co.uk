@@ -2,39 +2,27 @@ import styled from 'styled-components'
 import {
   color,
   space,
-  maxWidth,
-  minHeight,
-  display,
   position,
-  zIndex,
-  top,
-  right,
-  bottom,
-  left,
-  width,
-  flex,
-  justifySelf,
-  alignSelf,
-  height,
+  flexbox,
+  gridGap,
+  border,
+  shadow,
+  textAlign,
+  layout,
+  grid,
 } from 'styled-system'
 
 const Box = styled.div`
   ${color}
   ${space}
-    ${width}
-    ${maxWidth}
-    ${minHeight}
-    ${height}
-    ${display}
-    ${position}
-    ${zIndex}
-    ${top}
-    ${right}
-    ${bottom}
-    ${left}
-    ${flex}
-    ${alignSelf}
-    ${justifySelf}
+  ${border}
+  ${flexbox}
+  ${position}
+  ${shadow}
+  ${layout}
+  ${textAlign}
+  ${grid}
+  ${gridGap}
 `
 
 export default Box

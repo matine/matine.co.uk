@@ -17,7 +17,7 @@ import MyEmployment from '../components/partials/MyEmployment'
 import MyEducation from '../components/partials/MyEducation'
 import MyInterests from '../components/partials/MyInterests'
 
-const CVPage = ({ data }) => {
+function CVPage({ data }) {
   const globalContent = data.global.edges[0].node.data
 
   const printPage = () => {
@@ -51,7 +51,7 @@ const CVPage = ({ data }) => {
       <Box id={`${pageName}-page`} pb={5}>
         <Container>
           <Contained maxWidth={4} pb={5}>
-            <Box pt={5} pb={4}>
+            <Box pt={6} pb={4}>
               <LogoInfoLockup firstName={first_name} surname={surname} />
             </Box>
             <MyIntro

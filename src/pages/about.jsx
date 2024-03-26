@@ -7,7 +7,7 @@ import MyIntro from '../components/partials/MyIntro'
 import MyInfo from '../components/partials/MyInfo'
 import MySkills from '../components/partials/MySkills'
 
-const AboutPage = ({ data }) => {
+function AboutPage({ data }) {
   const globalContent = data.global.edges[0].node.data
 
   if (!globalContent) {
@@ -26,7 +26,7 @@ const AboutPage = ({ data }) => {
       <Box id={`${pageName}-page`} pb={5}>
         <Container>
           <Contained maxWidth={3}>
-            <Box mt={[25, 15, 10]} mb={5}>
+            <Box mt={66} mb={5}>
               <GatsbyImage image={meImage} alt="photo-of-matine" />
             </Box>
             <MyIntro

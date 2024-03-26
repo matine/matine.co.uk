@@ -39,7 +39,7 @@ export const shadows = [
 ]
 
 export const fonts = {
-  base: '"Noto Sans", sans-serif',
+  base: 'Raleway, sans-serif',
 }
 
 export const textStyles = {

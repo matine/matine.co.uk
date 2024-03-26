@@ -4,12 +4,11 @@ import LinkedInIcon from './icons/LinkedInIcon'
 import PinterestIcon from './icons/PinterestIcon'
 import EmailIcon from './icons/EmailIcon'
 import TwitterIcon from './icons/TwitterIcon'
-import { Grid, Col } from './objects/Grid'
+import { Grid } from './objects/Grid'
 import Box from './objects/Box'
 import Container from './objects/Container'
 import Contained from './objects/Contained'
 import Fixed from './objects/Fixed'
-import Flex from './objects/Flex'
 import Text, { TextXs, TextSm, TextMd, TextLg, TextXl } from './typography/Text'
 import Heading, {
   HeadingXs,
@@ -64,7 +63,6 @@ export {
   Container,
   Contained,
   Fixed,
-  Flex,
   Text,
   TextXs,
   TextSm,
@@ -92,7 +90,6 @@ export {
   ThemeInverted,
   HeadingDecorated,
   Grid,
-  Col,
   List,
   SvgWrap,
   Me,

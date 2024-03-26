@@ -7,7 +7,7 @@ const globalStyles = css`
     font-feature-settings: 'kern' 1, 'liga' 1, 'pnum' 1;
     text-shadow: 'white' 0 0 1px;
     text-size-adjust: 100%;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
     background-color: ${colors.text};
     line-height: 1.5;
     margin: 0;

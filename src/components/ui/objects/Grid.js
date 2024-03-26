@@ -40,8 +40,3 @@ export const Grid = styled(Box)`
 Grid.defaultProps = {
   gutter: 3,
 }
-
-export const Col = styled(Box)`
-  ${width}
-  ${maxWidth}
-`

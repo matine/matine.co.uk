@@ -2,27 +2,17 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { useThemeSwitchContext } from '../../context/ThemeSwitchContext'
-import {
-  Box,
-  ProjectThumbnail,
-  ThemeDefault,
-  Col,
-  Fixed,
-  Flex,
-  Heading,
-} from '../ui'
+import { Box, ProjectThumbnail, ThemeDefault, Fixed, Heading } from '../ui'
 
-const ProjectThumbnails = ({ projectData }) => {
+function ProjectThumbnails({ projectData }) {
   const projects = projectData.projects.edges
 
-  const {
-    setTheme,
-  } = useThemeSwitchContext()
+  const { setTheme } = useThemeSwitchContext()
 
   return (
     <>
       {projects.map(({ node: { uid, data } }) => (
-        <Col
+        <Box
           key={uid}
           width={[1, 1, 1, 1 / 3]}
           maxWidth="700px"
@@ -66,14 +56,14 @@ const ProjectThumbnails = ({ projectData }) => {
                   <Box width={1} position="absolute" bottom={0} left={0}>
                     <Box width="100%" pt="22.66%">
                       <Fixed px={2}>
-                        <Flex
+                        <Box
+                          display="flex"
                           flex={1}
                           alignItems="center"
                           justifyContent="center"
                           height="100%"
                         >
                           <Heading
-                            caps
                             fontSize={[16, 18, 22, 16, 20]}
                             mb={0}
                             pb={0}
@@ -82,7 +72,7 @@ const ProjectThumbnails = ({ projectData }) => {
                           >
                             {data.project_title.text}
                           </Heading>
-                        </Flex>
+                        </Box>
                       </Fixed>
                     </Box>
                   </Box>
@@ -90,7 +80,7 @@ const ProjectThumbnails = ({ projectData }) => {
               </Link>
             </ProjectThumbnail>
           </ThemeDefault>
-        </Col>
+        </Box>
       ))}
     </>
   )

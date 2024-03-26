@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import { Box } from '../index'
-import { breakpoints } from '../theme'
+import { breakpoints, colors } from '../theme'
 
 export const Ipad = styled(Box)`
   width: 40%;
@@ -49,37 +49,45 @@ export const TouchDevices = styled.div`
 
 export const ProjectsNav = styled.div`
   position: fixed;
-  top: 240px;
+  top: 50%;
   z-index: 0;
+  text-transform: uppercase;
+  fontsize: 14px;
+  padding: 0 5px;
 
-  @media (min-width: ${breakpoints[2]}) {
-    top: 318px;
-    z-index: 1;
+  &:hover {
+    background-color: ${colors.primary};
+
+    a {
+      color: inherit;
+    }
   }
 
   @media (min-width: ${breakpoints[2]}) {
-    top: 400px;
+    z-index: 1;
   }
 
   ${(props) =>
     props.direction === 'next' &&
     css`
-      right: 18px;
+      right: -12px;
       text-align: left;
+      transform: rotate(90deg);
 
-      @media (min-width: ${breakpoints[3]}) {
-        right: 40px;
+      @media (min-width: ${breakpoints[2]}) {
+        right: 0;
       }
     `}
 
   ${(props) =>
     props.direction === 'prev' &&
     css`
-      left: 18px;
+      left: -12px;
       text-align: right;
+      transform: rotate(-90deg);
 
-      @media (min-width: ${breakpoints[3]}) {
-        left: 40px;
+      @media (min-width: ${breakpoints[2]}) {
+        left: 0;
       }
     `}
 `

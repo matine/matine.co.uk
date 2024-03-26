@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import { Link } from 'gatsby'
-import { TextWrap, ProjectsNav } from '../ui'
+import { TextWrap, ProjectsNav, TextMd } from '../ui'
 
-const ProjectPrevNext = ({ projectsContent, currentProjectUid }) => {
+function ProjectPrevNext({ projectsContent, currentProjectUid }) {
   const numberOfProjects = projectsContent.length
   const currentProjectPos = projectsContent
     .map((project) => project.node.uid)
@@ -51,10 +51,18 @@ const ProjectPrevNext = ({ projectsContent, currentProjectUid }) => {
   return (
     <TextWrap fontSize={[26, 26, 40]}>
       <ProjectsNav direction="prev">
-        {prevProjectDetails && renderProjectLink(prevProjectDetails, '←')}
+        {prevProjectDetails && (
+          <TextMd>
+            {renderProjectLink(prevProjectDetails, 'Prev project')}
+          </TextMd>
+        )}
       </ProjectsNav>
       <ProjectsNav direction="next">
-        {nextProjectDetails && renderProjectLink(nextProjectDetails, '→')}
+        {nextProjectDetails && (
+          <TextMd>
+            {renderProjectLink(nextProjectDetails, 'Next project')}
+          </TextMd>
+        )}
       </ProjectsNav>
     </TextWrap>
   )

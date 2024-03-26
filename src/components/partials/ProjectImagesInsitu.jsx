@@ -29,7 +29,7 @@ function ProjectImagesInsitu({
   )
 
   return (
-    <Box position="relative" bottom={-130}>
+    <Box position="relative" bottom={[0, 0, -130]}>
       <Container>
         {imacImage}
         <TouchDevices>

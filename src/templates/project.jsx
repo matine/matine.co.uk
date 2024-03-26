@@ -50,7 +50,11 @@ function ProjectTemplate({ data }) {
         <div id={`${pageName}-page`}>
           <ThemeDefault themeBg position="relative" zIndex={2} height="100%">
             <Box>
-              <PageHeading mb={-200} py={6}>
+              <PageHeading
+                mb={[0, 0, -200]}
+                pt={[120, 120, 200]}
+                pb={[4, 4, 3]}
+              >
                 {title}
               </PageHeading>
               <ProjectImagesInsitu
@@ -61,7 +65,7 @@ function ProjectTemplate({ data }) {
               />
             </Box>
             <Box
-              pt={120}
+              pt={[0, 0, 120]}
               bg={[
                 colors.transparent,
                 colors.transparent,

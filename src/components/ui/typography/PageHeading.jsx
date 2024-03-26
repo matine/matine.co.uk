@@ -18,9 +18,7 @@ const PageHeading = styled.h1`
 
 PageHeading.defaultProps = {
   fontSize: [26, 26, 30, 40],
-  caps: true,
   textAlign: 'center',
-  py: [5, 5, 6],
   lineHeight: 1,
 }
 

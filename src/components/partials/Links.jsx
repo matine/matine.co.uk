@@ -1,5 +1,5 @@
 import React from 'react'
-import { TextXs, TextWrapXs, HeadingDecorated, Col, List } from '../ui'
+import { TextXs, TextWrapXs, HeadingDecorated, Box, List } from '../ui'
 
 const Links = ({ data }) => {
   const sliceContent = data.map((slice, sliceIndex) => {
@@ -28,10 +28,10 @@ const Links = ({ data }) => {
       ))
 
       return (
-        <Col key={sliceIndex} width={[1, 1, 1 / 2, 1 / 4]}>
+        <Box key={sliceIndex} width={[1, 1, 1 / 2, 1 / 4]}>
           <HeadingDecorated>{listOfLinksTitle}</HeadingDecorated>
           <List listStyle="bordered">{linkContent}</List>
-        </Col>
+        </Box>
       )
     }
     return null
