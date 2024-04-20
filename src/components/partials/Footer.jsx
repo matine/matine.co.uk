@@ -32,11 +32,11 @@ function Footer({ data }) {
     >
       <Container>
         <TextWrapMd textAlign="center" linkStyle="default">
-          <Box mb={4}>
+          {/* <Box mb={4}>
             <ButtonHover onClick={scroll.scrollToTop} hover="arrow">
               <TextMd fontWeight="bold">Top</TextMd>
             </ButtonHover>
-          </Box>
+          </Box> */}
           {footerText && (
             <TextWrap textSpacing>
               <Box mb={4}>

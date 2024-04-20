@@ -26,8 +26,16 @@ function AboutPage({ data }) {
       <Box id={`${pageName}-page`} pb={5}>
         <Container>
           <Contained maxWidth={3}>
-            <Box mt={66} mb={5}>
-              <GatsbyImage image={meImage} alt="photo-of-matine" />
+            <Box display="flex" justifyContent="center">
+              <Box
+                maxWidth="310px"
+                mt={96}
+                mb={5}
+                borderRadius="50%"
+                overflow="hidden"
+              >
+                <GatsbyImage image={meImage} alt="photo-of-matine" />
+              </Box>
             </Box>
             <MyIntro
               meIntroTitle={me_intro_title}
