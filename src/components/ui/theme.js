@@ -7,7 +7,7 @@ export const colors = {
   primaryDark: '#f7e366',
   text: '#333',
   textLight: '#333',
-  highlight: '#ff7e3e',
+  highlight: '#ff5b67',
   keyline: '#ccc',
   gray: ['#333', '#666', '#999', '#ccc', '#eee', '#f6f6f6'],
   transparent: 'rgba(0,0,0,0)',

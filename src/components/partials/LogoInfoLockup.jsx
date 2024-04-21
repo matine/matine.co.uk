@@ -13,7 +13,7 @@ function LogoInfoLockup({ firstName, surname }) {
       </Heading>
       <TextMd pb={1}>
         <Span fontWeight="bold" display={['block', 'inline-block']}>
-          Frontend Engineer
+          Senior Frontend Engineer
         </Span>
         <Span display={['none', 'inline-block']}>&nbsp;|&nbsp;</Span>
         <Span display={['block', 'inline-block']}>

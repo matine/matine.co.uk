@@ -3,7 +3,7 @@ import React from 'react'
 import Slider from 'react-slick'
 import { Contained } from '../ui'
 
-const Carousel = ({ items }) => {
+function Carousel({ items }) {
   const settings = {
     arrows: false,
     dots: true,

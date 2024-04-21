@@ -25,7 +25,7 @@ function AboutPage({ data }) {
     <PageLayout>
       <Box id={`${pageName}-page`} pb={5}>
         <Container>
-          <Contained maxWidth={3}>
+          <Contained maxWidth="560px" textAlign="center">
             <Box display="flex" justifyContent="center">
               <Box
                 maxWidth="310px"
@@ -38,11 +38,13 @@ function AboutPage({ data }) {
               </Box>
             </Box>
             <MyIntro
+              isCentered
               meIntroTitle={me_intro_title}
               meIntroText={me_intro_text}
               sectionName={pageName}
             />
             <MySkills
+              isCentered
               meSkillsTitle={me_skills_title}
               meSkillsText={me_skills_text}
               sectionName={pageName}

@@ -11,7 +11,8 @@ export const HeadingDecorated = styled(HeadingLg)`
     display: block;
     position: absolute;
     bottom: -5px;
-    left: 0;
+    left: ${(props) => (props.isCentered ? '50%' : '0px')};
+    margin-left: ${(props) => (props.isCentered ? '-9px' : '0px')};
     width: 18px;
     height: 5px;
     background-color: ${colors.primary};
@@ -23,6 +24,7 @@ HeadingDecorated.defaultProps = {
   caps: true,
   fontWeight: '100',
   mb: 4,
+  isCentered: false,
 }
 
 export default HeadingDecorated

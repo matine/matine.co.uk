@@ -46,7 +46,7 @@ TextSm.defaultProps = {
 export const TextMd = styled(Text)``
 
 TextMd.defaultProps = {
-  fontSize: [fontSizes[2], fontSizes[3]],
+  fontSize: [fontSizes[3]],
 }
 
 export const TextLg = styled(Text)``

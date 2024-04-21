@@ -48,51 +48,57 @@ function CVPage({ data }) {
 
   return (
     <PageLayout>
-      <Box id={`${pageName}-page`} pb={5}>
+      <Box id={`${pageName}-page`}>
         <Container>
-          <Contained maxWidth={4} pb={5}>
-            <Box pt={6} pb={4}>
-              <LogoInfoLockup firstName={first_name} surname={surname} />
+          <Contained maxWidth={5} pb={5}>
+            <Box bg="white" px={[3, 4, 5]} py={2}>
+              <Box pt={6} pb={4}>
+                <LogoInfoLockup firstName={first_name} surname={surname} />
+              </Box>
+              <MyIntro
+                meIntroTitle={me_intro_title}
+                meIntroText={me_intro_text}
+                sectionName={pageName}
+              />
+              <MySkills
+                meSkillsTitle={me_skills_title}
+                meSkillsText={me_skills_text}
+                sectionName={pageName}
+              />
+              <MyEmployment
+                meEmploymentTitle={me_employment_title}
+                meEmployments={me_employments}
+                sectionName={pageName}
+              />
+              <MyEducation
+                meEducationTitle={me_education_title}
+                meEducations={me_educations}
+                sectionName={pageName}
+              />
+              <MyInterests
+                meInterestsTitle={me_interests_title}
+                meInterestsText={me_interests_text}
+                sectionName={pageName}
+              />
             </Box>
-            <MyIntro
-              meIntroTitle={me_intro_title}
-              meIntroText={me_intro_text}
-              sectionName={pageName}
-            />
-            <MySkills
-              meSkillsTitle={me_skills_title}
-              meSkillsText={me_skills_text}
-              sectionName={pageName}
-            />
-            <MyEmployment
-              meEmploymentTitle={me_employment_title}
-              meEmployments={me_employments}
-              sectionName={pageName}
-            />
-            <MyEducation
-              meEducationTitle={me_education_title}
-              meEducations={me_educations}
-              sectionName={pageName}
-            />
-            <MyInterests
-              meInterestsTitle={me_interests_title}
-              meInterestsText={me_interests_text}
-              sectionName={pageName}
-            />
-            <div>
+            <Box mt={4}>
               <ButtonHover
                 hover="big"
                 onClick={() => printPage()}
                 className="hide-for-print"
               >
-                <SvgWrap width={30}>
-                  <PrintIcon />
-                </SvgWrap>
-                <Box className="show-on-hover" position="absolute" mt="50px">
-                  <TextSm fontWeight="bold">Prints best in Chrome!</TextSm>
+                <Box display="flex" alignItems="center">
+                  <SvgWrap width={30}>
+                    <PrintIcon />
+                  </SvgWrap>
+                  <Box className="show-on-hover">
+                    <TextSm ml={3} fontWeight="bold">
+                      Prints best in Chrome!
+                    </TextSm>
+                  </Box>
                 </Box>
               </ButtonHover>
-            </div>
+            </Box>
           </Contained>
         </Container>
       </Box>

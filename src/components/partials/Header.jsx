@@ -11,8 +11,8 @@ function Header({ pageName }) {
         <ThemeDefault themeBg themeBorder themeSvg>
           <Box
             display="flex"
-            px={4}
-            minHeight={[65, 70]}
+            px={[3, 4]}
+            minHeight={[60, 70]}
             w={1}
             alignItems="center"
             justifyContent="center"
@@ -32,7 +32,6 @@ function Header({ pageName }) {
                   gridColumn={3}
                 >
                   <NavItem to="/about">About</NavItem>
-                  <NavItem to="/cv">CV</NavItem>
                 </Box>
               </NavWrap>
             </Box>

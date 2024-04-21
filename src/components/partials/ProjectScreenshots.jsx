@@ -3,12 +3,12 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 import Carousel from './Carousel'
 import { CarouselWrap, BrowserWindow, Box, Container } from '../ui'
 
-const ProjectScreenshots = ({
+function ProjectScreenshots({
   projectScreenshots,
   projectUid,
   projectType,
   projectTitle = '',
-}) => {
+}) {
   if (!projectScreenshots[0]) {
     return null
   }

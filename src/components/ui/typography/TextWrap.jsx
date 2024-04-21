@@ -114,31 +114,31 @@ export const TextWrap = styled.div`
 export const TextWrapXs = styled(TextWrap)``
 
 TextWrapXs.defaultProps = {
-  fontSize: ['10px', fontSizes[1]],
+  fontSize: fontSizes[1],
 }
 
 export const TextWrapSm = styled(TextWrap)``
 
 TextWrapSm.defaultProps = {
-  fontSize: [fontSizes[1], fontSizes[2]],
+  fontSize: fontSizes[2],
 }
 
 export const TextWrapMd = styled(TextWrap)``
 
 TextWrapMd.defaultProps = {
-  fontSize: [fontSizes[2], fontSizes[3]],
+  fontSize: fontSizes[3],
 }
 
 export const TextWrapLg = styled(TextWrap)``
 
 TextWrapLg.defaultProps = {
-  fontSize: [fontSizes[3], fontSizes[4]],
+  fontSize: fontSizes[4],
 }
 
 export const TextWrapXl = styled(TextWrap)``
 
 TextWrapXl.defaultProps = {
-  fontSize: [fontSizes[4], fontSizes[5]],
+  fontSize: fontSizes[5],
 }
 
 export default TextWrap

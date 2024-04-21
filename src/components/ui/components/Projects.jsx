@@ -70,10 +70,13 @@ export const ProjectsNav = styled.div`
   ${(props) =>
     props.direction === 'next' &&
     css`
-      right: -12px;
+      right: -24px;
       text-align: left;
       transform: rotate(90deg);
 
+      @media (min-width: ${breakpoints[1]}) {
+        right: -9px;
+      }
       @media (min-width: ${breakpoints[2]}) {
         right: 0;
       }
@@ -82,10 +85,13 @@ export const ProjectsNav = styled.div`
   ${(props) =>
     props.direction === 'prev' &&
     css`
-      left: -12px;
+      left: -24px;
       text-align: right;
       transform: rotate(-90deg);
 
+      @media (min-width: ${breakpoints[1]}) {
+        left: -9px;
+      }
       @media (min-width: ${breakpoints[2]}) {
         left: 0;
       }

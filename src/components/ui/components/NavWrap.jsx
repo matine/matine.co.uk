@@ -13,7 +13,18 @@ const NavWrap = styled.nav`
 
     &:hover,
     &.active {
-      background-color: ${colors.primary};
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        margin-left: -9px;
+        width: 18px;
+        height: 5px;
+        background-color: ${colors.primary};
+        border: 1px solid ${colors.primaryDark};
+      }
     }
   }
 `

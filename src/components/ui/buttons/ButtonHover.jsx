@@ -23,7 +23,7 @@ const ButtonHover = styled(Button)`
       }
       &:hover {
         svg {
-          transform: scale(4);
+          transform: scale(1.2);
           position: relative;
         }
         .show-on-hover {

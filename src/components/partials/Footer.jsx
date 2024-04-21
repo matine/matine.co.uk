@@ -32,24 +32,8 @@ function Footer({ data }) {
     >
       <Container>
         <TextWrapMd textAlign="center" linkStyle="default">
-          {/* <Box mb={4}>
-            <ButtonHover onClick={scroll.scrollToTop} hover="arrow">
-              <TextMd fontWeight="bold">Top</TextMd>
-            </ButtonHover>
-          </Box> */}
-          {footerText && (
-            <TextWrap textSpacing>
-              <Box mb={4}>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: footerText.html,
-                  }}
-                />
-              </Box>
-            </TextWrap>
-          )}
           <TextWrap linkStyle="none">
-            <SocialLinks linkedIn email gitHub />
+            <SocialLinks linkedIn email gitHub cv />
           </TextWrap>
         </TextWrapMd>
       </Container>

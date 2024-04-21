@@ -25,7 +25,7 @@ const printStyles = css`
     }
     .cv-section__heading {
       margin-bottom: 1em;
-      &:before {
+      &::before {
         display: none;
       }
     }

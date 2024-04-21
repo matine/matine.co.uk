@@ -3,7 +3,7 @@ import React from 'react'
 import { Box, HeadingDecorated, TextWrapSm } from '../ui'
 import { PropTypeGatsbyText, PropTypeGatsbyHtml } from '../../propTypes'
 
-const MySkills = ({ meSkillsTitle, meSkillsText, sectionName }) => {
+function MySkills({ meSkillsTitle, meSkillsText, sectionName, isCentered }) {
   if (!meSkillsTitle && !meSkillsText) {
     return null
   }
@@ -11,7 +11,10 @@ const MySkills = ({ meSkillsTitle, meSkillsText, sectionName }) => {
   return (
     <Box mb={5} className={`${sectionName}-section`}>
       {meSkillsTitle && (
-        <HeadingDecorated className={`${sectionName}-section__heading`}>
+        <HeadingDecorated
+          isCentered={isCentered}
+          className={`${sectionName}-section__heading`}
+        >
           {meSkillsTitle.text}
         </HeadingDecorated>
       )}
@@ -32,12 +35,14 @@ MySkills.defaultProps = {
   meSkillsTitle: null,
   meSkillsText: null,
   sectionName: null,
+  isCentered: null,
 }
 
 MySkills.propTypes = {
   meSkillsTitle: PropTypeGatsbyText,
   meSkillsText: PropTypeGatsbyHtml,
   sectionName: PropTypes.string,
+  isCentered: PropTypes.bool,
 }
 
 export default MySkills
