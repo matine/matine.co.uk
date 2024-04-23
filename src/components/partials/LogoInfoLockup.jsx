@@ -26,7 +26,7 @@ function LogoInfoLockup({ firstName, surname }) {
           fontWeight="bold"
           display={['block', 'inline-block']}
         >
-          Senior Frontend Engineer
+          Senior frontend engineer
         </Span>
         <Span className="print-inline-block" display={['none', 'inline-block']}>
           &nbsp;|&nbsp;

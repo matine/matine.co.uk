@@ -21,7 +21,7 @@ function IndexPage({ data }) {
           <Box py={[5, 5, 6]}>
             <LogoLockup firstName={first_name} surname={surname} />
             <Text fontWeight="bold" textAlign="center" fontSize={[16, 20, 24]}>
-              Frontend Engineer
+              Frontend engineer
             </Text>
           </Box>
           <Grid gutter={1}>
