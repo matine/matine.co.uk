@@ -3,7 +3,7 @@ import React from 'react'
 import { Box, HeadingDecorated, TextWrapSm, HeadingXs, HeadingMd } from '../ui'
 import { PropTypeGatsbyText } from '../../propTypes'
 
-const MyEducation = ({ meEducationTitle, meEducations, sectionName }) => {
+function MyEducation({ meEducationTitle, meEducations, sectionName }) {
   if (!meEducationTitle && !meEducations) {
     return null
   }
@@ -14,7 +14,7 @@ const MyEducation = ({ meEducationTitle, meEducations, sectionName }) => {
     const educationDesc = education.me_education_description
 
     return (
-      <Box key={index} mb={4}>
+      <Box key={index} className="cv-education-item" mb={4}>
         {educationDate && (
           <HeadingXs caps color="light" mb={1}>
             {educationDate.text}

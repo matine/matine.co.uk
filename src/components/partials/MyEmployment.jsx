@@ -3,7 +3,7 @@ import React from 'react'
 import { Box, HeadingDecorated, TextWrapSm, HeadingXs, HeadingMd } from '../ui'
 import { PropTypeGatsbyText } from '../../propTypes'
 
-const MyEmployment = ({ meEmploymentTitle, meEmployments, sectionName }) => {
+function MyEmployment({ meEmploymentTitle, meEmployments, sectionName }) {
   if (!meEmploymentTitle && !meEmployments) {
     return null
   }
@@ -14,7 +14,7 @@ const MyEmployment = ({ meEmploymentTitle, meEmployments, sectionName }) => {
     const employmentDesc = employment.me_employment_description
 
     return (
-      <Box key={index} mb={4}>
+      <Box className="cv-employment-item" key={index} mb={4}>
         {employmentDate && (
           <HeadingXs caps color="light" mb={1}>
             {employmentDate.text}

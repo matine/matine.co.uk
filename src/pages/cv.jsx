@@ -50,9 +50,9 @@ function CVPage({ data }) {
     <PageLayout>
       <Box id={`${pageName}-page`}>
         <Container>
-          <Contained maxWidth={5} pb={5}>
-            <Box bg="white" px={[3, 4, 5]} py={2}>
-              <Box pt={6} pb={4}>
+          <Contained className="cv-contained" maxWidth={5} pb={5}>
+            <Box className="cv-inner" bg="white" px={[3, 4, 5]} pt={6} pb={2}>
+              <Box className="cv-logo-lockup" pb={4}>
                 <LogoInfoLockup firstName={first_name} surname={surname} />
               </Box>
               <MyIntro
