@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Box, HeadingDecorated, TextWrapSm, HeadingXs, HeadingMd } from '../ui'
+import { Box, HeadingDecorated, TextWrapSm, HeadingSm, HeadingMd } from '../ui'
 import { PropTypeGatsbyText } from '../../propTypes'
 
 function MyEmployment({ meEmploymentTitle, meEmployments, sectionName }) {
@@ -16,15 +16,20 @@ function MyEmployment({ meEmploymentTitle, meEmployments, sectionName }) {
     return (
       <Box className="cv-employment-item" key={index} mb={4}>
         {employmentDate && (
-          <HeadingXs caps color="light" mb={1}>
+          <HeadingSm className="cv-employment-date" color="light" mb={1}>
             {employmentDate.text}
-          </HeadingXs>
+          </HeadingSm>
         )}
         {employmentTitle && (
-          <HeadingMd mb={2}>{employmentTitle.text}</HeadingMd>
+          <HeadingMd
+            className="cv-employment-title"
+            mb={employmentDesc ? 2 : 0}
+          >
+            {employmentTitle.text}
+          </HeadingMd>
         )}
         {employmentDesc && (
-          <TextWrapSm textSpacing mb={0}>
+          <TextWrapSm className="cv-employment-desc" textSpacing mb={0}>
             <div
               dangerouslySetInnerHTML={{
                 __html: employmentDesc.html,

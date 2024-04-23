@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Box, HeadingDecorated, TextWrapSm, HeadingXs, HeadingMd } from '../ui'
+import { Box, HeadingDecorated, TextWrapSm, HeadingSm, HeadingMd } from '../ui'
 import { PropTypeGatsbyText } from '../../propTypes'
 
 function MyEducation({ meEducationTitle, meEducations, sectionName }) {
@@ -16,13 +16,17 @@ function MyEducation({ meEducationTitle, meEducations, sectionName }) {
     return (
       <Box key={index} className="cv-education-item" mb={4}>
         {educationDate && (
-          <HeadingXs caps color="light" mb={1}>
+          <HeadingSm className="cv-education-date" color="light" mb={1}>
             {educationDate.text}
-          </HeadingXs>
+          </HeadingSm>
         )}
-        {educationDate && <HeadingMd mb={0}>{educationTitle.text}</HeadingMd>}
+        {educationTitle && (
+          <HeadingMd className="cv-education-title" mb={0}>
+            {educationTitle.text}
+          </HeadingMd>
+        )}
         {educationDesc && (
-          <TextWrapSm textSpacing mb={0}>
+          <TextWrapSm className="cv-education-desc" textSpacing mb={0}>
             <div
               dangerouslySetInnerHTML={{
                 __html: educationDesc.html,

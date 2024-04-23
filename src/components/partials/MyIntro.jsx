@@ -19,7 +19,7 @@ function MyIntro({ isCentered, meIntroTitle, meIntroText, sectionName }) {
         </HeadingDecorated>
       )}
       {meIntroText && (
-        <TextWrapMd textSpacing>
+        <TextWrapMd className="cv-intro-text" textSpacing>
           <div
             dangerouslySetInnerHTML={{
               __html: meIntroText.html,

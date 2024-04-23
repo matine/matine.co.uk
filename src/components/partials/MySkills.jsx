@@ -19,7 +19,12 @@ function MySkills({ meSkillsTitle, meSkillsText, sectionName, isCentered }) {
         </HeadingDecorated>
       )}
       {meSkillsText && (
-        <TextWrapSm listStyle="none" textSpacing headings>
+        <TextWrapSm
+          className="cv-skills-text"
+          listStyle="none"
+          textSpacing
+          headings
+        >
           <div
             dangerouslySetInnerHTML={{
               __html: meSkillsText.html,

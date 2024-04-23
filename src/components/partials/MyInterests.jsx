@@ -3,7 +3,7 @@ import React from 'react'
 import { Box, HeadingDecorated, TextWrapSm } from '../ui'
 import { PropTypeGatsbyText, PropTypeGatsbyHtml } from '../../propTypes'
 
-const MyInterests = ({ meInterestsTitle, meInterestsText, sectionName }) => {
+function MyInterests({ meInterestsTitle, meInterestsText, sectionName }) {
   if (!meInterestsTitle && !meInterestsText) {
     return null
   }
@@ -16,7 +16,7 @@ const MyInterests = ({ meInterestsTitle, meInterestsText, sectionName }) => {
         </HeadingDecorated>
       )}
       {meInterestsText && (
-        <TextWrapSm textSpacing>
+        <TextWrapSm className="cv-interests-text" textSpacing>
           <div
             dangerouslySetInnerHTML={{
               __html: meInterestsText.html,
